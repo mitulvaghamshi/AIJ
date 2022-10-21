@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/m_1"
+        android:orderInCategory="@color/background_tint_action_bar"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+
+    <item
+        android:orderInCategory="@color/background_tint_action_bar"
+        android:title="@string/action_add_shortcut"
+        app:showAsAction="never" />
+
+    <item
+        android:orderInCategory="@color/background_tint_action_bar"
+        android:title="@string/action_remove_shortcut"
+        app:showAsAction="never" />
+</menu>

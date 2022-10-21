@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <me.mitul.aij.splash.MyViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:keepScreenOn="true" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/splash_fab_login_go"
+        style="@style/fab_common_style"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="@dimen/dimen_10_dp"
+        android:layout_marginBottom="@dimen/dimen_10_dp"
+        android:contentDescription="@string/desc_login_go"
+        android:src="@drawable/ic_send_black_24dp"
+        android:tint="@color/white"
+        app:fabSize="normal"
+        app:rippleColor="@color/white" />
+
+    <TextView
+        android:id="@+id/tv_splash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Hello World!"
+        android:visibility="gone" />
+</merge>
