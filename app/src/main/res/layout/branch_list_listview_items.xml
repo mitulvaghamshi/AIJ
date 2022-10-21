@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen_10_dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/row_button_bar"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="@dimen/dimen_0_dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:orientation="horizontal"
+            android:padding="@dimen/dimen_10_dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/branch_list_item_branch_id"
+                    android:layout_width="@dimen/dimen_0_dp"
+                    android:layout_height="@dimen/dimen_0_dp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/branch_list_item_branch_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_5_dp"
+                    android:textSize="@dimen/dimen_15_sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/branch_list_items_collage_count_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="@dimen/dimen_0_dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/rightarrow"
+            android:src="@drawable/ic_chevron_right_black_24dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_5_dp"
+        android:background="@color/white" />
+</LinearLayout>

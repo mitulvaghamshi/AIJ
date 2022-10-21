@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <AutoCompleteTextView
+        android:id="@+id/edSearchCommon"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_40_dp"
+        android:layout_margin="@dimen/dimen_10_dp"
+        android:layout_marginBottom="@dimen/dimen_20_dp"
+        android:background="@drawable/row_button_bar"
+        android:drawableStart="@android:drawable/ic_menu_search"
+        android:drawableTint="@color/background_tint_action_bar"
+        android:foregroundTint="@color/background_tint_action_bar"
+        android:hint="@string/search_hint"
+        android:textColor="@color/background_tint_action_bar"
+        android:textColorHint="@color/background_tint_action_bar" />
+
+    <ListView
+        android:id="@+id/common_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_10_dp"
+        android:divider="@null"
+        android:dividerHeight="@dimen/dimen_0_dp"
+        android:listSelector="@drawable/row_button_pressed_2"
+        android:scrollbars="none"
+        android:visibility="gone" />
+
+    <ExpandableListView
+        android:id="@+id/expandableListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_10_dp"
+        android:dividerHeight="@dimen/dimen_0_dp"
+        android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+        android:listSelector="@drawable/row_button_pressed_2"
+        android:scrollbars="none"
+        android:visibility="gone" />
+</LinearLayout>

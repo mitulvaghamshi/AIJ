@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name"
+        android:gravity="center_horizontal"
+        android:src="@drawable/aij_trans4" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_10_dp">
+
+        <TextView
+            style="@style/hw"
+            android:padding="@dimen/dimen_5_dp"
+            android:text="@string/amrut_institute_junagadh" />
+
+        <TextView
+            style="@style/hw"
+            android:autoLink="web"
+            android:padding="@dimen/dimen_5_dp"
+            android:text="@string/www_aij_ind_in" />
+    </LinearLayout>
+</LinearLayout>
+

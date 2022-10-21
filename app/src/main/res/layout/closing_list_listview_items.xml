@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:divider="@color/black"
+    android:orientation="horizontal"
+    android:padding="@dimen/dimen_5_dp"
+    android:showDividers="middle">
+
+    <TextView
+        android:id="@+id/allclosing_tv_branch"
+        style="@style/closing_textviews" />
+
+    <TextView
+        android:id="@+id/allclosing_tv_tfw"
+        style="@style/closing_textviews" />
+
+    <TextView
+        android:id="@+id/allclosing_tv_open"
+        style="@style/closing_textviews" />
+
+    <TextView
+        android:id="@+id/allclosing_tv_ebc"
+        style="@style/closing_textviews" />
+
+    <TextView
+        android:id="@+id/allclosing_tv_sebc"
+        style="@style/closing_textviews" />
+
+    <TextView
+        android:id="@+id/allclosing_tv_sc"
+        style="@style/closing_textviews" />
+
+    <TextView
+        android:id="@+id/allclosing_tv_st1"
+        style="@style/closing_textviews" />
+</LinearLayout>

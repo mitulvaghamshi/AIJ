@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
+        <item
+            android:icon="@drawable/ic_brightness_1_green_24dp"
+            android:title="Explore"
+            app:showAsAction="ifRoom">
+            <menu>
+                <item
+                    android:icon="@drawable/ic_launcher"
+                    android:title="GTU" />
+            </menu>
+        </item>
+    </group>
+    <group android:checkableBehavior="single">
+        <item
+            android:icon="@drawable/ic_launcher"
+            android:title="Contact"
+            app:showAsAction="ifRoom">
+            <menu>
+                <item
+                    android:id="@+id/nav_contact"
+                    android:icon="@drawable/ic_launcher"
+                    android:title="Contact Us" />
+                <item
+                    android:icon="@drawable/ic_launcher"
+                    android:title="Important Link" />
+            </menu>
+        </item>
+    </group>
+    <group android:checkableBehavior="single">
+        <item
+            android:icon="@drawable/ic_launcher"
+            android:title="Sharing"
+            app:showAsAction="ifRoom">
+            <menu>
+                <item
+                    android:icon="@drawable/ic_launcher"
+                    android:title="Share this app" />
+                <item
+                    android:icon="@drawable/ic_launcher"
+                    android:title="Send Feedback" />
+            </menu>
+        </item>
+    </group>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home_exit"
+            android:icon="@drawable/ic_launcher"
+            android:title="Exit"
+            app:showAsAction="ifRoom" />
+    </group>
+</menu>

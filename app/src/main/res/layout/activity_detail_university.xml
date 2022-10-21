@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/common_fragment_aij"
+    android:padding="@dimen/dimen_10_dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_10_dp"
+            android:background="@drawable/bg_bl_wh"
+            android:orientation="horizontal"
+            android:padding="@dimen/dimen_10_dp">
+
+            <TextView
+                android:id="@+id/universitydetail_tv_university_shortname"
+                style="@style/detail_collage_ll_textview_horizontal"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:typeface="serif"
+                android:layout_width="0dp" />
+
+            <TextView
+                android:id="@+id/universitydetail_tv_university_id"
+                android:layout_width="@dimen/dimen_0_dp"
+                android:layout_height="@dimen/dimen_0_dp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_10_dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/detail_collage_ll">
+
+                <TextView style="@style/detail_collage_ll_textview_pin" />
+
+                <TextView
+                    android:id="@+id/universitydetail_tv_university_fullname"
+                    style="@style/detail_collage_ll_textview" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/detail_collage_ll">
+
+                <TextView style="@style/detail_collage_ll_textview_pin" />
+
+                <TextView
+                    android:id="@+id/universitydetail_tv_university_address"
+                    style="@style/detail_collage_ll_textview" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/detail_collage_ll">
+
+                <TextView style="@style/detail_collage_ll_textview_pin" />
+
+                <TextView
+                    android:id="@+id/universitydetail_tv_university_phone"
+                    style="@style/detail_collage_ll_textview" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/detail_collage_ll">
+
+                <TextView style="@style/detail_collage_ll_textview_pin" />
+
+                <TextView
+                    android:id="@+id/universitydetail_tv_university_website"
+                    style="@style/detail_collage_ll_textview" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/detail_collage_ll">
+
+                <TextView style="@style/detail_collage_ll_textview_pin" />
+
+                <TextView
+                    android:id="@+id/universitydetail_tv_university_email"
+                    style="@style/detail_collage_ll_textview" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/detail_collage_ll">
+
+                <TextView style="@style/detail_collage_ll_textview_pin" />
+
+                <TextView
+                    style="@style/detail_collage_ll_textview_horizontal"
+                    android:layout_weight="0.2"
+                    android:text="@string/type" />
+
+                <TextView
+                    android:id="@+id/universitydetail_tv_university_type"
+                    style="@style/detail_collage_ll_textview_horizontal"
+                    android:layout_weight="0.8" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout style="@style/hw">
+
+            <Button
+                android:id="@+id/universitydetail_tv_university_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/row_button_pressed"
+                android:padding="@dimen/dimen_10_dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_20_sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/common_fragment_aij"
+    android:padding="@dimen/dimen_10_dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_10_dp"
+            android:background="@drawable/bg_bl_wh"
+            android:orientation="horizontal"
+            android:padding="@dimen/dimen_10_dp">
+
+            <TextView
+                android:id="@+id/collegedetail_tv_collegeshortname"
+                style="@style/detail_collage_ll_textview_horizontal"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:typeface="serif" />
+
+            <TextView
+                android:id="@+id/collegedetail_tv_collegelabel"
+                style="@style/detail_collage_ll_textview_horizontal"
+                android:layout_weight="0.25"
+                android:textColor="@color/white"
+                android:typeface="serif" />
+
+            <TextView
+                android:layout_width="@dimen/dimen_0_dp"
+                android:layout_height="@dimen/dimen_0_dp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_10_dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/detail_collage_ll">
+
+                <TextView style="@style/detail_collage_ll_textview_pin" />
+
+                <TextView
+                    android:id="@+id/collegedetail_tv_collegefullname"
+                    style="@style/detail_collage_ll_textview" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/detail_collage_ll">
+
+                <TextView style="@style/detail_collage_ll_textview_pin" />
+
+                <TextView
+                    android:id="@+id/collegedetail_tv_collegeaddress"
+                    style="@style/detail_collage_ll_textview" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/detail_collage_ll">
+
+                <TextView style="@style/detail_collage_ll_textview_pin" />
+
+                <TextView
+                    android:id="@+id/collegedetail_tv_phone_value"
+                    style="@style/detail_collage_ll_textview"
+                    android:autoLink="phone" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/detail_collage_ll">
+
+                <TextView style="@style/detail_collage_ll_textview_pin" />
+
+                <TextView
+                    android:id="@+id/collegedetail_tv_website_value"
+                    style="@style/detail_collage_ll_textview"
+                    android:autoLink="web" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/detail_collage_ll">
+
+                <TextView style="@style/detail_collage_ll_textview_pin" />
+
+                <TextView
+                    android:id="@+id/collegedetail_tv_email_value"
+                    style="@style/detail_collage_ll_textview"
+                    android:autoLink="email" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/detail_collage_ll">
+
+                <TextView style="@style/detail_collage_ll_textview_pin" />
+
+                <TextView
+                    android:id="@+id/collegedetail_tv_fees_value"
+                    style="@style/detail_collage_ll_textview" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_10_dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/detail_collage_ll_horizontal">
+
+                <TextView style="@style/detail_collage_ll_textview_pin" />
+
+                <TextView
+                    style="@style/detail_collage_ll_textview_horizontal"
+                    android:layout_weight="0.4"
+                    android:text="@string/type" />
+
+                <TextView
+                    android:id="@+id/collegedetail_tv_collegetype_value"
+                    style="@style/detail_collage_ll_textview_horizontal"
+                    android:layout_weight="0.6" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/detail_collage_ll_horizontal">
+
+                <TextView style="@style/detail_collage_ll_textview_pin" />
+
+                <TextView
+                    style="@style/detail_collage_ll_textview_horizontal"
+                    android:layout_weight="0.4"
+                    android:text="@string/hostel" />
+
+                <TextView
+                    android:id="@+id/collegedetail_tv_collegetype_hostel"
+                    style="@style/detail_collage_ll_textview_horizontal"
+                    android:layout_weight="0.6" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/detail_collage_ll_horizontal">
+
+                <TextView style="@style/detail_collage_ll_textview_pin" />
+
+                <TextView
+                    style="@style/detail_collage_ll_textview_horizontal"
+                    android:layout_weight="0.4"
+                    android:text="@string/university" />
+
+                <TextView
+                    android:id="@+id/collegedetail_tv_collegetype_university"
+                    style="@style/detail_collage_ll_textview_horizontal"
+                    android:layout_weight="0.6" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/hw"
+            android:orientation="horizontal">
+
+            <Button
+                style="?android:buttonBarButtonStyle"
+                android:layout_width="@dimen/dimen_0_dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_5_dp"
+                android:layout_weight="1"
+                android:background="#ff8740"
+                android:padding="@dimen/dimen_10_dp"
+                android:text="@string/intake"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_20_sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
+            <Button
+                style="?android:buttonBarButtonStyle"
+                android:layout_width="@dimen/dimen_0_dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_5_dp"
+                android:layout_weight="1"
+                android:background="#2a47ff"
+                android:padding="@dimen/dimen_10_dp"
+                android:text="@string/closing"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_20_sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

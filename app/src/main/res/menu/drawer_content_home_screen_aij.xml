@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
+        <item
+            android:icon="@drawable/ic_launcher"
+            android:title="@string/explore_aij"
+            app:showAsAction="ifRoom">
+            <menu>
+                <item
+                    android:id="@+id/nav_aij_faqs"
+                    android:icon="@drawable/ic_launcher"
+                    android:title="@string/faq_s" />
+                <item
+                    android:id="@+id/nav_aij_carrier"
+                    android:icon="@drawable/ic_launcher"
+                    android:title="Carrier with us" />
+                <item
+                    android:id="@+id/nav_aij_admission_procedure"
+                    android:icon="@drawable/ic_launcher"
+                    android:title="Admission Procedure" />
+                <item
+                    android:id="@+id/nav_aij_eligibility_criteria"
+                    android:icon="@drawable/ic_launcher"
+                    android:title="Eligibility Criteria" />
+                <item
+                    android:id="@+id/nav_aij_facilities"
+                    android:icon="@drawable/ic_launcher"
+                    android:title="Facilities" />
+                <item
+                    android:id="@+id/nav_aij_Activities"
+                    android:icon="@drawable/ic_launcher"
+                    android:title="Activities" />
+                <item
+                    android:id="@+id/nav_aij_policy"
+                    android:icon="@drawable/ic_launcher"
+                    android:title="Policy" />
+                <item
+                    android:id="@+id/nav_aij_about_shect"
+                    android:icon="@drawable/ic_launcher"
+                    android:title="About SHECT" />
+                <item
+                    android:id="@+id/nav_aij_infrastructure"
+                    android:icon="@drawable/ic_launcher"
+                    android:title="Infrastructure" />
+                <item
+                    android:id="@+id/nav_placement"
+                    android:icon="@drawable/ic_launcher"
+                    android:title="Placement" />
+            </menu>
+        </item>
+    </group>
+    <group android:checkableBehavior="single">
+        <item
+            android:icon="@drawable/ic_launcher"
+            android:title="@string/explore_aij"
+            app:showAsAction="ifRoom">
+            <menu>
+                <item
+                    android:id="@+id/nav_cources"
+                    android:icon="@drawable/ic_launcher"
+                    android:title="Cources" />
+            </menu>
+        </item>
+    </group>
+</menu>

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout style="@style/relative_layout_home_screen">
+
+            <Button
+                android:id="@+id/find"
+                style="@style/ButtonBarAll"
+                android:layout_width="@dimen/dimen_180_dp"
+                android:layout_height="@dimen/dimen_180_dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="@dimen/dimen_10_dp"
+                android:background="#354cd7"
+                android:text="@string/find" />
+
+            <Button
+                android:id="@+id/collage"
+                style="@style/ButtonBarAll"
+                android:layout_width="@dimen/dimen_90_dp"
+                android:layout_height="@dimen/dimen_85_dp"
+                android:layout_alignTop="@id/find"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@id/find"
+                android:background="#2db600"
+                android:text="@string/collages" />
+
+            <Button
+                android:id="@+id/branches"
+                style="@style/ButtonBarAll"
+                android:layout_width="@dimen/dimen_90_dp"
+                android:layout_height="@dimen/dimen_85_dp"
+                android:layout_below="@+id/collage"
+                android:layout_alignStart="@+id/collage"
+                android:layout_alignBottom="@+id/find"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/dimen_10_dp"
+                android:background="#c4ca20"
+                android:text="@string/branches" />
+
+        </RelativeLayout>
+
+        <View style="@style/hw.view" />
+
+        <RelativeLayout style="@style/relative_layout_home_screen">
+
+            <Button
+                android:id="@+id/university"
+                style="@style/ButtonBarAll"
+                android:layout_width="@dimen/dimen_120_dp"
+                android:layout_height="@dimen/dimen_85_dp"
+                android:background="#27b5f7"
+                android:text="@string/university_btn" />
+
+            <Button
+                android:id="@+id/scholarship"
+                style="@style/ButtonBarAll"
+                android:layout_width="@dimen/dimen_180_dp"
+                android:layout_height="@dimen/dimen_85_dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/dimen_10_dp"
+                android:layout_toEndOf="@+id/university"
+                android:background="#2e238c"
+                android:text="@string/scholarship" />
+
+            <Button
+                android:id="@+id/bank"
+                style="@style/ButtonBarAll"
+                android:layout_width="@dimen/dimen_200_dp"
+                android:layout_height="@dimen/dimen_85_dp"
+                android:layout_below="@id/university"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="false"
+                android:layout_marginTop="@dimen/dimen_10_dp"
+                android:background="#c7205a"
+                android:text="@string/bank_branch" />
+
+        </RelativeLayout>
+
+        <View style="@style/hw.view" />
+
+        <RelativeLayout style="@style/relative_layout_home_screen">
+
+            <Button
+                android:id="@+id/developer"
+                style="@style/ButtonBarAll"
+                android:layout_width="@dimen/dimen_180_dp"
+                android:layout_height="@dimen/dimen_180_dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:background="#ff8740"
+                android:text="@string/developer" />
+
+        </RelativeLayout>
+
+        <View style="@style/hw.view" />
+
+        <RelativeLayout style="@style/relative_layout_home_screen">
+
+            <Button
+                android:id="@+id/help"
+                style="@style/ButtonBarAll"
+                android:layout_width="@dimen/dimen_180_dp"
+                android:layout_height="@dimen/dimen_160_dp"
+                android:layout_alignParentStart="true"
+                android:background="#0a532b"
+                android:text="@string/help_centers" />
+
+            <Button
+                android:id="@+id/qa"
+                style="@style/ButtonBarAll"
+                android:layout_width="@dimen/dimen_180_dp"
+                android:layout_height="@dimen/dimen_85_dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/dimen_10_dp"
+                android:layout_toEndOf="@+id/help"
+                android:background="#504332"
+                android:text="@string/q_amp_a" />
+
+        </RelativeLayout>
+
+        <View style="@style/hw.view" />
+
+        <RelativeLayout style="@style/relative_layout_home_screen">
+
+            <Button
+                android:id="@+id/webAdmissionView2"
+                style="@style/ButtonBarAll"
+                android:layout_width="@dimen/dimen_0_dp"
+                android:layout_height="@dimen/dimen_85_dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:background="#66bf18"
+                android:text="@string/admission_step" />
+
+            <Button
+                android:id="@+id/new2"
+                style="@style/ButtonBarAll"
+                android:layout_width="@dimen/dimen_90_dp"
+                android:layout_height="@dimen/dimen_85_dp"
+                android:layout_below="@+id/webAdmissionView2"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/dimen_10_dp"
+                android:layout_toStartOf="@+id/new3"
+                android:background="#cc4b75"
+                android:text="@string/new2" />
+
+            <Button
+                android:id="@+id/new3"
+                style="@style/ButtonBarAll"
+                android:layout_width="@dimen/dimen_180_dp"
+                android:layout_height="@dimen/dimen_85_dp"
+                android:layout_below="@+id/webAdmissionView2"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/dimen_10_dp"
+                android:layout_marginTop="@dimen/dimen_10_dp"
+                android:background="#972697"
+                android:text="@string/new3" />
+
+        </RelativeLayout>
+
+        <View style="@style/hw.view" />
+
+        <RelativeLayout style="@style/relative_layout_home_screen">
+
+            <Button
+                android:id="@+id/new4"
+                style="@style/ButtonBarAll"
+                android:layout_width="@dimen/dimen_180_dp"
+                android:layout_height="@dimen/dimen_85_dp"
+                android:layout_alignParentEnd="true"
+                android:background="#51bc57"
+                android:text="@string/new4" />
+
+            <Button
+                android:id="@+id/new5"
+                style="@style/ButtonBarAll"
+                android:layout_width="@dimen/dimen_180_dp"
+                android:layout_height="@dimen/dimen_85_dp"
+                android:layout_below="@id/new4"
+                android:layout_alignStart="@+id/new4"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/dimen_10_dp"
+                android:background="#13b3c1"
+                android:text="@string/new5" />
+
+            <Button
+                android:id="@+id/new6"
+                style="@style/ButtonBarAll"
+                android:layout_width="@dimen/dimen_110_dp"
+                android:layout_height="@dimen/dimen_85_dp"
+                android:layout_alignBottom="@+id/new5"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/dimen_10_dp"
+                android:background="#6e30e4"
+                android:text="@string/new7" />
+
+        </RelativeLayout>
+
+        <View style="@style/hw.view" />
+
+        <RelativeLayout style="@style/relative_layout_home_screen">
+
+            <Button
+                android:id="@+id/new7"
+                style="@style/ButtonBarAll"
+                android:layout_width="@dimen/dimen_0_dp"
+                android:layout_height="@dimen/dimen_150_dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:background="@color/background_tint_action_bar"
+                android:text="@string/aij" />
+
+        </RelativeLayout>
+
+        <View style="@style/hw.view" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_backup_go"
+                style="@style/fab_home_screen"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/ic_cloud_upload_black_24dp"
+                app:backgroundTint="@color/background_tint_action_bar"
+                app:fabSize="normal"
+                android:contentDescription="Backup button" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_exit_now"
+                style="@style/fab_common_style"
+                android:layout_centerHorizontal="true"
+                android:src="@android:drawable/ic_lock_power_off"
+                android:tint="@color/white"
+                app:backgroundTint="@color/home_fab_1"
+                app:fabSize="normal"
+                android:contentDescription="Exit button" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_restore_go"
+                style="@style/fab_common_style"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_cloud_download_black_24dp"
+                app:backgroundTint="@color/home_fab_2"
+                app:fabSize="normal"
+                android:contentDescription="Restore button" />
+
+        </RelativeLayout>
+
+        <View style="@style/hw.view" />
+
+        <RelativeLayout style="@style/relative_layout_home_screen">
+
+            <Button
+                android:id="@+id/student_corner"
+                style="@style/ButtonBarAll"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_85_dp"
+                android:background="#009dff"
+                android:text="@string/students_corner" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>
+
