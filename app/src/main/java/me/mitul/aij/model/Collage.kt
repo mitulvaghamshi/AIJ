@@ -1,0 +1,25 @@
+package me.mitul.aij.model
+
+class Collage(
+    var collageName: String? = null,
+    var collageId: Int? = null,
+    var collageFees: Int? = null,
+    var branches: String? = null,
+    var hostel: String? = null,
+    var label: String? = null,
+    var clgCollageID: Int? = null,
+    var clgShortName: String? = null,
+    var clgFullName: String? = null,
+    var clgAddress: String? = null,
+    var phone: String? = null,
+    var web: String? = null,
+    var email: String? = null,
+    var fees: String? = null,
+    var type: String? = null,
+    var university: String? = null,
+    var vecStr: String? = null,
+    var warningMessage: String? = null,
+    var lvBranch: String? = null,
+    var lvSeat: Int? = null,
+    var lvVacant: Int? = null,
+)

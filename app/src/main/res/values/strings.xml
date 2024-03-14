@@ -139,4 +139,7 @@
     <string name="fake_address">asdfghjklpo,\n12,dsasd,\ndfsdfds-(123456)</string>
     <string name="contact_2">Contact 2</string>
     <string name="_000000000">000000000</string>
+    <string name="restore_button">Restore button</string>
+    <string name="exit_button">Exit button</string>
+    <string name="backup_button">Backup button</string>
 </resources>
