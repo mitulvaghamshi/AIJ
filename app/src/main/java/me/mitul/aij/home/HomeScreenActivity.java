@@ -25,7 +25,6 @@ import com.google.android.material.snackbar.Snackbar;
 import me.mitul.aij.R;
 import me.mitul.aij.aij.ContactUs;
 import me.mitul.aij.aij.HomeScreenAijActivity;
-import me.mitul.aij.frags.MainActivity;
 import me.mitul.aij.helper.HelperBackupRestore;
 
 public class HomeScreenActivity extends Activity implements NavigationView.OnNavigationItemSelectedListener, OnClickListener {
@@ -58,15 +57,7 @@ public class HomeScreenActivity extends Activity implements NavigationView.OnNav
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
         Toolbar toolbar = findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
         exitDialog = new AlertDialog.Builder(this);
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(view -> {
-            Snackbar.make(view, "Share this app", Snackbar.LENGTH_LONG).setAction("Share", null).show();
-            //animate();
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-        });
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
