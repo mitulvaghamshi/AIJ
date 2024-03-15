@@ -16,9 +16,8 @@ import android.view.ViewTreeObserver.OnGlobalLayoutListener
 class JustifiedTextView : View {
     private var hasTextBeenDrown = false
     private var context: Context? = null
-    var textPaint: TextPaint? = null
-    var lineSpace = 0
-        private set
+    private var textPaint: TextPaint? = null
+    private var lineSpace = 0
     private var lineHeight = 0
     private var textAreaWidth = 0
     private var measuredViewHeight = 0
@@ -29,13 +28,14 @@ class JustifiedTextView : View {
             calculate()
             invalidate()
         }
+
     private var lineList: MutableList<String> = ArrayList()
 
-    constructor(context: Context, attrs: AttributeSet?, defStyle: Int) : super(
-        context,
-        attrs,
-        defStyle
-    ) {
+    constructor(
+        context: Context,
+        attrs: AttributeSet?,
+        defStyle: Int
+    ) : super(context, attrs, defStyle) {
         constructor(context, attrs)
     }
 
@@ -52,18 +52,14 @@ class JustifiedTextView : View {
         val xmlParser = XmlToClassAttribHandler(this.context, attrs)
         initTextPaint()
         if (attrs != null) {
-            val text: String
-            val textColor: Int
-            val textSize: Int
-            val textSizeUnit: Int
-            text = xmlParser.textValue
-            textColor = xmlParser.colorValue
-            textSize = xmlParser.textSize
-            textSizeUnit = xmlParser.gettextSizeUnit()
+            val text: String = xmlParser.textValue
+            val textSize: Int = xmlParser.textSize
+            val textColor: Int = xmlParser.colorValue
+            val textSizeUnit: Int = xmlParser.gettextSizeUnit()
             this.text = text
             this.textColor = textColor
-            if (textSizeUnit == -1) this.textSize =
-                textSize.toFloat() else setTextSize(textSizeUnit, textSize.toFloat())
+            if (textSizeUnit == -1) this.textSize = textSize.toFloat()
+            else setTextSize(textSizeUnit, textSize.toFloat())
             //			setText(XmlToClassAttribHandler.GetAttributeStringValue(mContext, attrs, namespace, key, ""));
             typeFace = xmlParser.typeFace
             //setTypeFace(Typeface.create("serif", Typeface.NORMAL));
@@ -102,9 +98,9 @@ class JustifiedTextView : View {
 
     override fun onDraw(canvas: Canvas) {
         var rowIndex = paddingTop
-        var colIndex = 0
-        colIndex =
-            if (alignment == Align.RIGHT) getPaddingLeft() + textAreaWidth else getPaddingLeft()
+        val colIndex: Int =
+            if (alignment == Align.RIGHT) getPaddingLeft() + textAreaWidth
+            else getPaddingLeft()
         for (i in lineList.indices) {
             rowIndex += lineHeight + lineSpace
             canvas.drawText(lineList[i], colIndex.toFloat(), rowIndex.toFloat(), textPaint!!)
@@ -115,11 +111,13 @@ class JustifiedTextView : View {
         val listStringLine = ArrayList<String>()
         var line = ""
         var textWidth: Float
-        val paragraphList =
-            originalText!!.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+        val paragraphList = originalText!!.split("\n".toRegex()).dropLastWhile {
+            it.isEmpty()
+        }.toTypedArray()
         for (paragraph in paragraphList) {
-            val wordList =
-                paragraph.split(" ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+            val wordList = paragraph.split(" ".toRegex()).dropLastWhile {
+                it.isEmpty()
+            }.toTypedArray()
             var i = 0
             while (i < wordList.size) {
                 line += wordList[i] + " "
@@ -132,7 +130,7 @@ class JustifiedTextView : View {
                 } else if (textAreaWidth < textWidth) {
                     val lastWordCount = wordList[i].length
                     line = line.substring(0, line.length - lastWordCount - 1)
-                    if (line.trim { it <= ' ' }.length == 0) {
+                    if (line.trim { it <= ' ' }.isEmpty()) {
                         i++
                         continue
                     }
@@ -240,12 +238,8 @@ internal class XmlToClassAttribHandler(
     private val mAttributeSet: AttributeSet?
 ) {
     private val KEY_TEXT_SIZE = "textSize"
-    private val mRes: Resources
+    private val mRes: Resources = mContext!!.resources
     private val namespace = "http://me.mitul.aij"
-
-    init {
-        mRes = mContext!!.resources
-    }
 
     val textValue: String
         get() {
@@ -261,8 +255,9 @@ internal class XmlToClassAttribHandler(
             }
             return value
         }
-    val typeFace: Typeface
-        get() = Typeface.createFromAsset(mContext!!.assets, "font/f011.ttf")
+
+    val typeFace: Typeface = Typeface.createFromAsset(mContext!!.assets, "font/f011.ttf")
+
     val colorValue: Int
         get() {
             val KEY_TEXT_COLOR = "textColor"

@@ -11,28 +11,24 @@ import me.mitul.aij.helper.HelperAijExplorer
 
 class PlaceHolderFragment : Fragment() {
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val rootView: View
-        rootView = inflater.inflate(R.layout.fragment_explore_holder, container, false)
-        val ARG_ITEM_ID = arguments!!.getInt("ARG_ITEm_ID")
-        if (ARG_ITEM_ID == 0) return rootView
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View {
+        val rootView: View = inflater.inflate(R.layout.fragment_explore_holder, container, false)
+        val argItemId = requireArguments().getInt("ARG_ITEm_ID")
+        if (argItemId == 0) return rootView
         HelperAijExplorer(context).use { aij ->
-            val tv = rootView.findViewById<TextView>(R.id.header_text)
-            val jtv = rootView.findViewById<JustifiedTextView>(R.id.detail_text)
-            tv.text = aij.selectHeader(ARG_ITEM_ID)
-            jtv.setText(aij.selectDetail(ARG_ITEM_ID))
+            rootView.findViewById<TextView>(R.id.header_text).text = aij.selectHeader(argItemId)
+            rootView.findViewById<JustifiedTextView>(R.id.detail_text).text =
+                aij.selectDetail(argItemId)
         }
         return rootView
     }
 
     companion object {
+        @JvmStatic
         fun newInstance(itemId: Int): PlaceHolderFragment {
             val fragment = PlaceHolderFragment()
-            val args = Bundle()
-            args.putInt("ARG_ITEm_ID", itemId)
+            val args = Bundle().also { it.putInt("ARG_ITEm_ID", itemId) }
             fragment.setArguments(args)
             return fragment
         }

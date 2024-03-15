@@ -119,6 +119,7 @@
 
     <style name="hw.view">
         <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginHorizontal">@dimen/dimen_10_dp</item>
         <item name="android:background">@color/background_tint_action_bar</item>
     </style>
 

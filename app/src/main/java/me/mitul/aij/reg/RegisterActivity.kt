@@ -105,43 +105,40 @@ class RegisterActivity : AppCompatActivity() {
     private inner class UserRegTask : AsyncTask<String?, Void?, Boolean>() {
         var email: String? = null
         var pass: String? = null
-        protected override fun doInBackground(vararg strings: String): Boolean {
+
+        @Deprecated("Deprecated in Java")
+        override fun doInBackground(vararg params: String?): Boolean {
             try {
                 Thread.sleep(2000)
-                return HelperRegistration(this@RegisterActivity)
-                    .attemptReg(
-                        strings[0].also { email = it },
-                        strings[1],
-                        strings[2],
-                        strings[3],
-                        strings[4].also { pass = it },
-                        strings[5],
-                        strings[6]
-                    )
+                return HelperRegistration(this@RegisterActivity).attemptReg(
+                    params[0].also { email = it },
+                    params[1],
+                    params[2],
+                    params[3],
+                    params[4].also { pass = it },
+                    params[5],
+                    params[6]
+                )
             } catch (ignored: InterruptedException) {
             }
             return false
         }
 
-        override fun onPreExecute() {
-            progressView!!.startAnimation(
-                AnimationUtils.loadAnimation(
-                    applicationContext, R.anim.anim_fab
-                )
-            )
-        }
+        @Deprecated("Deprecated in Java")
+        override fun onPreExecute() = progressView!!.startAnimation(
+            AnimationUtils.loadAnimation(applicationContext, R.anim.anim_fab)
+        )
 
-        override fun onPostExecute(success: Boolean) {
-            if (success) {
-                val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
-                intent.putExtra("IsRegistered", true)
-                    .putExtra("UserName", email)
-                    .putExtra("Password", pass)
-                startActivity(intent)
-                finish()
-            } else {
-                regFormView!!.startAnimation(shake)
-            }
+        @Deprecated("Deprecated in Java")
+        override fun onPostExecute(success: Boolean) = if (success) {
+            val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
+            intent.putExtra("IsRegistered", true)
+                .putExtra("UserName", email)
+                .putExtra("Password", pass)
+            startActivity(intent)
+            finish()
+        } else {
+            regFormView!!.startAnimation(shake)
         }
     }
 }

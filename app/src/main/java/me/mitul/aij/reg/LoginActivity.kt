@@ -18,9 +18,9 @@ import me.mitul.aij.helper.HelperLogin
 import me.mitul.aij.home.HomeScreenActivity
 
 class LoginActivity : AppCompatActivity() {
-    private var emailView: AutoCompleteTextView? = null
-    private var passwordView: AutoCompleteTextView? = null
-    private var cbxKeepMeLoggedIn: CheckBox? = null
+    private lateinit var emailView: AutoCompleteTextView
+    private lateinit var passwordView: AutoCompleteTextView
+    private lateinit var cbxKeepMeLoggedIn: CheckBox
     private var progressView: View? = null
     private var loginFormView: View? = null
     private var shake: Animation? = null
@@ -40,12 +40,12 @@ class LoginActivity : AppCompatActivity() {
         }
         val firstRun = getPreferences(MODE_PRIVATE)
         if (firstRun.getBoolean("firstTime", true)) {
-            if (HelperBackupRestore.sdDatabaseExists()) {
+            if (HelperBackupRestore.isDbExists) {
                 AlertDialog.Builder(this).setIcon(R.drawable.ic_launcher)
                     .setTitle("Backup found!")
                     .setMessage("Do you want to restore previous data ?(Restart Required!)")
                     .setCancelable(false).setNegativeButton("No", null)
-                    .setPositiveButton("Yes") { p1: DialogInterface?, p2: Int ->
+                    .setPositiveButton("Yes") { _: DialogInterface?, _: Int ->
                         HelperBackupRestore.restoreDb()
                         finish()
                         startActivity(getIntent())
@@ -59,8 +59,8 @@ class LoginActivity : AppCompatActivity() {
             cbxKeepMeLoggedIn.setChecked(loginPreference.getBoolean("keepMeLoggdIn", false))
             // attemptLogin();
         }
-        findViewById<View>(R.id.fab_login_go).setOnClickListener { view: View? -> attemptLogin() }
-        findViewById<View>(R.id.fab_reg_new).setOnClickListener { v: View? ->
+        findViewById<View>(R.id.fab_login_go).setOnClickListener { attemptLogin() }
+        findViewById<View>(R.id.fab_reg_new).setOnClickListener {
             startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
             finish()
         }
@@ -71,10 +71,10 @@ class LoginActivity : AppCompatActivity() {
         super.onStop()
         val editor = getSharedPreferences("Login1", 0)
             .edit()
-            .putBoolean("keepMeLoggdIn", cbxKeepMeLoggedIn!!.isChecked)
-        if (cbxKeepMeLoggedIn!!.isChecked) {
-            editor.putString("Email1", emailView!!.getText().toString())
-                .putString("Pass1", passwordView!!.getText().toString())
+            .putBoolean("keepMeLoggdIn", cbxKeepMeLoggedIn.isChecked)
+        if (cbxKeepMeLoggedIn.isChecked) {
+            editor.putString("Email1", emailView.getText().toString())
+                .putString("Pass1", passwordView.getText().toString())
         } else {
             editor.putString("Email1", "mady@me")
                 .putString("Pass1", "123456")
@@ -84,14 +84,14 @@ class LoginActivity : AppCompatActivity() {
 
     private fun attemptLogin() {
         var isValid = true
-        val email = emailView!!.getText().toString()
-        val pass = passwordView!!.getText().toString()
+        val email = emailView.getText().toString()
+        val pass = passwordView.getText().toString()
         if (TextUtils.isEmpty(email)) {
-            emailView!!.startAnimation(shake)
+            emailView.startAnimation(shake)
             isValid = false
         }
         if (TextUtils.isEmpty(pass)) {
-            passwordView!!.startAnimation(shake)
+            passwordView.startAnimation(shake)
             isValid = false
         }
         if (isValid) {
@@ -100,31 +100,30 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private inner class UserLoginTask : AsyncTask<String?, Void?, Int>() {
-        protected override fun doInBackground(vararg strings: String): Int {
+        @Deprecated("Deprecated in Java")
+        override fun doInBackground(vararg params: String?): Int {
             try {
                 Thread.sleep(2000)
-                return HelperLogin(this@LoginActivity).attemptLogin(strings[0], strings[1])
+                return HelperLogin(this@LoginActivity).attemptLogin(params[0], params[1])
             } catch (ignored: InterruptedException) {
             }
             return 999
         }
 
-        override fun onPreExecute() {
-            progressView!!.startAnimation(
-                AnimationUtils.loadAnimation(
-                    applicationContext, R.anim.anim_fab
-                )
+        @Deprecated("Deprecated in Java")
+        override fun onPreExecute() = progressView!!.startAnimation(
+            AnimationUtils.loadAnimation(
+                applicationContext, R.anim.anim_fab
             )
-        }
+        )
 
-        override fun onPostExecute(localID: Int) {
-            if (localID != 999) {
-                val intent = Intent(applicationContext, HomeScreenActivity::class.java)
-                startActivity(intent.putExtra("UserID", localID.toString()))
-                finish()
-            } else {
-                loginFormView!!.startAnimation(shake)
-            }
+        @Deprecated("Deprecated in Java")
+        override fun onPostExecute(localID: Int) = if (localID != 999) {
+            val intent = Intent(applicationContext, HomeScreenActivity::class.java)
+            startActivity(intent.putExtra("UserID", localID.toString()))
+            finish()
+        } else {
+            loginFormView!!.startAnimation(shake)
         }
     }
 }

@@ -62,7 +62,7 @@
                 android:text="@string/university_btn" />
 
             <Button
-                android:id="@+id/scholarship"
+                android:id="@+id/help"
                 style="@style/ButtonBarAll"
                 android:layout_width="@dimen/dimen_180_dp"
                 android:layout_height="@dimen/dimen_85_dp"
@@ -70,7 +70,7 @@
                 android:layout_marginStart="@dimen/dimen_10_dp"
                 android:layout_toEndOf="@+id/university"
                 android:background="#2e238c"
-                android:text="@string/scholarship" />
+                android:text="@string/help_centers" />
 
             <Button
                 android:id="@+id/bank"
@@ -107,13 +107,13 @@
         <RelativeLayout style="@style/relative_layout_home_screen">
 
             <Button
-                android:id="@+id/help"
+                android:id="@+id/scholarship"
                 style="@style/ButtonBarAll"
                 android:layout_width="@dimen/dimen_180_dp"
                 android:layout_height="@dimen/dimen_160_dp"
                 android:layout_alignParentStart="true"
                 android:background="#0a532b"
-                android:text="@string/help_centers" />
+                android:text="@string/scholarship" />
 
             <Button
                 android:id="@+id/qa"
@@ -122,7 +122,7 @@
                 android:layout_height="@dimen/dimen_85_dp"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="@dimen/dimen_10_dp"
-                android:layout_toEndOf="@+id/help"
+                android:layout_toEndOf="@+id/scholarship"
                 android:background="#504332"
                 android:text="@string/q_amp_a" />
 
