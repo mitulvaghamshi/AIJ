@@ -1,18 +1,17 @@
 package me.mitul.aij.helper
 
-import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper
+import me.mitul.aij.utils.Constants
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-class HelperRegistration @SuppressLint("SdCardPath") constructor(var context: Context) :
-    SQLiteAssetHelper(
-        context, "AIJ_DB.s3db", "/data/data/me.mitul.aij/databases", null, 1
-    ) {
-    fun attemptReg(vararg strings: String): Boolean {
+class HelperRegistration(val context: Context?) : SQLiteAssetHelper(
+    context, Constants.DB_NAME, Constants.DB_PATH, null, Constants.DB_VERSION
+) {
+    fun attemptReg(vararg strings: String?): Boolean {
         val query =
             "SELECT * FROM MST_User WHERE UserName = '" + strings[0] + "' AND Password = '" + strings[4] + "'"
         val database = getWritableDatabase()

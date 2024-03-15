@@ -4,9 +4,11 @@ import android.annotation.SuppressLint
 import android.content.Context
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper
 import me.mitul.aij.model.University
+import me.mitul.aij.utils.Constants
 
-class HelperUniversity @SuppressLint("SdCardPath") constructor(context: Context?) :
-    SQLiteAssetHelper(context, "AIJ_DB.s3db", "/data/data/me.mitul.aij/databases", null, 1) {
+class HelperUniversity(context: Context?) : SQLiteAssetHelper(
+    context, Constants.DB_NAME, Constants.DB_PATH, null, Constants.DB_VERSION
+) {
     @SuppressLint("NewApi", "DefaultLocale")
     fun selectAllUniversity(): ArrayList<University> {
         val list = ArrayList<University>()

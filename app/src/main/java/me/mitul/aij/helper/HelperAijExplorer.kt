@@ -3,9 +3,11 @@ package me.mitul.aij.helper
 import android.annotation.SuppressLint
 import android.content.Context
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper
+import me.mitul.aij.utils.Constants
 
-class HelperAijExplorer @SuppressLint("SdCardPath") constructor(context: Context?) :
-    SQLiteAssetHelper(context, "AIJ_DB.s3db", "/data/data/me.mitul.aij/databases", null, 1) {
+class HelperAijExplorer(context: Context?) : SQLiteAssetHelper(
+    context, Constants.DB_NAME, Constants.DB_PATH, null, Constants.DB_VERSION
+) {
     @SuppressLint("NewApi", "DefaultLocale")
     fun selectHeader(id: Int): String {
         val database = getReadableDatabase()

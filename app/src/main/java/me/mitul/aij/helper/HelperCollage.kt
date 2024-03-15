@@ -5,9 +5,11 @@ import android.content.Context
 import android.database.Cursor
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper
 import me.mitul.aij.model.Collage
+import me.mitul.aij.utils.Constants
 
-class HelperCollage @SuppressLint("SdCardPath") constructor(context: Context?) :
-    SQLiteAssetHelper(context, "AIJ_DB.s3db", "/data/data/me.mitul.aij/databases", null, 1) {
+class HelperCollage(context: Context?) : SQLiteAssetHelper(
+    context, Constants.DB_NAME, Constants.DB_PATH, null, Constants.DB_VERSION
+) {
     @SuppressLint("NewApi", "DefaultLocale")
     fun selectAllCollage(): ArrayList<Collage> {
         val list = ArrayList<Collage>()
@@ -29,8 +31,8 @@ class HelperCollage @SuppressLint("SdCardPath") constructor(context: Context?) :
             if (cursor1.moveToFirst()) {
                 var branches = ""
                 do {
-                    branches =
-                        branches + cursor1.getString(cursor1.getColumnIndex("BranchShortName")) + ","
+                    branches += cursor1
+                        .getString(cursor1.getColumnIndex("BranchShortName")) + ","
                 } while (cursor1.moveToNext())
                 collage.branches = branches.substring(0, branches.length - 1)
             }
@@ -63,8 +65,8 @@ class HelperCollage @SuppressLint("SdCardPath") constructor(context: Context?) :
             if (cursor1.moveToFirst()) {
                 var branches = ""
                 do {
-                    branches =
-                        branches + cursor1.getString(cursor1.getColumnIndex("BranchShortName")) + ","
+                    branches += cursor1
+                        .getString(cursor1.getColumnIndex("BranchShortName")) + ","
                 } while (cursor1.moveToNext())
                 collage.branches = branches.substring(0, branches.length - 1)
             }
@@ -97,8 +99,8 @@ class HelperCollage @SuppressLint("SdCardPath") constructor(context: Context?) :
             if (cursor1.moveToFirst()) {
                 var branches = ""
                 do {
-                    branches =
-                        branches + cursor1.getString(cursor1.getColumnIndex("BranchShortName")) + ","
+                    branches += cursor1
+                        .getString(cursor1.getColumnIndex("BranchShortName")) + ","
                 } while (cursor1.moveToNext())
                 collage.branches = branches.substring(0, branches.length - 1)
             }

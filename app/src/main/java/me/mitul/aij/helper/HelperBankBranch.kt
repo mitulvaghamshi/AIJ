@@ -1,21 +1,20 @@
 package me.mitul.aij.helper
 
-import android.annotation.SuppressLint
 import android.content.Context
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper
 import me.mitul.aij.model.Common
+import me.mitul.aij.utils.Constants
 
-class HelperBankBranch @SuppressLint("SdCardPath") constructor(context: Context?) :
-    SQLiteAssetHelper(context, "AIJ_DB.s3db", "/data/data/me.mitul.dankawala/databases", null, 1) {
+class HelperBankBranch(context: Context?) : SQLiteAssetHelper(
+    context, Constants.DB_NAME, Constants.DB_PATH, null, Constants.DB_VERSION
+) {
     fun selectCityForBankBranch(): ArrayList<String> {
         val list = ArrayList<String>()
         val database = getReadableDatabase()
         val cursor = database.rawQuery("select distinct City from BankBranch order by City", null)
-        if (cursor.moveToFirst()) {
-            do {
-                list.add(cursor.getString(cursor.getColumnIndex("City")))
-            } while (cursor.moveToNext())
-        }
+        if (cursor.moveToFirst()) do {
+            list.add(cursor.getString(cursor.getColumnIndex("City")))
+        } while (cursor.moveToNext())
         cursor.close()
         database.close()
         return list
@@ -28,13 +27,11 @@ class HelperBankBranch @SuppressLint("SdCardPath") constructor(context: Context?
             "select BankBranchID, BankBranchName, Address from BankBranch where City = '$name' order by BankBranchName",
             null
         )
-        if (cursor.moveToFirst()) do {
-            val common = Common()
-            common.id = cursor.getString(cursor.getColumnIndex("BankBranchID")).toInt()
-            common.name = cursor.getString(cursor.getColumnIndex("BankBranchName"))
-            common.address = cursor.getString(cursor.getColumnIndex("Address"))
-            list.add(common)
-        } while (cursor.moveToNext())
+        if (cursor.moveToFirst()) do list += Common(
+            cursor.getString(cursor.getColumnIndex("BankBranchID")).toInt(),
+            cursor.getString(cursor.getColumnIndex("BankBranchName")),
+            cursor.getString(cursor.getColumnIndex("Address")),
+        ) while (cursor.moveToNext())
         cursor.close()
         database.close()
         return list

@@ -3,9 +3,11 @@ package me.mitul.aij.helper
 import android.content.Context
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper
 import me.mitul.aij.model.SplashScreen
+import me.mitul.aij.utils.Constants
 
-class HelperSplashScreen(context: Context?) :
-    SQLiteAssetHelper(context, "AIJ_DB.s3db", "/data/data/me.mitul.aij/databases", null, 1) {
+class HelperSplashScreen(context: Context?) : SQLiteAssetHelper(
+    context, Constants.DB_NAME, Constants.DB_PATH, null, Constants.DB_VERSION
+) {
     fun selectSplashTextData(id: Int): SplashScreen? {
         val database = getReadableDatabase()
         val cursor = database.rawQuery(

@@ -1,6 +1,7 @@
 package me.mitul.aij.helper
 
 import android.os.Environment
+import me.mitul.aij.utils.Constants
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileNotFoundException
@@ -8,16 +9,15 @@ import java.io.FileOutputStream
 import java.io.IOException
 
 class HelperBackupRestore {
-    private val SDCARD_DIRECTORY = File(Environment.getExternalStorageDirectory(), ".aij")
+    private val SD_DIR =
+        File(Environment.getExternalStorageDirectory(), Constants.DB_NAME + ".bak")
+
     fun exportStudentsProfile(bytes: ByteArray?, name: String?) {
-        if (!SDCARD_DIRECTORY.exists()) {
-            SDCARD_DIRECTORY.mkdir()
-        }
-        val file = File(SDCARD_DIRECTORY, name)
+        if (!SD_DIR.exists()) SD_DIR.mkdir()
+        val file = name?.let { File(SD_DIR, it) }
         try {
-            val fOut = FileOutputStream(file)
             try {
-                fOut.write(bytes)
+                FileOutputStream(file).write(bytes)
             } catch (ignored: IOException) {
             }
         } catch (ignored: FileNotFoundException) {
@@ -25,42 +25,33 @@ class HelperBackupRestore {
     }
 
     companion object {
-        private val DATABASE_DIRECTORY =
-            File(Environment.getExternalStorageDirectory(), ".mady_db_")
-        private val IMPORT_FILE = File(DATABASE_DIRECTORY, "AIJ_DB")
-        private val DATA_DIRECTORY_DATABASE = File(
-            Environment.getDataDirectory()
-                .toString() + "/data/" + "me.mitul.aij" + "/databases/" + "AIJ_DB.s3db"
-        )
+        private val sdPresent = Environment.getExternalStorageState() == Environment.MEDIA_MOUNTED
+        private val DB_DIR =
+            File(Environment.getExternalStorageDirectory(), Constants.DB_NAME + ".bak")
+        private val IMPORT_FILE = File(DB_DIR, Constants.DB_NAME)
+        private val DATA_DIR_DB =
+            File("${Environment.getDataDirectory()}/${Constants.DB_PATH}/${Constants.DB_NAME}")
+        val isDbExists = IMPORT_FILE.exists()
 
-        fun exportDb(): Boolean {
-            if (SdIsPresent()) {
-                return false
-            }
+        @JvmStatic
+        fun exportDb() {
+            if (!sdPresent) return
             val filename = "AIJ_DB"
-            val exportDir = DATABASE_DIRECTORY
+            val exportDir = DB_DIR
             val file = File(exportDir, filename)
-            if (!exportDir.exists()) {
-                exportDir.mkdirs()
-            }
-            return try {
+            if (!exportDir.exists()) exportDir.mkdirs()
+            try {
                 file.createNewFile()
-                copyFile(DATA_DIRECTORY_DATABASE, file)
-                true
+                copyFile(DATA_DIR_DB, file)
             } catch (e: IOException) {
                 e.printStackTrace()
-                false
             }
         }
 
+        @JvmStatic
         fun restoreDb() {
-            if (SdIsPresent()) {
-                return
-            }
-            val exportFile = DATA_DIRECTORY_DATABASE
-            if (!sdDatabaseExists()) {
-                return
-            }
+            if (!sdPresent || !isDbExists) return
+            val exportFile = DATA_DIR_DB
             try {
                 exportFile.createNewFile()
                 copyFile(IMPORT_FILE, exportFile)
@@ -69,25 +60,13 @@ class HelperBackupRestore {
             }
         }
 
-        fun sdDatabaseExists(): Boolean {
-            return IMPORT_FILE.exists()
-        }
-
         @Throws(IOException::class)
         private fun copyFile(src: File, dst: File) {
             FileInputStream(src).channel.use { inChannel ->
                 FileOutputStream(dst).channel.use { outChannel ->
-                    inChannel.transferTo(
-                        0,
-                        inChannel.size(),
-                        outChannel
-                    )
+                    inChannel.transferTo(0, inChannel.size(), outChannel)
                 }
             }
-        }
-
-        private fun SdIsPresent(): Boolean {
-            return Environment.getExternalStorageState() != Environment.MEDIA_MOUNTED
         }
     }
 }

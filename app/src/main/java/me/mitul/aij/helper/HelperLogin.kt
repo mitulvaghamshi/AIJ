@@ -1,17 +1,14 @@
 package me.mitul.aij.helper
 
-import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper
+import me.mitul.aij.utils.Constants
 
-class HelperLogin @SuppressLint("SdCardPath") constructor(context: Context?) :
-    SQLiteAssetHelper(context, "AIJ_DB.s3db", "/data/data/me.mitul.aij/databases", null, 1) {
-    init {
-        getReadableDatabase().close()
-    }
-
-    fun attemptLogin(email: String, pass: String): Int {
+class HelperLogin(context: Context?) : SQLiteAssetHelper(
+    context, Constants.DB_NAME, Constants.DB_PATH, null, Constants.DB_VERSION
+) {
+    fun attemptLogin(email: String?, pass: String?): Int {
         val query = "SELECT * FROM MST_User WHERE UserName = '$email' AND Password = '$pass'"
         val database = getReadableDatabase()
         val cursor = database.rawQuery(query, null)
