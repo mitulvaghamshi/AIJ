@@ -1,6 +1,6 @@
 package me.mitul.aij.model
 
-class University(
+data class University(
     var universityID: Int = 0,
     var universityName: String? = null,
     var universityShortName: String? = null,

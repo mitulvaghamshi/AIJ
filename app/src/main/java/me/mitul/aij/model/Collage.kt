@@ -1,6 +1,6 @@
 package me.mitul.aij.model
 
-class Collage(
+data class Collage(
     var collageName: String? = null,
     var collageId: Int? = null,
     var collageFees: Int? = null,

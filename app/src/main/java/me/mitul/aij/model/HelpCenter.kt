@@ -1,6 +1,6 @@
 package me.mitul.aij.model
 
-class HelpCenter(
+data class HelpCenter(
     var helpCenterID: Int = 0,
     var helpCenterName: String? = null,
     var helpCenterAddress: String? = null,
