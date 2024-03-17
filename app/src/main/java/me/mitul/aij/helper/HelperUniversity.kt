@@ -29,7 +29,7 @@ class HelperUniversity(context: Context?) : SQLiteAssetHelper(
     }
 
     @SuppressLint("NewApi", "DefaultLocale")
-    fun selectUniversityByID(id: Int): University {
+    fun selectUniversityByID(id: String?): University {
         val university = University()
         val database = getReadableDatabase()
         val cursor = database.rawQuery(

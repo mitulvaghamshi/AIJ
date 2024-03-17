@@ -8,7 +8,7 @@ import me.mitul.aij.utils.Constants
 class HelperHelpCenter(context: Context?) : SQLiteAssetHelper(
     context, Constants.DB_NAME, Constants.DB_PATH, null, Constants.DB_VERSION
 ) {
-    fun selectCityForHelpCenter(): ArrayList<String> {
+    fun getHelpCenterCities(): ArrayList<String> {
         val list = ArrayList<String>()
         val database = getReadableDatabase()
         val cursor = database.rawQuery("select distinct City from HelpCenter order by City", null)
@@ -20,7 +20,7 @@ class HelperHelpCenter(context: Context?) : SQLiteAssetHelper(
         return list
     }
 
-    fun selectHelpCenter(name: String): ArrayList<Common> {
+    fun getHelpCenterFor(name: String): ArrayList<Common> {
         val list = ArrayList<Common>()
         val database = getReadableDatabase()
         val cursor = database.rawQuery(

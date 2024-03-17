@@ -45,7 +45,7 @@ class HelperCollage(context: Context?) : SQLiteAssetHelper(
     }
 
     @SuppressLint("NewApi", "DefaultLocale")
-    fun selectBranchWiseCollage(id: Int): ArrayList<Collage> {
+    fun selectBranchWiseCollage(id: String?): ArrayList<Collage> {
         val list = ArrayList<Collage>()
         val database = getReadableDatabase()
         val cursor = database.rawQuery(
@@ -79,7 +79,7 @@ class HelperCollage(context: Context?) : SQLiteAssetHelper(
     }
 
     @SuppressLint("NewApi", "DefaultLocale")
-    fun selectUniversityWiseCollage(id: Int): ArrayList<Collage> {
+    fun selectUniversityWiseCollage(id: String?): ArrayList<Collage> {
         val list = ArrayList<Collage>()
         val database = getReadableDatabase()
         val cursor = database.rawQuery(
@@ -157,7 +157,7 @@ class HelperCollage(context: Context?) : SQLiteAssetHelper(
     }
 
     @SuppressLint("NewApi", "DefaultLocale")
-    fun selectCollageByID(id: Int): Collage {
+    fun selectCollageByID(id: String?): Collage {
         val collage = Collage()
         val database = getReadableDatabase()
         val cursor = database.rawQuery("Select * from INS_College where CollegeID = $id", null)

@@ -160,6 +160,7 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/college_detail_btn_intake"
                 style="?android:buttonBarButtonStyle"
                 android:layout_width="@dimen/dimen_0_dp"
                 android:layout_height="wrap_content"
@@ -174,6 +175,7 @@
                 android:typeface="serif" />
 
             <Button
+                android:id="@+id/college_detail_btn_closing"
                 style="?android:buttonBarButtonStyle"
                 android:layout_width="@dimen/dimen_0_dp"
                 android:layout_height="wrap_content"
