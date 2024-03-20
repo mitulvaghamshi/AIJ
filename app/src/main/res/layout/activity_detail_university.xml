@@ -90,7 +90,7 @@
                 <TextView
                     style="@style/detail_collage_ll_textview_horizontal"
                     android:layout_weight="0.2"
-                    android:text="@string/type" />
+                    android:text="Type:" />
 
                 <TextView
                     android:id="@+id/university_detail_tv_university_type"

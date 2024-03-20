@@ -17,20 +17,19 @@
 
                 <TextView
                     style="@style/developer_ll_textview"
-                    android:text="@string/about_app" />
+                    android:text="About App" />
             </LinearLayout>
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:contentDescription="@string/app_name"
                 android:src="@drawable/aij_trans4" />
 
             <TextView
                 style="@style/developer_ll_textview"
                 android:gravity="center"
-                android:text="@string/aij_v1_0"
+                android:text="AIJ-(v1.0)"
                 android:textColor="@color/black" />
         </LinearLayout>
 
@@ -43,7 +42,7 @@
 
                 <TextView
                     style="@style/developer_ll_textview"
-                    android:text="@string/about_developer" />
+                    android:text="About Developer" />
             </LinearLayout>
 
             <LinearLayout
@@ -53,12 +52,12 @@
                 <TextView
                     style="@style/detail_collage_ll_textview_horizontal"
                     android:layout_weight="0.4"
-                    android:text="@string/developed_by" />
+                    android:text="Developed by:" />
 
                 <TextView
                     style="@style/detail_collage_ll_textview_horizontal"
                     android:layout_weight="0.8"
-                    android:text="@string/mady_developer"
+                    android:text="Mitul Vaghmashi\nStudent, Computer Engineering"
                     android:typeface="serif" />
             </LinearLayout>
 
@@ -69,13 +68,13 @@
                 <TextView
                     style="@style/detail_collage_ll_textview_horizontal"
                     android:layout_weight="0.4"
-                    android:text="@string/email_dev" />
+                    android:text="Email:" />
 
                 <TextView
                     style="@style/detail_collage_ll_textview_horizontal"
                     android:layout_weight="0.8"
                     android:autoLink="email"
-                    android:text="@string/mady_dev_email"
+                    android:text="info@me.com"
                     android:typeface="serif" />
             </LinearLayout>
 
@@ -86,13 +85,13 @@
                 <TextView
                     style="@style/detail_collage_ll_textview_horizontal"
                     android:layout_weight="0.4"
-                    android:text="@string/mobile_dev" />
+                    android:text="Phone:" />
 
                 <TextView
                     style="@style/detail_collage_ll_textview_horizontal"
                     android:layout_weight="0.8"
                     android:autoLink="phone"
-                    android:text="@string/_8128079591"
+                    android:text="8128079591"
                     android:typeface="serif" />
             </LinearLayout>
 
@@ -103,13 +102,13 @@
                 <TextView
                     style="@style/detail_collage_ll_textview_horizontal"
                     android:layout_weight="0.4"
-                    android:text="@string/facebook" />
+                    android:text="Facebook:" />
 
                 <TextView
                     style="@style/detail_collage_ll_textview_horizontal"
                     android:layout_weight="0.8"
                     android:autoLink="web"
-                    android:text="@string/mady_dev_fb"
+                    android:text="https://facebook.com"
                     android:typeface="serif" />
             </LinearLayout>
 
@@ -120,13 +119,13 @@
                 <TextView
                     style="@style/detail_collage_ll_textview_horizontal"
                     android:layout_weight="0.4"
-                    android:text="@string/website" />
+                    android:text="Website:" />
 
                 <TextView
                     style="@style/detail_collage_ll_textview_horizontal"
                     android:layout_weight="0.8"
                     android:autoLink="web"
-                    android:text="@string/mady_16mb_com"
+                    android:text="https://example.com"
                     android:typeface="serif" />
             </LinearLayout>
         </LinearLayout>
@@ -141,7 +140,7 @@
 
                 <TextView
                     style="@style/developer_ll_textview"
-                    android:text="@string/about_aij" />
+                    android:text="About AIJ" />
             </LinearLayout>
 
             <LinearLayout
@@ -152,14 +151,13 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:contentDescription="@string/app_name"
                     android:src="@drawable/aij1" />
 
                 <Button
                     android:id="@+id/dev_goto_aij_login"
                     style="@style/developer_ll_textview"
                     android:background="@drawable/row_button_bar_2"
-                    android:text="@string/more_info_about_aij" />
+                    android:text="More info about AIJ" />
             </LinearLayout>
         </LinearLayout>
 
@@ -173,7 +171,7 @@
 
                 <TextView
                     style="@style/developer_ll_textview"
-                    android:text="@string/contact_aij" />
+                    android:text="Contact AIJ" />
 
             </LinearLayout>
 
@@ -190,13 +188,13 @@
                     <TextView
                         style="@style/detail_collage_ll_textview_horizontal"
                         android:layout_weight="0.3"
-                        android:text="@string/email" />
+                        android:text="Email:" />
 
                     <TextView
                         style="@style/detail_collage_ll_textview_horizontal"
                         android:layout_weight="0.8"
                         android:autoLink="email"
-                        android:text="@string/info_aij_ind_in" />
+                        android:text="info@example.com" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -206,13 +204,13 @@
                     <TextView
                         style="@style/detail_collage_ll_textview_horizontal"
                         android:layout_weight="0.3"
-                        android:text="@string/phone" />
+                        android:text="Phone" />
 
                     <TextView
                         style="@style/detail_collage_ll_textview_horizontal"
                         android:layout_weight="0.8"
                         android:autoLink="phone"
-                        android:text="@string/_82389_45600" />
+                        android:text="82389 45600" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -228,7 +226,7 @@
                         style="@style/detail_collage_ll_textview_horizontal"
                         android:layout_weight="0.8"
                         android:autoLink="phone"
-                        android:text="@string/_90991_09845" />
+                        android:text="90991 19845" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -244,7 +242,7 @@
                         style="@style/detail_collage_ll_textview_horizontal"
                         android:layout_weight="0.8"
                         android:autoLink="phone"
-                        android:text="@string/_0285_2901108" />
+                        android:text="0 285 2901108" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -254,13 +252,13 @@
                     <TextView
                         style="@style/detail_collage_ll_textview_horizontal"
                         android:layout_weight="0.3"
-                        android:text="@string/fax" />
+                        android:text="Fax:" />
 
                     <TextView
                         style="@style/detail_collage_ll_textview_horizontal"
                         android:layout_weight="0.8"
                         android:autoLink="phone"
-                        android:text="@string/_0285_2620108" />
+                        android:text="1 285 2620108" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -270,13 +268,13 @@
                     <TextView
                         style="@style/detail_collage_ll_textview_horizontal"
                         android:layout_weight="0.3"
-                        android:text="@string/site" />
+                        android:text="Web:" />
 
                     <TextView
                         style="@style/detail_collage_ll_textview_horizontal"
                         android:layout_weight="0.8"
                         android:autoLink="web"
-                        android:text="@string/www_aij_ind_in" />
+                        android:text="https://example.com" />
                 </LinearLayout>
 
                 <LinearLayout style="@style/hw">
@@ -285,7 +283,7 @@
                         android:id="@+id/dev_goto_detail_aij"
                         style="@style/developer_ll_textview"
                         android:background="@drawable/row_button_bar_2"
-                        android:text="@string/more_details_about_aij" />
+                        android:text="Learn more about AIJ" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
@@ -300,7 +298,7 @@
 
                 <TextView
                     style="@style/developer_ll_textview"
-                    android:text="@string/share" />
+                    android:text="Share" />
             </LinearLayout>
 
             <LinearLayout
@@ -313,7 +311,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/dimen_10_dp"
-                    android:text="@string/share_this_app"
+                    android:text="Share with friends"
                     android:textColor="@color/black" />
 
                 <TextView
@@ -321,7 +319,7 @@
                     android:layout_height="wrap_content"
                     android:autoLink="web"
                     android:padding="@dimen/dimen_10_dp"
-                    android:text="@string/like_me_on_facebook"
+                    android:text="Follow on Facebook"
                     android:textColor="@color/black" />
             </LinearLayout>
         </LinearLayout>
@@ -346,7 +344,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:padding="@dimen/dimen_10_dp"
-                android:text="@string/aij_crop_name"
+                android:text="©2016 AIJ"
                 android:textColor="@color/white" />
 
             <TextView
@@ -354,7 +352,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:padding="@dimen/dimen_10_dp"
-                android:text="@string/aij_res_text"
+                android:text="All Rights Reserved."
                 android:textColor="@color/white" />
         </LinearLayout>
     </LinearLayout>

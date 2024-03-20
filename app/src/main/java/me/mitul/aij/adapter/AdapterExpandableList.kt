@@ -26,7 +26,7 @@ class AdapterExpandableList(
         convertView: View?,
         parent: ViewGroup
     ): View {
-        val (_, name, address) = getChild(groupPosition, childPosition) as Common
+        val (_, name, address) = getChild(groupPosition, childPosition)
         val holder: ViewExpHolder
 
         var row = convertView

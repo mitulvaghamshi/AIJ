@@ -46,7 +46,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/rupees_sign" />
+                        android:text="₹" />
 
                     <TextView
                         android:id="@+id/collage_list_item_collage_fees"
@@ -57,7 +57,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/dimen_90_dp"
-                        android:text="@string/hostel" />
+                        android:text="Hostel:" />
 
                     <TextView
                         android:id="@+id/collage_list_item_collage_hostel"
@@ -78,7 +78,6 @@
             android:layout_height="match_parent"
             android:layout_weight="0.1"
             android:background="@android:color/transparent"
-            android:contentDescription="@string/right_arrow"
             android:src="@drawable/ic_chevron_right_black_24dp" />
     </LinearLayout>
 

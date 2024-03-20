@@ -116,7 +116,7 @@
                 <TextView
                     style="@style/detail_collage_ll_textview_horizontal"
                     android:layout_weight="0.4"
-                    android:text="@string/type" />
+                    android:text="Type" />
 
                 <TextView
                     android:id="@+id/college_detail_tv_college_type_value"
@@ -131,7 +131,7 @@
                 <TextView
                     style="@style/detail_collage_ll_textview_horizontal"
                     android:layout_weight="0.4"
-                    android:text="@string/hostel" />
+                    android:text="Hostel" />
 
                 <TextView
                     android:id="@+id/college_detail_tv_college_type_hostel"
@@ -146,7 +146,7 @@
                 <TextView
                     style="@style/detail_collage_ll_textview_horizontal"
                     android:layout_weight="0.4"
-                    android:text="@string/university" />
+                    android:text="University" />
 
                 <TextView
                     android:id="@+id/college_detail_tv_college_type_university"
@@ -168,7 +168,7 @@
                 android:layout_weight="1"
                 android:background="#ff8740"
                 android:padding="@dimen/dimen_10_dp"
-                android:text="@string/intake"
+                android:text="Intake"
                 android:textColor="@color/white"
                 android:textSize="@dimen/dimen_20_sp"
                 android:textStyle="bold"
@@ -183,7 +183,7 @@
                 android:layout_weight="1"
                 android:background="#2a47ff"
                 android:padding="@dimen/dimen_10_dp"
-                android:text="@string/closing"
+                android:text="Closing"
                 android:textColor="@color/white"
                 android:textSize="@dimen/dimen_20_sp"
                 android:textStyle="bold"

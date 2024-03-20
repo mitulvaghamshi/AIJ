@@ -1,6 +1,5 @@
 package me.mitul.aij.helper
 
-import android.annotation.SuppressLint
 import android.content.Context
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper
 import me.mitul.aij.model.Branch
@@ -9,7 +8,6 @@ import me.mitul.aij.utils.Constants
 class HelperBranch(context: Context?) : SQLiteAssetHelper(
     context, Constants.DB_NAME, Constants.DB_PATH, null, Constants.DB_VERSION
 ) {
-    @SuppressLint("NewApi", "DefaultLocale")
     fun selectAllBranch(): ArrayList<Branch> {
         val list = ArrayList<Branch>()
         val database = getReadableDatabase()

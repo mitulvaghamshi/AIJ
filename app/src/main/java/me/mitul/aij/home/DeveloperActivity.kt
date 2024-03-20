@@ -14,12 +14,12 @@ class DeveloperActivity : Activity() {
 
         findViewById<View>(R.id.dev_goto_detail_aij).setOnClickListener {
             startActivity(
-                Intent(this@DeveloperActivity, DetailCollageActivity::class.java)
-                    .putExtra(getString(R.string.aij_id_to_find), getString(R.string.aij_id_58))
+                Intent(this, DetailCollageActivity::class.java)
+                    .putExtra("id_to_find", 58)
             )
         }
         findViewById<View>(R.id.dev_goto_aij_login).setOnClickListener {
-            startActivity(Intent(this@DeveloperActivity, LoginActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
         }
     }
 }

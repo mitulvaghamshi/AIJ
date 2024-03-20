@@ -32,7 +32,6 @@
             android:layout_height="match_parent"
             android:layout_weight="0.1"
             android:background="@android:color/transparent"
-            android:contentDescription="@string/app_name"
             android:src="@drawable/ic_chevron_right_black_24dp" />
     </LinearLayout>
 

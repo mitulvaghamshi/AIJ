@@ -13,12 +13,12 @@ import me.mitul.aij.utils.ArrayListOps
 import me.mitul.aij.utils.MyTextWatcher
 
 class HelpCenterListActivity : Activity() {
-    private val dbHelper = HelperHelpCenter(this@HelpCenterListActivity)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_common_listview)
         findViewById<View>(R.id.common_listview).visibility = View.GONE
 
+        val dbHelper = HelperHelpCenter(this)
         val cities = dbHelper.getHelpCenterCities()
         val helpCenterMap = HashMap<String, List<Common>>()
         for (city in cities) helpCenterMap[city] = ArrayList(dbHelper.getHelpCenterFor(city))
@@ -32,7 +32,7 @@ class HelpCenterListActivity : Activity() {
             listView.tag = it
         }
 
-        (findViewById<EditText>(R.id.edSearchCommon)).addTextChangedListener(
+        findViewById<EditText>(R.id.edSearchCommon).addTextChangedListener(
             MyTextWatcher(cities, object : ArrayListOps<String> {
                 override fun onListSet(list: ArrayList<String>) = listView.setAdapter(
                     AdapterExpandableList(this@HelpCenterListActivity, list, helpCenterMap)

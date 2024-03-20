@@ -16,27 +16,29 @@ import me.mitul.aij.utils.ArrayListOps
 import me.mitul.aij.utils.MyTextWatcher
 
 class UniversityListActivity : Activity() {
-    private val dbHelper = HelperUniversity(this@UniversityListActivity)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_common_listview)
         findViewById<View>(R.id.expandableListView).visibility = View.GONE
+
+        val dbHelper = HelperUniversity(this)
         val universities = dbHelper.selectAllUniversity()
         val listview = findViewById<ListView>(R.id.common_listview)
         listview.visibility = View.VISIBLE
-        listview.setAdapter(AdapterUniversity(this@UniversityListActivity, universities))
+        listview.setAdapter(AdapterUniversity(this, universities))
         listview.isTextFilterEnabled = true
         listview.onItemClickListener = OnItemClickListener { _, view, _, _ ->
             startActivity(
-                Intent(this@UniversityListActivity, DetailUniversityActivity::class.java).putExtra(
-                    getString(R.string.id_university_to_find),
-                    (view.findViewById<TextView>(R.id.list_simple_public_id)).getText()
-                        .toString()
-                )
+                Intent(this, DetailUniversityActivity::class.java)
+                    .putExtra(
+                        "id_to_find_university",
+                        (view.findViewById<TextView>(R.id.list_simple_public_id)).getText()
+                            .toString()
+                    )
             )
         }
 
-        (findViewById<EditText>(R.id.edSearchCommon)).addTextChangedListener(
+        findViewById<EditText>(R.id.edSearchCommon).addTextChangedListener(
             MyTextWatcher(universities, object : ArrayListOps<University> {
                 override fun onListSet(list: ArrayList<University>) =
                     listview.setAdapter(AdapterUniversity(this@UniversityListActivity, list))

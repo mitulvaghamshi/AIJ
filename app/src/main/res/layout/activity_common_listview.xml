@@ -15,7 +15,7 @@
         android:drawableStart="@android:drawable/ic_menu_search"
         android:drawableTint="@color/background_tint_action_bar"
         android:foregroundTint="@color/background_tint_action_bar"
-        android:hint="@string/search_hint"
+        android:hint="Search"
         android:textColor="@color/background_tint_action_bar"
         android:textColorHint="@color/background_tint_action_bar" />
 

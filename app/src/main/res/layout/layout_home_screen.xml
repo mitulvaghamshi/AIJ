@@ -21,7 +21,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginEnd="@dimen/dimen_10_dp"
                 android:background="#354cd7"
-                android:text="@string/find" />
+                android:text="Search" />
 
             <Button
                 android:id="@+id/collage"
@@ -32,7 +32,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_toEndOf="@id/find"
                 android:background="#2db600"
-                android:text="@string/collages" />
+                android:text="Collages" />
 
             <Button
                 android:id="@+id/branches"
@@ -45,7 +45,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="@dimen/dimen_10_dp"
                 android:background="#c4ca20"
-                android:text="@string/branches" />
+                android:text="Branches" />
 
         </RelativeLayout>
 
@@ -59,7 +59,7 @@
                 android:layout_width="@dimen/dimen_120_dp"
                 android:layout_height="@dimen/dimen_85_dp"
                 android:background="#27b5f7"
-                android:text="@string/university_btn" />
+                android:text="Universities" />
 
             <Button
                 android:id="@+id/help"
@@ -70,7 +70,7 @@
                 android:layout_marginStart="@dimen/dimen_10_dp"
                 android:layout_toEndOf="@+id/university"
                 android:background="#2e238c"
-                android:text="@string/help_centers" />
+                android:text="Help Center" />
 
             <Button
                 android:id="@+id/bank"
@@ -82,7 +82,7 @@
                 android:layout_alignParentBottom="false"
                 android:layout_marginTop="@dimen/dimen_10_dp"
                 android:background="#c7205a"
-                android:text="@string/bank_branch" />
+                android:text="Bank Branch" />
 
         </RelativeLayout>
 
@@ -98,7 +98,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:background="#ff8740"
-                android:text="@string/developer" />
+                android:text="Developer" />
 
         </RelativeLayout>
 
@@ -113,7 +113,7 @@
                 android:layout_height="@dimen/dimen_160_dp"
                 android:layout_alignParentStart="true"
                 android:background="#0a532b"
-                android:text="@string/scholarship" />
+                android:text="Scholarship" />
 
             <Button
                 android:id="@+id/qa"
@@ -124,7 +124,7 @@
                 android:layout_marginStart="@dimen/dimen_10_dp"
                 android:layout_toEndOf="@+id/scholarship"
                 android:background="#504332"
-                android:text="@string/q_amp_a" />
+                android:text="Q&amp;A" />
 
         </RelativeLayout>
 
@@ -140,7 +140,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:background="#66bf18"
-                android:text="@string/admission_step" />
+                android:text="Admission Step" />
 
             <Button
                 android:id="@+id/new2"
@@ -152,7 +152,7 @@
                 android:layout_marginTop="@dimen/dimen_10_dp"
                 android:layout_toStartOf="@+id/new3"
                 android:background="#cc4b75"
-                android:text="@string/new2" />
+                android:text="Button 2" />
 
             <Button
                 android:id="@+id/new3"
@@ -164,7 +164,7 @@
                 android:layout_marginStart="@dimen/dimen_10_dp"
                 android:layout_marginTop="@dimen/dimen_10_dp"
                 android:background="#972697"
-                android:text="@string/new3" />
+                android:text="Button 3" />
 
         </RelativeLayout>
 
@@ -179,7 +179,7 @@
                 android:layout_height="@dimen/dimen_85_dp"
                 android:layout_alignParentEnd="true"
                 android:background="#51bc57"
-                android:text="@string/new4" />
+                android:text="Button 4" />
 
             <Button
                 android:id="@+id/new5"
@@ -191,7 +191,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="@dimen/dimen_10_dp"
                 android:background="#13b3c1"
-                android:text="@string/new5" />
+                android:text="Button 5" />
 
             <Button
                 android:id="@+id/new6"
@@ -202,7 +202,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="@dimen/dimen_10_dp"
                 android:background="#6e30e4"
-                android:text="@string/new7" />
+                android:text="Button 6" />
 
         </RelativeLayout>
 
@@ -218,7 +218,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:background="@color/background_tint_action_bar"
-                android:text="@string/aij" />
+                android:text="AIJ" />
 
         </RelativeLayout>
 
@@ -233,7 +233,6 @@
                 android:id="@+id/fab_backup_go"
                 style="@style/fab_home_screen"
                 android:layout_alignParentStart="true"
-                android:contentDescription="@string/backup_button"
                 android:src="@drawable/ic_cloud_upload_black_24dp"
                 app:backgroundTint="@color/background_tint_action_bar"
                 app:fabSize="normal" />
@@ -242,7 +241,6 @@
                 android:id="@+id/fab_exit_now"
                 style="@style/fab_common_style"
                 android:layout_centerHorizontal="true"
-                android:contentDescription="@string/exit_button"
                 android:src="@android:drawable/ic_lock_power_off"
                 android:tint="@color/white"
                 app:backgroundTint="@color/home_fab_1"
@@ -252,7 +250,6 @@
                 android:id="@+id/fab_restore_go"
                 style="@style/fab_common_style"
                 android:layout_alignParentEnd="true"
-                android:contentDescription="@string/restore_button"
                 android:src="@drawable/ic_cloud_download_black_24dp"
                 app:backgroundTint="@color/home_fab_2"
                 app:fabSize="normal" />
@@ -269,7 +266,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dimen_85_dp"
                 android:background="#009dff"
-                android:text="@string/students_corner" />
+                android:text="Students" />
 
         </RelativeLayout>
 

@@ -7,7 +7,6 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/app_name"
         android:gravity="center_horizontal"
         android:src="@drawable/aij_trans4" />
 
@@ -20,13 +19,12 @@
         <TextView
             style="@style/hw"
             android:padding="@dimen/dimen_5_dp"
-            android:text="@string/amrut_institute_junagadh" />
+            android:text="Amrut Institute Junagadh" />
 
         <TextView
             style="@style/hw"
             android:autoLink="web"
             android:padding="@dimen/dimen_5_dp"
-            android:text="@string/www_aij_ind_in" />
+            android:text="https://example.com" />
     </LinearLayout>
 </LinearLayout>
-

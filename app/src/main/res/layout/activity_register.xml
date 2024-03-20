@@ -22,7 +22,6 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dimen_200_dp"
-                android:contentDescription="@string/app_name"
                 android:fitsSystemWindows="true"
                 android:scaleType="fitXY"
                 android:src="@drawable/reg_png_2"

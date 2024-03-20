@@ -1,6 +1,5 @@
 package me.mitul.aij.helper
 
-import android.annotation.SuppressLint
 import android.content.Context
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper
 import me.mitul.aij.model.AllClosingList
@@ -9,7 +8,6 @@ import me.mitul.aij.utils.Constants
 class HelperAllClosing(context: Context?) : SQLiteAssetHelper(
     context, Constants.DB_NAME, Constants.DB_PATH, null, Constants.DB_VERSION
 ) {
-    @SuppressLint("NewApi", "DefaultLocale")
     fun selectClosingAll(collegeId: Int): ArrayList<AllClosingList> {
         val list = ArrayList<AllClosingList>()
         val database = getReadableDatabase()

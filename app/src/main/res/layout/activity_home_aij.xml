@@ -28,7 +28,6 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:contentDescription="@string/app_name"
                     android:fitsSystemWindows="true"
                     android:scaleType="fitXY"
                     android:src="@drawable/logo_header"
@@ -62,6 +61,5 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:headerLayout="@layout/nav_header_drawer_home_screen_aij"
-        app:menu="@menu/drawer_content_home_screen_aij" />
+        app:headerLayout="@layout/nav_header_drawer_home_screen_aij" />
 </androidx.drawerlayout.widget.DrawerLayout>

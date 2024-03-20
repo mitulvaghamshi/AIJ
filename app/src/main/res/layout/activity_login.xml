@@ -22,7 +22,6 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dimen_200_dp"
-                android:contentDescription="@string/app_name"
                 android:fitsSystemWindows="true"
                 android:scaleType="fitXY"
                 android:src="@drawable/login_2"
@@ -34,7 +33,7 @@
                 android:background="@android:color/transparent"
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                app:title="@string/title_activity_login"
+                app:title="Login"
                 app:titleTextColor="@color/black" />
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
