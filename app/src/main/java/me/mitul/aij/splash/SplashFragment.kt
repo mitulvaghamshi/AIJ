@@ -12,7 +12,7 @@ import me.mitul.aij.R
 import me.mitul.aij.model.Splash
 import me.mitul.aij.utils.Consts
 
-class SplashHolderFragment(private val splash: Splash) : Fragment() {
+class SplashFragment(private val splash: Splash) : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,
     ): View {
@@ -23,7 +23,7 @@ class SplashHolderFragment(private val splash: Splash) : Fragment() {
             it.text = splash.text
             it.setTextColor(Consts.splashColors[splash.id - 1])
             it.setTextSize(TypedValue.COMPLEX_UNIT_SP, 32f)
-            it.setTypeface(Typeface.createFromAsset(requireActivity().assets, Consts.FONT_PATH))
+            it.setTypeface(Typeface.createFromAsset(requireActivity().assets, Consts.FONT_PRECIOUS))
         }
         return view
     }

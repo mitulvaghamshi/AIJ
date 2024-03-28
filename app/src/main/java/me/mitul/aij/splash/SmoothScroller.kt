@@ -3,7 +3,7 @@ package me.mitul.aij.splash
 import android.content.Context
 import android.widget.Scroller
 
-class FixedSpeedScroller(context: Context?) : Scroller(context) {
+class SmoothScroller(context: Context?) : Scroller(context) {
     private val duration = 5000
 
     override fun startScroll(startX: Int, startY: Int, dx: Int, dy: Int) =

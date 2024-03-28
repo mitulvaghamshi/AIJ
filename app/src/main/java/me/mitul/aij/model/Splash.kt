@@ -1,7 +1,3 @@
 package me.mitul.aij.model
 
-data class SplashScreen(
-    var text: String? = null,
-    var textSize: String? = null,
-    var textColor: String? = null,
-)
+data class Splash(val id: Int, val text: String)

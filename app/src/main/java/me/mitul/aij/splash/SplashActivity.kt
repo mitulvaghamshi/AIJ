@@ -1,5 +1,6 @@
 package me.mitul.aij.splash
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -16,7 +17,8 @@ import me.mitul.aij.model.Splash
 import me.mitul.aij.reg.LoginActivity
 import kotlin.coroutines.EmptyCoroutineContext
 
-class SplashPagerActivity : FragmentActivity() {
+@SuppressLint("CustomSplashScreen")
+class SplashActivity : FragmentActivity() {
     private lateinit var dbHelper: HelperSplashScreen
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -6,7 +6,7 @@
         android:label="AIJ"
         android:theme="@style/Theme.AIJ">
         <activity
-            android:name=".splash.SplashPagerActivity"
+            android:name=".splash.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
