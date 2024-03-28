@@ -2,33 +2,36 @@ package me.mitul.aij.helper
 
 import android.content.ContentValues
 import android.content.Context
+import androidx.core.database.getIntOrNull
+import androidx.core.database.getStringOrNull
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper
-import me.mitul.aij.utils.Constants
+import me.mitul.aij.utils.Consts
 
 class HelperLogin(context: Context?) : SQLiteAssetHelper(
-    context, Constants.DB_NAME, Constants.DB_PATH, null, Constants.DB_VERSION
+    context, Consts.DB_NAME, Consts.DB_PATH, null, Consts.DB_VERSION
 ) {
-    fun attemptLogin(email: String?, pass: String?): Int {
-        val query = "SELECT * FROM MST_User WHERE UserName = '$email' AND Password = '$pass'"
-        val database = getReadableDatabase()
-        val cursor = database.rawQuery(query, null)
-        if (cursor.count < 0) return 999
-        if (cursor.moveToFirst()) {
-            val userName = cursor.getString(cursor.getColumnIndex("UserName"))
-            val password = cursor.getString(cursor.getColumnIndex("Password"))
-            return if (userName == email && password == pass) cursor.getInt(cursor.getColumnIndex("UserID")) else 999
-        }
-        cursor.close()
-        database.close()
-        return 999
+    private object Keys {
+        const val DB_TBL_NAME = "User"
+        const val DB_COL_USER_ID = "user_id"
+        const val DB_COL_USERNAME = "username"
+        const val DB_COL_PASSWORD = "password"
     }
 
-    fun insertUser(email: String?, pass: String?) {
-        val database = getWritableDatabase()
-        val values = ContentValues()
-        values.put("UserName", email)
-        values.put("Password", pass)
-        database.insert("MST_User", null, values)
-        database.close()
+    fun login(username: String, password: String): Int {
+        val cursor = readableDatabase.query(
+            Keys.DB_TBL_NAME, null,
+            "${Keys.DB_COL_USERNAME}= ? AND ${Keys.DB_COL_PASSWORD} = ?",
+            arrayOf(username, password), null, null, null
+        )
+
+        if (cursor.count < 0) return -1
+        if (cursor.moveToFirst()) {
+            val user = cursor.getStringOrNull(cursor.getColumnIndex(Keys.DB_COL_USERNAME))
+            val pass = cursor.getStringOrNull(cursor.getColumnIndex(Keys.DB_COL_PASSWORD))
+            if (user != username || pass != password) return -1
+            return cursor.getIntOrNull(cursor.getColumnIndex(Keys.DB_COL_USER_ID)) ?: -1
+        }
+        cursor.close()
+        return -1
     }
 }

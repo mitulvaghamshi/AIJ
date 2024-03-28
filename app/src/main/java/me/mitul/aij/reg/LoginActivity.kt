@@ -1,129 +1,115 @@
 package me.mitul.aij.reg
 
-import android.content.DialogInterface
+import android.app.Activity
 import android.content.Intent
-import android.os.AsyncTask
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.TextUtils
-import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.AutoCompleteTextView
-import android.widget.CheckBox
-import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
+import android.widget.LinearLayout
+import androidx.appcompat.widget.SwitchCompat
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import me.mitul.aij.R
-import me.mitul.aij.helper.HelperBackupRestore
 import me.mitul.aij.helper.HelperLogin
 import me.mitul.aij.home.HomeScreenActivity
+import me.mitul.aij.utils.Consts
+import kotlin.coroutines.EmptyCoroutineContext
 
-class LoginActivity : AppCompatActivity() {
-    private lateinit var emailView: AutoCompleteTextView
-    private lateinit var passwordView: AutoCompleteTextView
-    private lateinit var cbxKeepMeLoggedIn: CheckBox
-    private var progressView: View? = null
-    private var loginFormView: View? = null
-    private var shake: Animation? = null
+class LoginActivity : Activity() {
+    private lateinit var tvUsername: AutoCompleteTextView
+    private lateinit var tvPassword: AutoCompleteTextView
+    private lateinit var swKeepSigned: SwitchCompat
+
+    private lateinit var fabLogin: FloatingActionButton
+    private lateinit var loginForm: LinearLayout
+
+    private lateinit var shake: Animation
+    private lateinit var rotate: Animation
+
+    private lateinit var intentHome: Intent
+    private lateinit var prefs: SharedPreferences
+    private lateinit var dbHelper: HelperLogin
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        emailView = findViewById(R.id.login_email)
-        passwordView = findViewById(R.id.login_password)
-        cbxKeepMeLoggedIn = findViewById(R.id.checkBoxKeepMeLoggedIn)
-        loginFormView = findViewById(R.id.login_form)
-        progressView = findViewById(R.id.fab_login_go)
-        val loginPreference = getSharedPreferences("Login1", 0)
-        val intent = intent
-        if (intent.getBooleanExtra("IsRegistered", false)) {
-            emailView.setText(intent.getStringExtra("UserName"))
-            passwordView.setText(intent.getStringExtra("Password"))
+
+        intentHome = Intent(applicationContext, HomeScreenActivity::class.java)
+        prefs = getSharedPreferences(Consts.KEY_LOGIN_INFO, MODE_PRIVATE)
+        dbHelper = HelperLogin(applicationContext)
+
+        shake = AnimationUtils.loadAnimation(applicationContext, R.anim.shake)
+        rotate = AnimationUtils.loadAnimation(applicationContext, R.anim.anim_fab)
+
+        tvUsername = findViewById(R.id.login_ed_username)
+        tvPassword = findViewById(R.id.login_ed_password)
+        swKeepSigned = findViewById(R.id.login_sw_keep_signed)
+        loginForm = findViewById(R.id.login_form)
+
+        if (intent.hasExtra(Consts.KEY_IS_REGISTERED)) {
+            tvUsername.setText(intent.getStringExtra(Consts.KEY_USERNAME))
+            tvPassword.setText(intent.getStringExtra(Consts.KEY_PASSWORD))
+        } else if (prefs.getBoolean(Consts.KEY_KEEP_SIGNED, false)) {
+            tvUsername.setText(prefs.getString(Consts.KEY_USERNAME, ""))
+            tvPassword.setText(prefs.getString(Consts.KEY_PASSWORD, ""))
+            swKeepSigned.isChecked = prefs.getBoolean(Consts.KEY_KEEP_SIGNED, false)
         }
-        val firstRun = getPreferences(MODE_PRIVATE)
-        if (firstRun.getBoolean("firstTime", true)) {
-            if (HelperBackupRestore.isDbExists) {
-                AlertDialog.Builder(this).setIcon(R.drawable.ic_launcher)
-                    .setTitle("Backup found!")
-                    .setMessage("Do you want to restore previous data ?(Restart Required!)")
-                    .setCancelable(false).setNegativeButton("No", null)
-                    .setPositiveButton("Yes") { _: DialogInterface?, _: Int ->
-                        HelperBackupRestore.restoreDb()
-                        finish()
-                        startActivity(getIntent())
-                    }.create().show()
+
+        fabLogin = findViewById<FloatingActionButton>(R.id.login_fab_submit).also {
+            it.setOnClickListener {
+                CoroutineScope(EmptyCoroutineContext).launch { attemptLogin() }
             }
-            firstRun.edit().putBoolean("firstTime", false).apply()
         }
-        if (loginPreference.getBoolean("keepMeLoggdIn", false)) {
-            emailView.setText(loginPreference.getString("Email1", ""))
-            passwordView.setText(loginPreference.getString("Pass1", ""))
-            cbxKeepMeLoggedIn.setChecked(loginPreference.getBoolean("keepMeLoggdIn", false))
-            // attemptLogin();
-        }
-        findViewById<View>(R.id.fab_login_go).setOnClickListener { attemptLogin() }
-        findViewById<View>(R.id.fab_reg_new).setOnClickListener {
-            startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
+        findViewById<FloatingActionButton>(R.id.login_fab_register).setOnClickListener {
+            startActivity(Intent(applicationContext, RegisterActivity::class.java))
             finish()
         }
-        shake = AnimationUtils.loadAnimation(this@LoginActivity, R.anim.shake)
     }
 
-    override fun onStop() {
-        super.onStop()
-        val editor = getSharedPreferences("Login1", 0)
-            .edit()
-            .putBoolean("keepMeLoggdIn", cbxKeepMeLoggedIn.isChecked)
-        if (cbxKeepMeLoggedIn.isChecked) {
-            editor.putString("Email1", emailView.getText().toString())
-                .putString("Pass1", passwordView.getText().toString())
-        } else {
-            editor.putString("Email1", "mady@me")
-                .putString("Pass1", "123456")
-        }
-        editor.apply()
-    }
+    private suspend fun attemptLogin() {
+        val username = tvUsername.text.toString()
+        val password = tvPassword.text.toString()
 
-    private fun attemptLogin() {
-        var isValid = true
-        val email = emailView.getText().toString()
-        val pass = passwordView.getText().toString()
-        if (TextUtils.isEmpty(email)) {
-            emailView.startAnimation(shake)
-            isValid = false
+        if (TextUtils.isEmpty(username)) {
+            tvUsername.startAnimation(shake)
+            return
         }
-        if (TextUtils.isEmpty(pass)) {
-            passwordView.startAnimation(shake)
-            isValid = false
+        if (TextUtils.isEmpty(password)) {
+            tvPassword.startAnimation(shake)
+            return
         }
-        if (isValid) {
-            UserLoginTask().execute(email, pass)
-        }
-    }
 
-    private inner class UserLoginTask : AsyncTask<String?, Void?, Int>() {
-        @Deprecated("Deprecated in Java")
-        override fun doInBackground(vararg params: String?): Int {
+        fabLogin.startAnimation(rotate)
+
+        coroutineScope {
             try {
-                Thread.sleep(2000)
-                return HelperLogin(this@LoginActivity).attemptLogin(params[0], params[1])
+                delay(timeMillis = 2000L)
+                val userId = dbHelper.login(username, password)
+                if (userId == -1) {
+                    loginForm.startAnimation(shake)
+                    return@coroutineScope
+                }
+
+                val editor = prefs.edit()
+                editor.putBoolean(Consts.KEY_KEEP_SIGNED, swKeepSigned.isChecked)
+                if (swKeepSigned.isChecked) {
+                    editor.putString(Consts.KEY_USERNAME, tvUsername.text.toString())
+                    editor.putString(Consts.KEY_PASSWORD, tvPassword.text.toString())
+                } else {
+                    editor.clear()
+                }
+                editor.apply()
+
+                startActivity(intentHome.putExtra(Consts.KEY_USER_ID, userId))
+                finish()
             } catch (ignored: InterruptedException) {
             }
-            return 999
-        }
-
-        @Deprecated("Deprecated in Java")
-        override fun onPreExecute() = progressView!!.startAnimation(
-            AnimationUtils.loadAnimation(
-                applicationContext, R.anim.anim_fab
-            )
-        )
-
-        @Deprecated("Deprecated in Java")
-        override fun onPostExecute(localID: Int) = if (localID != 999) {
-            val intent = Intent(applicationContext, HomeScreenActivity::class.java)
-            startActivity(intent.putExtra("UserID", localID.toString()))
-            finish()
-        } else {
-            loginFormView!!.startAnimation(shake)
         }
     }
 }
