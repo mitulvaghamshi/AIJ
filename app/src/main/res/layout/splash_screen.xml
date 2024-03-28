@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/splash_vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/splash_fab_login_go"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="@dimen/dimen_10_dp"
+        android:layout_marginBottom="@dimen/dimen_10_dp"
+        android:backgroundTint="@color/pink"
+        android:contentDescription="Go to login screen button"
+        android:src="@android:drawable/ic_menu_send" />
+</merge>

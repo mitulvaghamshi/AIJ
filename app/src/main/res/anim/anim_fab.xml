@@ -3,10 +3,10 @@
     android:fillAfter="false"
     android:repeatCount="1">
 
-    <rotate android:duration="2000"
+    <rotate
+        android:duration="2000"
         android:fromDegrees="0"
         android:pivotX="50%"
         android:pivotY="50%"
         android:toDegrees="1080" />
-
 </set>

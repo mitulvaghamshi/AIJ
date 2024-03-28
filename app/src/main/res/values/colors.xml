@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="white">#ffffff</color>
-    <color name="black">#000000</color>
-    <color name="background_tint_action_bar">#4E99FF</color>
-    <color name="home_fab_1">#b40501</color>
-    <color name="home_fab_2">#159300</color>
-    <color name="login_fab_go">#ff4781</color>
-    <color name="login_fab_skip">#6067f4</color>
-    <color name="deep_pink">#3e3b41</color>
-    <color name="red_text_hint">#1220b9</color>
+    <color name="red">#B40501</color>
+    <color name="pink">#FF4781</color>
+    <color name="blue">#2196F3</color>
+    <color name="brown">#4D2F1D</color>
+    <color name="green">#4CAF50</color>
+    <color name="yellow">#FFEB3B</color>
+    <color name="orange">#FF7700</color>
+    <color name="purple">#6067F4</color>
+    <color name="indigo">#3F51B5</color>
 </resources>
