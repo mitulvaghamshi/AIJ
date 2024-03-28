@@ -1,12 +1,12 @@
 package me.mitul.aij.model
 
 data class University(
-    var universityID: Int = 0,
-    var universityName: String? = null,
-    var universityShortName: String? = null,
-    var universityAddress: String? = null,
-    var universityWebsite: String? = null,
-    var universityEmail: String? = null,
-    var universityPhone: String? = null,
-    var universityType: String? = null,
+    val id: Int,
+    val name: String,
+    val initials: String,
+    val address: String,
+    val website: String,
+    val email: String,
+    val phone: String,
+    val type: String,
 )

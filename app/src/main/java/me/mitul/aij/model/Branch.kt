@@ -1,7 +1,3 @@
 package me.mitul.aij.model
 
-data class Branch(
-    var branchId: Int = 0,
-    var collegeNumber: Int = 0,
-    var branchName: String? = null,
-)
+data class Branch(val id: Int, val name: String, val collegeNumber: Int)
