@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ll_pad"
+    android:orientation="vertical">
+
+    <ImageView
+        style="@style/ll"
+        android:contentDescription="AIJ logo image"
+        android:src="@drawable/img_aij_logo" />
+
+    <TextView
+        style="@style/ll"
+        android:padding="@dimen/dimen_5_dp"
+        android:text="Amrut Institute Junagadh" />
+
+    <TextView
+        style="@style/ll"
+        android:autoLink="web"
+        android:padding="@dimen/dimen_5_dp"
+        android:text="https://example.com" />
+</LinearLayout>

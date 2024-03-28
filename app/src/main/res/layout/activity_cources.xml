@@ -7,18 +7,18 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs_courses"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabIndicatorColor="@color/white"
+            app:tabIndicatorColor="@android:color/white"
             app:tabIndicatorHeight="@dimen/dimen_5_dp"
             app:tabMode="scrollable"
-            app:tabSelectedTextColor="@color/black"
-            app:tabTextColor="@color/white" />
+            app:tabSelectedTextColor="@android:color/black"
+            app:tabTextColor="@android:color/white" />
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/include_viewpager_aij" />
+    <include layout="@layout/common_viewpager" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

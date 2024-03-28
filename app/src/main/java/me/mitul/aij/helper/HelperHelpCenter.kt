@@ -3,12 +3,12 @@ package me.mitul.aij.helper
 import android.content.Context
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper
 import me.mitul.aij.model.Common
-import me.mitul.aij.utils.Constants
+import me.mitul.aij.utils.Consts
 
 class HelperHelpCenter(context: Context?) : SQLiteAssetHelper(
-    context, Constants.DB_NAME, Constants.DB_PATH, null, Constants.DB_VERSION
+    context, Consts.DB_NAME, Consts.DB_PATH, null, Consts.DB_VERSION
 ) {
-    fun getHelpCenterCities(): ArrayList<String> {
+    fun getCities(): ArrayList<String> {
         val list = ArrayList<String>()
         val database = getReadableDatabase()
         val cursor = database.rawQuery("select distinct City from HelpCenter order by City", null)

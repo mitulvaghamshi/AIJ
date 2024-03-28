@@ -1,359 +1,178 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@android:color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <LinearLayout style="@style/developer_ll">
-
-                <TextView
-                    style="@style/developer_ll_textview"
-                    android:text="About App" />
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:src="@drawable/aij_trans4" />
+        <LinearLayout style="@style/dev_header_ll">
 
             <TextView
-                style="@style/developer_ll_textview"
-                android:gravity="center"
-                android:text="AIJ-(v1.0)"
-                android:textColor="@color/black" />
+                style="@style/dev_header_ll_tv"
+                android:text="About App" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/img_aij_logo" />
 
-            <LinearLayout style="@style/developer_ll">
+        <TextView
+            style="@style/dev_header_ll_tv"
+            android:gravity="center"
+            android:text="AIJ (v1.0)"
+            android:textColor="@android:color/black" />
 
-                <TextView
-                    style="@style/developer_ll_textview"
-                    android:text="About Developer" />
-            </LinearLayout>
-
-            <LinearLayout
-                style="@style/hw"
-                android:padding="@dimen/dimen_10_dp">
-
-                <TextView
-                    style="@style/detail_collage_ll_textview_horizontal"
-                    android:layout_weight="0.4"
-                    android:text="Developed by:" />
-
-                <TextView
-                    style="@style/detail_collage_ll_textview_horizontal"
-                    android:layout_weight="0.8"
-                    android:text="Mitul Vaghmashi\nStudent, Computer Engineering"
-                    android:typeface="serif" />
-            </LinearLayout>
-
-            <LinearLayout
-                style="@style/hw"
-                android:padding="@dimen/dimen_10_dp">
-
-                <TextView
-                    style="@style/detail_collage_ll_textview_horizontal"
-                    android:layout_weight="0.4"
-                    android:text="Email:" />
-
-                <TextView
-                    style="@style/detail_collage_ll_textview_horizontal"
-                    android:layout_weight="0.8"
-                    android:autoLink="email"
-                    android:text="info@me.com"
-                    android:typeface="serif" />
-            </LinearLayout>
-
-            <LinearLayout
-                style="@style/hw"
-                android:padding="@dimen/dimen_10_dp">
-
-                <TextView
-                    style="@style/detail_collage_ll_textview_horizontal"
-                    android:layout_weight="0.4"
-                    android:text="Phone:" />
-
-                <TextView
-                    style="@style/detail_collage_ll_textview_horizontal"
-                    android:layout_weight="0.8"
-                    android:autoLink="phone"
-                    android:text="8128079591"
-                    android:typeface="serif" />
-            </LinearLayout>
-
-            <LinearLayout
-                style="@style/hw"
-                android:padding="@dimen/dimen_10_dp">
-
-                <TextView
-                    style="@style/detail_collage_ll_textview_horizontal"
-                    android:layout_weight="0.4"
-                    android:text="Facebook:" />
-
-                <TextView
-                    style="@style/detail_collage_ll_textview_horizontal"
-                    android:layout_weight="0.8"
-                    android:autoLink="web"
-                    android:text="https://facebook.com"
-                    android:typeface="serif" />
-            </LinearLayout>
-
-            <LinearLayout
-                style="@style/hw"
-                android:padding="@dimen/dimen_10_dp">
-
-                <TextView
-                    style="@style/detail_collage_ll_textview_horizontal"
-                    android:layout_weight="0.4"
-                    android:text="Website:" />
-
-                <TextView
-                    style="@style/detail_collage_ll_textview_horizontal"
-                    android:layout_weight="0.8"
-                    android:autoLink="web"
-                    android:text="https://example.com"
-                    android:typeface="serif" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_10_dp"
-            android:orientation="vertical">
-
-            <LinearLayout style="@style/developer_ll">
-
-                <TextView
-                    style="@style/developer_ll_textview"
-                    android:text="About AIJ" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/aij1" />
-
-                <Button
-                    android:id="@+id/dev_goto_aij_login"
-                    style="@style/developer_ll_textview"
-                    android:background="@drawable/row_button_bar_2"
-                    android:text="More info about AIJ" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_10_dp"
-            android:orientation="vertical">
-
-            <LinearLayout style="@style/developer_ll">
-
-                <TextView
-                    style="@style/developer_ll_textview"
-                    android:text="Contact AIJ" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    style="@style/hw"
-                    android:padding="@dimen/dimen_10_dp">
-
-                    <TextView
-                        style="@style/detail_collage_ll_textview_horizontal"
-                        android:layout_weight="0.3"
-                        android:text="Email:" />
-
-                    <TextView
-                        style="@style/detail_collage_ll_textview_horizontal"
-                        android:layout_weight="0.8"
-                        android:autoLink="email"
-                        android:text="info@example.com" />
-                </LinearLayout>
-
-                <LinearLayout
-                    style="@style/hw"
-                    android:padding="@dimen/dimen_10_dp">
-
-                    <TextView
-                        style="@style/detail_collage_ll_textview_horizontal"
-                        android:layout_weight="0.3"
-                        android:text="Phone" />
-
-                    <TextView
-                        style="@style/detail_collage_ll_textview_horizontal"
-                        android:layout_weight="0.8"
-                        android:autoLink="phone"
-                        android:text="82389 45600" />
-                </LinearLayout>
-
-                <LinearLayout
-                    style="@style/hw"
-                    android:padding="@dimen/dimen_10_dp">
-
-                    <TextView
-                        style="@style/detail_collage_ll_textview_horizontal"
-                        android:layout_weight="0.3"
-                        android:text="" />
-
-                    <TextView
-                        style="@style/detail_collage_ll_textview_horizontal"
-                        android:layout_weight="0.8"
-                        android:autoLink="phone"
-                        android:text="90991 19845" />
-                </LinearLayout>
-
-                <LinearLayout
-                    style="@style/hw"
-                    android:padding="@dimen/dimen_10_dp">
-
-                    <TextView
-                        style="@style/detail_collage_ll_textview_horizontal"
-                        android:layout_weight="0.3"
-                        android:text="" />
-
-                    <TextView
-                        style="@style/detail_collage_ll_textview_horizontal"
-                        android:layout_weight="0.8"
-                        android:autoLink="phone"
-                        android:text="0 285 2901108" />
-                </LinearLayout>
-
-                <LinearLayout
-                    style="@style/hw"
-                    android:padding="@dimen/dimen_10_dp">
-
-                    <TextView
-                        style="@style/detail_collage_ll_textview_horizontal"
-                        android:layout_weight="0.3"
-                        android:text="Fax:" />
-
-                    <TextView
-                        style="@style/detail_collage_ll_textview_horizontal"
-                        android:layout_weight="0.8"
-                        android:autoLink="phone"
-                        android:text="1 285 2620108" />
-                </LinearLayout>
-
-                <LinearLayout
-                    style="@style/hw"
-                    android:padding="@dimen/dimen_10_dp">
-
-                    <TextView
-                        style="@style/detail_collage_ll_textview_horizontal"
-                        android:layout_weight="0.3"
-                        android:text="Web:" />
-
-                    <TextView
-                        style="@style/detail_collage_ll_textview_horizontal"
-                        android:layout_weight="0.8"
-                        android:autoLink="web"
-                        android:text="https://example.com" />
-                </LinearLayout>
-
-                <LinearLayout style="@style/hw">
-
-                    <Button
-                        android:id="@+id/dev_goto_detail_aij"
-                        style="@style/developer_ll_textview"
-                        android:background="@drawable/row_button_bar_2"
-                        android:text="Learn more about AIJ" />
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_10_dp"
-            android:orientation="vertical">
-
-            <LinearLayout style="@style/developer_ll">
-
-                <TextView
-                    style="@style/developer_ll_textview"
-                    android:text="Share" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="@dimen/dimen_10_dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="@dimen/dimen_10_dp"
-                    android:text="Share with friends"
-                    android:textColor="@color/black" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:autoLink="web"
-                    android:padding="@dimen/dimen_10_dp"
-                    android:text="Follow on Facebook"
-                    android:textColor="@color/black" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginBottom="1dp"
-                android:background="@color/black" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/developer_ll"
-            android:orientation="vertical">
+        <LinearLayout style="@style/dev_header_ll">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:padding="@dimen/dimen_10_dp"
-                android:text="©2016 AIJ"
-                android:textColor="@color/white" />
+                style="@style/dev_header_ll_tv"
+                android:text="About Developer" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/ll"
+            android:padding="@dimen/dimen_10_dp">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:padding="@dimen/dimen_10_dp"
-                android:text="All Rights Reserved."
-                android:textColor="@color/white" />
+                style="@style/tv_inline"
+                android:layout_weight="0.3"
+                android:text="Developer:" />
+
+            <TextView
+                style="@style/tv_inline"
+                android:layout_weight="0.7"
+                android:text="Mitul Vaghmashi"
+                android:typeface="serif" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/ll"
+            android:padding="@dimen/dimen_10_dp">
+
+            <TextView
+                style="@style/tv_inline"
+                android:layout_weight="0.3"
+                android:text="Phone:" />
+
+            <TextView
+                style="@style/tv_inline"
+                android:layout_weight="0.7"
+                android:autoLink="phone"
+                android:text="+1 (289) 933-0783"
+                android:typeface="serif" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/ll"
+            android:padding="@dimen/dimen_10_dp">
+
+            <TextView
+                style="@style/tv_inline"
+                android:layout_weight="0.3"
+                android:text="Email:" />
+
+            <TextView
+                style="@style/tv_inline"
+                android:layout_weight="0.7"
+                android:autoLink="email"
+                android:text="mitulvaghmashi@gmail.com"
+                android:typeface="serif" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/ll"
+            android:padding="@dimen/dimen_10_dp">
+
+            <TextView
+                style="@style/tv_inline"
+                android:layout_weight="0.3"
+                android:text="Website:" />
+
+            <TextView
+                style="@style/tv_inline"
+                android:layout_weight="0.7"
+                android:autoLink="web"
+                android:text="https://mitulvaghamshi.github.io"
+                android:typeface="serif" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/dev_header_ll">
+
+            <TextView
+                style="@style/dev_header_ll_tv"
+                android:text="Contact AIJ" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/ll"
+            android:padding="@dimen/dimen_10_dp">
+
+            <TextView
+                style="@style/tv_inline"
+                android:layout_weight="0.3"
+                android:text="Phone" />
+
+            <TextView
+                style="@style/tv_inline"
+                android:layout_weight="0.7"
+                android:autoLink="phone"
+                android:text="82389 45600" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/ll"
+            android:padding="@dimen/dimen_10_dp">
+
+            <TextView
+                style="@style/tv_inline"
+                android:layout_weight="0.3"
+                android:text="Email:" />
+
+            <TextView
+                style="@style/tv_inline"
+                android:layout_weight="0.7"
+                android:autoLink="email"
+                android:text="info@example.com" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/ll"
+            android:padding="@dimen/dimen_10_dp">
+
+            <TextView
+                style="@style/tv_inline"
+                android:layout_weight="0.3"
+                android:text="Web:" />
+
+            <TextView
+                style="@style/tv_inline"
+                android:layout_weight="0.7"
+                android:autoLink="web"
+                android:text="https://example.com" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/dev_btn_aij"
+            style="@style/dev_header_ll_tv"
+            android:text="Learn more about AIJ" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_aij_banner" />
+
+        <LinearLayout style="@style/dev_header_ll">
+
+            <TextView
+                style="@style/dev_header_ll_tv"
+                android:gravity="center_horizontal"
+                android:text="© 2016 AIJ. All Rights Reserved." />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

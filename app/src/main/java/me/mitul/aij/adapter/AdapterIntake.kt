@@ -39,9 +39,9 @@ class AdapterIntake(
         val tvVacant: TextView
 
         init {
-            tvBranch = view.findViewById(R.id.intake_detail_list_item_branch)
-            tvSeats = view.findViewById(R.id.intake_detail_list_item_seat)
-            tvVacant = view.findViewById(R.id.intake_detail_list_item_vacant)
+            tvBranch = view.findViewById(R.id.intake_branch)
+            tvSeats = view.findViewById(R.id.intake_seat)
+            tvVacant = view.findViewById(R.id.intake_vacant)
         }
     }
 }

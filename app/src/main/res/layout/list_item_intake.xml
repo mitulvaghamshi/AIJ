@@ -1,39 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    style="@style/ll">
 
     <TextView
-        android:id="@+id/intake_detail_list_item_branch"
-        android:layout_width="0.0dip"
+        android:id="@+id/intake_branch"
+        android:layout_width="@dimen/dimen_0_dp"
         android:layout_height="wrap_content"
         android:layout_weight="2.5"
         android:typeface="serif" />
 
     <View
         android:layout_width="0.5dp"
-        android:layout_height="fill_parent"
+        android:layout_height="match_parent"
         android:background="@android:color/black" />
 
     <TextView
-        android:id="@+id/intake_detail_list_item_seat"
-        android:layout_width="0.0dip"
+        android:id="@+id/intake_seat"
+        android:layout_width="@dimen/dimen_0_dp"
         android:layout_height="wrap_content"
         android:layout_weight="1.0"
         android:gravity="center"
         android:typeface="serif" />
 
     <View
-        android:layout_width="0.5dip"
-        android:layout_height="fill_parent"
+        android:layout_width="0.5dp"
+        android:layout_height="match_parent"
         android:background="@android:color/black" />
 
     <TextView
-        android:id="@+id/intake_detail_list_item_vacant"
-        android:layout_width="0.0dip"
+        android:id="@+id/intake_vacant"
+        android:layout_width="@dimen/dimen_0_dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_weight="1.0"
         android:gravity="center"
         android:typeface="serif" />
 </LinearLayout>

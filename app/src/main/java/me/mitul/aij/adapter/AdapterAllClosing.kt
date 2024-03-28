@@ -21,7 +21,7 @@ class AdapterAllClosing(
     override fun getView(index: Int, view: View?, viewGroup: ViewGroup): View {
         var row = view
         if (row == null) {
-            row = inflater.inflate(R.layout.closing_list_listview_items, null)
+            row = inflater.inflate(R.layout.list_item_closing, null)
             ViewHolder(row).also { row.tag = it }
         } else {
             row.tag as ViewHolder
@@ -53,7 +53,7 @@ class AdapterAllClosing(
             tvSEBCValue = view.findViewById(R.id.closing_tv_sebc)
             tvEbcValue = view.findViewById(R.id.closing_tv_ebc)
             tvScValue = view.findViewById(R.id.closing_tv_sc)
-            tvSTValue = view.findViewById(R.id.closing_tv_st1)
+            tvSTValue = view.findViewById(R.id.closing_tv_st)
         }
     }
 }

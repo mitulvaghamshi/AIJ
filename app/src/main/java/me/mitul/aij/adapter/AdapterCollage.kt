@@ -21,7 +21,7 @@ class AdapterCollage(
     override fun getView(index: Int, view: View?, viewGroup: ViewGroup): View {
         var row = view
         if (row == null) {
-            row = inflater.inflate(R.layout.collage_list_listview_items, null)
+            row = inflater.inflate(R.layout.list_item_college, null)
             ViewHolder(row).also { row.tag = it }
         } else {
             row.tag as ViewHolder

@@ -4,12 +4,12 @@ import android.content.Context
 import android.database.Cursor
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper
 import me.mitul.aij.model.Collage
-import me.mitul.aij.utils.Constants
+import me.mitul.aij.utils.Consts
 
 class HelperCollage(context: Context?) : SQLiteAssetHelper(
-    context, Constants.DB_NAME, Constants.DB_PATH, null, Constants.DB_VERSION
+    context, Consts.DB_NAME, Consts.DB_PATH, null, Consts.DB_VERSION
 ) {
-    fun selectAllCollage(): ArrayList<Collage> {
+    fun getAllCollage(): ArrayList<Collage> {
         val list = ArrayList<Collage>()
         val database = getReadableDatabase()
         val cursor = database.rawQuery(
@@ -18,12 +18,12 @@ class HelperCollage(context: Context?) : SQLiteAssetHelper(
         )
         if (cursor.moveToFirst()) do {
             val collage = Collage()
-            collage.collageId = cursor.getInt(cursor.getColumnIndex("CollegeID"))
-            collage.collageName = cursor.getString(cursor.getColumnIndex("CollegeShortName"))
+            collage.id = cursor.getInt(cursor.getColumnIndex("CollegeID"))
+            collage.name = cursor.getString(cursor.getColumnIndex("CollegeShortName"))
             collage.fees = cursor.getInt(cursor.getColumnIndex("Fees")).toString() + "/-"
             collage.hostel = cursor.getString(cursor.getColumnIndex("Hostel"))
             val cursor1 = database.rawQuery(
-                "SELECT BranchShortName FROM INS_Branch WHERE BranchID IN (SELECT BranchID FROM INS_Intake WHERE CollegeID = " + collage.collageId + ");",
+                "SELECT BranchShortName FROM INS_Branch WHERE BranchID IN (SELECT BranchID FROM INS_Intake WHERE CollegeID = " + collage.id + ");",
                 null
             )
             if (cursor1.moveToFirst()) {
@@ -42,7 +42,7 @@ class HelperCollage(context: Context?) : SQLiteAssetHelper(
         return list
     }
 
-    fun selectBranchWiseCollage(id: String?): ArrayList<Collage> {
+    fun getCollageForBranch(id: String?): ArrayList<Collage> {
         val list = ArrayList<Collage>()
         val database = getReadableDatabase()
         val cursor = database.rawQuery(
@@ -51,12 +51,12 @@ class HelperCollage(context: Context?) : SQLiteAssetHelper(
         )
         if (cursor.moveToFirst()) do {
             val collage = Collage()
-            collage.collageId = cursor.getInt(cursor.getColumnIndex("CollegeID"))
-            collage.collageName = cursor.getString(cursor.getColumnIndex("CollegeShortName"))
+            collage.id = cursor.getInt(cursor.getColumnIndex("CollegeID"))
+            collage.name = cursor.getString(cursor.getColumnIndex("CollegeShortName"))
             collage.fees = cursor.getInt(cursor.getColumnIndex("Fees")).toString() + "/-"
             collage.hostel = cursor.getString(cursor.getColumnIndex("Hostel"))
             val cursor1 = database.rawQuery(
-                "SELECT BranchShortName FROM INS_Branch WHERE BranchID IN (SELECT BranchID FROM INS_Intake WHERE CollegeID = " + collage.collageId + ");",
+                "SELECT BranchShortName FROM INS_Branch WHERE BranchID IN (SELECT BranchID FROM INS_Intake WHERE CollegeID = " + collage.id + ");",
                 null
             )
             if (cursor1.moveToFirst()) {
@@ -75,7 +75,7 @@ class HelperCollage(context: Context?) : SQLiteAssetHelper(
         return list
     }
 
-    fun selectUniversityWiseCollage(id: String?): ArrayList<Collage> {
+    fun getCollageForUniversity(id: String?): ArrayList<Collage> {
         val list = ArrayList<Collage>()
         val database = getReadableDatabase()
         val cursor = database.rawQuery(
@@ -84,12 +84,12 @@ class HelperCollage(context: Context?) : SQLiteAssetHelper(
         )
         if (cursor.moveToFirst()) do {
             val collage = Collage()
-            collage.collageId = cursor.getInt(cursor.getColumnIndex("CollegeID"))
-            collage.collageName = cursor.getString(cursor.getColumnIndex("CollegeShortName"))
+            collage.id = cursor.getInt(cursor.getColumnIndex("CollegeID"))
+            collage.name = cursor.getString(cursor.getColumnIndex("CollegeShortName"))
             collage.fees = cursor.getInt(cursor.getColumnIndex("Fees")).toString() + "/-"
             collage.hostel = cursor.getString(cursor.getColumnIndex("Hostel"))
             val cursor1 = database.rawQuery(
-                "SELECT BranchShortName FROM INS_Branch WHERE BranchID IN (SELECT BranchID FROM INS_Intake WHERE CollegeID = " + collage.collageId + ");",
+                "SELECT BranchShortName FROM INS_Branch WHERE BranchID IN (SELECT BranchID FROM INS_Intake WHERE CollegeID = " + collage.id + ");",
                 null
             )
             if (cursor1.moveToFirst()) {
@@ -120,10 +120,10 @@ class HelperCollage(context: Context?) : SQLiteAssetHelper(
         if (cursorIntake.moveToFirst()) {
             do {
                 val collage = Collage()
-                collage.lvBranch =
+                collage.branch =
                     cursorIntake.getString(cursorIntake.getColumnIndex("BranchProperName"))
-                collage.lvSeat = cursorIntake.getInt(cursorIntake.getColumnIndex("Intake"))
-                collage.lvVacant = cursorIntake.getInt(cursorIntake.getColumnIndex("Vacant"))
+                collage.seat = cursorIntake.getInt(cursorIntake.getColumnIndex("Intake"))
+                collage.vacant = cursorIntake.getInt(cursorIntake.getColumnIndex("Vacant"))
                 cursorSeat = database.rawQuery(
                     "SELECT Intake,Vacant from INS_Intake WHERE BranchID = (SELECT BranchID FROM INS_Intake WHERE CollegeID = $collegeId);",
                     null
@@ -133,11 +133,11 @@ class HelperCollage(context: Context?) : SQLiteAssetHelper(
                     null
                 )
                 if (cursorSeat.moveToFirst()) {
-                    collage.lvSeat = cursorSeat.getInt(cursorSeat.getColumnIndex("Intake"))
+                    collage.seat = cursorSeat.getInt(cursorSeat.getColumnIndex("Intake"))
                 }
-                collage.lvVacant = cursorSeat.getInt(cursorSeat.getColumnIndex("Vacant"))
+                collage.vacant = cursorSeat.getInt(cursorSeat.getColumnIndex("Vacant"))
                 if (cursorVacant.moveToFirst()) {
-                    collage.lvVacant = cursorVacant.getInt(cursorVacant.getColumnIndex("Vacant"))
+                    collage.vacant = cursorVacant.getInt(cursorVacant.getColumnIndex("Vacant"))
                 }
                 list.add(collage)
                 cursorSeat.moveToNext()
@@ -151,16 +151,16 @@ class HelperCollage(context: Context?) : SQLiteAssetHelper(
         return list
     }
 
-    fun selectCollageByID(id: String?): Collage {
+    fun getCollageBy(id: String?): Collage {
         val collage = Collage()
         val database = getReadableDatabase()
         val cursor = database.rawQuery("Select * from INS_College where CollegeID = $id", null)
         if (cursor.moveToFirst()) {
-            collage.label = cursor.getString(cursor.getColumnIndex("CollegeCode"))
-            collage.clgCollageID = cursor.getInt(cursor.getColumnIndex("CollegeID"))
-            collage.clgShortName = cursor.getString(cursor.getColumnIndex("CollegeShortName"))
-            collage.clgFullName = cursor.getString(cursor.getColumnIndex("CollegeName"))
-            collage.clgAddress = cursor.getString(cursor.getColumnIndex("Address"))
+            collage.code = cursor.getString(cursor.getColumnIndex("CollegeCode"))
+            collage.clgCollageId = cursor.getInt(cursor.getColumnIndex("CollegeID"))
+            collage.initials = cursor.getString(cursor.getColumnIndex("CollegeShortName"))
+            collage.fullName = cursor.getString(cursor.getColumnIndex("CollegeName"))
+            collage.address = cursor.getString(cursor.getColumnIndex("Address"))
             collage.phone = cursor.getString(cursor.getColumnIndex("Phone"))
             collage.web = cursor.getString(cursor.getColumnIndex("Website"))
             collage.email = cursor.getString(cursor.getColumnIndex("Email"))

@@ -12,38 +12,40 @@ import me.mitul.aij.R
 import me.mitul.aij.adapter.AdapterUniversity
 import me.mitul.aij.helper.HelperUniversity
 import me.mitul.aij.model.University
-import me.mitul.aij.utils.ArrayListOps
+import me.mitul.aij.utils.ListOps
 import me.mitul.aij.utils.MyTextWatcher
 
 class UniversityListActivity : Activity() {
+    private val dbHelper = HelperUniversity(this)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_common_listview)
-        findViewById<View>(R.id.expandableListView).visibility = View.GONE
 
-        val dbHelper = HelperUniversity(this)
-        val universities = dbHelper.selectAllUniversity()
-        val listview = findViewById<ListView>(R.id.common_listview)
-        listview.visibility = View.VISIBLE
-        listview.setAdapter(AdapterUniversity(this, universities))
-        listview.isTextFilterEnabled = true
-        listview.onItemClickListener = OnItemClickListener { _, view, _, _ ->
-            startActivity(
-                Intent(this, DetailUniversityActivity::class.java)
-                    .putExtra(
-                        "id_to_find_university",
-                        (view.findViewById<TextView>(R.id.list_simple_public_id)).getText()
-                            .toString()
-                    )
-            )
+        val universities = dbHelper.getUniversities()
+
+        val listview = findViewById<ListView>(R.id.common_lv).also {
+            it.visibility = View.VISIBLE
+            it.isTextFilterEnabled = true
+            it.setAdapter(AdapterUniversity(this.layoutInflater, universities))
+            it.onItemClickListener = OnItemClickListener { _, view, _, _ ->
+                startActivity(
+                    Intent(this, DetailUniversityActivity::class.java)
+                        .putExtra(
+                            "id_to_find_university",
+                            view.findViewById<TextView>(R.id.list_item_tv_name).tag.toString()
+                        )
+                )
+            }
         }
 
-        findViewById<EditText>(R.id.edSearchCommon).addTextChangedListener(
-            MyTextWatcher(universities, object : ArrayListOps<University> {
-                override fun onListSet(list: ArrayList<University>) =
-                    listview.setAdapter(AdapterUniversity(this@UniversityListActivity, list))
+        findViewById<EditText>(R.id.common_ed_search).addTextChangedListener(
+            MyTextWatcher(universities, object : ListOps<University> {
+                override fun setList(list: List<University>) = listview.setAdapter(
+                    AdapterUniversity(this@UniversityListActivity.layoutInflater, list)
+                )
 
-                override fun getName(item: University) = item.universityName!!
+                override fun getName(item: University) = item.name!!
             })
         )
     }

@@ -3,29 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@android:color/black"
     android:fitsSystemWindows="true">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_180_dp"
-        android:background="@color/white"
+        android:background="@android:color/white"
         android:fitsSystemWindows="true"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:backgroundTint="@color/background_tint_action_bar"
+            android:backgroundTint="@color/blue"
             android:fitsSystemWindows="true"
-            app:contentScrim="@color/background_tint_action_bar"
+            app:contentScrim="@color/blue"
             app:layout_scrollFlags="exitUntilCollapsed|scroll">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="fitXY"
-                android:src="@drawable/aij_trans4"
+                android:src="@drawable/img_aij_logo"
                 app:layout_collapseMode="parallax" />
 
             <Toolbar
@@ -33,7 +33,7 @@
                 android:layout_height="?actionBarSize"
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                app:titleTextColor="@color/white" />
+                app:titleTextColor="@android:color/white" />
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 

@@ -9,10 +9,8 @@ class ContactUs : AppCompatActivity() {
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.contact_us)
-
         setSupportActionBar(findViewById(R.id.toolbar12))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
         findViewById<CollapsingToolbarLayout>(R.id.collapsing_toolbar12).title = "Contact Us"
     }
 }

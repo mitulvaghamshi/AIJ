@@ -1,190 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/common_fragment_aij"
-    android:padding="@dimen/dimen_10_dp">
+    style="@style/detail_scrollview">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/ll"
         android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/ll_pad"
             android:layout_marginBottom="@dimen/dimen_10_dp"
-            android:background="@drawable/bg_bl_wh"
-            android:orientation="horizontal"
-            android:padding="@dimen/dimen_10_dp">
+            android:background="@drawable/img_header_bg">
 
             <TextView
-                android:id="@+id/college_detail_tv_colleges_hort_name"
-                style="@style/detail_collage_ll_textview_horizontal"
+                android:id="@+id/cd_tv_initials"
+                style="@style/tv_inline"
                 android:layout_weight="1"
-                android:textColor="@color/white"
+                android:textColor="@android:color/white"
                 android:typeface="serif" />
 
             <TextView
-                android:id="@+id/college_detail_tv_college_label"
-                style="@style/detail_collage_ll_textview_horizontal"
+                android:id="@+id/cd_tv_code"
+                style="@style/tv_inline"
                 android:layout_weight="0.25"
-                android:textColor="@color/white"
+                android:textColor="@android:color/white"
                 android:typeface="serif" />
-
-            <TextView
-                android:layout_width="@dimen/dimen_0_dp"
-                android:layout_height="@dimen/dimen_0_dp"
-                android:visibility="gone" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/ll"
             android:layout_marginBottom="@dimen/dimen_10_dp"
-            android:background="@color/white"
+            android:background="@android:color/white"
             android:orientation="vertical">
 
-            <LinearLayout style="@style/detail_collage_ll">
+            <LinearLayout style="@style/ll_pad">
 
-                <TextView style="@style/detail_collage_ll_textview_pin" />
+                <View style="@style/detail_pin" />
 
                 <TextView
-                    android:id="@+id/college_detail_tv_college_full_name"
-                    style="@style/detail_collage_ll_textview" />
+                    android:id="@+id/cd_tv_full_name"
+                    style="@style/detail_tv" />
             </LinearLayout>
 
-            <LinearLayout style="@style/detail_collage_ll">
+            <LinearLayout style="@style/ll_pad">
 
-                <TextView style="@style/detail_collage_ll_textview_pin" />
+                <View style="@style/detail_pin" />
 
                 <TextView
-                    android:id="@+id/college_detail_tv_college_address"
-                    style="@style/detail_collage_ll_textview" />
+                    android:id="@+id/cd_tv_address"
+                    style="@style/detail_tv" />
             </LinearLayout>
 
-            <LinearLayout style="@style/detail_collage_ll">
+            <LinearLayout style="@style/ll_pad">
 
-                <TextView style="@style/detail_collage_ll_textview_pin" />
+                <TextView style="@style/detail_pin" />
 
                 <TextView
-                    android:id="@+id/college_detail_tv_phone_value"
-                    style="@style/detail_collage_ll_textview"
+                    android:id="@+id/cd_tv_phone"
+                    style="@style/detail_tv"
                     android:autoLink="phone" />
             </LinearLayout>
 
-            <LinearLayout style="@style/detail_collage_ll">
+            <LinearLayout style="@style/ll_pad">
 
-                <TextView style="@style/detail_collage_ll_textview_pin" />
+                <View style="@style/detail_pin" />
 
                 <TextView
-                    android:id="@+id/college_detail_tv_website_value"
-                    style="@style/detail_collage_ll_textview"
+                    android:id="@+id/cd_tv_website"
+                    style="@style/detail_tv"
                     android:autoLink="web" />
             </LinearLayout>
 
-            <LinearLayout style="@style/detail_collage_ll">
+            <LinearLayout style="@style/ll_pad">
 
-                <TextView style="@style/detail_collage_ll_textview_pin" />
+                <View style="@style/detail_pin" />
 
                 <TextView
-                    android:id="@+id/college_detail_tv_email_value"
-                    style="@style/detail_collage_ll_textview"
+                    android:id="@+id/cd_tv_email"
+                    style="@style/detail_tv"
                     android:autoLink="email" />
             </LinearLayout>
 
-            <LinearLayout style="@style/detail_collage_ll">
+            <LinearLayout style="@style/ll_pad">
 
-                <TextView style="@style/detail_collage_ll_textview_pin" />
+                <View style="@style/detail_pin" />
 
                 <TextView
-                    android:id="@+id/college_detail_tv_fees_value"
-                    style="@style/detail_collage_ll_textview" />
+                    android:id="@+id/cd_tv_fees"
+                    style="@style/detail_tv" />
             </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/ll"
             android:layout_marginBottom="@dimen/dimen_10_dp"
-            android:background="@color/white"
+            android:background="@android:color/white"
             android:orientation="vertical">
 
-            <LinearLayout style="@style/detail_collage_ll_horizontal">
+            <LinearLayout style="@style/ll_pad">
 
-                <TextView style="@style/detail_collage_ll_textview_pin" />
+                <View style="@style/detail_pin" />
 
                 <TextView
-                    style="@style/detail_collage_ll_textview_horizontal"
+                    style="@style/tv_inline"
                     android:layout_weight="0.4"
                     android:text="Type" />
 
                 <TextView
-                    android:id="@+id/college_detail_tv_college_type_value"
-                    style="@style/detail_collage_ll_textview_horizontal"
+                    android:id="@+id/cd_tv_type"
+                    style="@style/tv_inline"
                     android:layout_weight="0.6" />
             </LinearLayout>
 
-            <LinearLayout style="@style/detail_collage_ll_horizontal">
+            <LinearLayout style="@style/ll_pad">
 
-                <TextView style="@style/detail_collage_ll_textview_pin" />
+                <View style="@style/detail_pin" />
 
                 <TextView
-                    style="@style/detail_collage_ll_textview_horizontal"
+                    style="@style/tv_inline"
                     android:layout_weight="0.4"
                     android:text="Hostel" />
 
                 <TextView
-                    android:id="@+id/college_detail_tv_college_type_hostel"
-                    style="@style/detail_collage_ll_textview_horizontal"
+                    android:id="@+id/cd_tv_hostel"
+                    style="@style/tv_inline"
                     android:layout_weight="0.6" />
             </LinearLayout>
 
-            <LinearLayout style="@style/detail_collage_ll_horizontal">
+            <LinearLayout style="@style/ll_pad">
 
-                <TextView style="@style/detail_collage_ll_textview_pin" />
+                <View style="@style/detail_pin" />
 
                 <TextView
-                    style="@style/detail_collage_ll_textview_horizontal"
+                    style="@style/tv_inline"
                     android:layout_weight="0.4"
                     android:text="University" />
 
                 <TextView
-                    android:id="@+id/college_detail_tv_college_type_university"
-                    style="@style/detail_collage_ll_textview_horizontal"
+                    android:id="@+id/cd_tv_university"
+                    style="@style/tv_inline"
                     android:layout_weight="0.6" />
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            style="@style/hw"
+            style="@style/ll"
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/college_detail_btn_intake"
+                android:id="@+id/cd_btn_intake"
                 style="?android:buttonBarButtonStyle"
                 android:layout_width="@dimen/dimen_0_dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/dimen_5_dp"
                 android:layout_weight="1"
-                android:background="#ff8740"
+                android:background="@color/orange"
                 android:padding="@dimen/dimen_10_dp"
                 android:text="Intake"
-                android:textColor="@color/white"
+                android:textColor="@android:color/white"
                 android:textSize="@dimen/dimen_20_sp"
                 android:textStyle="bold"
                 android:typeface="serif" />
 
             <Button
-                android:id="@+id/college_detail_btn_closing"
+                android:id="@+id/cd_btn_closing"
                 style="?android:buttonBarButtonStyle"
                 android:layout_width="@dimen/dimen_0_dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dimen_5_dp"
                 android:layout_weight="1"
-                android:background="#2a47ff"
+                android:background="@color/blue"
                 android:padding="@dimen/dimen_10_dp"
                 android:text="Closing"
-                android:textColor="@color/white"
+                android:textColor="@android:color/white"
                 android:textSize="@dimen/dimen_20_sp"
                 android:textStyle="bold"
                 android:typeface="serif" />

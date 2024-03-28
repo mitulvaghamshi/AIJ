@@ -1,275 +1,492 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/white"
+    style="@style/ll"
     android:scrollbars="none">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/ll"
+        android:isScrollContainer="true"
+        android:padding="@dimen/dimen_10_dp">
 
-        <RelativeLayout style="@style/relative_layout_home_screen">
+        <Button
+            android:id="@+id/btn_find"
+            style="@style/hs_btn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_180_dp"
+            android:layout_marginEnd="@dimen/dimen_10_dp"
+            android:background="#354cd7"
+            android:text="Search"
+            app:layout_constraintEnd_toStartOf="@id/btn_collage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/find"
-                style="@style/ButtonBarAll"
-                android:layout_width="@dimen/dimen_180_dp"
-                android:layout_height="@dimen/dimen_180_dp"
-                android:layout_alignParentStart="true"
-                android:layout_marginEnd="@dimen/dimen_10_dp"
-                android:background="#354cd7"
-                android:text="Search" />
+        <Button
+            android:id="@+id/btn_collage"
+            style="@style/hs_btn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_85_dp"
+            android:background="#2db600"
+            android:text="Collages"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_find"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/collage"
-                style="@style/ButtonBarAll"
-                android:layout_width="@dimen/dimen_90_dp"
-                android:layout_height="@dimen/dimen_85_dp"
-                android:layout_alignTop="@id/find"
-                android:layout_alignParentEnd="true"
-                android:layout_toEndOf="@id/find"
-                android:background="#2db600"
-                android:text="Collages" />
+        <Button
+            android:id="@+id/btn_branches"
+            style="@style/hs_btn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_85_dp"
+            android:layout_marginTop="@dimen/dimen_10_dp"
+            android:background="#c4ca20"
+            android:text="Branches"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_find"
+            app:layout_constraintStart_toStartOf="@id/btn_collage"
+            app:layout_constraintTop_toBottomOf="@id/btn_collage" />
 
-            <Button
-                android:id="@+id/branches"
-                style="@style/ButtonBarAll"
-                android:layout_width="@dimen/dimen_90_dp"
-                android:layout_height="@dimen/dimen_85_dp"
-                android:layout_below="@+id/collage"
-                android:layout_alignStart="@+id/collage"
-                android:layout_alignBottom="@+id/find"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="@dimen/dimen_10_dp"
-                android:background="#c4ca20"
-                android:text="Branches" />
+        <View
+            android:id="@+id/divider_1"
+            style="@style/divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_find" />
 
-        </RelativeLayout>
+        <Button
+            android:id="@+id/btn_university"
+            style="@style/hs_btn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_85_dp"
+            android:layout_marginTop="@dimen/dimen_10_dp"
+            android:layout_marginEnd="@dimen/dimen_10_dp"
+            android:background="#27b5f7"
+            android:text="Universities"
+            app:layout_constraintEnd_toStartOf="@id/btn_help_centers"
+            app:layout_constraintHorizontal_weight="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_1" />
 
-        <View style="@style/hw.view" />
+        <Button
+            android:id="@+id/btn_help_centers"
+            style="@style/hs_btn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_85_dp"
+            android:layout_marginTop="@dimen/dimen_10_dp"
+            android:background="#2e238c"
+            android:text="Help Center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="0.5"
+            app:layout_constraintStart_toEndOf="@id/btn_university"
+            app:layout_constraintTop_toBottomOf="@id/divider_1" />
 
-        <RelativeLayout style="@style/relative_layout_home_screen">
+        <Button
+            android:id="@+id/btn_bank"
+            style="@style/hs_btn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_85_dp"
+            android:layout_marginTop="@dimen/dimen_10_dp"
+            android:background="#c7205a"
+            android:text="Bank Branch"
+            app:layout_constraintEnd_toEndOf="@id/btn_university"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_university" />
 
-            <Button
-                android:id="@+id/university"
-                style="@style/ButtonBarAll"
-                android:layout_width="@dimen/dimen_120_dp"
-                android:layout_height="@dimen/dimen_85_dp"
-                android:background="#27b5f7"
-                android:text="Universities" />
+        <View
+            android:id="@+id/divider_2"
+            style="@style/divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_bank" />
 
-            <Button
-                android:id="@+id/help"
-                style="@style/ButtonBarAll"
-                android:layout_width="@dimen/dimen_180_dp"
-                android:layout_height="@dimen/dimen_85_dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="@dimen/dimen_10_dp"
-                android:layout_toEndOf="@+id/university"
-                android:background="#2e238c"
-                android:text="Help Center" />
+        <Button
+            android:id="@+id/btn_developer"
+            style="@style/hs_btn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_180_dp"
+            android:layout_marginTop="@dimen/dimen_10_dp"
+            android:background="#ff8740"
+            android:text="Developer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_2" />
 
-            <Button
-                android:id="@+id/bank"
-                style="@style/ButtonBarAll"
-                android:layout_width="@dimen/dimen_200_dp"
-                android:layout_height="@dimen/dimen_85_dp"
-                android:layout_below="@id/university"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentBottom="false"
-                android:layout_marginTop="@dimen/dimen_10_dp"
-                android:background="#c7205a"
-                android:text="Bank Branch" />
+        <View
+            android:id="@+id/divider_3"
+            style="@style/divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_developer" />
 
-        </RelativeLayout>
+        <Button
+            android:id="@+id/btn_scholarship"
+            style="@style/hs_btn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_160_dp"
+            android:layout_marginTop="@dimen/dimen_10_dp"
+            android:background="#0a532b"
+            android:text="Scholarship"
+            app:layout_constraintEnd_toStartOf="@id/btn_qa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_3" />
 
-        <View style="@style/hw.view" />
+        <Button
+            android:id="@+id/btn_qa"
+            style="@style/hs_btn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_85_dp"
+            android:layout_marginStart="@dimen/dimen_10_dp"
+            android:layout_marginTop="@dimen/dimen_10_dp"
+            android:background="#504332"
+            android:text="Q&amp;A"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_scholarship"
+            app:layout_constraintTop_toBottomOf="@id/divider_3" />
 
-        <RelativeLayout style="@style/relative_layout_home_screen">
+        <View
+            android:id="@+id/divider_4"
+            style="@style/divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_scholarship" />
 
-            <Button
-                android:id="@+id/developer"
-                style="@style/ButtonBarAll"
-                android:layout_width="@dimen/dimen_180_dp"
-                android:layout_height="@dimen/dimen_180_dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:background="#ff8740"
-                android:text="Developer" />
+        <Button
+            android:id="@+id/btn_admission"
+            style="@style/hs_btn"
+            android:layout_width="@dimen/dimen_0_dp"
+            android:layout_height="@dimen/dimen_85_dp"
+            android:layout_marginTop="@dimen/dimen_10_dp"
+            android:background="#66bf18"
+            android:text="Admission Step"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_4" />
 
-        </RelativeLayout>
+        <Button
+            android:id="@+id/btn_2"
+            style="@style/hs_btn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_85_dp"
+            android:layout_marginTop="@dimen/dimen_10_dp"
+            android:background="#cc4b75"
+            android:text="Button 2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_admission" />
 
-        <View style="@style/hw.view" />
+        <Button
+            android:id="@+id/btn_3"
+            style="@style/hs_btn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_85_dp"
+            android:layout_marginStart="@dimen/dimen_10_dp"
+            android:layout_marginTop="@dimen/dimen_10_dp"
+            android:background="#972697"
+            android:text="Button 3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_2"
+            app:layout_constraintTop_toBottomOf="@id/btn_admission" />
 
-        <RelativeLayout style="@style/relative_layout_home_screen">
+        <View
+            android:id="@+id/divider_5"
+            style="@style/divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_3" />
 
-            <Button
-                android:id="@+id/scholarship"
-                style="@style/ButtonBarAll"
-                android:layout_width="@dimen/dimen_180_dp"
-                android:layout_height="@dimen/dimen_160_dp"
-                android:layout_alignParentStart="true"
-                android:background="#0a532b"
-                android:text="Scholarship" />
+        <Button
+            android:id="@+id/btn_4"
+            style="@style/hs_btn"
+            android:layout_width="230dp"
+            android:layout_height="@dimen/dimen_85_dp"
+            android:layout_marginTop="@dimen/dimen_10_dp"
+            android:background="#51bc57"
+            android:text="Button 4"
+            app:layout_constraintBottom_toTopOf="@id/btn_5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_5" />
 
-            <Button
-                android:id="@+id/qa"
-                style="@style/ButtonBarAll"
-                android:layout_width="@dimen/dimen_180_dp"
-                android:layout_height="@dimen/dimen_85_dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="@dimen/dimen_10_dp"
-                android:layout_toEndOf="@+id/scholarship"
-                android:background="#504332"
-                android:text="Q&amp;A" />
+        <Button
+            android:id="@+id/btn_5"
+            style="@style/hs_btn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_85_dp"
+            android:layout_marginTop="@dimen/dimen_10_dp"
+            android:layout_marginEnd="@dimen/dimen_10_dp"
+            android:background="#13b3c1"
+            android:text="Button 5"
+            app:layout_constraintEnd_toStartOf="@id/btn_6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_4" />
 
-        </RelativeLayout>
+        <Button
+            android:id="@+id/btn_6"
+            style="@style/hs_btn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_85_dp"
+            android:layout_marginTop="@dimen/dimen_10_dp"
+            android:background="#6e30e4"
+            android:text="Button 6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_4" />
 
-        <View style="@style/hw.view" />
+        <View
+            android:id="@+id/divider_6"
+            style="@style/divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_6" />
 
-        <RelativeLayout style="@style/relative_layout_home_screen">
+        <Button
+            android:id="@+id/btn_aij"
+            style="@style/hs_btn"
+            android:layout_width="@dimen/dimen_0_dp"
+            android:layout_height="@dimen/dimen_150_dp"
+            android:layout_marginTop="@dimen/dimen_10_dp"
+            android:background="@color/blue"
+            android:text="AIJ"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_6" />
 
-            <Button
-                android:id="@+id/webAdmissionView2"
-                style="@style/ButtonBarAll"
-                android:layout_width="@dimen/dimen_0_dp"
-                android:layout_height="@dimen/dimen_85_dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:background="#66bf18"
-                android:text="Admission Step" />
+        <View
+            android:id="@+id/divider_7"
+            style="@style/divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_aij" />
 
-            <Button
-                android:id="@+id/new2"
-                style="@style/ButtonBarAll"
-                android:layout_width="@dimen/dimen_90_dp"
-                android:layout_height="@dimen/dimen_85_dp"
-                android:layout_below="@+id/webAdmissionView2"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="@dimen/dimen_10_dp"
-                android:layout_toStartOf="@+id/new3"
-                android:background="#cc4b75"
-                android:text="Button 2" />
+        <Button
+            android:id="@+id/btn_students"
+            style="@style/hs_btn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_85_dp"
+            android:layout_marginTop="@dimen/dimen_10_dp"
+            android:background="#009dff"
+            android:text="Students"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_7" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <Button
-                android:id="@+id/new3"
-                style="@style/ButtonBarAll"
-                android:layout_width="@dimen/dimen_180_dp"
-                android:layout_height="@dimen/dimen_85_dp"
-                android:layout_below="@+id/webAdmissionView2"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="@dimen/dimen_10_dp"
-                android:layout_marginTop="@dimen/dimen_10_dp"
-                android:background="#972697"
-                android:text="Button 3" />
+    <!--    <LinearLayout-->
+    <!--        style="@style/ll"-->
+    <!--        android:orientation="vertical">-->
+    <!--        -->
+    <!--        &lt;!&ndash;        <RelativeLayout style="@style/ll_pad">&ndash;&gt;-->
 
-        </RelativeLayout>
+    <!--        &lt;!&ndash;            <Button&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:id="@+id/btn_find"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                style="@style/hs_btn"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_width="@dimen/dimen_180_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_height="@dimen/dimen_180_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_alignParentStart="true"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_marginEnd="@dimen/dimen_10_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:background="#354cd7"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:text="Search" />&ndash;&gt;-->
 
-        <View style="@style/hw.view" />
+    <!--        &lt;!&ndash;            <Button&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:id="@+id/btn_collage"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                style="@style/hs_btn"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_width="@dimen/dimen_90_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_height="@dimen/dimen_85_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_alignTop="@id/btn_find"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_alignParentEnd="true"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_toEndOf="@id/btn_find"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:background="#2db600"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:text="Collages" />&ndash;&gt;-->
 
-        <RelativeLayout style="@style/relative_layout_home_screen">
+    <!--        &lt;!&ndash;            <Button&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:id="@+id/btn_branches"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                style="@style/hs_btn"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_width="@dimen/dimen_90_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_height="@dimen/dimen_85_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_below="@+id/btn_collage"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_alignStart="@+id/btn_collage"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_alignBottom="@+id/btn_find"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_alignParentEnd="true"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_marginTop="@dimen/dimen_10_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:background="#c4ca20"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:text="Branches" />&ndash;&gt;-->
+    <!--        &lt;!&ndash;        </RelativeLayout>&ndash;&gt;-->
 
-            <Button
-                android:id="@+id/new4"
-                style="@style/ButtonBarAll"
-                android:layout_width="@dimen/dimen_180_dp"
-                android:layout_height="@dimen/dimen_85_dp"
-                android:layout_alignParentEnd="true"
-                android:background="#51bc57"
-                android:text="Button 4" />
+    <!--        &lt;!&ndash;        <View style="@style/divider" />&ndash;&gt;-->
 
-            <Button
-                android:id="@+id/new5"
-                style="@style/ButtonBarAll"
-                android:layout_width="@dimen/dimen_180_dp"
-                android:layout_height="@dimen/dimen_85_dp"
-                android:layout_below="@id/new4"
-                android:layout_alignStart="@+id/new4"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="@dimen/dimen_10_dp"
-                android:background="#13b3c1"
-                android:text="Button 5" />
+    <!--        &lt;!&ndash;        <RelativeLayout style="@style/ll_pad">&ndash;&gt;-->
 
-            <Button
-                android:id="@+id/new6"
-                style="@style/ButtonBarAll"
-                android:layout_width="@dimen/dimen_110_dp"
-                android:layout_height="@dimen/dimen_85_dp"
-                android:layout_alignBottom="@+id/new5"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="@dimen/dimen_10_dp"
-                android:background="#6e30e4"
-                android:text="Button 6" />
+    <!--        &lt;!&ndash;            <Button&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:id="@+id/btn_university"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                style="@style/hs_btn"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_width="@dimen/dimen_120_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_height="@dimen/dimen_85_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:background="#27b5f7"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:text="Universities" />&ndash;&gt;-->
 
-        </RelativeLayout>
+    <!--        &lt;!&ndash;            <Button&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:id="@+id/btn_help_centers"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                style="@style/hs_btn"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_width="@dimen/dimen_180_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_height="@dimen/dimen_85_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_alignParentEnd="true"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_marginStart="@dimen/dimen_10_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_toEndOf="@+id/btn_university"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:background="#2e238c"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:text="Help Center" />&ndash;&gt;-->
 
-        <View style="@style/hw.view" />
+    <!--        &lt;!&ndash;            <Button&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:id="@+id/btn_bank"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                style="@style/hs_btn"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_width="@dimen/dimen_200_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_height="@dimen/dimen_85_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_below="@id/btn_university"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_alignParentStart="true"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_alignParentBottom="false"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_marginTop="@dimen/dimen_10_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:background="#c7205a"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:text="Bank Branch" />&ndash;&gt;-->
+    <!--        &lt;!&ndash;        </RelativeLayout>&ndash;&gt;-->
 
-        <RelativeLayout style="@style/relative_layout_home_screen">
+    <!--        &lt;!&ndash;        <View style="@style/divider" />&ndash;&gt;-->
 
-            <Button
-                android:id="@+id/new7"
-                style="@style/ButtonBarAll"
-                android:layout_width="@dimen/dimen_0_dp"
-                android:layout_height="@dimen/dimen_150_dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:background="@color/background_tint_action_bar"
-                android:text="AIJ" />
+    <!--        &lt;!&ndash;        <RelativeLayout style="@style/ll_pad">&ndash;&gt;-->
 
-        </RelativeLayout>
+    <!--        &lt;!&ndash;            <Button&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:id="@+id/btn_developer"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                style="@style/hs_btn"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_width="@dimen/dimen_180_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_height="@dimen/dimen_180_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_alignParentStart="true"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_alignParentEnd="true"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:background="#ff8740"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:text="Developer" />&ndash;&gt;-->
+    <!--        &lt;!&ndash;        </RelativeLayout>&ndash;&gt;-->
 
-        <View style="@style/hw.view" />
+    <!--        &lt;!&ndash;        <View style="@style/divider" />&ndash;&gt;-->
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp">
+    <!--        &lt;!&ndash;        <RelativeLayout style="@style/ll_pad">&ndash;&gt;-->
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab_backup_go"
-                style="@style/fab_home_screen"
-                android:layout_alignParentStart="true"
-                android:src="@drawable/ic_cloud_upload_black_24dp"
-                app:backgroundTint="@color/background_tint_action_bar"
-                app:fabSize="normal" />
+    <!--        &lt;!&ndash;            <Button&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:id="@+id/btn_scholarship"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                style="@style/hs_btn"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_width="@dimen/dimen_180_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_height="@dimen/dimen_160_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_alignParentStart="true"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:background="#0a532b"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:text="Scholarship" />&ndash;&gt;-->
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab_exit_now"
-                style="@style/fab_common_style"
-                android:layout_centerHorizontal="true"
-                android:src="@android:drawable/ic_lock_power_off"
-                android:tint="@color/white"
-                app:backgroundTint="@color/home_fab_1"
-                app:fabSize="normal" />
+    <!--        &lt;!&ndash;            <Button&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:id="@+id/btn_qa"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                style="@style/hs_btn"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_width="@dimen/dimen_180_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_height="@dimen/dimen_85_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_alignParentEnd="true"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_marginStart="@dimen/dimen_10_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_toEndOf="@+id/btn_scholarship"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:background="#504332"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:text="Q&amp;A" />&ndash;&gt;-->
+    <!--        &lt;!&ndash;        </RelativeLayout>&ndash;&gt;-->
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab_restore_go"
-                style="@style/fab_common_style"
-                android:layout_alignParentEnd="true"
-                android:src="@drawable/ic_cloud_download_black_24dp"
-                app:backgroundTint="@color/home_fab_2"
-                app:fabSize="normal" />
+    <!--        &lt;!&ndash;        <View style="@style/divider" />&ndash;&gt;-->
 
-        </RelativeLayout>
+    <!--        &lt;!&ndash;        <RelativeLayout style="@style/ll_pad">&ndash;&gt;-->
 
-        <View style="@style/hw.view" />
+    <!--        &lt;!&ndash;            <Button&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:id="@+id/btn_admission"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                style="@style/hs_btn"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_width="@dimen/dimen_0_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_height="@dimen/dimen_85_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_alignParentStart="true"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_alignParentEnd="true"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:background="#66bf18"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:text="Admission Step" />&ndash;&gt;-->
 
-        <RelativeLayout style="@style/relative_layout_home_screen">
+    <!--        &lt;!&ndash;            <Button&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:id="@+id/btn_2"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                style="@style/hs_btn"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_width="@dimen/dimen_90_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_height="@dimen/dimen_85_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_below="@+id/btn_admission"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_alignParentStart="true"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_marginTop="@dimen/dimen_10_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_toStartOf="@+id/btn_3"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:background="#cc4b75"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:text="Button 2" />&ndash;&gt;-->
 
-            <Button
-                android:id="@+id/student_corner"
-                style="@style/ButtonBarAll"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_85_dp"
-                android:background="#009dff"
-                android:text="Students" />
+    <!--        &lt;!&ndash;            <Button&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:id="@+id/btn_3"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                style="@style/hs_btn"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_width="@dimen/dimen_180_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_height="@dimen/dimen_85_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_below="@+id/btn_admission"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_alignParentEnd="true"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_marginStart="@dimen/dimen_10_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_marginTop="@dimen/dimen_10_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:background="#972697"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:text="Button 3" />&ndash;&gt;-->
+    <!--        &lt;!&ndash;        </RelativeLayout>&ndash;&gt;-->
 
-        </RelativeLayout>
+    <!--        &lt;!&ndash;        <View style="@style/divider" />&ndash;&gt;-->
 
-    </LinearLayout>
+    <!--        &lt;!&ndash;        <RelativeLayout style="@style/ll_pad">&ndash;&gt;-->
 
+    <!--        &lt;!&ndash;            <Button&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:id="@+id/btn_4"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                style="@style/hs_btn"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_width="@dimen/dimen_180_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_height="@dimen/dimen_85_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_alignParentEnd="true"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:background="#51bc57"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:text="Button 4" />&ndash;&gt;-->
+
+    <!--        &lt;!&ndash;            <Button&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:id="@+id/btn_5"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                style="@style/hs_btn"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_width="@dimen/dimen_180_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_height="@dimen/dimen_85_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_below="@id/btn_4"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_alignStart="@+id/btn_4"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_alignParentStart="true"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_marginTop="@dimen/dimen_10_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:background="#13b3c1"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:text="Button 5" />&ndash;&gt;-->
+
+    <!--        &lt;!&ndash;            <Button&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:id="@+id/btn_6"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                style="@style/hs_btn"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_width="@dimen/dimen_110_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_height="@dimen/dimen_85_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_alignBottom="@+id/btn_5"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_alignParentEnd="true"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_marginTop="@dimen/dimen_10_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:background="#6e30e4"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:text="Button 6" />&ndash;&gt;-->
+    <!--        &lt;!&ndash;        </RelativeLayout>&ndash;&gt;-->
+
+    <!--        &lt;!&ndash;        <View style="@style/divider" />&ndash;&gt;-->
+
+    <!--        &lt;!&ndash;        <RelativeLayout style="@style/ll_pad">&ndash;&gt;-->
+
+    <!--        &lt;!&ndash;            <Button&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:id="@+id/btn_aij"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                style="@style/hs_btn"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_width="@dimen/dimen_0_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_height="@dimen/dimen_150_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_alignParentStart="true"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_alignParentEnd="true"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:background="@color/blue"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:text="AIJ" />&ndash;&gt;-->
+    <!--        &lt;!&ndash;        </RelativeLayout>&ndash;&gt;-->
+
+    <!--        &lt;!&ndash;        <View style="@style/divider" />&ndash;&gt;-->
+
+    <!--        &lt;!&ndash;        <RelativeLayout style="@style/ll_pad">&ndash;&gt;-->
+
+    <!--        &lt;!&ndash;            <Button&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:id="@+id/btn_students"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                style="@style/hs_btn"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_height="@dimen/dimen_85_dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:background="#009dff"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:text="Students" />&ndash;&gt;-->
+    <!--        &lt;!&ndash;        </RelativeLayout>&ndash;&gt;-->
+    <!--    </LinearLayout>-->
 </ScrollView>

@@ -3,12 +3,12 @@ package me.mitul.aij.helper
 import android.content.Context
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper
 import me.mitul.aij.model.Branch
-import me.mitul.aij.utils.Constants
+import me.mitul.aij.utils.Consts
 
 class HelperBranch(context: Context?) : SQLiteAssetHelper(
-    context, Constants.DB_NAME, Constants.DB_PATH, null, Constants.DB_VERSION
+    context, Consts.DB_NAME, Consts.DB_PATH, null, Consts.DB_VERSION
 ) {
-    fun selectAllBranch(): ArrayList<Branch> {
+    fun getAllBranches(): ArrayList<Branch> {
         val list = ArrayList<Branch>()
         val database = getReadableDatabase()
         val cursor = database.rawQuery(
@@ -16,25 +16,24 @@ class HelperBranch(context: Context?) : SQLiteAssetHelper(
             null
         )
         if (cursor.moveToFirst()) do {
-            val branch = Branch()
-            branch.branchId = cursor.getInt(cursor.getColumnIndex("BranchID"))
-            branch.branchName = cursor
-                .getString(cursor.getColumnIndex("BranchName")) + "(" +
-                    cursor.getString(cursor.getColumnIndex("BranchShortName")) + ")"
+            val id = cursor.getInt(cursor.getColumnIndex("BranchID"))
             val cursor1 = database.rawQuery(
-                "SELECT CollegeID FROM INS_Cutoff WHERE BranchID = " + branch.branchId + ";",
-                null
+                "SELECT CollegeID FROM INS_Cutoff WHERE BranchID = $id;", null
             )
             if (cursor1.moveToFirst()) {
                 var count = 0
                 do count++ while (cursor1.moveToNext())
-                branch.collegeNumber = count
+
+                list += Branch(
+                    id = id, collegeNumber = count,
+                    name = cursor.getString(cursor.getColumnIndex("BranchName")) + "(" +
+                            cursor.getString(cursor.getColumnIndex("BranchShortName")) + ")",
+                )
             }
             cursor1.close()
-            list.add(branch)
         } while (cursor.moveToNext())
+
         cursor.close()
-        database.close()
         return list
     }
 }

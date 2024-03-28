@@ -16,7 +16,6 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import me.mitul.aij.R
 import me.mitul.aij.helper.HelperRegistration
-import me.mitul.aij.home.HomeScreenActivity
 import me.mitul.aij.utils.Consts
 import kotlin.coroutines.EmptyCoroutineContext
 
@@ -105,7 +104,7 @@ class RegisterActivity : Activity() {
             try {
                 delay(timeMillis = 2000L)
                 val deviceId =
-                    Settings.System.getString(contentResolver, Settings.Secure.ANDROID_ID)
+                    Settings.Secure.getString(contentResolver, Settings.Secure.ANDROID_ID)
                 val status = dbHelper.register(username, email, phone, city, password, deviceId)
                 if (status != -1L) {
                     intentLogin.putExtra(Consts.KEY_IS_REGISTERED, true)

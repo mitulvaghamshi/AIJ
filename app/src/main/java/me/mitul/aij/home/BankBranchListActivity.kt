@@ -6,31 +6,35 @@ import android.view.View
 import android.widget.EditText
 import android.widget.ExpandableListView
 import me.mitul.aij.R
-import me.mitul.aij.adapter.AdapterExpandableList
+import me.mitul.aij.adapter.AdapterCommon
 import me.mitul.aij.helper.HelperBankBranch
 import me.mitul.aij.model.Common
-import me.mitul.aij.utils.ArrayListOps
+import me.mitul.aij.utils.ListOps
 import me.mitul.aij.utils.MyTextWatcher
 
 class BankBranchListActivity : Activity() {
+    private val dbHelper = HelperBankBranch(this)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_common_listview)
-        findViewById<View>(R.id.common_listview).visibility = View.GONE
 
-        val mDbHelper = HelperBankBranch(this)
-        val list = mDbHelper.selectCityForBankBranch()
-        val bankBranchMap = HashMap<String, List<Common>>()
-        for (name in list) bankBranchMap[name] = ArrayList(mDbHelper.selectBankBranch(name))
+        val cities = dbHelper.selectCityForBankBranch()
+        val branches = HashMap<String, List<Common>>()
+        for (city in cities) branches[city] = dbHelper.getBankBranchesFor(city)
 
-        val listView = findViewById<ExpandableListView>(R.id.expandableListView)
-        listView.visibility = View.VISIBLE
-        listView.setAdapter(AdapterExpandableList(this, list, bankBranchMap))
+        val listView = findViewById<ExpandableListView>(R.id.common_exp_lv).also {
+            it.visibility = View.VISIBLE
+            it.setAdapter(AdapterCommon(this.layoutInflater, cities, branches))
+        }
 
-        findViewById<EditText>(R.id.edSearchCommon).addTextChangedListener(
-            MyTextWatcher(list, object : ArrayListOps<String> {
-                override fun onListSet(list: ArrayList<String>) = listView.setAdapter(
-                    AdapterExpandableList(this@BankBranchListActivity, list, bankBranchMap)
+        findViewById<EditText>(R.id.common_ed_search).addTextChangedListener(
+            MyTextWatcher(cities, object : ListOps<String> {
+                override fun setList(list: List<String>) = listView.setAdapter(
+                    AdapterCommon(
+                        this@BankBranchListActivity.layoutInflater,
+                        list, branches
+                    )
                 )
 
                 override fun getName(item: String) = item

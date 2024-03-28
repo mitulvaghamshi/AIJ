@@ -9,7 +9,7 @@ import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
 import me.mitul.aij.R
 import me.mitul.aij.adapter.AdapterViewPager
-import me.mitul.aij.utils.PlaceHolderFragment.Companion.newInstance
+import me.mitul.aij.utils.FragmentCommon.Companion.newInstance
 
 class HomeScreenAijActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +17,7 @@ class HomeScreenAijActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home_aij)
 
         val drawer = findViewById<DrawerLayout>(R.id.drawer_layout_home_screen_aij)
-        findViewById<NavigationView>(R.id.navigation_drawer_home_screen_aij)?.let {
+        findViewById<NavigationView>(R.id.navigation_drawer_home_screen_aij)?.also {
             it.setNavigationItemSelectedListener { item ->
                 item.setChecked(true)
                 drawer!!.closeDrawers()
@@ -28,17 +28,16 @@ class HomeScreenAijActivity : AppCompatActivity() {
                 true
             }
         }
-        val viewPager = findViewById<ViewPager>(R.id.viewpager_home_screen_aij)
-        viewPager?.let { pager ->
+        val viewPager = findViewById<ViewPager>(R.id.common_viewpager).also { pager ->
             pager.setAdapter(AdapterViewPager(supportFragmentManager).also {
-                it.addFragment(newInstance(1), "Welcome")
-                it.addFragment(newInstance(16), "About")
-                it.addFragment(newInstance(21), "Vision")
-                it.addFragment(newInstance(20), "Mission")
-                it.addFragment(newInstance(22), "Why AIJ")
+                it.add(title = "Welcome", newInstance(1))
+                it.add(title = "About", newInstance(16))
+                it.add(title = "Vision", newInstance(21))
+                it.add(title = "Mission", newInstance(20))
+                it.add(title = "Why AIJ", newInstance(22))
             })
         }
-        (findViewById<TabLayout>(R.id.tabs11)).setupWithViewPager(viewPager)
+        findViewById<TabLayout>(R.id.tabs11).setupWithViewPager(viewPager)
     }
 
     private fun findItemId(id: Int) = when (id) {

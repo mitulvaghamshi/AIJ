@@ -1,7 +1,7 @@
 package me.mitul.aij.helper
 
 import android.os.Environment
-import me.mitul.aij.utils.Constants
+import me.mitul.aij.utils.Consts
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileNotFoundException
@@ -10,7 +10,7 @@ import java.io.IOException
 
 class HelperBackupRestore {
     private val SD_DIR =
-        File(Environment.getExternalStorageDirectory(), Constants.DB_NAME + ".bak")
+        File(Environment.getExternalStorageDirectory(), Consts.DB_NAME + ".bak")
 
     fun exportStudentsProfile(bytes: ByteArray?, name: String?) {
         if (!SD_DIR.exists()) SD_DIR.mkdir()
@@ -27,10 +27,10 @@ class HelperBackupRestore {
     companion object {
         private val sdPresent = Environment.getExternalStorageState() == Environment.MEDIA_MOUNTED
         private val DB_DIR =
-            File(Environment.getExternalStorageDirectory(), Constants.DB_NAME + ".bak")
-        private val IMPORT_FILE = File(DB_DIR, Constants.DB_NAME)
+            File(Environment.getExternalStorageDirectory(), Consts.DB_NAME + ".bak")
+        private val IMPORT_FILE = File(DB_DIR, Consts.DB_NAME)
         private val DATA_DIR_DB =
-            File("${Environment.getDataDirectory()}/${Constants.DB_PATH}/${Constants.DB_NAME}")
+            File("${Environment.getDataDirectory()}/${Consts.DB_PATH}/${Consts.DB_NAME}")
         val isDbExists = IMPORT_FILE.exists()
 
         @JvmStatic

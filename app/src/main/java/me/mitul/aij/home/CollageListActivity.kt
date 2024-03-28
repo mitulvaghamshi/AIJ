@@ -12,52 +12,49 @@ import me.mitul.aij.R
 import me.mitul.aij.adapter.AdapterCollage
 import me.mitul.aij.helper.HelperCollage
 import me.mitul.aij.model.Collage
-import me.mitul.aij.utils.ArrayListOps
+import me.mitul.aij.utils.ListOps
 import me.mitul.aij.utils.MyTextWatcher
 
 class CollageListActivity : Activity() {
+    private val dbHelper = HelperCollage(this)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_common_listview)
-        findViewById<View>(R.id.expandableListView).visibility = View.GONE
 
-        val dbHelper = HelperCollage(this)
-        val list: ArrayList<Collage> =
-            when (intent.getStringExtra("selected_or_all")) {
-                "ALL" -> dbHelper.selectAllCollage()
-
-                "BRANCH" -> dbHelper.selectBranchWiseCollage(
-                    intent.getStringExtra("id_branch_collage")
-                )
-
-                "UNIVERSITY" -> dbHelper.selectUniversityWiseCollage(
-                    intent.getStringExtra("id_to_find_university")
-                )
-
-                else -> ArrayList()
-            }
-
-        val listview = findViewById<ListView>(R.id.common_listview)
-        listview.visibility = View.VISIBLE
-        listview.setAdapter(AdapterCollage(this, list))
-        listview.isTextFilterEnabled = true
-        listview.onItemClickListener = OnItemClickListener { _, view, _, _ ->
-            startActivity(
-                Intent(this, DetailCollageActivity::class.java)
-                    .putExtra(
-                        "id_to_find",
-                        (view.findViewById<TextView>(R.id.collage_list_item_collage_id))
-                            .getText().toString()
-                    )
+        val collages = when (intent.getStringExtra("selected_or_all")) {
+            "ALL" -> dbHelper.getAllCollage()
+            "BRANCH" -> dbHelper.getCollageForBranch(intent.getStringExtra("id_branch_collage"))
+            "UNIVERSITY" -> dbHelper.getCollageForUniversity(
+                intent.getStringExtra("id_to_find_university")
             )
+
+            else -> ArrayList()
         }
 
-        findViewById<EditText>(R.id.edSearchCommon).addTextChangedListener(
-            MyTextWatcher(list, object : ArrayListOps<Collage> {
-                override fun onListSet(list: ArrayList<Collage>) =
-                    listview.setAdapter(AdapterCollage(this@CollageListActivity, list))
+        val listview = findViewById<ListView>(R.id.common_lv).also {
+            it.visibility = View.VISIBLE
+            it.isTextFilterEnabled = true
+            it.setAdapter(AdapterCollage(this.layoutInflater, collages))
+            it.onItemClickListener = OnItemClickListener { _, view, _, _ ->
+                startActivity(
+                    Intent(this, DetailCollageActivity::class.java)
+                        .putExtra(
+                            "id_to_find",
+                            view.findViewById<TextView>(R.id.cl_li_id)
+                                .getText().toString()
+                        )
+                )
+            }
+        }
 
-                override fun getName(item: Collage) = item.collageName!!
+        findViewById<EditText>(R.id.common_ed_search).addTextChangedListener(
+            MyTextWatcher(collages, object : ListOps<Collage> {
+                override fun setList(list: List<Collage>) = listview.setAdapter(
+                    AdapterCollage(this@CollageListActivity.layoutInflater, list)
+                )
+
+                override fun getName(item: Collage) = item.name!!
             })
         )
     }

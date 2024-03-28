@@ -18,6 +18,8 @@ object Consts {
 
     const val KEY_IS_REGISTERED = "is_registered"
 
+    const val KEY_FRAG_ID_ARG = "fragment_id_arg"
+
     var splashColors = intArrayOf(
         Color.BLACK,
         Color.BLUE,

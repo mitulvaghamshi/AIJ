@@ -2,10 +2,10 @@ package me.mitul.aij.helper
 
 import android.content.Context
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper
-import me.mitul.aij.utils.Constants
+import me.mitul.aij.utils.Consts
 
 class HelperAijExplorer(context: Context?) : SQLiteAssetHelper(
-    context, Constants.DB_NAME, Constants.DB_PATH, null, Constants.DB_VERSION
+    context, Consts.DB_NAME, Consts.DB_PATH, null, Consts.DB_VERSION
 ) {
     fun selectHeader(id: Int): String {
         val database = getReadableDatabase()

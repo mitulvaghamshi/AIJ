@@ -12,39 +12,40 @@ import me.mitul.aij.R
 import me.mitul.aij.adapter.AdapterBranch
 import me.mitul.aij.helper.HelperBranch
 import me.mitul.aij.model.Branch
-import me.mitul.aij.utils.ArrayListOps
+import me.mitul.aij.utils.ListOps
 import me.mitul.aij.utils.MyTextWatcher
 
 class BranchListActivity : Activity() {
+    private val dbHelper = HelperBranch(this)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_common_listview)
-        findViewById<View>(R.id.expandableListView).visibility = View.GONE
 
-        val dbHelper = HelperBranch(this)
-        val branches = dbHelper.selectAllBranch()
-        val listview = findViewById<ListView>(R.id.common_listview)
-        listview.visibility = View.VISIBLE
-        listview.setAdapter(AdapterBranch(this, branches))
-        listview.isTextFilterEnabled = true
-        listview.onItemClickListener = OnItemClickListener { _, view, _, _ ->
-            startActivity(
-                Intent(this, CollageListActivity::class.java)
-                    .putExtra("selected_or_all", "BRANCH")
-                    .putExtra(
-                        "id_branch_collage",
-                        (view.findViewById<TextView>(R.id.branch_list_item_branch_id)).getText()
-                            .toString()
-                    )
-            )
+        val branches = dbHelper.getAllBranches()
+        val listview = findViewById<ListView>(R.id.common_lv).also {
+            it.visibility = View.VISIBLE
+            it.isTextFilterEnabled = true
+            it.setAdapter(AdapterBranch(this.layoutInflater, branches))
+            it.onItemClickListener = OnItemClickListener { _, view, _, _ ->
+                startActivity(
+                    Intent(this, CollageListActivity::class.java)
+                        .putExtra("selected_or_all", "BRANCH")
+                        .putExtra(
+                            "id_branch_collage",
+                            view.findViewById<TextView>(R.id.b_li_id)
+                                .getText().toString()
+                        )
+                )
+            }
         }
 
-        findViewById<EditText>(R.id.edSearchCommon).addTextChangedListener(
-            MyTextWatcher(branches, object : ArrayListOps<Branch> {
-                override fun onListSet(list: ArrayList<Branch>) =
-                    listview.setAdapter(AdapterBranch(this@BranchListActivity, list))
+        findViewById<EditText>(R.id.common_ed_search).addTextChangedListener(
+            MyTextWatcher(branches, object : ListOps<Branch> {
+                override fun setList(list: List<Branch>) =
+                    listview.setAdapter(AdapterBranch(this@BranchListActivity.layoutInflater, list))
 
-                override fun getName(item: Branch) = item.branchName!!
+                override fun getName(item: Branch) = item.name!!
             })
         )
     }

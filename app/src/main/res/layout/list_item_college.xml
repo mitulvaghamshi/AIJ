@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ll"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/ll_pad"
+        android:background="@drawable/row_button_bar"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/cl_li_id"
+            android:layout_width="@dimen/dimen_0_dp"
+            android:layout_height="@dimen/dimen_0_dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/cl_li_name"
+            style="@style/ll"
+            android:textStyle="bold" />
+
+        <LinearLayout style="@style/ll">
+
+            <TextView
+                android:id="@+id/cl_li_fees"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5" />
+
+            <TextView
+                android:id="@+id/cl_li_hostel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/cl_li_branches"
+            style="@style/ll" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_10_dp"
+        android:background="@android:color/white" />
+</LinearLayout>

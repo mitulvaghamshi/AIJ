@@ -1,114 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/common_fragment_aij"
-    android:padding="@dimen/dimen_10_dp">
+    style="@style/detail_scrollview">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/ll"
         android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/ll_pad"
             android:layout_marginBottom="@dimen/dimen_10_dp"
-            android:background="@drawable/bg_bl_wh"
-            android:orientation="horizontal"
-            android:padding="@dimen/dimen_10_dp">
+            android:background="@drawable/img_header_bg">
 
             <TextView
-                android:id="@+id/university_detail_tv_university_shortname"
-                style="@style/detail_collage_ll_textview_horizontal"
+                android:id="@+id/ud_tv_initials"
+                style="@style/tv_inline"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:textColor="@color/white"
+                android:textColor="@android:color/white"
                 android:typeface="serif" />
-
-            <TextView
-                android:id="@+id/university_detail_tv_university_id"
-                android:layout_width="@dimen/dimen_0_dp"
-                android:layout_height="@dimen/dimen_0_dp"
-                android:visibility="gone" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/ll"
             android:layout_marginBottom="@dimen/dimen_10_dp"
-            android:background="@color/white"
+            android:background="@android:color/white"
             android:orientation="vertical">
 
-            <LinearLayout style="@style/detail_collage_ll">
+            <LinearLayout style="@style/ll_pad">
 
-                <TextView style="@style/detail_collage_ll_textview_pin" />
+                <View style="@style/detail_pin" />
 
                 <TextView
-                    android:id="@+id/university_detail_tv_university_full_name"
-                    style="@style/detail_collage_ll_textview" />
+                    android:id="@+id/ud_tv_full_name"
+                    style="@style/detail_tv" />
             </LinearLayout>
 
-            <LinearLayout style="@style/detail_collage_ll">
+            <LinearLayout style="@style/ll_pad">
 
-                <TextView style="@style/detail_collage_ll_textview_pin" />
+                <View style="@style/detail_pin" />
 
                 <TextView
-                    android:id="@+id/university_detail_tv_university_address"
-                    style="@style/detail_collage_ll_textview" />
+                    android:id="@+id/ud_tv_address"
+                    style="@style/detail_tv" />
             </LinearLayout>
 
-            <LinearLayout style="@style/detail_collage_ll">
+            <LinearLayout style="@style/ll_pad">
 
-                <TextView style="@style/detail_collage_ll_textview_pin" />
+                <TextView style="@style/detail_pin" />
 
                 <TextView
-                    android:id="@+id/university_detail_tv_university_phone"
-                    style="@style/detail_collage_ll_textview" />
+                    android:id="@+id/ud_tv_phone"
+                    style="@style/detail_tv" />
             </LinearLayout>
 
-            <LinearLayout style="@style/detail_collage_ll">
+            <LinearLayout style="@style/ll_pad">
 
-                <TextView style="@style/detail_collage_ll_textview_pin" />
+                <TextView style="@style/detail_pin" />
 
                 <TextView
-                    android:id="@+id/university_detail_tv_university_website"
-                    style="@style/detail_collage_ll_textview" />
+                    android:id="@+id/ud_tv_website"
+                    style="@style/detail_tv" />
             </LinearLayout>
 
-            <LinearLayout style="@style/detail_collage_ll">
+            <LinearLayout style="@style/ll_pad">
 
-                <TextView style="@style/detail_collage_ll_textview_pin" />
+                <TextView style="@style/detail_pin" />
 
                 <TextView
-                    android:id="@+id/university_detail_tv_university_email"
-                    style="@style/detail_collage_ll_textview" />
+                    android:id="@+id/ud_tv_email"
+                    style="@style/detail_tv" />
             </LinearLayout>
 
-            <LinearLayout style="@style/detail_collage_ll">
+            <LinearLayout style="@style/ll_pad">
 
-                <TextView style="@style/detail_collage_ll_textview_pin" />
+                <TextView style="@style/detail_pin" />
 
                 <TextView
-                    style="@style/detail_collage_ll_textview_horizontal"
+                    style="@style/tv_inline"
                     android:layout_weight="0.2"
                     android:text="Type:" />
 
                 <TextView
-                    android:id="@+id/university_detail_tv_university_type"
-                    style="@style/detail_collage_ll_textview_horizontal"
+                    android:id="@+id/ud_tv_type"
+                    style="@style/tv_inline"
                     android:layout_weight="0.8" />
             </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout style="@style/hw">
+        <LinearLayout style="@style/ll">
 
             <Button
-                android:id="@+id/university_detail_tv_university_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/row_button_pressed"
-                android:padding="@dimen/dimen_10_dp"
-                android:textColor="@color/black"
-                android:textSize="@dimen/dimen_20_sp"
+                android:id="@+id/ud_btn_collages"
+                style="@style/ll_pad"
+                android:background="@color/orange"
+                android:textColor="@android:color/black"
                 android:textStyle="bold"
                 android:typeface="serif" />
         </LinearLayout>

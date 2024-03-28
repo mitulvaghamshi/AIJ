@@ -3,6 +3,7 @@ package me.mitul.aij.helper
 import android.content.ContentValues
 import android.content.Context
 import androidx.core.database.getIntOrNull
+import androidx.core.database.getStringOrNull
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper
 import me.mitul.aij.utils.Consts
 import java.text.SimpleDateFormat
@@ -13,7 +14,9 @@ class HelperRegistration(val context: Context?) : SQLiteAssetHelper(
     context, Consts.DB_NAME, Consts.DB_PATH, null, Consts.DB_VERSION
 ) {
     private object Keys {
-        const val DB_TBL_NAME = "Registration"
+        const val DB_TBL_LOGIN = "User"
+
+        const val DB_TBL_REGISTRATION = "Registration"
         const val DB_COL_USER_ID = "user_id"
         const val DB_COL_USERNAME = "username"
         const val DB_COL_EMAIL = "email"
@@ -22,6 +25,7 @@ class HelperRegistration(val context: Context?) : SQLiteAssetHelper(
         const val DB_COL_PASSWORD = "password"
         const val DB_COL_DEVICE_ID = "device_id"
         const val DB_COL_DATE_CREATED = "date_created"
+
         const val DATE_FORMAT = "dd-MM-yyyy"
     }
 
@@ -34,13 +38,18 @@ class HelperRegistration(val context: Context?) : SQLiteAssetHelper(
         deviceId: String,
     ): Long {
         val cursor = readableDatabase.query(
-            Keys.DB_TBL_NAME, null,
-            "${Keys.DB_COL_USERNAME}= ? AND ${Keys.DB_COL_PASSWORD} = ?",
+            Keys.DB_TBL_LOGIN, null,
+            "${Keys.DB_COL_USERNAME} = ? AND ${Keys.DB_COL_PASSWORD} = ?",
             arrayOf(username, password), null, null, null
         )
-        if (cursor.count < 0) return -1L
+        if (cursor.count > 0 && cursor.moveToFirst() &&
+            cursor.getStringOrNull(cursor.getColumnIndex(Keys.DB_COL_USERNAME)) == username &&
+            cursor.getStringOrNull(cursor.getColumnIndex(Keys.DB_COL_PASSWORD)) == password
+        ) return -1L
 
-        val id = (cursor.getIntOrNull(cursor.getColumnIndex(Keys.DB_COL_USER_ID)) ?: 0) + 1
+        val id = if (cursor.count <= 0) 0 else {
+            (cursor.getIntOrNull(cursor.getColumnIndex(Keys.DB_COL_USER_ID)) ?: 0) + 1
+        }
         val now = SimpleDateFormat(Keys.DATE_FORMAT, Locale.ENGLISH).format(Date())
         cursor.close()
 
@@ -53,7 +62,7 @@ class HelperRegistration(val context: Context?) : SQLiteAssetHelper(
             it.put(Keys.DB_COL_DATE_CREATED, now)
         }
 
-        val status = writableDatabase.insert(Keys.DB_TBL_NAME, null, values)
+        val status = writableDatabase.insert(Keys.DB_TBL_REGISTRATION, null, values)
         if (status == -1L) return status
         return insertUser(id, username, password)
     }
@@ -64,6 +73,6 @@ class HelperRegistration(val context: Context?) : SQLiteAssetHelper(
             it.put(Keys.DB_COL_USERNAME, username)
             it.put(Keys.DB_COL_PASSWORD, password)
         }
-        return writableDatabase.insert(Keys.DB_TBL_NAME, null, values)
+        return writableDatabase.insert(Keys.DB_TBL_LOGIN, null, values)
     }
 }

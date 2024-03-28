@@ -21,7 +21,7 @@ class AdapterBranch(
     override fun getView(index: Int, view: View?, viewGroup: ViewGroup): View {
         var row = view
         if (row == null) {
-            row = inflater.inflate(R.layout.branch_list_listview_items, null)
+            row = inflater.inflate(R.layout.list_item_branch, null)
             ViewHolder(row).also { row.tag = it }
         } else {
             row.tag as ViewHolder
@@ -40,9 +40,9 @@ class AdapterBranch(
         val tvCollageCount: TextView
 
         init {
-            tvBranchID = view.findViewById(R.id.branch_list_item_branch_id)
-            tvBranchName = view.findViewById(R.id.branch_list_item_branch_name)
-            tvCollageCount = view.findViewById(R.id.branch_list_item_collage_count)
+            tvBranchID = view.findViewById(R.id.b_li_id)
+            tvBranchName = view.findViewById(R.id.b_li_name)
+            tvCollageCount = view.findViewById(R.id.b_li_collages)
         }
     }
 }
