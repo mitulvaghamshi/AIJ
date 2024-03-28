@@ -1,6 +1,6 @@
 package me.mitul.aij.adapter
 
-import android.app.Activity
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
@@ -9,44 +9,39 @@ import me.mitul.aij.R
 import me.mitul.aij.model.Collage
 
 class AdapterIntake(
-    private val activity: Activity,
-    private val list: ArrayList<Collage>
-) :
-    BaseAdapter() {
-    override fun getCount() = list.size
+    private val inflater: LayoutInflater,
+    private val items: List<Collage>,
+) : BaseAdapter() {
+    override fun getCount() = items.size
 
-    override fun getItem(index: Int) = list[index]
+    override fun getItem(index: Int) = items[index]
 
     override fun getItemId(index: Int) = 0L
 
     override fun getView(index: Int, view: View?, viewGroup: ViewGroup): View {
-        val holder: ViewIntakeHolder
-
         var row = view
-        if (view == null) {
-            val inflater = activity.layoutInflater
-            row = inflater.inflate(R.layout.intake_list_listview_items, null)
-            holder = ViewIntakeHolder(row)
-            row.tag = holder
+        if (row == null) {
+            row = inflater.inflate(R.layout.list_item_intake, null)
+            ViewHolder(row).also { row.tag = it }
         } else {
-            holder = view.tag as ViewIntakeHolder
+            row.tag as ViewHolder
+        }.also {
+            it.tvBranch.text = items[index].branch
+            it.tvSeats.text = items[index].seat.toString()
+            it.tvVacant.text = items[index].vacant.toString()
         }
-
-        holder.txtClgDetailListBranch.text = list[index].lvBranch
-        holder.txtClgDetailListSeat.text = list[index].lvSeat.toString()
-        holder.txtClgDetailListVecent.text = list[index].lvVacant.toString()
         return row!!
     }
 
-    private class ViewIntakeHolder(view: View) {
-        val txtClgDetailListBranch: TextView
-        val txtClgDetailListSeat: TextView
-        val txtClgDetailListVecent: TextView
+    private class ViewHolder(view: View) {
+        val tvBranch: TextView
+        val tvSeats: TextView
+        val tvVacant: TextView
 
         init {
-            txtClgDetailListBranch = view.findViewById(R.id.intake_detail_listview_branch)
-            txtClgDetailListSeat = view.findViewById(R.id.intake_detail_listview_seat)
-            txtClgDetailListVecent = view.findViewById(R.id.intake_detail_listview_vacant)
+            tvBranch = view.findViewById(R.id.intake_detail_list_item_branch)
+            tvSeats = view.findViewById(R.id.intake_detail_list_item_seat)
+            tvVacant = view.findViewById(R.id.intake_detail_list_item_vacant)
         }
     }
 }

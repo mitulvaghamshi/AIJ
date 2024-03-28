@@ -1,63 +1,59 @@
 package me.mitul.aij.adapter
 
-import android.app.Activity
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 import me.mitul.aij.R
-import me.mitul.aij.model.AllClosingList
+import me.mitul.aij.model.Closing
 
 class AdapterAllClosing(
-    private val activity: Activity,
-    private val list: ArrayList<AllClosingList>
+    private val inflater: LayoutInflater,
+    private val items: List<Closing>,
 ) : BaseAdapter() {
-    override fun getCount() = list.size
+    override fun getCount() = items.size
 
     override fun getItemId(index: Int) = 0L
 
-    override fun getItem(index: Int) = list[index]
+    override fun getItem(index: Int) = items[index]
 
     override fun getView(index: Int, view: View?, viewGroup: ViewGroup): View {
-        val holder: ViewAllClosingHolder
-
         var row = view
         if (row == null) {
-            val inflater = activity.layoutInflater
             row = inflater.inflate(R.layout.closing_list_listview_items, null)
-            holder = ViewAllClosingHolder(row)
-            row.tag = holder
+            ViewHolder(row).also { row.tag = it }
         } else {
-            holder = row.tag as ViewAllClosingHolder
+            row.tag as ViewHolder
+        }.also {
+            it.tvBranchName.text = items[index].branchName
+            it.tvTFWSValue.text = items[index].tFWSValue.toString()
+            it.tvOpenValue.text = items[index].openValue.toString()
+            it.tvSEBCValue.text = items[index].sEBCValue.toString()
+            it.tvEbcValue.text = items[index].oBCValue.toString()
+            it.tvScValue.text = items[index].sCValue.toString()
+            it.tvSTValue.text = items[index].sTValue.toString()
         }
-
-        holder.closingTextViewBranchName.text = list[index].branchName
-        holder.closingTextViewTfwsValue.text = list[index].tfwsValue.toString()
-        holder.closingTextViewOpenValue.text = list[index].openValue.toString()
-        holder.closingTextViewSebcValue.text = list[index].sebcValue.toString()
-        holder.closingTextViewEbcValue.text = list[index].ebcValue.toString()
-        holder.closingTextViewScValue.text = list[index].scValue.toString()
-        holder.closingTextViewStValue.text = list[index].stValue.toString()
         return row!!
     }
 
-    private class ViewAllClosingHolder(view: View?) {
-        val closingTextViewBranchName: TextView
-        val closingTextViewTfwsValue: TextView
-        val closingTextViewOpenValue: TextView
-        val closingTextViewEbcValue: TextView
-        val closingTextViewSebcValue: TextView
-        val closingTextViewScValue: TextView
-        val closingTextViewStValue: TextView
+    private class ViewHolder(view: View) {
+        val tvBranchName: TextView
+        val tvTFWSValue: TextView
+        val tvOpenValue: TextView
+        val tvEbcValue: TextView
+        val tvSEBCValue: TextView
+        val tvScValue: TextView
+        val tvSTValue: TextView
 
         init {
-            closingTextViewBranchName = view!!.findViewById(R.id.all_closing_tv_branch)
-            closingTextViewTfwsValue = view.findViewById(R.id.all_closing_tv_tfw)
-            closingTextViewOpenValue = view.findViewById(R.id.all_closing_tv_open)
-            closingTextViewSebcValue = view.findViewById(R.id.all_closing_tv_sebc)
-            closingTextViewEbcValue = view.findViewById(R.id.all_closing_tv_ebc)
-            closingTextViewScValue = view.findViewById(R.id.all_closing_tv_sc)
-            closingTextViewStValue = view.findViewById(R.id.all_closing_tv_st1)
+            tvBranchName = view.findViewById(R.id.closing_tv_branch)
+            tvTFWSValue = view.findViewById(R.id.closing_tv_tfw)
+            tvOpenValue = view.findViewById(R.id.closing_tv_open)
+            tvSEBCValue = view.findViewById(R.id.closing_tv_sebc)
+            tvEbcValue = view.findViewById(R.id.closing_tv_ebc)
+            tvScValue = view.findViewById(R.id.closing_tv_sc)
+            tvSTValue = view.findViewById(R.id.closing_tv_st1)
         }
     }
 }

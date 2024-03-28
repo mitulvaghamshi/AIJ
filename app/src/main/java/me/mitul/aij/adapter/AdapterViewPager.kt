@@ -4,18 +4,19 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 
-class AdapterViewPager(manager: FragmentManager?) : FragmentPagerAdapter(manager!!) {
-    private val titleList = ArrayList<String>()
-    private val fragmentList = ArrayList<Fragment>()
+class AdapterViewPager(
+    manager: FragmentManager,
+    private val list: ArrayList<String> = ArrayList(),
+    private val fragments: ArrayList<Fragment> = ArrayList(),
+) : FragmentPagerAdapter(manager) {
+    override fun getCount() = fragments.size
 
-    fun addFragment(fragment: Fragment, title: String) {
-        fragmentList.add(fragment)
-        titleList.add(title)
+    override fun getItem(index: Int) = fragments[index]
+
+    override fun getPageTitle(index: Int) = list[index]
+
+    fun add(title: String, fragment: Fragment) {
+        list.add(title)
+        fragments.add(fragment)
     }
-
-    override fun getCount() = fragmentList.size
-
-    override fun getItem(index: Int) = fragmentList[index]
-
-    override fun getPageTitle(index: Int) = titleList[index]
 }

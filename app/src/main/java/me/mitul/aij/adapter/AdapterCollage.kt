@@ -1,6 +1,6 @@
 package me.mitul.aij.adapter
 
-import android.app.Activity
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
@@ -9,49 +9,45 @@ import me.mitul.aij.R
 import me.mitul.aij.model.Collage
 
 class AdapterCollage(
-    private val activity: Activity,
-    private val list: ArrayList<Collage>
+    private val inflater: LayoutInflater,
+    private val items: List<Collage>,
 ) : BaseAdapter() {
-    override fun getCount() = list.size
+    override fun getCount() = items.size
 
-    override fun getItem(index: Int) = list[index]
+    override fun getItem(index: Int) = items[index]
 
     override fun getItemId(index: Int) = 0L
 
     override fun getView(index: Int, view: View?, viewGroup: ViewGroup): View {
-        val holder: ViewCollageHolder
-
         var row = view
         if (row == null) {
-            val inflater = activity.layoutInflater
             row = inflater.inflate(R.layout.collage_list_listview_items, null)
-            holder = ViewCollageHolder(row)
-            row.tag = holder
+            ViewHolder(row).also { row.tag = it }
         } else {
-            holder = row.tag as ViewCollageHolder
+            row.tag as ViewHolder
+        }.also {
+            it.tvId.text = items[index].id.toString()
+            it.tvName.text = items[index].name.toString()
+            it.tvFees.text = String.format("₹%s", items[index].fees)
+            it.tcHostel.text = String.format("Hostel: %s", items[index].hostel)
+            it.tvBranches.text = items[index].branches
         }
-
-        holder.txtID.text = list[index].collageId.toString()
-        holder.txtName.text = list[index].collageName.toString()
-        holder.txtCollageFees.text = list[index].fees.toString()
-        holder.txtCollageHostel.text = list[index].hostel
-        holder.txtCollageBranches.text = list[index].branches
         return row!!
     }
 
-    private class ViewCollageHolder(view: View) {
-        val txtID: TextView
-        val txtName: TextView
-        val txtCollageFees: TextView
-        val txtCollageHostel: TextView
-        val txtCollageBranches: TextView
+    private class ViewHolder(view: View) {
+        val tvId: TextView
+        val tvName: TextView
+        val tvFees: TextView
+        val tcHostel: TextView
+        val tvBranches: TextView
 
         init {
-            txtID = view.findViewById(R.id.collage_list_item_collage_id)
-            txtName = view.findViewById(R.id.collage_list_item_collage_name)
-            txtCollageFees = view.findViewById(R.id.collage_list_item_collage_fees)
-            txtCollageHostel = view.findViewById(R.id.collage_list_item_collage_hostel)
-            txtCollageBranches = view.findViewById(R.id.collage_list_item_collage_branches)
+            tvId = view.findViewById(R.id.cl_li_id)
+            tvName = view.findViewById(R.id.cl_li_name)
+            tvFees = view.findViewById(R.id.cl_li_fees)
+            tcHostel = view.findViewById(R.id.cl_li_hostel)
+            tvBranches = view.findViewById(R.id.cl_li_branches)
         }
     }
 }
