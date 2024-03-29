@@ -7,13 +7,14 @@ import android.view.View
 import android.widget.Button
 import me.mitul.aij.R
 import me.mitul.aij.aij.HomeScreenAijActivity
+import me.mitul.aij.utils.Consts
 
 class HomeScreenActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.layout_home_screen)
+        setContentView(R.layout.activity_home)
 
-        // val userId = intent.getStringExtra("UserID")?.toInt() ?: -1
+        val userId = intent.getIntExtra(Consts.KEY_USER_ID, -1)
 
         findViewById<Button>(R.id.btn_find).setOnClickListener { it.onClick() }
         findViewById<Button>(R.id.btn_collage).setOnClickListener {

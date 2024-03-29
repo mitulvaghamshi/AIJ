@@ -4,7 +4,7 @@
     <application
         android:icon="@drawable/ic_launcher"
         android:label="AIJ"
-        android:theme="@style/Theme.AIJ">
+        android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar">
         <activity
             android:name=".splash.SplashActivity"
             android:exported="true">

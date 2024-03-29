@@ -9,16 +9,9 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/b_li_id"
-            android:layout_width="@dimen/dimen_0_dp"
-            android:layout_height="@dimen/dimen_0_dp"
-            android:visibility="gone" />
-
-        <TextView
             android:id="@+id/b_li_name"
             style="@style/ll"
             android:layout_marginBottom="@dimen/dimen_5_dp"
-            android:textSize="@dimen/dimen_15_sp"
             android:textStyle="bold" />
 
         <TextView

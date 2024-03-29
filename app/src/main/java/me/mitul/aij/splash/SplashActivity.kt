@@ -13,55 +13,45 @@ import kotlinx.coroutines.launch
 import me.mitul.aij.R
 import me.mitul.aij.adapter.AdapterViewPager
 import me.mitul.aij.helper.HelperSplashScreen
-import me.mitul.aij.model.Splash
 import me.mitul.aij.reg.LoginActivity
 import kotlin.coroutines.EmptyCoroutineContext
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : FragmentActivity() {
-    private lateinit var dbHelper: HelperSplashScreen
+    private val dbHelper = HelperSplashScreen(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.splash_screen)
+        setContentView(R.layout.activity_splash)
 
-        dbHelper = HelperSplashScreen(applicationContext)
+        val items = dbHelper.getSplashContent()
+        val adapter = AdapterViewPager(supportFragmentManager)
+        adapter.add(title = "Frag0", SplashFragment.getInstance())
+        items.forEach { adapter.add(title = "Splash${it}", SplashFragment.getInstance(it)) }
 
-        findViewById<ViewPager>(R.id.splash_viewpager).start()
+        val pager = findViewById<ViewPager>(R.id.common_viewpager).also { it.adapter = adapter }
+        try {
+            val field = ViewPager::class.java.getDeclaredField("mScroller")
+            field.isAccessible = true
+            field[pager] = SmoothScroller(applicationContext)
+            pager.start()
+        } catch (ignored: NoSuchFieldException) {
+        }
+
         findViewById<FloatingActionButton>(R.id.splash_fab_login).setOnClickListener {
             startActivity(Intent(applicationContext, LoginActivity::class.java))
             finish()
         }
     }
 
-    private fun ViewPager.start() {
-        this@start.adapter = AdapterViewPager(supportFragmentManager).also {
-            it.add(title = "Frag0", SplashFragment(Splash(id = 0, text = "")))
-            dbHelper.getSplashContent().forEach { item ->
-                it.add(title = "Frag${item.id}", SplashFragment(item))
-            }
-        }
-
-        try {
-            ViewPager::class.java.getDeclaredField("mScroller").also {
-                it.isAccessible = true
-                it[this@start] = SmoothScroller(context)
-            }
-        } catch (ignored: NoSuchFieldException) {
-            return
-        }
-
-        CoroutineScope(EmptyCoroutineContext).launch {
-            val handler = Handler(mainLooper)
-            var index = 0
-            while (true) {
-                try {
-                    delay(timeMillis = 2000L)
-                    val page = if (index <= 7) index++ else 0.also { index = 0 }
-                    handler.post { this@start.setCurrentItem(page, true) }
-                } catch (ignored: InterruptedException) {
-                }
-            }
+    private fun ViewPager.start() = CoroutineScope(EmptyCoroutineContext).launch {
+        val handler = Handler(mainLooper)
+        var index = 0
+        while (true) try {
+            val page = if (index <= 7) index++ else 0.also { index = 0 }
+            handler.post { this@start.currentItem = page }
+            delay(timeMillis = 3000L)
+        } catch (ignored: InterruptedException) {
         }
     }
 }

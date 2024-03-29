@@ -1,7 +1,5 @@
 package me.mitul.aij.utils
 
-import android.graphics.Color
-
 object Consts {
     const val DB_VERSION = 1
     const val DB_NAME = "AIJ_DB.s3db"
@@ -19,14 +17,4 @@ object Consts {
     const val KEY_IS_REGISTERED = "is_registered"
 
     const val KEY_FRAG_ID_ARG = "fragment_id_arg"
-
-    var splashColors = intArrayOf(
-        Color.BLACK,
-        Color.BLUE,
-        Color.RED,
-        Color.MAGENTA,
-        Color.GREEN,
-        Color.YELLOW,
-        Color.CYAN,
-    )
 }

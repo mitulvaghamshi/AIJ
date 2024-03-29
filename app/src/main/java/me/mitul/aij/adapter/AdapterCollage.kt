@@ -26,28 +26,19 @@ class AdapterCollage(
         } else {
             row.tag as ViewHolder
         }.also {
-            it.tvId.text = items[index].id.toString()
-            it.tvName.text = items[index].name.toString()
-            it.tvFees.text = String.format("₹%s", items[index].fees)
-            it.tcHostel.text = String.format("Hostel: %s", items[index].hostel)
+            it.tvName.tag = items[index].id.toString()
+            it.tvName.text = items[index].name
+            it.tvFees.text = String.format("Fees: ₹%s", items[index].fees)
+            it.tcHostel.text = String.format("Hostel type: %s", items[index].hostel)
             it.tvBranches.text = items[index].branches
         }
         return row!!
     }
 
     private class ViewHolder(view: View) {
-        val tvId: TextView
-        val tvName: TextView
-        val tvFees: TextView
-        val tcHostel: TextView
-        val tvBranches: TextView
-
-        init {
-            tvId = view.findViewById(R.id.cl_li_id)
-            tvName = view.findViewById(R.id.cl_li_name)
-            tvFees = view.findViewById(R.id.cl_li_fees)
-            tcHostel = view.findViewById(R.id.cl_li_hostel)
-            tvBranches = view.findViewById(R.id.cl_li_branches)
-        }
+        val tvName: TextView = view.findViewById(R.id.cl_li_name)
+        val tvFees: TextView = view.findViewById(R.id.cl_li_fees)
+        val tcHostel: TextView = view.findViewById(R.id.cl_li_hostel)
+        val tvBranches: TextView = view.findViewById(R.id.cl_li_branches)
     }
 }

@@ -12,7 +12,7 @@ import me.mitul.aij.R
 import me.mitul.aij.adapter.AdapterUniversity
 import me.mitul.aij.helper.HelperUniversity
 import me.mitul.aij.model.University
-import me.mitul.aij.utils.ListOps
+import me.mitul.aij.utils.ListFilter
 import me.mitul.aij.utils.MyTextWatcher
 
 class UniversityListActivity : Activity() {
@@ -23,14 +23,13 @@ class UniversityListActivity : Activity() {
         setContentView(R.layout.activity_common_listview)
 
         val universities = dbHelper.getUniversities()
-
         val listview = findViewById<ListView>(R.id.common_lv).also {
             it.visibility = View.VISIBLE
             it.isTextFilterEnabled = true
             it.setAdapter(AdapterUniversity(this.layoutInflater, universities))
             it.onItemClickListener = OnItemClickListener { _, view, _, _ ->
                 startActivity(
-                    Intent(this, DetailUniversityActivity::class.java)
+                    Intent(applicationContext, DetailUniversityActivity::class.java)
                         .putExtra(
                             "id_to_find_university",
                             view.findViewById<TextView>(R.id.list_item_tv_name).tag.toString()
@@ -40,12 +39,12 @@ class UniversityListActivity : Activity() {
         }
 
         findViewById<EditText>(R.id.common_ed_search).addTextChangedListener(
-            MyTextWatcher(universities, object : ListOps<University> {
+            MyTextWatcher(universities, object : ListFilter<University> {
                 override fun setList(list: List<University>) = listview.setAdapter(
                     AdapterUniversity(this@UniversityListActivity.layoutInflater, list)
                 )
 
-                override fun getName(item: University) = item.name!!
+                override fun getFilterText(item: University) = item.name
             })
         )
     }

@@ -12,7 +12,7 @@ import me.mitul.aij.R
 import me.mitul.aij.adapter.AdapterBranch
 import me.mitul.aij.helper.HelperBranch
 import me.mitul.aij.model.Branch
-import me.mitul.aij.utils.ListOps
+import me.mitul.aij.utils.ListFilter
 import me.mitul.aij.utils.MyTextWatcher
 
 class BranchListActivity : Activity() {
@@ -23,6 +23,7 @@ class BranchListActivity : Activity() {
         setContentView(R.layout.activity_common_listview)
 
         val branches = dbHelper.getAllBranches()
+
         val listview = findViewById<ListView>(R.id.common_lv).also {
             it.visibility = View.VISIBLE
             it.isTextFilterEnabled = true
@@ -33,19 +34,18 @@ class BranchListActivity : Activity() {
                         .putExtra("selected_or_all", "BRANCH")
                         .putExtra(
                             "id_branch_collage",
-                            view.findViewById<TextView>(R.id.b_li_id)
-                                .getText().toString()
+                            view.findViewById<TextView>(R.id.b_li_name).tag.toString()
                         )
                 )
             }
         }
 
         findViewById<EditText>(R.id.common_ed_search).addTextChangedListener(
-            MyTextWatcher(branches, object : ListOps<Branch> {
+            MyTextWatcher(branches, object : ListFilter<Branch> {
                 override fun setList(list: List<Branch>) =
                     listview.setAdapter(AdapterBranch(this@BranchListActivity.layoutInflater, list))
 
-                override fun getName(item: Branch) = item.name!!
+                override fun getFilterText(item: Branch) = item.name
             })
         )
     }

@@ -12,7 +12,7 @@ import me.mitul.aij.R
 import me.mitul.aij.adapter.AdapterCollage
 import me.mitul.aij.helper.HelperCollage
 import me.mitul.aij.model.Collage
-import me.mitul.aij.utils.ListOps
+import me.mitul.aij.utils.ListFilter
 import me.mitul.aij.utils.MyTextWatcher
 
 class CollageListActivity : Activity() {
@@ -41,20 +41,19 @@ class CollageListActivity : Activity() {
                     Intent(this, DetailCollageActivity::class.java)
                         .putExtra(
                             "id_to_find",
-                            view.findViewById<TextView>(R.id.cl_li_id)
-                                .getText().toString()
+                            view.findViewById<TextView>(R.id.cl_li_name).tag.toString()
                         )
                 )
             }
         }
 
         findViewById<EditText>(R.id.common_ed_search).addTextChangedListener(
-            MyTextWatcher(collages, object : ListOps<Collage> {
+            MyTextWatcher(collages, object : ListFilter<Collage> {
                 override fun setList(list: List<Collage>) = listview.setAdapter(
                     AdapterCollage(this@CollageListActivity.layoutInflater, list)
                 )
 
-                override fun getName(item: Collage) = item.name!!
+                override fun getFilterText(item: Collage) = item.name
             })
         )
     }

@@ -6,7 +6,7 @@
     </style>
 
     <style name="ll_pad" parent="ll">
-        <item name="android:padding">@dimen/dimen_16_dp</item>
+        <item name="android:padding">@dimen/dimen_10_dp</item>
     </style>
 
     <style name="tv_inline" parent="ll">

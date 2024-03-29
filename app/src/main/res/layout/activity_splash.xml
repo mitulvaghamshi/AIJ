@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/ll">
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/splash_viewpager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <include layout="@layout/common_viewpager" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/splash_fab_login"
@@ -13,7 +12,7 @@
         android:layout_gravity="end|bottom"
         android:layout_marginEnd="@dimen/dimen_10_dp"
         android:layout_marginBottom="@dimen/dimen_10_dp"
-        android:backgroundTint="@color/pink"
         android:contentDescription="Go to login screen button"
-        android:src="@android:drawable/ic_menu_send" />
-</merge>
+        android:src="@drawable/ic_send_24dp"
+        app:elevation="@dimen/dimen_0_dp" />
+</FrameLayout>

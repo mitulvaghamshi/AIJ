@@ -9,7 +9,7 @@ import me.mitul.aij.R
 import me.mitul.aij.adapter.AdapterCommon
 import me.mitul.aij.helper.HelperHelpCenter
 import me.mitul.aij.model.Common
-import me.mitul.aij.utils.ListOps
+import me.mitul.aij.utils.ListFilter
 import me.mitul.aij.utils.MyTextWatcher
 
 class HelpCenterListActivity : Activity() {
@@ -35,12 +35,12 @@ class HelpCenterListActivity : Activity() {
         }
 
         findViewById<EditText>(R.id.common_ed_search).addTextChangedListener(
-            MyTextWatcher(cities, object : ListOps<String> {
+            MyTextWatcher(cities, object : ListFilter<String> {
                 override fun setList(list: List<String>) = listView.setAdapter(
                     AdapterCommon(this@HelpCenterListActivity.layoutInflater, list, centers)
                 )
 
-                override fun getName(item: String) = item
+                override fun getFilterText(item: String) = item
             })
         )
     }

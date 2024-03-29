@@ -7,6 +7,7 @@ import android.widget.BaseAdapter
 import android.widget.TextView
 import me.mitul.aij.R
 import me.mitul.aij.model.Branch
+import java.util.Locale
 
 class AdapterBranch(
     private val inflater: LayoutInflater,
@@ -26,23 +27,19 @@ class AdapterBranch(
         } else {
             row.tag as ViewHolder
         }.also {
-            it.tvBranchID.text = items[index].id.toString()
-            it.tvBranchName.text = items[index].name
-            it.tvCollageCount.text =
-                String.format("Found in %d collages", items[index].collegeNumber)
+            it.tvName.tag = items[index].id.toString()
+            it.tvName.text = items[index].name
+            it.tvCollages.text = String.format(
+                Locale.getDefault(),
+                "Found in %d collages",
+                items[index].collegeNumber
+            )
         }
         return row!!
     }
 
     private class ViewHolder(view: View) {
-        val tvBranchID: TextView
-        val tvBranchName: TextView
-        val tvCollageCount: TextView
-
-        init {
-            tvBranchID = view.findViewById(R.id.b_li_id)
-            tvBranchName = view.findViewById(R.id.b_li_name)
-            tvCollageCount = view.findViewById(R.id.b_li_collages)
-        }
+        val tvName: TextView = view.findViewById(R.id.b_li_name)
+        val tvCollages: TextView = view.findViewById(R.id.b_li_collages)
     }
 }

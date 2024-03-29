@@ -1,40 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/ll"
-    android:background="@android:color/white"
+    style="@style/ll_pad"
     android:orientation="vertical">
 
     <AutoCompleteTextView
         android:id="@+id/common_ed_search"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_40_dp"
-        android:layout_margin="@dimen/dimen_10_dp"
-        android:layout_marginBottom="@dimen/dimen_20_dp"
+        android:layout_height="?actionBarSize"
+        android:layout_marginBottom="@dimen/dimen_10_dp"
         android:background="@drawable/row_button_bar"
-        android:drawableStart="@android:drawable/ic_menu_search"
-        android:drawableTint="@color/blue"
-        android:foregroundTint="@color/blue"
+        android:drawableStart="@drawable/ic_filter_24"
+        android:drawablePadding="@dimen/dimen_10_dp"
         android:hint="Search"
-        android:textColor="@color/blue"
-        android:textColorHint="@color/blue" />
+        android:padding="@dimen/dimen_10_dp" />
 
     <ListView
         android:id="@+id/common_lv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/dimen_10_dp"
-        android:divider="@null"
-        android:dividerHeight="@dimen/dimen_0_dp"
+        style="@style/ll"
         android:listSelector="@color/blue"
         android:scrollbars="none"
         android:visibility="gone" />
 
     <ExpandableListView
         android:id="@+id/common_exp_lv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/dimen_10_dp"
-        android:dividerHeight="@dimen/dimen_0_dp"
+        style="@style/ll_pad"
         android:listSelector="@color/blue"
         android:scrollbars="none"
         android:visibility="gone" />

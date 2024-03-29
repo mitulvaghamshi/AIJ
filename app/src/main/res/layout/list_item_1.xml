@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/ll_pad"
-    android:layout_margin="@dimen/dimen_10_dp"
-    android:background="@drawable/row_button_bar">
+    style="@style/ll"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/list_item_tv_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold" />
+    <LinearLayout
+        style="@style/ll_pad"
+        android:background="@drawable/row_button_bar">
+
+        <TextView
+            android:id="@+id/list_item_tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_10_dp"
+        android:background="@android:color/white" />
 </LinearLayout>
