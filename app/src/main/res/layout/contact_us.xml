@@ -24,7 +24,7 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_200_dp"
+                android:layout_height="@dimen/dimen_200dp"
                 android:fitsSystemWindows="true"
                 android:src="@drawable/img_user_account"
                 app:layout_collapseMode="parallax" />
@@ -55,7 +55,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/dimen_10_dp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
                 android:background="@android:color/white"
                 android:orientation="vertical">
 
@@ -63,28 +63,28 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/img_header_bg"
-                    android:padding="@dimen/dimen_5_dp"
+                    android:padding="@dimen/dimen_5dp"
                     android:text="Contact 1"
                     android:textColor="@android:color/white"
-                    android:textSize="@dimen/dimen_20_sp"
+                    android:textSize="@dimen/font_20sp"
                     android:typeface="serif" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_10_dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="@dimen/dimen_0_dp"
+                        android:layout_width="@dimen/dimen_0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
-                        android:paddingStart="@dimen/dimen_10_dp"
-                        android:paddingEnd="@dimen/dimen_0_dp"
+                        android:paddingStart="@dimen/dimen_10dp"
+                        android:paddingEnd="@dimen/dimen_0dp"
                         android:text="Phone:" />
 
                     <TextView
-                        android:layout_width="@dimen/dimen_0_dp"
+                        android:layout_width="@dimen/dimen_0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.6"
                         android:autoLink="phone"
@@ -97,15 +97,15 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="@dimen/dimen_0_dp"
+                        android:layout_width="@dimen/dimen_0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
-                        android:paddingStart="@dimen/dimen_10_dp"
-                        android:paddingEnd="@dimen/dimen_0_dp"
+                        android:paddingStart="@dimen/dimen_10dp"
+                        android:paddingEnd="@dimen/dimen_0dp"
                         android:text="Email:" />
 
                     <TextView
-                        android:layout_width="@dimen/dimen_0_dp"
+                        android:layout_width="@dimen/dimen_0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.6"
                         android:autoLink="email"
@@ -118,15 +118,15 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="@dimen/dimen_0_dp"
+                        android:layout_width="@dimen/dimen_0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
-                        android:paddingStart="@dimen/dimen_10_dp"
-                        android:paddingEnd="@dimen/dimen_0_dp"
+                        android:paddingStart="@dimen/dimen_10dp"
+                        android:paddingEnd="@dimen/dimen_0dp"
                         android:text="WhatsApp:" />
 
                     <TextView
-                        android:layout_width="@dimen/dimen_0_dp"
+                        android:layout_width="@dimen/dimen_0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.6"
                         android:autoLink="phone"
@@ -139,15 +139,15 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="@dimen/dimen_0_dp"
+                        android:layout_width="@dimen/dimen_0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
-                        android:paddingStart="@dimen/dimen_10_dp"
-                        android:paddingEnd="@dimen/dimen_0_dp"
+                        android:paddingStart="@dimen/dimen_10dp"
+                        android:paddingEnd="@dimen/dimen_0dp"
                         android:text="Facebook:" />
 
                     <TextView
-                        android:layout_width="@dimen/dimen_0_dp"
+                        android:layout_width="@dimen/dimen_0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.6"
                         android:autoLink="web"
@@ -157,19 +157,19 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dimen_10_dp"
+                    android:layout_marginBottom="@dimen/dimen_10dp"
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="@dimen/dimen_0_dp"
+                        android:layout_width="@dimen/dimen_0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
-                        android:paddingStart="@dimen/dimen_10_dp"
-                        android:paddingEnd="@dimen/dimen_0_dp"
+                        android:paddingStart="@dimen/dimen_10dp"
+                        android:paddingEnd="@dimen/dimen_0dp"
                         android:text="Address:" />
 
                     <TextView
-                        android:layout_width="@dimen/dimen_0_dp"
+                        android:layout_width="@dimen/dimen_0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.6"
                         android:text="24 Grenadier Dr, Hamilton, ON, Canada." />
@@ -179,7 +179,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/dimen_10_dp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
                 android:background="@android:color/white"
                 android:orientation="vertical">
 
@@ -187,28 +187,28 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/img_header_bg"
-                    android:padding="@dimen/dimen_5_dp"
+                    android:padding="@dimen/dimen_5dp"
                     android:text="Contact 2"
                     android:textColor="@android:color/white"
-                    android:textSize="@dimen/dimen_20_sp"
+                    android:textSize="@dimen/font_20sp"
                     android:typeface="serif" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_10_dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="@dimen/dimen_0_dp"
+                        android:layout_width="@dimen/dimen_0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
-                        android:paddingStart="@dimen/dimen_10_dp"
-                        android:paddingEnd="@dimen/dimen_0_dp"
+                        android:paddingStart="@dimen/dimen_10dp"
+                        android:paddingEnd="@dimen/dimen_0dp"
                         android:text="Phone:" />
 
                     <TextView
-                        android:layout_width="@dimen/dimen_0_dp"
+                        android:layout_width="@dimen/dimen_0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.6"
                         android:autoLink="phone"
@@ -221,15 +221,15 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="@dimen/dimen_0_dp"
+                        android:layout_width="@dimen/dimen_0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
-                        android:paddingStart="@dimen/dimen_10_dp"
-                        android:paddingEnd="@dimen/dimen_0_dp"
+                        android:paddingStart="@dimen/dimen_10dp"
+                        android:paddingEnd="@dimen/dimen_0dp"
                         android:text="Email:" />
 
                     <TextView
-                        android:layout_width="@dimen/dimen_0_dp"
+                        android:layout_width="@dimen/dimen_0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.6"
                         android:autoLink="email"
@@ -242,15 +242,15 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="@dimen/dimen_0_dp"
+                        android:layout_width="@dimen/dimen_0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
-                        android:paddingStart="@dimen/dimen_10_dp"
-                        android:paddingEnd="@dimen/dimen_0_dp"
+                        android:paddingStart="@dimen/dimen_10dp"
+                        android:paddingEnd="@dimen/dimen_0dp"
                         android:text="Whatsapp:" />
 
                     <TextView
-                        android:layout_width="@dimen/dimen_0_dp"
+                        android:layout_width="@dimen/dimen_0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.6"
                         android:autoLink="phone"
@@ -263,15 +263,15 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="@dimen/dimen_0_dp"
+                        android:layout_width="@dimen/dimen_0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
-                        android:paddingStart="@dimen/dimen_10_dp"
-                        android:paddingEnd="@dimen/dimen_0_dp"
+                        android:paddingStart="@dimen/dimen_10dp"
+                        android:paddingEnd="@dimen/dimen_0dp"
                         android:text="Facebook:" />
 
                     <TextView
-                        android:layout_width="@dimen/dimen_0_dp"
+                        android:layout_width="@dimen/dimen_0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.6"
                         android:autoLink="web"
@@ -281,19 +281,19 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dimen_10_dp"
+                    android:layout_marginBottom="@dimen/dimen_10dp"
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="@dimen/dimen_0_dp"
+                        android:layout_width="@dimen/dimen_0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
-                        android:paddingStart="@dimen/dimen_10_dp"
-                        android:paddingEnd="@dimen/dimen_0_dp"
+                        android:paddingStart="@dimen/dimen_10dp"
+                        android:paddingEnd="@dimen/dimen_0dp"
                         android:text="Address:" />
 
                     <TextView
-                        android:layout_width="@dimen/dimen_0_dp"
+                        android:layout_width="@dimen/dimen_0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.6"
                         android:text="24 Grenadier Dr, Hamilton, ON, Canada." />

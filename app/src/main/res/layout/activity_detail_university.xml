@@ -1,101 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/detail_scrollview">
+    style="@style/ll_scroll">
 
     <LinearLayout
-        style="@style/ll"
+        style="@style/ll_pad"
         android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/ud_tv_initials"
             style="@style/ll_pad"
-            android:layout_marginBottom="@dimen/dimen_10_dp"
-            android:background="@drawable/img_header_bg">
+            android:layout_marginBottom="@dimen/dimen_10dp"
+            android:background="@drawable/row_button_bar_2"
+            android:gravity="center_horizontal"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/ud_tv_initials"
-                style="@style/tv_inline"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:textColor="@android:color/white"
-                android:typeface="serif" />
-        </LinearLayout>
+        <TableLayout
+            style="@style/ll_divider"
+            android:layout_marginBottom="@dimen/dimen_10dp"
+            android:background="@drawable/row_button_bar">
 
-        <LinearLayout
-            style="@style/ll"
-            android:layout_marginBottom="@dimen/dimen_10_dp"
-            android:background="@android:color/white"
-            android:orientation="vertical">
+            <TableRow style="@style/ll_divider">
 
-            <LinearLayout style="@style/ll_pad">
-
-                <View style="@style/detail_pin" />
+                <TextView
+                    style="@style/detail_label_tv"
+                    android:text="Name" />
 
                 <TextView
                     android:id="@+id/ud_tv_full_name"
-                    style="@style/detail_tv" />
-            </LinearLayout>
+                    style="@style/detail_text_tv" />
+            </TableRow>
 
-            <LinearLayout style="@style/ll_pad">
+            <TableRow style="@style/ll_divider">
 
-                <View style="@style/detail_pin" />
+                <TextView
+                    style="@style/detail_label_tv"
+                    android:autoLink="map"
+                    android:text="Address" />
 
                 <TextView
                     android:id="@+id/ud_tv_address"
-                    style="@style/detail_tv" />
-            </LinearLayout>
+                    style="@style/detail_text_tv" />
+            </TableRow>
 
-            <LinearLayout style="@style/ll_pad">
+            <TableRow style="@style/ll_divider">
 
-                <TextView style="@style/detail_pin" />
+                <TextView
+                    style="@style/detail_label_tv"
+                    android:text="Phone" />
 
                 <TextView
                     android:id="@+id/ud_tv_phone"
-                    style="@style/detail_tv" />
-            </LinearLayout>
+                    style="@style/detail_text_tv"
+                    android:autoLink="phone" />
+            </TableRow>
 
-            <LinearLayout style="@style/ll_pad">
-
-                <TextView style="@style/detail_pin" />
+            <TableRow style="@style/ll_divider">
 
                 <TextView
-                    android:id="@+id/ud_tv_website"
-                    style="@style/detail_tv" />
-            </LinearLayout>
-
-            <LinearLayout style="@style/ll_pad">
-
-                <TextView style="@style/detail_pin" />
+                    style="@style/detail_label_tv"
+                    android:text="Email" />
 
                 <TextView
                     android:id="@+id/ud_tv_email"
-                    style="@style/detail_tv" />
-            </LinearLayout>
+                    style="@style/detail_text_tv"
+                    android:autoLink="email" />
+            </TableRow>
 
-            <LinearLayout style="@style/ll_pad">
-
-                <TextView style="@style/detail_pin" />
+            <TableRow style="@style/ll_divider">
 
                 <TextView
-                    style="@style/tv_inline"
-                    android:layout_weight="0.2"
-                    android:text="Type:" />
+                    style="@style/detail_label_tv"
+                    android:text="Website" />
+
+                <TextView
+                    android:id="@+id/ud_tv_website"
+                    style="@style/detail_text_tv"
+                    android:autoLink="web" />
+            </TableRow>
+
+            <TableRow style="@style/ll_divider">
+
+                <TextView
+                    style="@style/detail_label_tv"
+                    android:text="Type" />
 
                 <TextView
                     android:id="@+id/ud_tv_type"
-                    style="@style/tv_inline"
-                    android:layout_weight="0.8" />
-            </LinearLayout>
-        </LinearLayout>
+                    style="@style/detail_text_tv" />
+            </TableRow>
+        </TableLayout>
 
-        <LinearLayout style="@style/ll">
-
-            <Button
-                android:id="@+id/ud_btn_collages"
-                style="@style/ll_pad"
-                android:background="@color/orange"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:typeface="serif" />
-        </LinearLayout>
+        <Button
+            android:id="@+id/ud_btn_colleges"
+            style="@style/ll"
+            android:background="@drawable/row_button_bar_2"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
     </LinearLayout>
 </ScrollView>

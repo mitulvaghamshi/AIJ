@@ -1,25 +1,24 @@
 # AIJ
 
-Final year project for Diploma in Computer Engineering - India (2014-17).
+Final year project for Diploma in Computer Engineering - (2014-17).
 
-- School Management System.
-- Java, XML (View), SQLite.
+Java+Kotlin, XML(Views), SQLite Database.
 
-## Previews
+## Screenshots
 
-![](previews/preview_registration.webp)
-![](previews/preview_login.webp)
-![](previews/preview_home_screen.webp)
-![](previews/preview_home_screen_2.webp)
-![](previews/preview_universities.webp)
-![](previews/preview_colleges.webp)
-![](previews/preview_branches.webp)
-![](previews/preview_help_centers.webp)
-![](previews/preview_bank_branches.webp)
-![](previews/preview_search.webp)
-![](previews/preview_about.webp)
-![](previews/preview_aij_drawer.webp)
-![](previews/preview_aij.webp)
-![](previews/preview_courses.webp)
-![](previews/preview_info.webp)
-![](previews/preview_exit.webp)
+![](res/preview_registration.webp)
+![](res/preview_login.webp)
+![](res/preview_home_screen.webp)
+![](res/preview_home_screen_2.webp)
+![](res/preview_universities.webp)
+![](res/preview_colleges.webp)
+![](res/preview_branches.webp)
+![](res/preview_help_centers.webp)
+![](res/preview_bank_branches.webp)
+![](res/preview_search.webp)
+![](res/preview_about.webp)
+![](res/preview_aij_drawer.webp)
+![](res/preview_aij.webp)
+![](res/preview_courses.webp)
+![](res/preview_info.webp)
+![](res/preview_exit.webp)

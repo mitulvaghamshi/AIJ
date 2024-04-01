@@ -6,7 +6,7 @@
         android:label="AIJ"
         android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar">
         <activity
-            android:name=".splash.SplashActivity"
+            android:name=".splash.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -14,32 +14,32 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".reg.LoginActivity" />
-        <activity android:name=".reg.RegisterActivity" />
+        <activity android:name=".login.LoginActivity" />
+        <activity android:name=".login.RegisterActivity" />
 
-        <activity android:name=".home.HomeScreenActivity" />
+        <activity android:name=".home.HomeActivity" />
 
-        <activity android:name=".home.CollageListActivity" />
-        <activity android:name=".home.DetailCollageActivity" />
+        <activity android:name=".college.CollegeListActivity" />
+        <activity android:name=".college.CollegeDetailActivity" />
 
-        <activity android:name=".home.BranchListActivity" />
+        <activity android:name=".branch.BranchListActivity" />
 
-        <activity android:name=".home.UniversityListActivity" />
-        <activity android:name=".home.DetailUniversityActivity" />
+        <activity android:name=".university.UniversityListActivity" />
+        <activity android:name=".university.UniversityDetailActivity" />
 
-        <activity android:name=".home.HelpCenterListActivity" />
+        <activity android:name=".helpcenter.HelpCenterListActivity" />
 
-        <activity android:name=".home.BankBranchListActivity" />
+        <activity android:name=".bankbranch.BankBranchListActivity" />
 
         <activity android:name=".home.DeveloperActivity" />
 
         <activity android:name=".aij.AijExplorerActivity" />
-        <activity android:name=".aij.HomeScreenAijActivity" />
+        <activity android:name=".aij.AijActivity" />
         <activity
             android:name=".aij.CourseActivity"
-            android:parentActivityName=".aij.HomeScreenAijActivity" />
+            android:parentActivityName=".aij.AijActivity" />
         <activity
-            android:name=".aij.ContactUs"
-            android:parentActivityName=".aij.HomeScreenAijActivity" />
+            android:name=".aij.ContactActivity"
+            android:parentActivityName=".aij.AijActivity" />
     </application>
 </manifest>

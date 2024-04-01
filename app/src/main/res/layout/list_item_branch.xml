@@ -4,6 +4,7 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/b_li_container"
         style="@style/ll_pad"
         android:background="@drawable/row_button_bar"
         android:orientation="vertical">
@@ -11,16 +12,16 @@
         <TextView
             android:id="@+id/b_li_name"
             style="@style/ll"
-            android:layout_marginBottom="@dimen/dimen_5_dp"
+            android:layout_marginBottom="@dimen/dimen_5dp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/b_li_collages"
+            android:id="@+id/b_li_college_count"
             style="@style/ll" />
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_10_dp"
+        android:layout_height="@dimen/dimen_10dp"
         android:background="@android:color/white" />
 </LinearLayout>

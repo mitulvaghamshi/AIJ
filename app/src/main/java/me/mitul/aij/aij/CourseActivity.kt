@@ -1,29 +1,31 @@
 package me.mitul.aij.aij
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import me.mitul.aij.R
-import me.mitul.aij.adapter.AdapterViewPager
-import me.mitul.aij.utils.FragmentCommon.Companion.newInstance
+import me.mitul.aij.aij.FragmentCommon.Companion.newInstance
 
-class CourseActivity : AppCompatActivity() {
+class CourseActivity : FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cources)
 
-        val viewPager = findViewById<ViewPager>(R.id.common_viewpager).also { pager ->
-            pager.setAdapter(AdapterViewPager(supportFragmentManager).also {
-                it.add(title = "Architect", newInstance(6))
-                it.add(title = "Automobile", newInstance(7))
-                it.add(title = "Civil", newInstance(8))
-                it.add(title = "Computer", newInstance(9))
-                it.add(title = "Electrical", newInstance(10))
-                it.add(title = "Inst. & Control", newInstance(11))
-                it.add(title = "Mechanical", newInstance(12))
-            })
+        val pager = findViewById<ViewPager>(R.id.splash_viewpager)
+        pager.adapter = buildAdapter()
+
+        findViewById<TabLayout>(R.id.tabs_courses).setupWithViewPager(pager)
+    }
+
+    private fun buildAdapter() = object : FragmentPagerAdapter(supportFragmentManager) {
+        val fragments = buildList<Fragment>(capacity = 7) {
+            repeat(times = 7) { add(newInstance(id = it + 6)) }
         }
-        findViewById<TabLayout>(R.id.tabs_courses).setupWithViewPager(viewPager)
+
+        override fun getCount() = fragments.size
+        override fun getItem(index: Int) = fragments[index]
     }
 }

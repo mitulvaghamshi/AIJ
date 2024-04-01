@@ -10,12 +10,12 @@
 
     <TextView
         style="@style/ll"
-        android:padding="@dimen/dimen_5_dp"
+        android:padding="@dimen/dimen_5dp"
         android:text="Amrut Institute Junagadh" />
 
     <TextView
         style="@style/ll"
         android:autoLink="web"
-        android:padding="@dimen/dimen_5_dp"
+        android:padding="@dimen/dimen_5dp"
         android:text="https://example.com" />
 </LinearLayout>

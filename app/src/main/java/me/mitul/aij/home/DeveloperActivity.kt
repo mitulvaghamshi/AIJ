@@ -5,6 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import me.mitul.aij.R
+import me.mitul.aij.college.CollegeDetailActivity
+import me.mitul.aij.utils.Keys
 
 class DeveloperActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,8 +15,8 @@ class DeveloperActivity : Activity() {
 
         findViewById<View>(R.id.dev_btn_aij).setOnClickListener {
             startActivity(
-                Intent(this, DetailCollageActivity::class.java)
-                    .putExtra("id_to_find", 58)
+                Intent(applicationContext, CollegeDetailActivity::class.java)
+                    .putExtra(Keys.KEY_FILTER_ID, 58)
             )
         }
     }

@@ -6,12 +6,12 @@
     </style>
 
     <style name="ll_pad" parent="ll">
-        <item name="android:padding">@dimen/dimen_10_dp</item>
+        <item name="android:padding">@dimen/dimen_10dp</item>
     </style>
 
     <style name="tv_inline" parent="ll">
-        <item name="android:layout_width">@dimen/dimen_0_dp</item>
-        <item name="android:textColor">@android:color/black</item>
+        <item name="android:layout_width">@dimen/dimen_0dp</item>
+        <item name="android:textColor">@color/red</item>
     </style>
 
     <style name="dev_header_ll" parent="ll">
@@ -19,60 +19,62 @@
     </style>
 
     <style name="dev_header_ll_tv" parent="ll">
-        <item name="android:padding">@dimen/dimen_10_dp</item>
-        <item name="android:textSize">@dimen/dimen_20_sp</item>
+        <item name="android:padding">@dimen/dimen_10dp</item>
+        <item name="android:textSize">@dimen/font_20sp</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:typeface">serif</item>
     </style>
 
     <style name="reg_tv" parent="ll">
         <item name="android:layout_height">?actionBarSize</item>
-        <item name="android:padding">@dimen/dimen_10_dp</item>
-        <item name="android:layout_marginBottom">@dimen/dimen_10_dp</item>
+        <item name="android:padding">@dimen/dimen_10dp</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_10dp</item>
         <item name="android:background">@drawable/row_button_bar</item>
         <item name="android:imeOptions">actionNext</item>
     </style>
 
     <style name="hs_btn">
-        <item name="android:textSize">@dimen/dimen_15_sp</item>
+        <item name="android:textSize">@dimen/font_15sp</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textStyle">bold</item>
         <item name="android:ellipsize">marquee</item>
         <item name="android:typeface">serif</item>
     </style>
 
-    <style name="detail_pin">
-        <item name="android:layout_width">@dimen/dimen_25_dp</item>
-        <item name="android:layout_height">@dimen/dimen_20_dp</item>
-        <item name="android:background">@drawable/img_pin</item>
+    <style name="detail_label_tv" parent="ll_pad">
+        <item name="android:minWidth">@dimen/dimen_110dp</item>
+        <item name="android:layout_weight">0.2</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="detail_tv">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@android:color/black</item>
+    <style name="detail_text_tv" parent="ll_pad">
+        <item name="android:layout_weight">0.8</item>
+    </style>
+
+    <style name="ll_divider" parent="ll">
+        <item name="android:divider">@android:color/black</item>
+        <item name="android:showDividers">middle</item>
     </style>
 
     <style name="divider">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">2dp</item>
-        <item name="android:layout_margin">@dimen/dimen_10_dp</item>
+        <item name="android:layout_margin">@dimen/dimen_10dp</item>
         <item name="android:background">@color/blue</item>
     </style>
 
-    <style name="detail_scrollview" parent="ll_pad">
+    <style name="ll_scroll" parent="ll">
         <item name="android:layout_height">match_parent</item>
-        <item name="android:scrollbars">none</item>
         <item name="android:orientation">vertical</item>
-        <item name="android:background">@android:color/white</item>
+        <item name="android:scrollbars">none</item>
     </style>
 
     <style name="closing_tv">
-        <item name="android:layout_width">@dimen/dimen_0_dp</item>
+        <item name="android:layout_width">@dimen/dimen_0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
         <item name="android:gravity">center</item>
-        <item name="android:padding">@dimen/dimen_5_dp</item>
+        <item name="android:padding">@dimen/dimen_5dp</item>
         <item name="android:textColor">@android:color/black</item>
         <item name="android:singleLine">true</item>
     </style>

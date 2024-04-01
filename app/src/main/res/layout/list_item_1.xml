@@ -3,19 +3,14 @@
     style="@style/ll"
     android:orientation="vertical">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/li_tv_name"
         style="@style/ll_pad"
-        android:background="@drawable/row_button_bar">
-
-        <TextView
-            android:id="@+id/list_item_tv_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold" />
-    </LinearLayout>
+        android:background="@drawable/row_button_bar"
+        android:textStyle="bold" />
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_10_dp"
+        android:layout_height="@dimen/dimen_10dp"
         android:background="@android:color/white" />
 </LinearLayout>

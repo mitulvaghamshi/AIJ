@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/detail_scrollview">
+    style="@style/ll_scroll"
+    android:padding="@dimen/dimen_10dp">
 
     <LinearLayout
-        style="@style/ll"
+        style="@style/ll_pad"
         android:orientation="vertical">
 
         <TextView
@@ -11,7 +12,7 @@
             style="@style/ll"
             android:background="@drawable/img_header_bg"
             android:ellipsize="marquee"
-            android:padding="@dimen/dimen_10_dp"
+            android:padding="@dimen/dimen_10dp"
             android:singleLine="true"
             android:textColor="@android:color/white"
             android:typeface="serif" />
@@ -19,7 +20,7 @@
         <me.mitul.aij.utils.JustifiedTextView
             android:id="@+id/frag_tv_description"
             style="@style/ll"
-            android:padding="@dimen/dimen_10_dp"
+            android:padding="@dimen/dimen_10dp"
             android:typeface="serif" />
     </LinearLayout>
 </ScrollView>

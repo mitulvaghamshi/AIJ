@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ll_scroll">
+
+    <LinearLayout
+        style="@style/ll_pad"
+        android:orientation="vertical">
+
+        <LinearLayout
+            style="@style/ll_pad"
+            android:layout_marginBottom="@dimen/dimen_10dp"
+            android:background="@drawable/row_button_bar_2">
+
+            <TextView
+                android:id="@+id/cd_tv_initials"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.80"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/cd_tv_code"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.20"
+                android:gravity="center_horizontal"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TableLayout
+            style="@style/ll_divider"
+            android:layout_marginBottom="@dimen/dimen_10dp"
+            android:background="@drawable/row_button_bar">
+
+            <TableRow style="@style/ll_divider">
+
+                <TextView
+                    style="@style/detail_label_tv"
+                    android:text="Name" />
+
+                <TextView
+                    android:id="@+id/cd_tv_full_name"
+                    style="@style/detail_text_tv" />
+            </TableRow>
+
+            <TableRow style="@style/ll_divider">
+
+                <TextView
+                    style="@style/detail_label_tv"
+                    android:text="Address" />
+
+                <TextView
+                    android:id="@+id/cd_tv_address"
+                    style="@style/detail_text_tv"
+                    android:autoLink="map" />
+            </TableRow>
+
+            <TableRow style="@style/ll_divider">
+
+                <TextView
+                    style="@style/detail_label_tv"
+                    android:text="Phone" />
+
+                <TextView
+                    android:id="@+id/cd_tv_phone"
+                    style="@style/detail_text_tv"
+                    android:autoLink="phone" />
+            </TableRow>
+
+            <TableRow style="@style/ll_divider">
+
+                <TextView
+                    style="@style/detail_label_tv"
+                    android:text="Website" />
+
+                <TextView
+                    android:id="@+id/cd_tv_website"
+                    style="@style/detail_text_tv"
+                    android:autoLink="web" />
+            </TableRow>
+
+            <TableRow style="@style/ll_divider">
+
+                <TextView
+                    style="@style/detail_label_tv"
+                    android:text="Email" />
+
+                <TextView
+                    android:id="@+id/cd_tv_email"
+                    style="@style/detail_text_tv"
+                    android:autoLink="email" />
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            style="@style/ll_divider"
+            android:layout_marginBottom="@dimen/dimen_10dp"
+            android:background="@drawable/row_button_bar">
+
+            <TableRow style="@style/ll_divider">
+
+                <TextView
+                    style="@style/detail_label_tv"
+                    android:text="Fees" />
+
+                <TextView
+                    android:id="@+id/cd_tv_fees"
+                    style="@style/detail_text_tv" />
+            </TableRow>
+
+            <TableRow style="@style/ll_divider">
+
+                <TextView
+                    style="@style/detail_label_tv"
+                    android:text="Type" />
+
+                <TextView
+                    android:id="@+id/cd_tv_type"
+                    style="@style/detail_text_tv" />
+            </TableRow>
+
+            <TableRow style="@style/ll_divider">
+
+                <TextView
+                    style="@style/detail_label_tv"
+                    android:text="Hostel" />
+
+                <TextView
+                    android:id="@+id/cd_tv_hostel"
+                    style="@style/detail_text_tv" />
+            </TableRow>
+
+            <TableRow style="@style/ll_divider">
+
+            </TableRow>
+
+            <TableRow style="@style/ll_divider">
+
+                <TextView
+                    style="@style/detail_label_tv"
+                    android:text="University" />
+
+                <TextView
+                    android:id="@+id/cd_tv_university"
+                    style="@style/detail_text_tv" />
+            </TableRow>
+        </TableLayout>
+
+        <LinearLayout style="@style/ll">
+
+            <Button
+                android:id="@+id/cd_btn_intake"
+                style="@style/ll"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/row_button_bar_2"
+                android:text="Intake"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/cd_btn_closing"
+                style="@style/ll"
+                android:layout_weight="0.5"
+                android:background="@drawable/row_button_bar_2"
+                android:text="Closing"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

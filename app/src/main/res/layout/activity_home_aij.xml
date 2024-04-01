@@ -20,7 +20,7 @@
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_180_dp"
+                android:layout_height="@dimen/dimen_180dp"
                 android:fitsSystemWindows="true"
                 android:isScrollContainer="true"
                 app:layout_scrollFlags="enterAlwaysCollapsed">
@@ -46,7 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:tabIndicatorColor="@android:color/white"
-                app:tabIndicatorHeight="@dimen/dimen_5_dp"
+                app:tabIndicatorHeight="@dimen/dimen_5dp"
                 app:tabMode="scrollable"
                 app:tabSelectedTextColor="@android:color/black"
                 app:tabTextColor="@android:color/white" />

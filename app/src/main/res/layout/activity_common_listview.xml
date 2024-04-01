@@ -7,12 +7,17 @@
         android:id="@+id/common_ed_search"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        android:layout_marginBottom="@dimen/dimen_10_dp"
+        android:layout_marginBottom="@dimen/dimen_10dp"
         android:background="@drawable/row_button_bar"
         android:drawableStart="@drawable/ic_filter_24"
-        android:drawablePadding="@dimen/dimen_10_dp"
-        android:hint="Search"
-        android:padding="@dimen/dimen_10_dp" />
+        android:drawablePadding="@dimen/dimen_10dp"
+        android:hint="Type to search..."
+        android:padding="@dimen/dimen_10dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <ListView
         android:id="@+id/common_lv"

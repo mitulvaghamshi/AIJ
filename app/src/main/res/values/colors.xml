@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="red">#B40501</color>
-    <color name="pink">#FF4781</color>
-    <color name="blue">#2196F3</color>
-    <color name="brown">#4D2F1D</color>
-    <color name="green">#4CAF50</color>
-    <color name="yellow">#FFEB3B</color>
-    <color name="orange">#FF7700</color>
-    <color name="purple">#6067F4</color>
-    <color name="indigo">#3F51B5</color>
+    <color name="red">#FF8280</color>
+    <color name="pink">#FF80A8</color>
+    <color name="orange">#FFBB80</color>
+    <color name="yellow">#FFF280</color>
+    <color name="green">#80FF85</color>
+    <color name="blue">#80C7FF</color>
+    <color name="purple">#8086FF</color>
+    <color name="splash_fab">#1E88E5</color>
 </resources>

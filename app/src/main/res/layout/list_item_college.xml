@@ -5,13 +5,14 @@
     android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_li_container"
         style="@style/ll_pad"
         android:background="@drawable/row_button_bar">
 
         <TextView
             android:id="@+id/cl_li_name"
             style="@style/ll"
-            android:layout_marginBottom="@dimen/dimen_5_dp"
+            android:layout_marginBottom="@dimen/dimen_5dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/cl_li_fees"
             app:layout_constraintEnd_toEndOf="parent"
@@ -40,7 +41,7 @@
         <TextView
             android:id="@+id/cl_li_branches"
             style="@style/ll"
-            android:layout_marginTop="@dimen/dimen_5_dp"
+            android:layout_marginTop="@dimen/dimen_5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -50,6 +51,6 @@
     <View
         android:id="@+id/divider"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_10_dp"
+        android:layout_height="@dimen/dimen_10dp"
         android:background="@android:color/white" />
 </LinearLayout>

@@ -23,7 +23,7 @@
                 android:id="@+id/login_fab_register"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/dimen_10_dp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
                 android:contentDescription="New registration button"
                 android:src="@drawable/ic_add_24dp"
                 android:tooltipText="Registration"
@@ -33,35 +33,35 @@
                 android:id="@+id/login_ed_username"
                 android:layout_width="match_parent"
                 android:layout_height="?actionBarSize"
-                android:layout_marginBottom="@dimen/dimen_10_dp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
                 android:background="@drawable/row_button_bar"
                 android:drawableStart="@drawable/ic_person_24dp"
                 android:hint="Username"
                 android:imeOptions="actionNext"
                 android:inputType="text"
                 android:maxLines="1"
-                android:padding="@dimen/dimen_10_dp" />
+                android:padding="@dimen/dimen_10dp" />
 
             <AutoCompleteTextView
                 android:id="@+id/login_ed_password"
                 android:layout_width="match_parent"
                 android:layout_height="?actionBarSize"
-                android:layout_marginBottom="@dimen/dimen_10_dp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
                 android:background="@drawable/row_button_bar"
                 android:drawableStart="@drawable/ic_lock_24dp"
                 android:hint="Password"
                 android:imeOptions="actionNext"
                 android:inputType="textPassword"
                 android:maxLines="1"
-                android:padding="@dimen/dimen_10_dp" />
+                android:padding="@dimen/dimen_10dp" />
 
             <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/login_sw_keep_signed"
                 android:layout_width="match_parent"
                 android:layout_height="?actionBarSize"
-                android:layout_marginBottom="@dimen/dimen_10_dp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
                 android:background="@drawable/row_button_bar"
-                android:paddingHorizontal="@dimen/dimen_10_dp"
+                android:paddingHorizontal="@dimen/dimen_10dp"
                 android:text="Keep me signed in."
                 app:thumbTint="@android:color/black"
                 app:trackTint="@android:color/darker_gray" />

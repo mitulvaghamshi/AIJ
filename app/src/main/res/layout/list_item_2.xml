@@ -9,20 +9,20 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/list_item_2_tv_name"
+            android:id="@+id/li2_tv_name"
             style="@style/ll"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/list_item_2_tv_address"
+            android:id="@+id/li2_tv_address"
             style="@style/ll"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/dimen_12_sp" />
+            android:textSize="@dimen/font_12sp" />
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_10_dp"
+        android:layout_height="@dimen/dimen_10dp"
         android:background="@android:color/white" />
 </LinearLayout>

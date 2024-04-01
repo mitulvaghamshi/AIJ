@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/ll">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <include layout="@layout/common_viewpager" />
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/splash_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/splash_fab_login"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/splash_btn_login"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:layout_marginEnd="@dimen/dimen_10_dp"
-        android:layout_marginBottom="@dimen/dimen_10_dp"
-        android:contentDescription="Go to login screen button"
-        android:src="@drawable/ic_send_24dp"
-        app:elevation="@dimen/dimen_0_dp" />
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/dimen_30dp"
+        android:background="@drawable/row_button_bar"
+        android:text="@string/splash_continue_btn" />
 </FrameLayout>

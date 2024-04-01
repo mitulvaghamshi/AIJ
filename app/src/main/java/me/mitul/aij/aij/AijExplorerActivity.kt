@@ -3,7 +3,7 @@ package me.mitul.aij.aij
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import me.mitul.aij.R
-import me.mitul.aij.utils.FragmentCommon.Companion.newInstance
+import me.mitul.aij.aij.FragmentCommon.Companion.newInstance
 
 class AijExplorerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

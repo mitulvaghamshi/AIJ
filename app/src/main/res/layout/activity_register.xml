@@ -20,11 +20,11 @@
             android:orientation="vertical">
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/reg_fab_login"
+                android:id="@+id/reg_fab_close"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/dimen_10_dp"
-                android:contentDescription="Login button"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:contentDescription="Close button"
                 android:src="@drawable/ic_cancel_24dp"
                 android:tooltipText="Back to login"
                 app:backgroundTint="@color/blue" />
@@ -67,7 +67,7 @@
             <AutoCompleteTextView
                 android:id="@+id/reg_ed_re_password"
                 style="@style/reg_tv"
-                android:layout_marginBottom="@dimen/dimen_10_dp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
                 android:drawableStart="@drawable/ic_lock_24dp"
                 android:hint="Confirm Password"
                 android:inputType="textPassword" />
