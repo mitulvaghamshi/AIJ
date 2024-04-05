@@ -23,15 +23,10 @@ class LoginActivity : Activity() {
     private lateinit var tvUsername: AutoCompleteTextView
     private lateinit var tvPassword: AutoCompleteTextView
     private lateinit var swKeepSigned: SwitchCompat
-
-    private lateinit var fabLogin: FloatingActionButton
     private lateinit var loginForm: LinearLayout
 
     private lateinit var shake: Animation
-    private lateinit var rotate: Animation
-
     private lateinit var prefs: SharedPreferences
-
     private lateinit var dbHelper: LoginModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,11 +34,8 @@ class LoginActivity : Activity() {
         setContentView(R.layout.activity_login)
 
         dbHelper = LoginModel(Database(applicationContext))
-
         prefs = getSharedPreferences(LoginModel.Keys.KEY_LOGIN_INFO, MODE_PRIVATE)
-
         shake = AnimationUtils.loadAnimation(applicationContext, R.anim.anim_shake)
-        rotate = AnimationUtils.loadAnimation(applicationContext, R.anim.anim_rotate)
 
         tvUsername = findViewById(R.id.login_ed_username)
         tvPassword = findViewById(R.id.login_ed_password)
@@ -59,8 +51,12 @@ class LoginActivity : Activity() {
             swKeepSigned.isChecked = prefs.getBoolean(LoginModel.Keys.KEY_KEEP_SIGNED, false)
         }
 
-        fabLogin = findViewById(R.id.login_fab_submit)
-        fabLogin.setOnClickListener { attemptLogin() }
+        findViewById<FloatingActionButton>(R.id.login_fab_submit).setOnClickListener {
+            attemptLogin()
+            it.animate().setDuration(1000L).alpha(0f).withEndAction {
+                it.animate().alpha(1f)
+            }
+        }
 
         findViewById<FloatingActionButton>(R.id.login_fab_register).setOnClickListener {
             startActivity(Intent(applicationContext, RegisterActivity::class.java))
@@ -80,8 +76,6 @@ class LoginActivity : Activity() {
             return
         }
 
-        fabLogin.startAnimation(rotate)
-
         CoroutineScope(EmptyCoroutineContext).launch {
             try {
                 delay(timeMillis = 2000L)
@@ -99,9 +93,10 @@ class LoginActivity : Activity() {
                     } else clear()
                 }
 
-                startActivity(Intent(applicationContext, HomeActivity::class.java).apply {
-                    putExtra(LoginModel.Keys.KEY_USER_ID, id)
-                })
+                startActivity(
+                    Intent(applicationContext, HomeActivity::class.java)
+                        .putExtra(LoginModel.Keys.KEY_USER_ID, id)
+                )
                 finish()
             } catch (ignored: InterruptedException) {
             }

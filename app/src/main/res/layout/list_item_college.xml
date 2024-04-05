@@ -1,52 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/ll"
     android:orientation="vertical">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:id="@+id/cl_li_container"
         style="@style/ll_pad"
-        android:background="@drawable/row_button_bar">
+        android:background="@drawable/row_button_bar"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/cl_li_name"
             style="@style/ll"
-            android:layout_marginBottom="@dimen/dimen_5dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/cl_li_fees"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/cl_li_fees"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@id/cl_li_branches"
-            app:layout_constraintEnd_toStartOf="@id/cl_li_hostel"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cl_li_name" />
+        <LinearLayout
+            style="@style/ll"
+            android:layout_marginVertical="@dimen/dimen_5dp">
 
-        <TextView
-            android:id="@+id/cl_li_hostel"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            app:layout_constraintBottom_toTopOf="@id/cl_li_branches"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/cl_li_fees"
-            app:layout_constraintTop_toBottomOf="@id/cl_li_name" />
+            <TextView
+                android:id="@+id/cl_li_fees"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5" />
+
+            <TextView
+                android:id="@+id/cl_li_hostel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.5" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/cl_li_branches"
-            style="@style/ll"
-            android:layout_marginTop="@dimen/dimen_5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cl_li_fees" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            style="@style/ll" />
+    </LinearLayout>
 
     <View
         android:id="@+id/divider"

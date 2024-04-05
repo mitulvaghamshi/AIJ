@@ -27,7 +27,9 @@ class BranchAdapter(
             val item = items[position]
             tvName.text = item.name
             tvCollegeCount.text = item.count
-            itemContainer.setOnClickListener { holder.onClick(it.context, item.id) }
+            itemContainer.setOnClickListener {
+                holder.onClick(it.context, item.id.toString())
+            }
         }
     }
 
@@ -36,10 +38,10 @@ class BranchAdapter(
         val tvCollegeCount: TextView = view.findViewById(R.id.b_li_college_count)
         val itemContainer: LinearLayout = view.findViewById(R.id.b_li_container)
 
-        fun onClick(context: Context, id: Long) = context.startActivity(
+        fun onClick(context: Context, id: String) = context.startActivity(
             Intent(context, CollegeListActivity::class.java)
                 .putExtra(Keys.KEY_FILTER_OPTION, Keys.KEY_FILTER_BRANCH)
-                .putExtra(Keys.KEY_FILTER_ID, id.toString())
+                .putExtra(Keys.KEY_FILTER_ID, id)
         )
     }
 }

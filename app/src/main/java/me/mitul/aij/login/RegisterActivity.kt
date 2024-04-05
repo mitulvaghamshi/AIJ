@@ -22,13 +22,10 @@ class RegisterActivity : Activity() {
     private lateinit var tvCity: AutoCompleteTextView
     private lateinit var tvPassword: AutoCompleteTextView
     private lateinit var tvRePassword: AutoCompleteTextView
-
-    private lateinit var fabRegister: FloatingActionButton
     private lateinit var registerForm: LinearLayout
 
-    private lateinit var dbHelper: LoginModel
     private lateinit var shake: Animation
-    private lateinit var rotate: Animation
+    private lateinit var dbHelper: LoginModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +33,6 @@ class RegisterActivity : Activity() {
 
         dbHelper = LoginModel(Database(applicationContext))
         shake = AnimationUtils.loadAnimation(applicationContext, R.anim.anim_shake)
-        rotate = AnimationUtils.loadAnimation(applicationContext, R.anim.anim_rotate)
 
         tvUsername = findViewById(R.id.reg_ed_username)
         tvEmail = findViewById(R.id.reg_ed_email)
@@ -46,8 +42,12 @@ class RegisterActivity : Activity() {
         tvRePassword = findViewById(R.id.reg_ed_re_password)
         registerForm = findViewById(R.id.registration_form)
 
-        fabRegister = findViewById(R.id.reg_fab_register)
-        fabRegister.setOnClickListener { attemptRegister() }
+        findViewById<FloatingActionButton>(R.id.reg_fab_register).setOnClickListener {
+            attemptRegister()
+            it.animate().setDuration(1000L).alpha(0f).withEndAction {
+                it.animate().alpha(1f)
+            }
+        }
 
         findViewById<FloatingActionButton>(R.id.reg_fab_close).setOnClickListener { finish() }
     }
@@ -84,8 +84,6 @@ class RegisterActivity : Activity() {
             tvRePassword.startAnimation(shake)
             return
         }
-
-        fabRegister.startAnimation(rotate)
 
         CoroutineScope(EmptyCoroutineContext).launch {
             try {

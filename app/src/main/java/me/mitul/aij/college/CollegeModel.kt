@@ -9,7 +9,7 @@ data class CollegeModel(
     var email: String? = "",
     var website: String? = "",
     var address: String? = "",
-    var fees: String? = "",
+    var fees: Int? = -1,
     var hostel: String? = "",
     var established: String? = "",
     var admissionCode: String? = "",

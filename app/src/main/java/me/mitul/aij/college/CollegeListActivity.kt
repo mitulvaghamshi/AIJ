@@ -8,7 +8,10 @@ import android.widget.AdapterView.OnItemClickListener
 import android.widget.EditText
 import android.widget.ListView
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import me.mitul.aij.R
+import me.mitul.aij.university.UniversityAdapter
 import me.mitul.aij.utils.Keys
 import me.mitul.aij.utils.MyWatcher
 
@@ -19,29 +22,14 @@ class CollegeListActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_common_listview)
 
+        val filter = intent.getStringExtra(Keys.KEY_FILTER_OPTION)
+        val id = intent.getStringExtra(Keys.KEY_FILTER_ID)
         dbHelper = CollegeHelper(applicationContext)
-        val colleges = when (intent.getStringExtra(Keys.KEY_FILTER_OPTION)) {
-            Keys.KEY_FILTER_BRANCH ->
-                dbHelper.getByBranch(intent.getStringExtra(Keys.KEY_FILTER_ID))
+        val colleges = dbHelper.getColleges(filter = filter, id = id)
 
-            Keys.KEY_FILTER_UNIVERSITY ->
-                dbHelper.getByUniversity(intent.getStringExtra(Keys.KEY_FILTER_ID))
-
-            else -> dbHelper.getAll()
-        }
-
-        val listview = findViewById<ListView>(R.id.common_lv).also {
-            it.visibility = View.VISIBLE
-            it.isTextFilterEnabled = true
-            it.setAdapter(CollegeAdapter(this.layoutInflater, colleges))
-            it.onItemClickListener = OnItemClickListener { _, view, _, _ ->
-                startActivity(
-                    Intent(applicationContext, CollegeDetailActivity::class.java).putExtra(
-                        Keys.KEY_FILTER_ID,
-                        view.findViewById<TextView>(R.id.cl_li_name).tag.toString()
-                    )
-                )
-            }
+        val listview = findViewById<RecyclerView>(R.id.recyclerview).apply {
+            layoutManager = LinearLayoutManager(applicationContext)
+            adapter = CollegeAdapter(layoutInflater, colleges)
         }
 
         findViewById<EditText>(R.id.common_ed_search).addTextChangedListener(

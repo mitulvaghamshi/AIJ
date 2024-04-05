@@ -1,11 +1,8 @@
 package me.mitul.aij.college
 
 import android.content.Context
-import android.database.Cursor
-import androidx.core.database.getIntOrNull
-import androidx.core.database.getLongOrNull
-import androidx.core.database.getStringOrNull
 import me.mitul.aij.utils.Database
+import me.mitul.aij.utils.Keys
 
 class CollegeHelper(context: Context, private val db: Database = Database(context)) {
     private companion object {
@@ -13,7 +10,7 @@ class CollegeHelper(context: Context, private val db: Database = Database(contex
         const val TBL_COLLEGE = "College"
         const val TBL_UNIVERSITY = "University"
         const val TBL_COLLEGE_TYPE = "CollegeType"
-        const val TBL_CB_COLLEGE_BRANCH = "cb_college_branch"
+        const val TBL_CB_COLLEGE_BRANCH = "CB_College_Branch"
 
         const val COL_ID = "id"
         const val COL_NAME = "name"
@@ -27,93 +24,130 @@ class CollegeHelper(context: Context, private val db: Database = Database(contex
         const val COL_HOSTEL = "hostel"
         const val COL_ESTABLISHED = "established"
         const val COL_ADMISSION_CODE = "admission_code"
-
-        const val COL_BRANCH_ID = "branch_id"
-        const val COL_COLLEGE_ID = "college_id"
         const val COL_UNIVERSITY_ID = "university_id"
         const val COL_COLLEGE_TYPE_ID = "college_type_id"
 
-        const val COL_COLLEGE_TYPE_TYPE = "type"
-
-        const val SQL_COLLEGE =
-            "SELECT $COL_ID, $COL_ACRONYM, $COL_FEES, $COL_HOSTEL FROM $TBL_COLLEGE"
-        const val SQL_COLLEGE_BY_ID = ""
-        const val SQL_BRANCH_FILTER =
-            "SELECT $COL_COLLEGE_ID FROM $TBL_CB_COLLEGE_BRANCH WHERE $COL_BRANCH_ID = ?"
-        const val SQL_COLLEGE_FILTER =
-            "SELECT $COL_BRANCH_ID FROM $TBL_CB_COLLEGE_BRANCH WHERE $COL_COLLEGE_ID = ?"
-        const val SQL_COLLEGE_BY_BRANCH = "$SQL_COLLEGE WHERE $COL_ID IN ($SQL_BRANCH_FILTER);"
-        const val SQL_BRANCH_BY_COLLEGE =
-            "SELECT $COL_ACRONYM FROM $TBL_BRANCH WHERE $COL_ID IN ($SQL_COLLEGE_FILTER);"
-        const val SQL_COLLEGE_BY_UNIVERSITY = "$SQL_COLLEGE WHERE $COL_UNIVERSITY_ID = ?;"
+        const val COL_CT_TYPE = "type"
+        const val COL_CB_BRANCH_ID = "branch_id"
+        const val COL_CB_COLLEGE_ID = "college_id"
     }
 
-    private fun get(sql: String, selectionArgs: Array<String?>? = null): List<CollegeModel> {
+    private object Sql {
+        const val COLLEGE_LIST = """
+            SELECT $COL_ID, $COL_NAME, $COL_FEES, $COL_HOSTEL 
+            FROM   $TBL_COLLEGE
+        """
+
+        const val COLLEGE_DETAIL = """
+            SELECT $COL_ID, $COL_NAME, $COL_CODE, $COL_ACRONYM, $COL_PHONE,
+                   $COL_EMAIL, $COL_WEBSITE, $COL_ADDRESS, $COL_FEES, 
+                   $COL_HOSTEL, $COL_ESTABLISHED, $COL_ADMISSION_CODE,
+                   $COL_COLLEGE_TYPE_ID, $COL_UNIVERSITY_ID
+            FROM   $TBL_COLLEGE 
+            WHERE  $COL_ID = ?;
+        """
+
+        private const val COLLEGE_FILTER = """
+            SELECT $COL_CB_BRANCH_ID 
+            FROM   $TBL_CB_COLLEGE_BRANCH 
+            WHERE  $COL_CB_COLLEGE_ID = ?
+        """
+
+        private const val BRANCH_FILTER = """
+            SELECT $COL_CB_COLLEGE_ID 
+            FROM   $TBL_CB_COLLEGE_BRANCH 
+            WHERE  $COL_CB_BRANCH_ID = ?
+        """
+
+        const val BRANCHES_BY_COLLEGE = """
+            SELECT $COL_ACRONYM 
+            FROM   $TBL_BRANCH 
+            WHERE  $COL_ID IN ($COLLEGE_FILTER);
+        """
+
+        const val COLLEGE_BY_BRANCH = """
+            $COLLEGE_LIST 
+            WHERE $COL_ID IN ($BRANCH_FILTER);
+        """
+
+        const val COLLEGE_BY_UNIVERSITY = """
+            $COLLEGE_LIST 
+            WHERE $COL_UNIVERSITY_ID = ?;
+        """
+    }
+
+    fun getColleges(filter: String?, id: String?) = when (filter) {
+        Keys.KEY_FILTER_BRANCH -> getByBranch(id)
+        Keys.KEY_FILTER_UNIVERSITY -> getByUniversity(id)
+        else -> get(Sql.COLLEGE_LIST)
+    }
+
+    fun getCollegeBy(id: String?, includeAllData: Boolean = true) =
+        get(Sql.COLLEGE_DETAIL, arrayOf(id), includeAllData).first()
+
+    private fun getByBranch(id: String?) = get(Sql.COLLEGE_BY_BRANCH, arrayOf(id))
+
+    private fun getByUniversity(id: String?) = get(Sql.COLLEGE_BY_UNIVERSITY, arrayOf(id))
+
+    private fun getCollegeTypeBy(id: String?) = getValueBy(TBL_COLLEGE_TYPE, COL_CT_TYPE, id)
+
+    private fun getUniversityNameBy(id: String?) = getValueBy(TBL_UNIVERSITY, COL_ACRONYM, id)
+
+    private fun getBranchesBy(id: String?): String? {
+        val cursor = db.readableDatabase.rawQuery(Sql.BRANCHES_BY_COLLEGE, arrayOf(id))
+        val branchString = if (cursor.moveToFirst()) StringBuilder().apply {
+            do append(cursor.getString(cursor.getColumnIndexOrThrow(COL_ACRONYM)) + ", ")
+            while (cursor.moveToNext())
+        }.toString().dropLast(n = 2) else null
+        cursor.close()
+        return branchString
+    }
+
+    private fun getValueBy(tbl: String, col: String, arg: String?): String? {
+        val cursor = db.readableDatabase
+            .rawQuery("SELECT $col FROM $tbl WHERE $COL_ID = ?", arrayOf(arg))
+        val value = if (cursor.moveToFirst()) cursor
+            .getString(cursor.getColumnIndexOrThrow(col)) else null
+        cursor.close()
+        return value
+    }
+
+    private fun get(
+        sql: String,
+        selectionArgs: Array<String?>? = null,
+        includeAllData: Boolean = false,
+    ): List<CollegeModel> {
         val items = arrayListOf<CollegeModel>()
         val cursor = db.readableDatabase.rawQuery(sql, selectionArgs)
         if (cursor.moveToFirst()) do {
+            val collegeId = cursor.getLong(cursor.getColumnIndexOrThrow(COL_ID))
             val college = CollegeModel(
-                id = cursor.getLongOrNull(cursor.getColumnIndex(COL_ID)) ?: -1L,
-                name = cursor.getStringOrNull(cursor.getColumnIndex(COL_ACRONYM)) ?: "",
-                fees = cursor.getIntOrNull(cursor.getColumnIndex(COL_FEES)).toString() + "/-",
-                hostel = cursor.getStringOrNull(cursor.getColumnIndex(COL_HOSTEL)),
+                id = collegeId,
+                name = cursor.getString(cursor.getColumnIndexOrThrow(COL_NAME)),
+                fees = cursor.getInt(cursor.getColumnIndexOrThrow(COL_FEES)),
+                hostel = cursor.getString(cursor.getColumnIndexOrThrow(COL_HOSTEL)),
+                branches = getBranchesBy(collegeId.toString()),
             )
-            val cursorBranches = db.readableDatabase
-                .rawQuery(SQL_BRANCH_BY_COLLEGE, arrayOf(college.id.toString()))
-            if (cursorBranches.moveToFirst()) college.branches = StringBuilder().apply {
-                do append(
-                    cursorBranches.getStringOrNull(cursorBranches.getColumnIndex(COL_ACRONYM)) + ","
-                ) while (cursorBranches.moveToNext())
-            }.toString().dropLast(1)
-            cursorBranches.close()
+            if (includeAllData) {
+                val typeId = cursor.getInt(cursor.getColumnIndexOrThrow(COL_COLLEGE_TYPE_ID))
+                val universityId = cursor.getInt(cursor.getColumnIndexOrThrow(COL_UNIVERSITY_ID))
+                college.apply {
+                    code = cursor.getString(cursor.getColumnIndexOrThrow(COL_CODE))
+                    acronym = cursor.getString(cursor.getColumnIndexOrThrow(COL_ACRONYM))
+                    phone = cursor.getString(cursor.getColumnIndexOrThrow(COL_PHONE))
+                    email = cursor.getString(cursor.getColumnIndexOrThrow(COL_EMAIL))
+                    website = cursor.getString(cursor.getColumnIndexOrThrow(COL_WEBSITE))
+                    address = cursor.getString(cursor.getColumnIndexOrThrow(COL_ADDRESS))
+                    established = cursor.getString(cursor.getColumnIndexOrThrow(COL_ESTABLISHED))
+                    admissionCode =
+                        cursor.getString(cursor.getColumnIndexOrThrow(COL_ADMISSION_CODE))
+                    type = getCollegeTypeBy(typeId.toString())
+                    university = getUniversityNameBy(universityId.toString())
+                }
+            }
             items.add(college)
         } while (cursor.moveToNext())
         cursor.close()
         return items
-    }
-
-    fun getAll() = get(SQL_COLLEGE)
-
-    fun getByBranch(id: String?) = get(SQL_COLLEGE_BY_BRANCH, arrayOf(id))
-
-    fun getByUniversity(id: String?) = get(SQL_COLLEGE_BY_UNIVERSITY, arrayOf(id))
-
-    fun getCollegeBy(id: String?): CollegeModel {
-        val college = CollegeModel()
-        val database = db.readableDatabase
-        val cursor = database.rawQuery("Select * from INS_College where CollegeID = $id", null)
-        if (cursor.moveToFirst()) {
-            college.code = cursor.getString(cursor.getColumnIndex("CollegeCode"))
-            college.clgCollegeId = cursor.getInt(cursor.getColumnIndex("CollegeID"))
-            college.initials = cursor.getString(cursor.getColumnIndex("CollegeShortName"))
-            college.fullName = cursor.getString(cursor.getColumnIndex("CollegeName"))
-            college.address = cursor.getString(cursor.getColumnIndex("Address"))
-            college.phone = cursor.getString(cursor.getColumnIndex("Phone"))
-            college.web = cursor.getString(cursor.getColumnIndex("Website"))
-            college.email = cursor.getString(cursor.getColumnIndex("Email"))
-            college.fees = cursor.getString(cursor.getColumnIndex("Fees"))
-            college.type = cursor.getString(cursor.getColumnIndex("CollegeTypeID"))
-            college.hostel = cursor.getString(cursor.getColumnIndex("Hostel"))
-            college.university = cursor.getString(cursor.getColumnIndex("UniversityID"))
-        }
-        val cursor1 = database.rawQuery(
-            "Select CollegeTypeName from MST_CollegeType where CollegeTypeID = " + college.type,
-            null
-        )
-        if (cursor1.moveToFirst()) {
-            college.type = cursor1.getString(cursor1.getColumnIndex("CollegeTypeName"))
-        }
-        val cursor2 = database.rawQuery(
-            "Select UniversityShortName from MST_University where UniversityID = " + college.university,
-            null
-        )
-        if (cursor2.moveToFirst()) {
-            college.university = cursor2.getString(cursor2.getColumnIndex("UniversityShortName"))
-        }
-        cursor2.close()
-        cursor1.close()
-        cursor.close()
-        database.close()
-        return college
     }
 }

@@ -6,7 +6,7 @@
     </style>
 
     <style name="ll_pad" parent="ll">
-        <item name="android:padding">@dimen/dimen_10dp</item>
+        <item name="android:padding">@dimen/dimen_16dp</item>
     </style>
 
     <style name="tv_inline" parent="ll">
@@ -25,12 +25,14 @@
         <item name="android:typeface">serif</item>
     </style>
 
-    <style name="reg_tv" parent="ll">
+    <style name="login_tv" parent="ll">
         <item name="android:layout_height">?actionBarSize</item>
         <item name="android:padding">@dimen/dimen_10dp</item>
         <item name="android:layout_marginBottom">@dimen/dimen_10dp</item>
         <item name="android:background">@drawable/row_button_bar</item>
+        <item name="android:drawablePadding">@dimen/dimen_10dp</item>
         <item name="android:imeOptions">actionNext</item>
+        <item name="android:maxLines">1</item>
     </style>
 
     <style name="hs_btn">
@@ -41,14 +43,15 @@
         <item name="android:typeface">serif</item>
     </style>
 
-    <style name="detail_label_tv" parent="ll_pad">
+    <style name="detail_label_tv" parent="ll">
+        <item name="android:padding">@dimen/dimen_10dp</item>
         <item name="android:minWidth">@dimen/dimen_110dp</item>
-        <item name="android:layout_weight">0.2</item>
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="detail_text_tv" parent="ll_pad">
-        <item name="android:layout_weight">0.8</item>
+    <style name="detail_text_tv" parent="ll">
+        <item name="android:padding">@dimen/dimen_10dp</item>
+        <item name="android:layout_weight">1</item>
     </style>
 
     <style name="ll_divider" parent="ll">

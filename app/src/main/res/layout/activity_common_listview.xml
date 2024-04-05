@@ -19,13 +19,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <ListView
-        android:id="@+id/common_lv"
-        style="@style/ll"
-        android:listSelector="@color/blue"
-        android:scrollbars="none"
-        android:visibility="gone" />
-
     <ExpandableListView
         android:id="@+id/common_exp_lv"
         style="@style/ll_pad"

@@ -16,7 +16,7 @@ class UniversityListActivity : Activity() {
         setContentView(R.layout.activity_common_listview)
 
         dbHelper = UniversityHelper(applicationContext)
-        val universities = dbHelper.getAll()
+        val universities = dbHelper.getUniversities()
 
         val listview = findViewById<RecyclerView>(R.id.recyclerview).apply {
             layoutManager = LinearLayoutManager(applicationContext)

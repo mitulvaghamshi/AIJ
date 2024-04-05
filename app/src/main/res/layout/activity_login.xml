@@ -9,7 +9,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="230dp"
+            android:layout_height="@dimen/dimen_200dp"
             android:contentDescription="Login form header image"
             android:scaleType="fitXY"
             android:src="@drawable/img_login" />
@@ -31,36 +31,21 @@
 
             <AutoCompleteTextView
                 android:id="@+id/login_ed_username"
-                android:layout_width="match_parent"
-                android:layout_height="?actionBarSize"
-                android:layout_marginBottom="@dimen/dimen_10dp"
-                android:background="@drawable/row_button_bar"
+                style="@style/login_tv"
                 android:drawableStart="@drawable/ic_person_24dp"
                 android:hint="Username"
-                android:imeOptions="actionNext"
-                android:inputType="text"
-                android:maxLines="1"
-                android:padding="@dimen/dimen_10dp" />
+                android:inputType="text" />
 
             <AutoCompleteTextView
                 android:id="@+id/login_ed_password"
-                android:layout_width="match_parent"
-                android:layout_height="?actionBarSize"
-                android:layout_marginBottom="@dimen/dimen_10dp"
-                android:background="@drawable/row_button_bar"
+                style="@style/login_tv"
                 android:drawableStart="@drawable/ic_lock_24dp"
                 android:hint="Password"
-                android:imeOptions="actionNext"
-                android:inputType="textPassword"
-                android:maxLines="1"
-                android:padding="@dimen/dimen_10dp" />
+                android:inputType="textPassword" />
 
             <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/login_sw_keep_signed"
-                android:layout_width="match_parent"
-                android:layout_height="?actionBarSize"
-                android:layout_marginBottom="@dimen/dimen_10dp"
-                android:background="@drawable/row_button_bar"
+                style="@style/login_tv"
                 android:paddingHorizontal="@dimen/dimen_10dp"
                 android:text="Keep me signed in."
                 app:thumbTint="@android:color/black"

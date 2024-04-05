@@ -12,7 +12,7 @@
             android:background="@drawable/row_button_bar_2">
 
             <TextView
-                android:id="@+id/cd_tv_initials"
+                android:id="@+id/cd_tv_acronym"
                 android:layout_width="@dimen/dimen_0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.80"
@@ -41,7 +41,7 @@
                     android:text="Name" />
 
                 <TextView
-                    android:id="@+id/cd_tv_full_name"
+                    android:id="@+id/cd_tv_name"
                     style="@style/detail_text_tv" />
             </TableRow>
 
@@ -92,6 +92,35 @@
                     style="@style/detail_text_tv"
                     android:autoLink="email" />
             </TableRow>
+
+            <TableRow style="@style/ll_divider">
+
+                <TextView
+                    style="@style/detail_label_tv"
+                    android:text="Established" />
+
+                <TextView
+                    android:id="@+id/cd_tv_established"
+                    style="@style/detail_text_tv"
+                    android:autoLink="email" />
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            style="@style/ll_divider"
+            android:layout_marginBottom="@dimen/dimen_10dp"
+            android:background="@drawable/row_button_bar">
+
+            <TableRow style="@style/ll_divider">
+
+                <TextView
+                    style="@style/detail_label_tv"
+                    android:text="Branches" />
+
+                <TextView
+                    android:id="@+id/cd_tv_branches"
+                    style="@style/detail_text_tv" />
+            </TableRow>
         </TableLayout>
 
         <TableLayout
@@ -130,10 +159,6 @@
                 <TextView
                     android:id="@+id/cd_tv_hostel"
                     style="@style/detail_text_tv" />
-            </TableRow>
-
-            <TableRow style="@style/ll_divider">
-
             </TableRow>
 
             <TableRow style="@style/ll_divider">

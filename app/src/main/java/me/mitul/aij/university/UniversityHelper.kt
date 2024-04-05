@@ -20,7 +20,7 @@ class UniversityHelper(context: Context, private val db: Database = Database(con
         const val COL_ESTABLISHED = "established"
     }
 
-    fun getAll(): List<UniversityModel> {
+    fun getUniversities(): List<UniversityModel> {
         val cursor = db.readableDatabase.query(
             TBL_UNIVERSITY, arrayOf(COL_ID, COL_NAME),
             null, null, null, null, COL_NAME
