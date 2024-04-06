@@ -8,7 +8,7 @@ import me.mitul.aij.aij.FragmentCommon.Companion.newInstance
 class AijExplorerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_explore_aij)
+        setContentView(R.layout.aij_activity_explore)
 
         supportFragmentManager.beginTransaction().replace(
             R.id.fragment_container,

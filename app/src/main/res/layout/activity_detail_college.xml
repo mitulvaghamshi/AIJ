@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/ll_scroll">
+    style="@style/scroll_layout">
 
     <LinearLayout
-        style="@style/ll_pad"
+        style="@style/linear_layout_pad"
         android:orientation="vertical">
 
-        <LinearLayout
-            style="@style/ll_pad"
-            android:layout_marginBottom="@dimen/dimen_10dp"
-            android:background="@drawable/row_button_bar_2">
+        <LinearLayout style="@style/section_header">
 
             <TextView
                 android:id="@+id/cd_tv_acronym"
@@ -30,169 +27,166 @@
         </LinearLayout>
 
         <TableLayout
-            style="@style/ll_divider"
+            style="@style/table_cell_divider"
             android:layout_marginBottom="@dimen/dimen_10dp"
-            android:background="@drawable/row_button_bar">
+            android:background="@drawable/list_item_bg_border">
 
-            <TableRow style="@style/ll_divider">
+            <TableRow style="@style/table_cell_divider">
 
                 <TextView
-                    style="@style/detail_label_tv"
+                    style="@style/table_cell_label"
                     android:text="Name" />
 
                 <TextView
                     android:id="@+id/cd_tv_name"
-                    style="@style/detail_text_tv" />
+                    style="@style/table_cell_text" />
             </TableRow>
 
-            <TableRow style="@style/ll_divider">
+            <TableRow style="@style/table_cell_divider">
 
                 <TextView
-                    style="@style/detail_label_tv"
+                    style="@style/table_cell_label"
                     android:text="Address" />
 
                 <TextView
                     android:id="@+id/cd_tv_address"
-                    style="@style/detail_text_tv"
+                    style="@style/table_cell_text"
                     android:autoLink="map" />
             </TableRow>
 
-            <TableRow style="@style/ll_divider">
+            <TableRow style="@style/table_cell_divider">
 
                 <TextView
-                    style="@style/detail_label_tv"
+                    style="@style/table_cell_label"
                     android:text="Phone" />
 
                 <TextView
                     android:id="@+id/cd_tv_phone"
-                    style="@style/detail_text_tv"
+                    style="@style/table_cell_text"
                     android:autoLink="phone" />
             </TableRow>
 
-            <TableRow style="@style/ll_divider">
+            <TableRow style="@style/table_cell_divider">
 
                 <TextView
-                    style="@style/detail_label_tv"
+                    style="@style/table_cell_label"
                     android:text="Website" />
 
                 <TextView
                     android:id="@+id/cd_tv_website"
-                    style="@style/detail_text_tv"
+                    style="@style/table_cell_text"
                     android:autoLink="web" />
             </TableRow>
 
-            <TableRow style="@style/ll_divider">
+            <TableRow style="@style/table_cell_divider">
 
                 <TextView
-                    style="@style/detail_label_tv"
+                    style="@style/table_cell_label"
                     android:text="Email" />
 
                 <TextView
                     android:id="@+id/cd_tv_email"
-                    style="@style/detail_text_tv"
+                    style="@style/table_cell_text"
                     android:autoLink="email" />
             </TableRow>
 
-            <TableRow style="@style/ll_divider">
+            <TableRow style="@style/table_cell_divider">
 
                 <TextView
-                    style="@style/detail_label_tv"
+                    style="@style/table_cell_label"
                     android:text="Established" />
 
                 <TextView
                     android:id="@+id/cd_tv_established"
-                    style="@style/detail_text_tv"
+                    style="@style/table_cell_text"
                     android:autoLink="email" />
             </TableRow>
         </TableLayout>
 
         <TableLayout
-            style="@style/ll_divider"
+            style="@style/table_cell_divider"
             android:layout_marginBottom="@dimen/dimen_10dp"
-            android:background="@drawable/row_button_bar">
+            android:background="@drawable/list_item_bg_border">
 
-            <TableRow style="@style/ll_divider">
+            <TableRow style="@style/table_cell_divider">
 
                 <TextView
-                    style="@style/detail_label_tv"
+                    style="@style/table_cell_label"
                     android:text="Branches" />
 
                 <TextView
                     android:id="@+id/cd_tv_branches"
-                    style="@style/detail_text_tv" />
+                    style="@style/table_cell_text" />
             </TableRow>
         </TableLayout>
 
         <TableLayout
-            style="@style/ll_divider"
+            style="@style/table_cell_divider"
             android:layout_marginBottom="@dimen/dimen_10dp"
-            android:background="@drawable/row_button_bar">
+            android:background="@drawable/list_item_bg_border">
 
-            <TableRow style="@style/ll_divider">
+            <TableRow style="@style/table_cell_divider">
 
                 <TextView
-                    style="@style/detail_label_tv"
+                    style="@style/table_cell_label"
                     android:text="Fees" />
 
                 <TextView
                     android:id="@+id/cd_tv_fees"
-                    style="@style/detail_text_tv" />
+                    style="@style/table_cell_text" />
             </TableRow>
 
-            <TableRow style="@style/ll_divider">
+            <TableRow style="@style/table_cell_divider">
 
                 <TextView
-                    style="@style/detail_label_tv"
+                    style="@style/table_cell_label"
                     android:text="Type" />
 
                 <TextView
                     android:id="@+id/cd_tv_type"
-                    style="@style/detail_text_tv" />
+                    style="@style/table_cell_text" />
             </TableRow>
 
-            <TableRow style="@style/ll_divider">
+            <TableRow style="@style/table_cell_divider">
 
                 <TextView
-                    style="@style/detail_label_tv"
+                    style="@style/table_cell_label"
                     android:text="Hostel" />
 
                 <TextView
                     android:id="@+id/cd_tv_hostel"
-                    style="@style/detail_text_tv" />
+                    style="@style/table_cell_text" />
             </TableRow>
 
-            <TableRow style="@style/ll_divider">
+            <TableRow style="@style/table_cell_divider">
 
                 <TextView
-                    style="@style/detail_label_tv"
+                    style="@style/table_cell_label"
                     android:text="University" />
 
                 <TextView
                     android:id="@+id/cd_tv_university"
-                    style="@style/detail_text_tv" />
+                    style="@style/table_cell_text" />
             </TableRow>
         </TableLayout>
 
-        <LinearLayout style="@style/ll">
+        <LinearLayout style="@style/linear_layout">
 
             <Button
                 android:id="@+id/cd_btn_intake"
-                style="@style/ll"
-                android:layout_marginEnd="@dimen/dimen_10dp"
+                style="@style/section_header"
+                android:layout_marginEnd="@dimen/dimen_5dp"
                 android:layout_weight="0.5"
-                android:background="@drawable/row_button_bar_2"
-                android:text="Intake"
-                android:textColor="@android:color/white"
-                android:textStyle="bold" />
+                android:background="@drawable/list_item_bg_img"
+                android:text="Intake" />
 
             <Button
                 android:id="@+id/cd_btn_closing"
-                style="@style/ll"
+                style="@style/section_header"
+                android:layout_marginStart="@dimen/dimen_5dp"
                 android:layout_weight="0.5"
-                android:background="@drawable/row_button_bar_2"
-                android:text="Closing"
-                android:textColor="@android:color/white"
-                android:textStyle="bold" />
+                android:background="@drawable/list_item_bg_img"
+                android:text="Closing" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

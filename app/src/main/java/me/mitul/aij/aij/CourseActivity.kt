@@ -12,7 +12,7 @@ import me.mitul.aij.aij.FragmentCommon.Companion.newInstance
 class CourseActivity : FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_cources)
+        setContentView(R.layout.aij_activity_cources)
 
         val pager = findViewById<ViewPager>(R.id.splash_viewpager)
         pager.adapter = buildAdapter()

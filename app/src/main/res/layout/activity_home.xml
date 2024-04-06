@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/ll_pad"
-    android:scrollbars="none">
+    style="@style/scroll_layout">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/home_button_container"
-        style="@style/ll">
+        style="@style/linear_layout_pad"
+        android:padding="@dimen/dimen_10dp">
 
         <Button
             android:id="@+id/btn_find"
-            style="@style/hs_btn"
+            style="@style/home_button_text"
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_180dp"
             android:layout_marginEnd="@dimen/dimen_10dp"
@@ -22,7 +22,7 @@
 
         <Button
             android:id="@+id/btn_college"
-            style="@style/hs_btn"
+            style="@style/home_button_text"
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_85dp"
             android:background="#2db600"
@@ -33,7 +33,7 @@
 
         <Button
             android:id="@+id/btn_branches"
-            style="@style/hs_btn"
+            style="@style/home_button_text"
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginTop="@dimen/dimen_10dp"
@@ -46,14 +46,14 @@
 
         <View
             android:id="@+id/divider_1"
-            style="@style/divider"
+            style="@style/home_section_divider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_find" />
 
         <Button
             android:id="@+id/btn_university"
-            style="@style/hs_btn"
+            style="@style/home_button_text"
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginTop="@dimen/dimen_10dp"
@@ -67,7 +67,7 @@
 
         <Button
             android:id="@+id/btn_help_centers"
-            style="@style/hs_btn"
+            style="@style/home_button_text"
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginTop="@dimen/dimen_10dp"
@@ -80,7 +80,7 @@
 
         <Button
             android:id="@+id/btn_bank"
-            style="@style/hs_btn"
+            style="@style/home_button_text"
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginTop="@dimen/dimen_10dp"
@@ -92,14 +92,14 @@
 
         <View
             android:id="@+id/divider_2"
-            style="@style/divider"
+            style="@style/home_section_divider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_bank" />
 
         <Button
             android:id="@+id/btn_developer"
-            style="@style/hs_btn"
+            style="@style/home_button_text"
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_180dp"
             android:layout_marginTop="@dimen/dimen_10dp"
@@ -111,14 +111,14 @@
 
         <View
             android:id="@+id/divider_3"
-            style="@style/divider"
+            style="@style/home_section_divider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_developer" />
 
         <Button
             android:id="@+id/btn_scholarship"
-            style="@style/hs_btn"
+            style="@style/home_button_text"
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_160dp"
             android:layout_marginTop="@dimen/dimen_10dp"
@@ -130,7 +130,7 @@
 
         <Button
             android:id="@+id/btn_qa"
-            style="@style/hs_btn"
+            style="@style/home_button_text"
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginStart="@dimen/dimen_10dp"
@@ -143,14 +143,14 @@
 
         <View
             android:id="@+id/divider_4"
-            style="@style/divider"
+            style="@style/home_section_divider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_scholarship" />
 
         <Button
             android:id="@+id/btn_admission"
-            style="@style/hs_btn"
+            style="@style/home_button_text"
             android:layout_width="@dimen/dimen_0dp"
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginTop="@dimen/dimen_10dp"
@@ -162,18 +162,20 @@
 
         <Button
             android:id="@+id/btn_2"
-            style="@style/hs_btn"
+            style="@style/home_button_text"
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginTop="@dimen/dimen_10dp"
             android:background="#cc4b75"
             android:text="Button 2"
+            app:layout_constraintEnd_toStartOf="@id/btn_3"
+            app:layout_constraintHorizontal_weight="0.4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_admission" />
 
         <Button
             android:id="@+id/btn_3"
-            style="@style/hs_btn"
+            style="@style/home_button_text"
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginStart="@dimen/dimen_10dp"
@@ -181,20 +183,21 @@
             android:background="#972697"
             android:text="Button 3"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="0.6"
             app:layout_constraintStart_toEndOf="@id/btn_2"
             app:layout_constraintTop_toBottomOf="@id/btn_admission" />
 
         <View
             android:id="@+id/divider_5"
-            style="@style/divider"
+            style="@style/home_section_divider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_3" />
 
         <Button
             android:id="@+id/btn_4"
-            style="@style/hs_btn"
-            android:layout_width="230dp"
+            style="@style/home_button_text"
+            android:layout_width="@dimen/dimen_200dp"
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginTop="@dimen/dimen_10dp"
             android:background="#51bc57"
@@ -205,7 +208,7 @@
 
         <Button
             android:id="@+id/btn_5"
-            style="@style/hs_btn"
+            style="@style/home_button_text"
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginTop="@dimen/dimen_10dp"
@@ -213,30 +216,33 @@
             android:background="#13b3c1"
             android:text="Button 5"
             app:layout_constraintEnd_toStartOf="@id/btn_6"
+            app:layout_constraintHorizontal_weight="0.6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_4" />
 
         <Button
             android:id="@+id/btn_6"
-            style="@style/hs_btn"
+            style="@style/home_button_text"
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginTop="@dimen/dimen_10dp"
             android:background="#6e30e4"
             android:text="Button 6"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="0.4"
+            app:layout_constraintStart_toEndOf="@id/btn_5"
             app:layout_constraintTop_toBottomOf="@id/btn_4" />
 
         <View
             android:id="@+id/divider_6"
-            style="@style/divider"
+            style="@style/home_section_divider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_6" />
 
         <Button
             android:id="@+id/btn_aij"
-            style="@style/hs_btn"
+            style="@style/home_button_text"
             android:layout_width="@dimen/dimen_0dp"
             android:layout_height="@dimen/dimen_150dp"
             android:layout_marginTop="@dimen/dimen_10dp"
@@ -248,14 +254,14 @@
 
         <View
             android:id="@+id/divider_7"
-            style="@style/divider"
+            style="@style/home_section_divider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_aij" />
 
         <Button
             android:id="@+id/btn_students"
-            style="@style/hs_btn"
+            style="@style/home_button_text"
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginTop="@dimen/dimen_10dp"

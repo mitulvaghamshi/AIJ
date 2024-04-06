@@ -17,7 +17,7 @@ class UniversityAdapter(
     override fun getItemCount() = items.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(
-        inflater.inflate(R.layout.list_item_1, parent, false)
+        inflater.inflate(R.layout.list_item_university, parent, false)
     )
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

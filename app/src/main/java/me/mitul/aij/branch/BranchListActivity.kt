@@ -13,7 +13,7 @@ class BranchListActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_common_listview)
+        setContentView(R.layout.activity_recyclerview)
 
         dbHelper = BranchHelper(applicationContext)
         val branches = dbHelper.getAll()

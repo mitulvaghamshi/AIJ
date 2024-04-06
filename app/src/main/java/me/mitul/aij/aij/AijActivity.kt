@@ -13,7 +13,7 @@ import me.mitul.aij.aij.FragmentCommon.Companion.newInstance
 class AijActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home_aij)
+        setContentView(R.layout.aij_activity_home)
 
         val drawer = findViewById<DrawerLayout>(R.id.drawer_layout_home_screen_aij)
         findViewById<NavigationView>(R.id.navigation_drawer_home_screen_aij)?.also {

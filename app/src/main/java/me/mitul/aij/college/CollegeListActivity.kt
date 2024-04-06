@@ -1,17 +1,11 @@
 package me.mitul.aij.college
 
 import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.AdapterView.OnItemClickListener
 import android.widget.EditText
-import android.widget.ListView
-import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import me.mitul.aij.R
-import me.mitul.aij.university.UniversityAdapter
 import me.mitul.aij.utils.Keys
 import me.mitul.aij.utils.MyWatcher
 
@@ -20,7 +14,7 @@ class CollegeListActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_common_listview)
+        setContentView(R.layout.activity_recyclerview)
 
         val filter = intent.getStringExtra(Keys.KEY_FILTER_OPTION)
         val id = intent.getStringExtra(Keys.KEY_FILTER_ID)

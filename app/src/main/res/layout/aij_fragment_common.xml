@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/ll_scroll"
-    android:padding="@dimen/dimen_10dp">
+    style="@style/scroll_layout">
 
     <LinearLayout
-        style="@style/ll_pad"
+        style="@style/linear_layout_pad"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/frag_tv_header"
-            style="@style/ll"
-            android:background="@drawable/img_header_bg"
+            style="@style/linear_layout"
+            android:background="@drawable/img_item_bg"
             android:ellipsize="marquee"
             android:padding="@dimen/dimen_10dp"
             android:singleLine="true"
             android:textColor="@android:color/white"
             android:typeface="serif" />
 
-        <me.mitul.aij.utils.JustifiedTextView
+        <TextView
             android:id="@+id/frag_tv_description"
-            style="@style/ll"
+            style="@style/linear_layout"
             android:padding="@dimen/dimen_10dp"
             android:typeface="serif" />
     </LinearLayout>

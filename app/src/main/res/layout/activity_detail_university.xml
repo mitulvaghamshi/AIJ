@@ -1,100 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/ll_scroll">
+    style="@style/scroll_layout">
 
     <LinearLayout
-        style="@style/ll_pad"
+        style="@style/linear_layout_pad"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/ud_tv_initials"
-            style="@style/ll_pad"
+            style="@style/linear_layout_pad"
             android:layout_marginBottom="@dimen/dimen_10dp"
-            android:background="@drawable/row_button_bar_2"
+            android:background="@drawable/list_item_bg_img"
             android:gravity="center_horizontal"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
 
         <TableLayout
-            style="@style/ll_divider"
+            style="@style/table_cell_divider"
             android:layout_marginBottom="@dimen/dimen_10dp"
-            android:background="@drawable/row_button_bar">
+            android:background="@drawable/list_item_bg_border">
 
-            <TableRow style="@style/ll_divider">
+            <TableRow style="@style/table_cell_divider">
 
                 <TextView
-                    style="@style/detail_label_tv"
+                    style="@style/table_cell_label"
                     android:text="Name" />
 
                 <TextView
                     android:id="@+id/ud_tv_full_name"
-                    style="@style/detail_text_tv" />
+                    style="@style/table_cell_text" />
             </TableRow>
 
-            <TableRow style="@style/ll_divider">
+            <TableRow style="@style/table_cell_divider">
 
                 <TextView
-                    style="@style/detail_label_tv"
+                    style="@style/table_cell_label"
                     android:autoLink="map"
                     android:text="Address" />
 
                 <TextView
                     android:id="@+id/ud_tv_address"
-                    style="@style/detail_text_tv" />
+                    style="@style/table_cell_text" />
             </TableRow>
 
-            <TableRow style="@style/ll_divider">
+            <TableRow style="@style/table_cell_divider">
 
                 <TextView
-                    style="@style/detail_label_tv"
+                    style="@style/table_cell_label"
                     android:text="Phone" />
 
                 <TextView
                     android:id="@+id/ud_tv_phone"
-                    style="@style/detail_text_tv"
+                    style="@style/table_cell_text"
                     android:autoLink="phone" />
             </TableRow>
 
-            <TableRow style="@style/ll_divider">
+            <TableRow style="@style/table_cell_divider">
 
                 <TextView
-                    style="@style/detail_label_tv"
+                    style="@style/table_cell_label"
                     android:text="Email" />
 
                 <TextView
                     android:id="@+id/ud_tv_email"
-                    style="@style/detail_text_tv"
+                    style="@style/table_cell_text"
                     android:autoLink="email" />
             </TableRow>
 
-            <TableRow style="@style/ll_divider">
+            <TableRow style="@style/table_cell_divider">
 
                 <TextView
-                    style="@style/detail_label_tv"
+                    style="@style/table_cell_label"
                     android:text="Website" />
 
                 <TextView
                     android:id="@+id/ud_tv_website"
-                    style="@style/detail_text_tv"
+                    style="@style/table_cell_text"
                     android:autoLink="web" />
             </TableRow>
 
-            <TableRow style="@style/ll_divider">
+            <TableRow style="@style/table_cell_divider">
 
                 <TextView
-                    style="@style/detail_label_tv"
+                    style="@style/table_cell_label"
                     android:text="Type" />
 
                 <TextView
                     android:id="@+id/ud_tv_type"
-                    style="@style/detail_text_tv" />
+                    style="@style/table_cell_text" />
             </TableRow>
         </TableLayout>
 
         <Button
             android:id="@+id/ud_btn_colleges"
-            style="@style/ll"
-            android:background="@drawable/row_button_bar_2"
+            style="@style/linear_layout"
+            android:background="@drawable/list_item_bg_img"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
     </LinearLayout>

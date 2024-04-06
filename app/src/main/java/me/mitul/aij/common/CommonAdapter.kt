@@ -26,7 +26,7 @@ class CommonAdapter(
     ): View {
         var row = view
         if (row == null) {
-            row = inflater.inflate(R.layout.list_item_1, null)
+            row = inflater.inflate(R.layout.list_item_university, null)
             ViewHolder(row).also { row.tag = it }
         } else {
             row.tag as ViewHolder

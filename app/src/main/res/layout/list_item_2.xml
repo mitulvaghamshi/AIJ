@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/ll"
+    style="@style/linear_layout"
     android:orientation="vertical">
 
     <LinearLayout
-        style="@style/ll_pad"
-        android:background="@drawable/row_button_bar_2"
+        style="@style/linear_layout_pad"
+        android:background="@drawable/list_item_bg_img"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/li2_tv_name"
-            style="@style/ll"
+            style="@style/linear_layout"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/li2_tv_address"
-            style="@style/ll"
+            style="@style/linear_layout"
             android:textColor="@android:color/white"
             android:textSize="@dimen/font_12sp" />
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_10dp"
-        android:background="@android:color/white" />
+    <include layout="@layout/include_divider" />
 </LinearLayout>

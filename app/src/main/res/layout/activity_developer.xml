@@ -1,178 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/white">
+    style="@style/scroll_layout">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/linear_layout_pad"
         android:orientation="vertical">
 
-        <LinearLayout style="@style/dev_header_ll">
-
-            <TextView
-                style="@style/dev_header_ll_tv"
-                android:text="About App" />
-        </LinearLayout>
+        <TextView
+            style="@style/section_header"
+            android:text="Application" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            style="@style/linear_layout"
             android:src="@drawable/img_aij_logo" />
 
         <TextView
-            style="@style/dev_header_ll_tv"
+            style="@style/table_cell_label"
             android:gravity="center"
-            android:text="AIJ (v1.0)"
-            android:textColor="@android:color/black" />
+            android:text="AIJ (v1.0)" />
 
-        <LinearLayout style="@style/dev_header_ll">
+        <TextView
+            style="@style/section_header"
+            android:text="Developer" />
 
-            <TextView
-                style="@style/dev_header_ll_tv"
-                android:text="About Developer" />
-        </LinearLayout>
+        <TableLayout
+            style="@style/table_cell_divider"
+            android:layout_marginBottom="@dimen/dimen_10dp"
+            android:background="@drawable/list_item_bg_border">
 
-        <LinearLayout
-            style="@style/ll"
-            android:padding="@dimen/dimen_10dp">
+            <TableRow style="@style/table_cell_divider">
 
-            <TextView
-                style="@style/tv_inline"
-                android:layout_weight="0.3"
-                android:text="Developer:" />
+                <TextView
+                    style="@style/table_cell_label"
+                    android:text="Developer" />
 
-            <TextView
-                style="@style/tv_inline"
-                android:layout_weight="0.7"
-                android:text="Mitul Vaghmashi"
-                android:typeface="serif" />
-        </LinearLayout>
+                <TextView
+                    style="@style/table_cell_text"
+                    android:text="Mitul Vaghmashi" />
+            </TableRow>
 
-        <LinearLayout
-            style="@style/ll"
-            android:padding="@dimen/dimen_10dp">
+            <TableRow style="@style/table_cell_divider">
 
-            <TextView
-                style="@style/tv_inline"
-                android:layout_weight="0.3"
-                android:text="Phone:" />
+                <TextView
+                    style="@style/table_cell_label"
+                    android:text="Phone" />
 
-            <TextView
-                style="@style/tv_inline"
-                android:layout_weight="0.7"
-                android:autoLink="phone"
-                android:text="+1 (289) 933-0783"
-                android:typeface="serif" />
-        </LinearLayout>
+                <TextView
+                    style="@style/table_cell_text"
+                    android:autoLink="phone"
+                    android:text="+1 (289) 933-0783" />
+            </TableRow>
 
-        <LinearLayout
-            style="@style/ll"
-            android:padding="@dimen/dimen_10dp">
+            <TableRow style="@style/table_cell_divider">
 
-            <TextView
-                style="@style/tv_inline"
-                android:layout_weight="0.3"
-                android:text="Email:" />
+                <TextView
+                    style="@style/table_cell_label"
+                    android:text="Email" />
 
-            <TextView
-                style="@style/tv_inline"
-                android:layout_weight="0.7"
-                android:autoLink="email"
-                android:text="mitulvaghmashi@gmail.com"
-                android:typeface="serif" />
-        </LinearLayout>
+                <TextView
+                    style="@style/table_cell_text"
+                    android:autoLink="email"
+                    android:text="mitulvaghmashi@gmail.com" />
+            </TableRow>
 
-        <LinearLayout
-            style="@style/ll"
-            android:padding="@dimen/dimen_10dp">
+            <TableRow style="@style/table_cell_divider">
 
-            <TextView
-                style="@style/tv_inline"
-                android:layout_weight="0.3"
-                android:text="Website:" />
+                <TextView
+                    style="@style/table_cell_label"
+                    android:text="Website" />
 
-            <TextView
-                style="@style/tv_inline"
-                android:layout_weight="0.7"
-                android:autoLink="web"
-                android:text="https://mitulvaghamshi.github.io"
-                android:typeface="serif" />
-        </LinearLayout>
+                <TextView
+                    style="@style/table_cell_text"
+                    android:autoLink="web"
+                    android:text="https://mitulvaghamshi.github.io/" />
+            </TableRow>
+        </TableLayout>
 
-        <LinearLayout style="@style/dev_header_ll">
-
-            <TextView
-                style="@style/dev_header_ll_tv"
-                android:text="Contact AIJ" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/ll"
-            android:padding="@dimen/dimen_10dp">
-
-            <TextView
-                style="@style/tv_inline"
-                android:layout_weight="0.3"
-                android:text="Phone" />
-
-            <TextView
-                style="@style/tv_inline"
-                android:layout_weight="0.7"
-                android:autoLink="phone"
-                android:text="82389 45600" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/ll"
-            android:padding="@dimen/dimen_10dp">
-
-            <TextView
-                style="@style/tv_inline"
-                android:layout_weight="0.3"
-                android:text="Email:" />
-
-            <TextView
-                style="@style/tv_inline"
-                android:layout_weight="0.7"
-                android:autoLink="email"
-                android:text="info@example.com" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/ll"
-            android:padding="@dimen/dimen_10dp">
-
-            <TextView
-                style="@style/tv_inline"
-                android:layout_weight="0.3"
-                android:text="Web:" />
-
-            <TextView
-                style="@style/tv_inline"
-                android:layout_weight="0.7"
-                android:autoLink="web"
-                android:text="https://example.com" />
-        </LinearLayout>
+        <TextView
+            style="@style/section_header"
+            android:text="Institute" />
 
         <Button
             android:id="@+id/dev_btn_aij"
-            style="@style/dev_header_ll_tv"
+            style="@style/linear_layout"
+            android:layout_marginBottom="@dimen/dimen_10dp"
+            android:background="@drawable/list_item_bg_border"
             android:text="Learn more about AIJ" />
 
+        <TableLayout
+            style="@style/table_cell_divider"
+            android:layout_marginBottom="@dimen/dimen_10dp"
+            android:background="@drawable/list_item_bg_border">
+
+            <TableRow style="@style/table_cell_divider">
+
+                <TextView
+                    style="@style/table_cell_label"
+                    android:text="Phone" />
+
+                <TextView
+                    style="@style/table_cell_text"
+                    android:autoLink="phone"
+                    android:text="+91 82389 45600" />
+            </TableRow>
+
+            <TableRow style="@style/table_cell_divider">
+
+                <TextView
+                    style="@style/table_cell_label"
+                    android:text="Email" />
+
+                <TextView
+                    style="@style/table_cell_text"
+                    android:autoLink="email"
+                    android:text="info@aij.ind.in" />
+            </TableRow>
+
+            <TableRow style="@style/table_cell_divider">
+
+                <TextView
+                    style="@style/table_cell_label"
+                    android:text="Website" />
+
+                <TextView
+                    style="@style/table_cell_text"
+                    android:autoLink="web"
+                    android:text="https://aij.ind.in/" />
+            </TableRow>
+        </TableLayout>
+
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/linear_layout"
             android:src="@drawable/img_aij_banner" />
 
-        <LinearLayout style="@style/dev_header_ll">
-
-            <TextView
-                style="@style/dev_header_ll_tv"
-                android:gravity="center_horizontal"
-                android:text="© 2016 AIJ. All Rights Reserved." />
-        </LinearLayout>
+        <TextView
+            style="@style/section_header"
+            android:gravity="center_horizontal"
+            android:text="© 2016 AIJ - All Rights Reserved." />
     </LinearLayout>
 </ScrollView>

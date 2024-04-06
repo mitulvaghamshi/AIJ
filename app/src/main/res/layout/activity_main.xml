@@ -11,9 +11,9 @@
     <Button
         android:id="@+id/splash_btn_login"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="?actionBarSize"
         android:layout_gravity="bottom"
         android:layout_margin="@dimen/dimen_30dp"
-        android:background="@drawable/row_button_bar"
+        android:background="@drawable/list_item_bg_border"
         android:text="@string/splash_continue_btn" />
 </FrameLayout>

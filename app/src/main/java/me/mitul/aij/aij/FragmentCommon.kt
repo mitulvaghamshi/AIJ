@@ -7,13 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import me.mitul.aij.R
-import me.mitul.aij.utils.Database
 
 class FragmentCommon : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,
     ): View {
-        val view = inflater.inflate(R.layout.fragment_common, container, false)
+        val view = inflater.inflate(R.layout.aij_fragment_common, container, false)
         val id = requireArguments().getInt(KEY_FRAG_ID)
         if (id == 0) return view
 

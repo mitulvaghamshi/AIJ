@@ -13,7 +13,7 @@ class UniversityListActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_common_listview)
+        setContentView(R.layout.activity_recyclerview)
 
         dbHelper = UniversityHelper(applicationContext)
         val universities = dbHelper.getUniversities()

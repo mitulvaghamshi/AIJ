@@ -15,7 +15,7 @@ class BankBranchListActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_common_listview)
+        setContentView(R.layout.activity_recyclerview)
 
         dbHelper = BankBranchHelper(applicationContext)
         val cities = dbHelper.selectCityForBankBranch()

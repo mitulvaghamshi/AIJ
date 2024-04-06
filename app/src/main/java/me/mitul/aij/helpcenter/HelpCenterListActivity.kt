@@ -8,7 +8,6 @@ import android.widget.ExpandableListView
 import me.mitul.aij.R
 import me.mitul.aij.common.CommonAdapter
 import me.mitul.aij.common.CommonModel
-import me.mitul.aij.utils.Database
 import me.mitul.aij.utils.MyWatcher
 
 class HelpCenterListActivity : Activity() {
@@ -16,7 +15,7 @@ class HelpCenterListActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_common_listview)
+        setContentView(R.layout.activity_recyclerview)
 
         dbHelper = HelpCenterHelper(applicationContext)
         val cities = dbHelper.getCities()

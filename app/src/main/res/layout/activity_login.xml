@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/ll">
+    style="@style/scroll_layout">
 
     <LinearLayout
-        style="@style/ll"
+        style="@style/linear_layout"
         android:orientation="vertical">
 
         <ImageView
@@ -16,7 +16,7 @@
 
         <LinearLayout
             android:id="@+id/login_form"
-            style="@style/ll_pad"
+            style="@style/linear_layout_pad"
             android:orientation="vertical">
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -27,25 +27,25 @@
                 android:contentDescription="New registration button"
                 android:src="@drawable/ic_add_24dp"
                 android:tooltipText="Registration"
-                app:backgroundTint="@color/blue" />
+                app:backgroundTint="@color/pink" />
 
             <AutoCompleteTextView
                 android:id="@+id/login_ed_username"
-                style="@style/login_tv"
+                style="@style/input_field"
                 android:drawableStart="@drawable/ic_person_24dp"
                 android:hint="Username"
                 android:inputType="text" />
 
             <AutoCompleteTextView
                 android:id="@+id/login_ed_password"
-                style="@style/login_tv"
+                style="@style/input_field"
                 android:drawableStart="@drawable/ic_lock_24dp"
                 android:hint="Password"
                 android:inputType="textPassword" />
 
             <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/login_sw_keep_signed"
-                style="@style/login_tv"
+                style="@style/input_field"
                 android:paddingHorizontal="@dimen/dimen_10dp"
                 android:text="Keep me signed in."
                 app:thumbTint="@android:color/black"
@@ -60,7 +60,7 @@
                 android:imeOptions="actionGo"
                 android:src="@drawable/ic_send_24dp"
                 android:tooltipText="Login"
-                app:backgroundTint="@color/pink" />
+                app:backgroundTint="@color/purple" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

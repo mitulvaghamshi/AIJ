@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/ll"
+    style="@style/linear_layout"
     android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/cl_li_container"
-        style="@style/ll_pad"
-        android:background="@drawable/row_button_bar"
+        style="@style/linear_layout_pad"
+        android:background="@drawable/list_item_bg_border"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/cl_li_name"
-            style="@style/ll"
+            style="@style/linear_layout"
             android:textStyle="bold" />
 
         <LinearLayout
-            style="@style/ll"
+            style="@style/linear_layout"
             android:layout_marginVertical="@dimen/dimen_5dp">
 
             <TextView
@@ -34,12 +34,8 @@
 
         <TextView
             android:id="@+id/cl_li_branches"
-            style="@style/ll" />
+            style="@style/linear_layout" />
     </LinearLayout>
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_10dp"
-        android:background="@android:color/white" />
+    <include layout="@layout/include_divider" />
 </LinearLayout>
