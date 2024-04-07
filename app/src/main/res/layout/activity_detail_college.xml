@@ -177,7 +177,6 @@
                 style="@style/section_header"
                 android:layout_marginEnd="@dimen/dimen_5dp"
                 android:layout_weight="0.5"
-                android:background="@drawable/list_item_bg_img"
                 android:text="Intake" />
 
             <Button
@@ -185,7 +184,6 @@
                 style="@style/section_header"
                 android:layout_marginStart="@dimen/dimen_5dp"
                 android:layout_weight="0.5"
-                android:background="@drawable/list_item_bg_img"
                 android:text="Closing" />
         </LinearLayout>
     </LinearLayout>

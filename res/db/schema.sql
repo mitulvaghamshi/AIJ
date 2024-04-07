@@ -39,16 +39,6 @@ CREATE TABLE [CollegeType] (
     [id]   INTEGER PRIMARY KEY AUTOINCREMENT,
     [type] TEXT    NOT NULL
 );
-CREATE TABLE [Bank] (
-    [id]       INTEGER PRIMARY KEY AUTOINCREMENT,
-    [name]     TEXT    NOT NULL,
-    [address]  TEXT    NULL
-);
-CREATE TABLE [HelpCenter] (
-    [id]       INTEGER PRIMARY KEY AUTOINCREMENT,
-    [name]     TEXT    NOT NULL,
-    [address]  TEXT    NULL
-);
 CREATE TABLE [Branch] (
     [id]      INTEGER PRIMARY KEY AUTOINCREMENT,
     [code]    INTEGER NOT NULL,
@@ -103,6 +93,18 @@ CREATE TABLE [College] (
 
     FOREIGN KEY([university_id])   REFERENCES [University]([id]),
     FOREIGN KEY([college_type_id]) REFERENCES [CollegeType]([id])
+);
+CREATE TABLE [BankBranch] (
+    [id]       INTEGER PRIMARY KEY AUTOINCREMENT,
+    [name]     TEXT    NOT NULL,
+    [city]     TEXT    NOT NULL,
+    [address]  TEXT    NULL
+);
+CREATE TABLE [HelpCenter] (
+    [id]       INTEGER PRIMARY KEY AUTOINCREMENT,
+    [name]     TEXT    NOT NULL,
+    [city]     TEXT    NOT NULL,
+    [address]  TEXT    NULL
 );
 CREATE TABLE [CB_College_Branch] (
     [id]         INTEGER PRIMARY KEY AUTOINCREMENT,

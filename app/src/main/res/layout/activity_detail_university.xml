@@ -8,12 +8,8 @@
 
         <TextView
             android:id="@+id/ud_tv_initials"
-            style="@style/linear_layout_pad"
-            android:layout_marginBottom="@dimen/dimen_10dp"
-            android:background="@drawable/list_item_bg_img"
-            android:gravity="center_horizontal"
-            android:textColor="@android:color/white"
-            android:textStyle="bold" />
+            style="@style/section_header"
+            android:gravity="center_horizontal" />
 
         <TableLayout
             style="@style/table_cell_divider"
@@ -93,9 +89,7 @@
 
         <Button
             android:id="@+id/ud_btn_colleges"
-            style="@style/linear_layout"
-            android:background="@drawable/list_item_bg_img"
-            android:textColor="@android:color/white"
-            android:textStyle="bold" />
+            style="@style/section_header"
+            android:text="See Affiliated Colleges" />
     </LinearLayout>
 </ScrollView>

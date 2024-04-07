@@ -19,29 +19,36 @@ class BranchHelper(context: Context, private val db: Database = Database(context
         const val COL_BRANCH_ID = "branch_id"
     }
 
-    fun getAll(): List<BranchModel> {
-        val items = arrayListOf<BranchModel>()
-        val cursor = db.readableDatabase.query(
-            TBL_BRANCH, arrayOf(COL_ID, COL_CODE, COL_NAME, COL_ACRONYM),
-            null, null, null, null, null
-        )
-        val sqlCollegeCount =
-            "SELECT COUNT(*) FROM $TBL_CB_COLLEGE_BRANCH WHERE $COL_BRANCH_ID = ?;"
-        val stmtCollegeCount = db.readableDatabase.compileStatement(sqlCollegeCount)
+    private object Sql {
+        const val BRANCHES = """
+            SELECT $COL_ID, $COL_CODE, $COL_NAME, $COL_ACRONYM
+            FROM   $TBL_BRANCH;
+        """
+
+        const val COLLEGE_COUNT = """
+            SELECT COUNT(*) 
+            FROM   $TBL_CB_COLLEGE_BRANCH 
+            WHERE  $COL_BRANCH_ID = ?;
+        """
+    }
+
+    fun getAll() = arrayListOf<BranchModel>().apply {
+        val cursor = db.readableDatabase.rawQuery(Sql.BRANCHES, null)
+        val stmt = db.readableDatabase.compileStatement(Sql.COLLEGE_COUNT)
         if (cursor.moveToFirst()) do {
             val id = cursor.getLongOrNull(cursor.getColumnIndex(COL_ID)) ?: -1L
             val name = cursor.getStringOrNull(cursor.getColumnIndex(COL_NAME))
             val acronym = cursor.getStringOrNull(cursor.getColumnIndex(COL_ACRONYM))
-            stmtCollegeCount.bindLong(1, id)
-            val count = stmtCollegeCount.simpleQueryForLong()
+            stmt.bindLong(1, id)
+            val count = stmt.simpleQueryForLong()
             val format = "Available in %d college${if (count == 1L) "" else "s"}."
-            items += BranchModel(
-                id = id,
-                count = String.format(format, count),
-                name = String.format("%s (%s)", name, acronym)
+            add(
+                BranchModel(
+                    id = id, count = String.format(format, count),
+                    name = String.format("%s (%s)", name, acronym)
+                )
             )
         } while (cursor.moveToNext())
         cursor.close()
-        return items
     }
 }

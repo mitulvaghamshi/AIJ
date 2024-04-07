@@ -4,8 +4,7 @@
     android:orientation="vertical">
 
     <LinearLayout
-        style="@style/linear_layout_pad"
-        android:background="@drawable/list_item_bg_img"
+        style="@style/section_header"
         android:orientation="vertical">
 
         <TextView

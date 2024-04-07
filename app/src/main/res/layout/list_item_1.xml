@@ -4,7 +4,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/li_tv_name"
+        android:id="@+id/li_tv_label"
         style="@style/linear_layout_pad"
         android:background="@drawable/list_item_bg_border"
         android:textStyle="bold" />

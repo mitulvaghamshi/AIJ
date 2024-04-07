@@ -17,7 +17,7 @@ class UniversityDetailActivity : Activity() {
         setContentView(R.layout.activity_detail_university)
 
         dbHelper = UniversityHelper(applicationContext)
-        val id = intent.getStringExtra(Keys.KEY_FILTER_ID)
+        val id = intent.getStringExtra(Keys.KEY_FILTER_ID) ?: return
         val university = dbHelper.getBy(id) ?: return
 
         findViewById<TextView>(R.id.ud_tv_initials).text = university.acronym
@@ -28,14 +28,11 @@ class UniversityDetailActivity : Activity() {
         findViewById<TextView>(R.id.ud_tv_email).text = university.email
         findViewById<TextView>(R.id.ud_tv_type).text = university.type
 
-        findViewById<Button>(R.id.ud_btn_colleges).apply {
-            text = String.format("See colleges affiliated with %s", university.acronym)
-            setOnClickListener {
-                startActivity(Intent(applicationContext, CollegeListActivity::class.java).apply {
-                    putExtra(Keys.KEY_FILTER_OPTION, Keys.KEY_FILTER_UNIVERSITY)
-                    putExtra(Keys.KEY_FILTER_ID, id)
-                })
-            }
+        findViewById<Button>(R.id.ud_btn_colleges).setOnClickListener {
+            startActivity(Intent(applicationContext, CollegeListActivity::class.java).apply {
+                putExtra(Keys.KEY_FILTER_OPTION, Keys.KEY_FILTER_UNIVERSITY)
+                putExtra(Keys.KEY_FILTER_ID, id)
+            })
         }
     }
 }

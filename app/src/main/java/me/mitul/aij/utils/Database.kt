@@ -3,7 +3,7 @@ package me.mitul.aij.utils
 import android.content.Context
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper
 
-private const val DB_NAME = "database.db"
+private const val DB_NAME = "database.sqlite"
 private const val DB_VERSION = 1
 private val FACTORY = null
 

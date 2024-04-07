@@ -41,8 +41,7 @@
         <item name="android:background">@color/purple</item>
     </style>
 
-    <style name="section_header" parent="linear_layout">
-        <item name="android:padding">@dimen/dimen_10dp</item>
+    <style name="section_header" parent="linear_layout_pad">
         <item name="android:layout_marginBottom">@dimen/dimen_10dp</item>
         <item name="android:background">@drawable/list_item_bg_img</item>
         <item name="android:textColor">@android:color/white</item>

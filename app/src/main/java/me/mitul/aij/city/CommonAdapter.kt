@@ -1,4 +1,4 @@
-package me.mitul.aij.common
+package me.mitul.aij.city
 
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +10,7 @@ import me.mitul.aij.R
 class CommonAdapter(
     private val inflater: LayoutInflater,
     private val items: List<String>,
-    private val children: HashMap<String, List<CommonModel>>,
+    private val children: HashMap<String, List<CityModel>>,
 ) : BaseExpandableListAdapter() {
     override fun getGroup(groupPosition: Int) = items[groupPosition]
 
@@ -26,12 +26,12 @@ class CommonAdapter(
     ): View {
         var row = view
         if (row == null) {
-            row = inflater.inflate(R.layout.list_item_university, null)
+            row = inflater.inflate(R.layout.list_item_1, null)
             ViewHolder(row).also { row.tag = it }
         } else {
             row.tag as ViewHolder
         }.also {
-            it.tvName.text = getGroup(groupPosition)
+            it.label.text = getGroup(groupPosition)
         }
         return row!!
     }
@@ -41,7 +41,7 @@ class CommonAdapter(
     override fun isChildSelectable(groupPosition: Int, childPosition: Int) = true
 
     private class ViewHolder(view: View) {
-        val tvName: TextView = view.findViewById(R.id.li_tv_name)
+        val label: TextView = view.findViewById(R.id.li_tv_label)
     }
 
     override fun getChild(groupPosition: Int, childPosititon: Int) =

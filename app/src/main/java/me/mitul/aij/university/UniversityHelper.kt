@@ -1,8 +1,6 @@
 package me.mitul.aij.university
 
 import android.content.Context
-import androidx.core.database.getIntOrNull
-import androidx.core.database.getStringOrNull
 import me.mitul.aij.utils.Database
 
 class UniversityHelper(context: Context, private val db: Database = Database(context)) {
@@ -20,44 +18,45 @@ class UniversityHelper(context: Context, private val db: Database = Database(con
         const val COL_ESTABLISHED = "established"
     }
 
-    fun getUniversities(): List<UniversityModel> {
-        val cursor = db.readableDatabase.query(
-            TBL_UNIVERSITY, arrayOf(COL_ID, COL_NAME),
-            null, null, null, null, COL_NAME
-        )
-        val items = arrayListOf<UniversityModel>()
-        if (cursor.moveToFirst()) do {
-            items += UniversityModel(
-                id = cursor.getIntOrNull(cursor.getColumnIndex(COL_ID)) ?: -1,
-                name = cursor.getStringOrNull(cursor.getColumnIndex(COL_NAME)) ?: ""
+    private object Sql {
+        const val UNIVERSITIES = """
+            SELECT   $COL_ID, $COL_NAME 
+            FROM     $TBL_UNIVERSITY
+            ORDER BY $COL_NAME;
+        """
+
+        const val UNIVERSITY_BY_ID = """
+            SELECT $COL_ID, $COL_NAME, $COL_ACRONYM, $COL_TYPE, $COL_PHONE,
+                   $COL_ADDRESS, $COL_WEBSITE, $COL_EMAIL, $COL_ESTABLISHED
+            FROM   $TBL_UNIVERSITY
+            WHERE  $COL_ID = ?;
+        """
+    }
+
+    fun getAll() = arrayListOf<UniversityModel>().apply {
+        val cursor = db.readableDatabase.rawQuery(Sql.UNIVERSITIES, null)
+        if (cursor.moveToFirst()) do add(
+            UniversityModel(
+                id = cursor.getInt(cursor.getColumnIndexOrThrow(COL_ID)),
+                name = cursor.getString(cursor.getColumnIndexOrThrow(COL_NAME)),
             )
-        } while (cursor.moveToNext())
+        ) while (cursor.moveToNext())
         cursor.close()
-        return items
     }
 
     fun getBy(id: String?): UniversityModel? {
-        if (id.isNullOrBlank()) return null
-        val cursor = db.readableDatabase.query(
-            TBL_UNIVERSITY, arrayOf(
-                COL_ID, COL_NAME, COL_ACRONYM, COL_TYPE, COL_PHONE,
-                COL_ADDRESS, COL_WEBSITE, COL_EMAIL, COL_ESTABLISHED,
-            ), "$COL_ID = ?", arrayOf(id), null, null, null
-        )
-        var university: UniversityModel? = null
-        if (cursor.count > 0 && cursor.moveToFirst()) {
-            university = UniversityModel(
-                id = cursor.getIntOrNull(cursor.getColumnIndex(COL_ID)) ?: -1,
-                name = cursor.getStringOrNull(cursor.getColumnIndex(COL_NAME)) ?: "",
-                acronym = cursor.getStringOrNull(cursor.getColumnIndex(COL_ACRONYM)),
-                type = cursor.getStringOrNull(cursor.getColumnIndex(COL_TYPE)),
-                phone = cursor.getStringOrNull(cursor.getColumnIndex(COL_PHONE)),
-                address = cursor.getStringOrNull(cursor.getColumnIndex(COL_ADDRESS)),
-                website = cursor.getStringOrNull(cursor.getColumnIndex(COL_WEBSITE)),
-                email = cursor.getStringOrNull(cursor.getColumnIndex(COL_EMAIL)),
-                established = cursor.getStringOrNull(cursor.getColumnIndex(COL_ESTABLISHED)),
-            )
-        }
+        val cursor = db.readableDatabase.rawQuery(Sql.UNIVERSITY_BY_ID, arrayOf(id))
+        val university = if (cursor.moveToFirst()) UniversityModel(
+            id = cursor.getInt(cursor.getColumnIndexOrThrow(COL_ID)),
+            name = cursor.getString(cursor.getColumnIndexOrThrow(COL_NAME)),
+            acronym = cursor.getString(cursor.getColumnIndexOrThrow(COL_ACRONYM)),
+            type = cursor.getString(cursor.getColumnIndexOrThrow(COL_TYPE)),
+            phone = cursor.getString(cursor.getColumnIndexOrThrow(COL_PHONE)),
+            address = cursor.getString(cursor.getColumnIndexOrThrow(COL_ADDRESS)),
+            website = cursor.getString(cursor.getColumnIndexOrThrow(COL_WEBSITE)),
+            email = cursor.getString(cursor.getColumnIndexOrThrow(COL_EMAIL)),
+            established = cursor.getString(cursor.getColumnIndexOrThrow(COL_ESTABLISHED)),
+        ) else null
         cursor.close()
         return university
     }
