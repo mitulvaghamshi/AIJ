@@ -17,7 +17,7 @@ class DeveloperActivity : Activity() {
         findViewById<Button>(R.id.dev_btn_aij).setOnClickListener {
             startActivity(
                 Intent(applicationContext, CollegeDetailActivity::class.java)
-                    .putExtra(Keys.KEY_FILTER_ID, 58)
+                    .putExtra(Keys.KEY_FILTER_ID, "58")
             )
         }
     }

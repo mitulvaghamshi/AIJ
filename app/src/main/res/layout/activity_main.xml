@@ -9,7 +9,7 @@
         android:layout_height="match_parent" />
 
     <Button
-        android:id="@+id/splash_btn_login"
+        android:id="@+id/splash_btn_continue"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:layout_gravity="bottom"

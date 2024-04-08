@@ -22,21 +22,19 @@ class MainActivity : FragmentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val btnLogin = findViewById<Button>(R.id.splash_btn_login)
-        btnLogin.setOnClickListener {
+        val btnContinue = findViewById<Button>(R.id.splash_btn_continue)
+        btnContinue.setOnClickListener {
             startActivity(Intent(applicationContext, LoginActivity::class.java))
             finish()
         }
 
         findViewById<ViewPager2>(R.id.splash_viewpager).apply {
-            adapter = buildAdapter()
-            start { btnLogin.callOnClick() }
+            adapter = object : FragmentStateAdapter(supportFragmentManager, lifecycle) {
+                override fun getItemCount(): Int = pageCount
+                override fun createFragment(position: Int) = PagerFragment.Instance.new(position)
+            }
+            start { btnContinue.callOnClick() }
         }
-    }
-
-    private fun buildAdapter() = object : FragmentStateAdapter(this) {
-        override fun getItemCount(): Int = pageCount
-        override fun createFragment(position: Int) = PagerFragment.Instance.new(position)
     }
 
     private fun ViewPager2.start(onFail: () -> Unit) =

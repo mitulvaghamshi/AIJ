@@ -169,22 +169,5 @@
                     style="@style/table_cell_text" />
             </TableRow>
         </TableLayout>
-
-        <LinearLayout style="@style/linear_layout">
-
-            <Button
-                android:id="@+id/cd_btn_intake"
-                style="@style/section_header"
-                android:layout_marginEnd="@dimen/dimen_5dp"
-                android:layout_weight="0.5"
-                android:text="Intake" />
-
-            <Button
-                android:id="@+id/cd_btn_closing"
-                style="@style/section_header"
-                android:layout_marginStart="@dimen/dimen_5dp"
-                android:layout_weight="0.5"
-                android:text="Closing" />
-        </LinearLayout>
     </LinearLayout>
 </ScrollView>

@@ -4,20 +4,19 @@
     android:orientation="vertical">
 
     <LinearLayout
-        style="@style/section_header"
+        style="@style/linear_layout_pad"
+        android:background="@drawable/list_item_bg_border"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/li2_tv_name"
             style="@style/linear_layout"
-            android:textColor="@android:color/white"
+            android:layout_marginBottom="@dimen/dimen_5dp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/li2_tv_address"
-            style="@style/linear_layout"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/font_12sp" />
+            style="@style/linear_layout" />
     </LinearLayout>
 
     <include layout="@layout/include_divider" />

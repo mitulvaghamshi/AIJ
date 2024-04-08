@@ -9,11 +9,12 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.children
 import me.mitul.aij.R
 import me.mitul.aij.aij.AijActivity
-import me.mitul.aij.bankbranch.BankBranchListActivity
+import me.mitul.aij.aij.AijContainer
 import me.mitul.aij.branch.BranchListActivity
+import me.mitul.aij.city.CityListActivity
 import me.mitul.aij.college.CollegeListActivity
-import me.mitul.aij.helpcenter.HelpCenterListActivity
 import me.mitul.aij.university.UniversityListActivity
+import me.mitul.aij.utils.Keys
 
 class HomeActivity : Activity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,33 +28,30 @@ class HomeActivity : Activity(), View.OnClickListener {
     }
 
     override fun onClick(view: View) {
-        val clazz = when (view.id) {
-            R.id.btn_college -> CollegeListActivity::class.java
-            R.id.btn_branches -> BranchListActivity::class.java
-            R.id.btn_university -> UniversityListActivity::class.java
-            R.id.btn_help_centers -> HelpCenterListActivity::class.java
-            R.id.btn_bank -> BankBranchListActivity::class.java
-            R.id.btn_developer -> DeveloperActivity::class.java
-            R.id.btn_aij -> AijActivity::class.java
+        val intent = when (view.id) {
+            R.id.btn_college -> Intent(applicationContext, CollegeListActivity::class.java)
+            R.id.btn_branch -> Intent(applicationContext, BranchListActivity::class.java)
+            R.id.btn_university -> Intent(applicationContext, UniversityListActivity::class.java)
+            R.id.btn_help_center -> Intent(applicationContext, CityListActivity::class.java)
+                .putExtra(Keys.KEY_FILTER_OPTION, Keys.KEY_FILTER_HELP_CENTER)
+
+            R.id.btn_bank_branch -> Intent(applicationContext, CityListActivity::class.java)
+                .putExtra(Keys.KEY_FILTER_OPTION, Keys.KEY_FILTER_BANK_BRANCH)
+
+            R.id.btn_developer -> Intent(applicationContext, DeveloperActivity::class.java)
+            R.id.btn_aij -> Intent(applicationContext, AijActivity::class.java)
+            R.id.btn_students -> Intent(applicationContext, AijContainer::class.java)
             else -> null
         }
         view.animate().setDuration(300L).alpha(0f).withEndAction {
             view.animate().alpha(1f)
-            clazz?.let { startActivity(Intent(applicationContext, it)) }
+            intent?.let { startActivity(it) }
         }
     }
 }
 
-// R.id.btn_college
-// R.id.btn_branches
-// R.id.btn_university
-// R.id.btn_help_centers
-// R.id.btn_bank
-// R.id.btn_developer
-// R.id.btn_aij
 // R.id.btn_scholarship
 // R.id.btn_admission
-// R.id.btn_students
 // R.id.btn_qa
 // R.id.btn_2
 // R.id.btn_3

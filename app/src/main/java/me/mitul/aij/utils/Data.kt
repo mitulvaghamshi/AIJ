@@ -439,126 +439,172 @@ During this extended time the students as well as gurus will get the handpicked 
 """
 
     const val ABOUT_AIJ =
-        """AIJ-Amrut Institute Junagadh-Diploma Engineering College is established at easily approachable distance from the developing city Junagadh in a beautiful natural environment with GURUKUL tradition. AIJ team is here to develop a high educational level where all concern persons are dedicated to their project and work with the concentrated mind as well as result oriented approach for students.
+        """AIJ Amrut Institute Junagadh Diploma Engineering College is established at easily approachable distance from the developing city Junagadh in a beautiful natural environment with GURUKUL tradition. 
+AIJ team is here to develop a high educational level where all concern persons are dedicated to their project and work with the concentrated mind as well as result oriented approach for students.
 
 With the state of art infrastructure, the academic team determines to develop & guide each student with best of its ability hidden inside.
 
 AIJ also deals with the development of personality and communication skills of each student to make them ready to survive in the real world of business.
 
-It’s a world of technology and where every second a new technology arrives; AIJ is also concentrated in developing ideas and strength of student to face any new technology of the world. All expert faculties of AIJ are a part of this AIM as we believe in GROWTH of every single student."""
+It's a world of technology and where every second a new technology arrives; AIJ is also concentrated in developing ideas and strength of student to face any new technology of the world. 
+All expert faculties of AIJ are a part of this AIM as we believe in GROWTH of every single student.
+"""
 
     const val ABOUT_SHECT =
         """The Shri Hari Education & Charitable Trust (SHECT) 
 
-The Shri Hari Education & Charitable Trust (SHECT) is The Trust formed by the youth in 2010 for enriching the Educational and Social activity for rural areas and make participate in national development . The AIM of the SHECT is to develop the AIJ campus to provide the best available technological educational assistance to the students.
+The Shri Hari Education & Charitable Trust (SHECT) is The Trust formed by the youth in 2010 for enriching the Educational and Social activity for rural areas and make participate in national development. 
+The AIM of the SHECT is to develop the AIJ campus to provide the best available technological educational assistance to the students.
 
-Mr. Navneet Mohanbhai Tilva                 - President
-
-Mr. Rajesh Dayabhai Vadodariya            - Vice-President
-
-Mr. Hiren Jayantilal Vyas                        - Secretary
-
-Mr. Vajubhai Bhikhabhai Desai               - Joint-Secretary
-
-Mr. Shaileshbhai Bachubhai Talaviya      - Tresurer
-
-Mr. Dayabhai Devrajbhai Vadodariya     - Trustee
-
-Mr. Popatbhai Bhikhabhai Desai            - Trustee
-
-Mr. Mohitsinh Virendrasinhji Jhala        - Trustee
-
-Mr. Jiteshbhai Samjibhai Savaliya          - Trustee
-
-Mr. Amit Ratilal Tilva"""
+Mr. Navneet Mohanbhai Tilva - President
+Mr. Rajesh Dayabhai Vadodariya - Vice-President
+Mr. Hiren Jayantilal Vyas - Secretary
+Mr. Vajubhai Bhikhabhai Desai - Joint-Secretary
+Mr. Shaileshbhai Bachubhai Talaviya - Treasurer
+Mr. Dayabhai Devrajbhai Vadodariya - Trustee
+Mr. Popatbhai Bhikhabhai Desai - Trustee
+Mr. Mohitsinh Virendrasinhji Jhala - Trustee
+Mr. Jiteshbhai Samjibhai Savaliya - Trustee
+Mr. Amit Ratilal Tilva
+"""
 
     const val INFRASTRUCTURE =
-        """The AIJ academic campus surrounded with greenery of Girnar and scent of Sorath. This campus is designed with environment friendly manners. Here you find a state of Art facility with fragrance of simplicity of ancient Gurukul culture.
+        """The AIJ academic campus surrounded with greenery of Girnar and scent of Sorath. 
+This campus is designed with environment friendly manners. 
+Here you find a state of Art facility with fragrance of simplicity of ancient Gurukul culture.
 
-Facilities provided by AIJ are:-
+Facilities provided by AIJ are:
 
-Laboratories
-The labs are designed as per requirement of industrial field and R&D friendly with latest technological development. Continuous updating of laboratories is adopted as an ongoing process. Latest computers, networking, internet, and other equipments will be provided to all students.
+Laboratories:
 
-Computer Lab
-Mechanical Lab
-Civil Lab 
-Electrical LabIC Lab
-Automobile Lab
+The labs are designed as per requirement of industrial field and R&D friendly with latest technological development. 
+Continuous updating of laboratories is adopted as an ongoing process. 
+Latest computers, networking, internet, and other equipments will be provided to all students.
 
-Classrooms
+- IC Lab.
+- Civil Lab. 
+- Computer Lab.
+- Electrical Lab
+- Mechanical Lab.
+- Automobile Lab.
+
+Classrooms:
+
 We are having 27+ latest classroom.
-The class room furnish with all latest equipments like projectors, access to internet and very comfortable sitting arrangement for the students for best concentration. We have tried to provide natural light and air to all classrooms.
+The class room furnish with all latest equipments like projectors, access to internet and very comfortable sitting arrangement for the students for best concentration. 
+We have tried to provide natural light and air to all classrooms.
 
-Library & Information Resource Centre
-A library is established with all curriculum reference book supported by large number of quality books for personality development and widening vision. A large number of good national and international journals periodical available for student to continuously upgrade them with latest development in engineering field, co-curriculum and current affairs. A latest concept of E-Books is introduced here to avail world class resources to students.
+Library & Information Resource Centre:
+
+A library is established with all curriculum reference book supported by large number of quality books for personality development and widening vision. 
+A large number of good national and international journals periodical available for student to continuously upgrade them with latest development in engineering field, co-curriculum and current affairs. 
+A latest concept of E-Books is introduced here to avail world class resources to students.
  
-Reading Room 
-We are having reading roomwith 100+ capacity of students where they can read
+Reading Room: 
 
-WiFi Availability
-A 24 x 7 WiFi Based connectivity of Internet is accessible all over the campus freely for best information availability.
+We are having reading room with 100+ capacity of students where they can read.
 
-Cafeteria
-AIJ have provided well furnished Cafeteria for all students where they can sit and have their food in hygienic atmosphere. The cafeteria offers mini meals and snacks at subsidized rates.
+WiFi Availability:
 
-Transportation
+A 24x7 WiFi Based connectivity of Internet is accessible all over the campus freely for best information availability.
+
+Cafeteria:
+
+AIJ have provided well furnished Cafeteria for all students where they can sit and have their food in hygienic atmosphere. 
+The cafeteria offers mini meals and snacks at subsidized rates.
+
+Transportation:
+
 For convenience of students and faculties we provide transportation facility on “NO PROFIT NO LOSS” basis on all working days between campus to city at fixed timing.
 
-Health  
-We are very much conscious for the health of the students. We have made available medical assistance at campus round the clock.
+Health: 
 
-Security
+We are very much conscious for the health of the students. 
+We have made available medical assistance at campus round the clock.
+
+Security:
+
 The entire campus is under CCTV observation and guarded by the security staff.
 
-RO Plant
+RO Plant:
+
 In our institute health of every member, each student is at top priority hence we provide RO water to all.
 
-Hostel and Meals
-AIJ provides 3 hostels with 500+ students capacity with meal facilities. We provide best facilities to live with natural environment where student feels like home. Hostel rooms are spacious, properly ventilated.  Hostel have a 24 hours security arrangements with a security guard. Hostels are under CCTV surveillance 24 x 7.
+Hostel and Meals:
 
-Seminar Hall
-The Institute has seminar halls of 200-capacity equipped with Multimedia facilities; are fully air-conditioned. Events such as small meetings and intra department level seminars/symposia, IT workshops, etc are organized here.
+AIJ provides 3 hostels with 500+ students capacity with meal facilities. 
+We provide best facilities to live with natural environment where student feels like home. 
+Hostel rooms are spacious, properly ventilated.  
+Hostel have a 24 hours security arrangements with a security guard. 
+Hostels are under CCTV surveillance 24x7.
 
-Workshop
-We have a room which provides both the area and tools (or machinery) that may be required for the knowledge of Students. Company and college workshops are held here for technical development of students.
+Seminar Hall:
 
-Boys Common Room
+The Institute has seminar halls of 200-capacity equipped with Multimedia facilities; are fully air-conditioned. 
+Events such as small meetings and intra department level seminars/symposium, IT workshops, etc are organized here.
+
+Workshop:
+
+We have a room which provides both the area and tools (or machinery) that may be required for the knowledge of Students. 
+Company and college workshops are held here for technical development of students.
+
+Boys Common Room:
+
 We have a facility of Boys common room which can be utilized by boys in their free time and they can even read and feel fresh there.
 
-Girls Common Room
-Similar to Boys common room there is a Girls common room which is a plcae for girls to read in peace and spent their free time.
+Girls Common Room:
 
-Indoor/Outdoor games
-Indoor games such as Chess, Carrom, Badminton, puzzles games etc. are available at campus for mental and physical growth of students.
-Ground for Outdoor games is available where students can play Cricket, Volley Ball, Football, Kabaddi, Kho-Kho etc. It helps them being energetic and make them physically fit.
+Similar to Boys common room there is a Girls common room which is a place for girls to read in peace and spent their free time.
 
-Drawing Hall
-As we teach engineers we provide a Drawing Hall where student can create their designs and a it’s a place where new innovations are developed."""
+Indoor/Outdoor games:
+
+Indoor games such as Chess, Carom, Badminton, puzzles games etc. are available at campus for mental and physical growth of students.
+Ground for Outdoor games is available where students can play Cricket, Volley Ball, Football, Kabaddi, Kho-Kho etc. 
+It helps them being energetic and make them physically fit.
+
+Drawing Hall:
+
+As we teach engineers we provide a Drawing Hall where student can create their designs and a it’s a place where new innovations are developed.
+"""
 
     const val CAMPUS_PLACEMENT =
-        """The program is conducted within educational institutes or in a common place to provide jobs to students pursuing or in the stage of completing the programme. In this programme, industries visit the colleges to select students depending on their ability to work, capability, focus and Aim.
+        """The program is conducted within educational institutes or in a common place to provide jobs to students pursuing or in the stage of completing the programme. 
+In this programme, industries visit the colleges to select students depending on their ability to work, capability, focus and Aim.
 
-The major objective of campus placement is to identify the talented and qualified professionals before they complete their education. This process reduces the time for an industry to pick the candidates according to their need. It is a cumbersome activity and hence majority of the companies find it difficult to trace the right talent.
+The major objective of campus placement is to identify the talented and qualified professionals before they complete their education. 
+This process reduces the time for an industry to pick the candidates according to their need. 
+It is a cumbersome activity and hence majority of the companies find it difficult to trace the right talent.
 
 Companies which plan to train the students and make them equipped on all aspects of career development should make an impact in the minds of the students that every minute they spend towards their training is knowledge for them.
 
-Special Sessions for better communication are arranged for students in which they learn how to face an interview, how to interact with other people at industry level etc."""
+Special Sessions for better communication are arranged for students in which they learn how to face an interview, how to interact with other people at industry level etc.
+"""
 
     const val OUR_MISSION =
-        """Established on the verge of revolutionary development era of this region, Amrut Institute Junagadh(AIJ) infuses the strengths  of the traditional Gurukuls with innovation and learning centered spirit. Our prier Aim is to fulfill the academic, cultural, social and career expectations of its constituents. We are determined to create technical persons with high skills of obtaining best results one can, A larger than life performance with leadership, attitude to give their best contribution in the process of re-building our nation as a leader of world. We will maintain the quality of education best available in state and highly competitive to international standards.
+        """Established on the verge of revolutionary development era of this region, Amrut Institute Junagadh(AIJ) infuses the strengths of the traditional Gurukuls with innovation and learning centered spirit. 
+Our prier Aim is to fulfill the academic, cultural, social and career expectations of its constituents. 
+We are determined to create technical persons with high skills of obtaining best results one can, A larger than life performance with leadership, attitude to give their best contribution in the process of re-building our nation as a leader of world. 
+We will maintain the quality of education best available in state and highly competitive to international standards.
 
 The primary focus of our curriculum and co-curriculum programs will be directed to the solution of problems and the development of knowledge and technology important to industries in the state and to the quality of life of Indian.
 
-The AIJ is committed to providing an educational environment where all share in the common responsibility to safeguard each other’s rights, encourage a mutual concern for individual growth and appreciate the benefits of the diverse campus community."""
+The AIJ is committed to providing an educational environment where all share in the common responsibility to safeguard each other’s rights, encourage a mutual concern for individual growth and appreciate the benefits of the diverse campus community.
+"""
 
     const val OUR_VISION =
-        """The Vision of AIJ is to Establish to fill the fuel of Technocrat Professional  in the growth of the region and to take this growth race at its new destination and will be recognized for its intellectual , cultural,  technological , and professional  contributions . The AIJ looks forward to be a leader among educational institutions by building on its traditions of innovation, problem solving and interdisciplinary  collaboration to meet the changing needs of Society.  The AIJ intended to be a model of excellence for challenging, learner – centered academic communities that advance knowledge and improve economic vitality and quality of life.
+        """The Vision of AIJ is to Establish to fill the fuel of Technocrat Professional in the growth of the region and to take this growth race at its new destination and will be recognized for its intellectual, cultural, technological, and professional contributions. 
+The AIJ looks forward to be a leader among educational institutions by building on its traditions of innovation, problem solving and interdisciplinary collaboration to meet the changing needs of Society.  
+The AIJ intended to be a model of excellence for challenging, learner – centered academic communities that advance knowledge and improve economic vitality and quality of life.
 
 Through its strategic partnership with other National recognized Universities, Industries and Business houses, the AIJ assist an economic development in the state.
 
-Through a close collaboration between the professional education faculties the AIJ develops strategies   for public education reform and models for industrial requirements and academic curriculum."""
+Through a close collaboration between the professional education faculties the AIJ develops strategies for public education reform and models for industrial requirements and academic curriculum.
+"""
 
     const val WHY_AIJ =
-        """We ensure that students of all ability are treated to be a best challenger for world.We provide best learning atmosphere with professional environmentWe provide professional technical education through its various institutions in Engineering and technology as well as computer Applications,We encourage our students in ways that provide them a basis for lifelong personal and professional development and that enable them to exercise leadership and make lasting contributions in their disciplines.Magnify our positive impact in serving regional, State and national needs by building mutually beneficial linkages with business, industry, community colleges.As a community of scholars, we will lead by example and with vision, inspiration, integrity, and a shared sense of purpose."""
+        """We ensure that students of all ability are treated to be a best challenger for world.
+We provide best learning atmosphere with professional environmentWe provide professional technical education through its various institutions in Engineering and technology as well as computer Applications.
+We encourage our students in ways that provide them a basis for lifelong personal and professional development and that enable them to exercise leadership and make lasting contributions in their disciplines.
+Magnify our positive impact in serving regional, State and national needs by building mutually beneficial linkages with business, industry, community colleges.As a community of scholars, we will lead by example and with vision, inspiration, integrity, and a shared sense of purpose.
+"""
 }

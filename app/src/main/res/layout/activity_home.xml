@@ -5,7 +5,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/home_button_container"
-        style="@style/linear_layout_pad"
+        style="@style/linear_layout"
         android:padding="@dimen/dimen_10dp">
 
         <Button
@@ -32,7 +32,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/btn_branches"
+            android:id="@+id/btn_branch"
             style="@style/home_button_text"
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_85dp"
@@ -60,13 +60,13 @@
             android:layout_marginEnd="@dimen/dimen_10dp"
             android:background="#27b5f7"
             android:text="Universities"
-            app:layout_constraintEnd_toStartOf="@id/btn_help_centers"
+            app:layout_constraintEnd_toStartOf="@id/btn_help_center"
             app:layout_constraintHorizontal_weight="0.6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/divider_1" />
 
         <Button
-            android:id="@+id/btn_help_centers"
+            android:id="@+id/btn_help_center"
             style="@style/home_button_text"
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_85dp"
@@ -79,7 +79,7 @@
             app:layout_constraintTop_toBottomOf="@id/divider_1" />
 
         <Button
-            android:id="@+id/btn_bank"
+            android:id="@+id/btn_bank_branch"
             style="@style/home_button_text"
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_85dp"
@@ -95,7 +95,7 @@
             style="@style/home_section_divider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_bank" />
+            app:layout_constraintTop_toBottomOf="@id/btn_bank_branch" />
 
         <Button
             android:id="@+id/btn_developer"

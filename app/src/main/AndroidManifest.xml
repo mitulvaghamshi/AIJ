@@ -18,28 +18,20 @@
         <activity android:name=".login.RegisterActivity" />
 
         <activity android:name=".home.HomeActivity" />
+        <activity android:name=".home.DeveloperActivity" />
+
+        <activity android:name=".branch.BranchListActivity" />
 
         <activity android:name=".college.CollegeListActivity" />
         <activity android:name=".college.CollegeDetailActivity" />
 
-        <activity android:name=".branch.BranchListActivity" />
-
         <activity android:name=".university.UniversityListActivity" />
         <activity android:name=".university.UniversityDetailActivity" />
 
-        <activity android:name=".helpcenter.HelpCenterListActivity" />
+        <activity android:name=".city.CityListActivity" />
+        <activity android:name=".city.AddressListActivity" />
 
-        <activity android:name=".bankbranch.BankBranchListActivity" />
-
-        <activity android:name=".home.DeveloperActivity" />
-
-        <activity android:name=".aij.AijExplorerActivity" />
         <activity android:name=".aij.AijActivity" />
-        <activity
-            android:name=".aij.CourseActivity"
-            android:parentActivityName=".aij.AijActivity" />
-        <activity
-            android:name=".aij.ContactActivity"
-            android:parentActivityName=".aij.AijActivity" />
+        <activity android:name=".aij.AijContainer" />
     </application>
 </manifest>

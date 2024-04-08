@@ -13,8 +13,10 @@ class CollegeDetailActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_college)
 
+        val id = intent.getStringExtra(Keys.KEY_FILTER_ID) ?: return
+
         dbHelper = CollegeHelper(applicationContext)
-        with(dbHelper.getCollegeBy(intent.getStringExtra(Keys.KEY_FILTER_ID))) {
+        with(dbHelper.getCollegeBy(id)) {
             findViewById<TextView>(R.id.cd_tv_name).text = name
             findViewById<TextView>(R.id.cd_tv_code).text = code
             findViewById<TextView>(R.id.cd_tv_acronym).text = acronym

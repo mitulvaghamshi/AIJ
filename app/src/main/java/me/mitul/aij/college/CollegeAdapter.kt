@@ -42,7 +42,8 @@ class CollegeAdapter(
         val itemContainer: LinearLayout = view.findViewById(R.id.cl_li_container)
 
         fun onClick(context: Context, id: String) = context.startActivity(
-            Intent(context, CollegeDetailActivity::class.java).putExtra(Keys.KEY_FILTER_ID, id)
+            Intent(context, CollegeDetailActivity::class.java)
+                .putExtra(Keys.KEY_FILTER_ID, id)
         )
     }
 }

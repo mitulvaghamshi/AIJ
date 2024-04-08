@@ -22,6 +22,7 @@ class JustifiedTextView : View {
     private var textAreaWidth = 0
     private var measuredViewHeight = 0
     private var measuredViewWidth = 0
+
     var text: String? = null
         set(text) {
             field = text
@@ -31,11 +32,8 @@ class JustifiedTextView : View {
 
     private var lineList: MutableList<String> = ArrayList()
 
-    constructor(
-        context: Context,
-        attrs: AttributeSet?,
-        defStyle: Int
-    ) : super(context, attrs, defStyle) {
+    constructor(context: Context, attrs: AttributeSet?, defStyle: Int) :
+            super(context, attrs, defStyle) {
         constructor(context, attrs)
     }
 
@@ -60,7 +58,6 @@ class JustifiedTextView : View {
             this.textColor = textColor
             if (textSizeUnit == -1) this.textSize = textSize.toFloat()
             else setTextSize(textSizeUnit, textSize.toFloat())
-            //			setText(XmlToClassAttribHandler.GetAttributeStringValue(mContext, attrs, namespace, key, ""));
             typeFace = xmlParser.typeFace
             //setTypeFace(Typeface.create("serif", Typeface.NORMAL));
         }
@@ -111,13 +108,11 @@ class JustifiedTextView : View {
         val listStringLine = ArrayList<String>()
         var line = ""
         var textWidth: Float
-        val paragraphList = originalText!!.split("\n".toRegex()).dropLastWhile {
-            it.isEmpty()
-        }.toTypedArray()
+        val paragraphList = originalText!!.split("\\n".toRegex())
+            .dropLastWhile { it.isEmpty() }.toTypedArray()
         for (paragraph in paragraphList) {
-            val wordList = paragraph.split(" ".toRegex()).dropLastWhile {
-                it.isEmpty()
-            }.toTypedArray()
+            val wordList = paragraph.split("\\s".toRegex())
+                .dropLastWhile { it.isEmpty() }.toTypedArray()
             var i = 0
             while (i < wordList.size) {
                 line += wordList[i] + " "
@@ -154,7 +149,7 @@ class JustifiedTextView : View {
     private fun justifyTextLine(
         textPaint: TextPaint?,
         lineString: String,
-        textAreaWidth: Int
+        textAreaWidth: Int,
     ): String {
         var lineString = lineString
         var gapIndex = 0
@@ -166,8 +161,8 @@ class JustifiedTextView : View {
                 gapIndex = lineString.indexOf(" ", gapIndex + 1)
                 if (gapIndex == -1) return lineString
             }
-            lineString =
-                lineString.substring(0, gapIndex) + "  " + lineString.substring(gapIndex + 1)
+            lineString = lineString.substring(0, gapIndex) + "  " +
+                    lineString.substring(gapIndex + 1)
             lineWidth = textPaint.measureText(lineString)
         }
         return lineString
@@ -235,7 +230,7 @@ class JustifiedTextView : View {
 
 internal class XmlToClassAttribHandler(
     private val mContext: Context?,
-    private val mAttributeSet: AttributeSet?
+    private val mAttributeSet: AttributeSet?,
 ) {
     private val KEY_TEXT_SIZE = "textSize"
     private val mRes: Resources = mContext!!.resources
