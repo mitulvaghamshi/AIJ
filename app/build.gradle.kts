@@ -25,6 +25,4 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.0")
     implementation("com.readystatesoftware.sqliteasset:sqliteassethelper:2.0.1")
-
-    implementation("androidx.coordinatorlayout:coordinatorlayout:1.2.0")
 }

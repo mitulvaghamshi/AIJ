@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/linear_layout"
+    android:orientation="vertical">
+
+    <AutoCompleteTextView
+        android:id="@+id/reg_ed_username"
+        style="@style/input_field"
+        android:drawableStart="@drawable/ic_person_24dp"
+        android:hint="Username"
+        android:inputType="text" />
+
+    <AutoCompleteTextView
+        android:id="@+id/reg_ed_email"
+        style="@style/input_field"
+        android:drawableStart="@drawable/ic_email_24dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
+
+    <AutoCompleteTextView
+        android:id="@+id/reg_ed_phone"
+        style="@style/input_field"
+        android:drawableStart="@drawable/ic_call_24dp"
+        android:hint="Phone"
+        android:inputType="phone" />
+
+    <AutoCompleteTextView
+        android:id="@+id/reg_ed_city"
+        style="@style/input_field"
+        android:drawableStart="@drawable/ic_city_24dp"
+        android:hint="City"
+        android:inputType="text" />
+
+    <AutoCompleteTextView
+        android:id="@+id/reg_ed_password"
+        style="@style/input_field"
+        android:drawableStart="@drawable/ic_lock_24dp"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
+    <AutoCompleteTextView
+        android:id="@+id/reg_ed_re_password"
+        style="@style/input_field"
+        android:layout_marginBottom="@dimen/dimen_10dp"
+        android:drawableStart="@drawable/ic_lock_24dp"
+        android:hint="Confirm Password"
+        android:inputType="textPassword" />
+</LinearLayout>

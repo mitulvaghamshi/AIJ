@@ -12,9 +12,4 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         style="@style/scroll_layout" />
-
-    <ExpandableListView
-        android:id="@+id/common_exp_lv"
-        style="@style/linear_layout_pad"
-        android:visibility="gone" />
 </LinearLayout>

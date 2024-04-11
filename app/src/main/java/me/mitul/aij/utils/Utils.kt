@@ -1,5 +1,22 @@
 package me.mitul.aij.utils
 
+import android.view.View
+
+internal fun View.animate(duration: Long, onComplete: (() -> Unit)? = null) =
+    this.animate().setDuration(duration).alpha(0f).withEndAction {
+        this.animate().alpha(1f)
+        onComplete?.invoke()
+    }
+
+object Keys {
+    const val KEY_FILTER_ID = "filter_id"
+    const val KEY_FILTER_OPTION = "filter_option"
+    const val KEY_FILTER_BRANCH = "filter_branch"
+    const val KEY_FILTER_UNIVERSITY = "filter_university"
+    const val KEY_FILTER_BANK_BRANCH = "filter_bank_branch"
+    const val KEY_FILTER_HELP_CENTER = "filter_help_center"
+}
+
 object Data {
     const val WELCOME =
         """Welcome to Amrut Institute Junagadh

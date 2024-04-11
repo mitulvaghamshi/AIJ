@@ -11,7 +11,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import me.mitul.aij.R
-import me.mitul.aij.login.LoginActivity
+import me.mitul.aij.auth.AuthActivity
 import kotlin.coroutines.EmptyCoroutineContext
 
 class MainActivity : FragmentActivity() {
@@ -22,13 +22,13 @@ class MainActivity : FragmentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val btnContinue = findViewById<Button>(R.id.splash_btn_continue)
+        val btnContinue = findViewById<Button>(R.id.main_btn_continue)
         btnContinue.setOnClickListener {
-            startActivity(Intent(applicationContext, LoginActivity::class.java))
+            startActivity(Intent(applicationContext, AuthActivity::class.java))
             finish()
         }
 
-        findViewById<ViewPager2>(R.id.splash_viewpager).apply {
+        findViewById<ViewPager2>(R.id.main_viewpager).apply {
             adapter = object : FragmentStateAdapter(supportFragmentManager, lifecycle) {
                 override fun getItemCount(): Int = pageCount
                 override fun createFragment(position: Int) = PagerFragment.Instance.new(position)

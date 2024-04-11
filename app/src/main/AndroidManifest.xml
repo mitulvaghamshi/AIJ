@@ -14,8 +14,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".login.LoginActivity" />
-        <activity android:name=".login.RegisterActivity" />
+        <activity android:name=".auth.AuthActivity" />
 
         <activity android:name=".home.HomeActivity" />
         <activity android:name=".home.DeveloperActivity" />
@@ -30,8 +29,5 @@
 
         <activity android:name=".city.CityListActivity" />
         <activity android:name=".city.AddressListActivity" />
-
-        <activity android:name=".aij.AijActivity" />
-        <activity android:name=".aij.AijContainer" />
     </application>
 </manifest>

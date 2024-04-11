@@ -8,8 +8,6 @@ import android.widget.Button
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.children
 import me.mitul.aij.R
-import me.mitul.aij.aij.AijActivity
-import me.mitul.aij.aij.AijContainer
 import me.mitul.aij.branch.BranchListActivity
 import me.mitul.aij.city.CityListActivity
 import me.mitul.aij.college.CollegeListActivity
@@ -21,7 +19,6 @@ class HomeActivity : Activity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        // val userId = intent.getIntExtra(Keys.KEY_USER_ID, -1)
         findViewById<ConstraintLayout>(R.id.home_button_container).children.forEach {
             if (it is Button) it.setOnClickListener(this)
         }
@@ -39,8 +36,6 @@ class HomeActivity : Activity(), View.OnClickListener {
                 .putExtra(Keys.KEY_FILTER_OPTION, Keys.KEY_FILTER_BANK_BRANCH)
 
             R.id.btn_developer -> Intent(applicationContext, DeveloperActivity::class.java)
-            R.id.btn_aij -> Intent(applicationContext, AijActivity::class.java)
-            R.id.btn_students -> Intent(applicationContext, AijContainer::class.java)
             else -> null
         }
         view.animate().setDuration(300L).alpha(0f).withEndAction {
@@ -49,12 +44,3 @@ class HomeActivity : Activity(), View.OnClickListener {
         }
     }
 }
-
-// R.id.btn_scholarship
-// R.id.btn_admission
-// R.id.btn_qa
-// R.id.btn_2
-// R.id.btn_3
-// R.id.btn_4
-// R.id.btn_5
-// R.id.btn_6

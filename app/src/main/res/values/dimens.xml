@@ -11,7 +11,5 @@
     <dimen name="dimen_180dp">180dp</dimen>
     <dimen name="dimen_200dp">200dp</dimen>
 
-    <dimen name="font_12sp">12sp</dimen>
     <dimen name="font_15sp">15sp</dimen>
-    <dimen name="font_20sp">20sp</dimen>
 </resources>
