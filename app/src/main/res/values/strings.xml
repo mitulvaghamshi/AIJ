@@ -1,3 +1,4 @@
 <resources>
     <string name="splash_continue_btn">Continue</string>
+    <string name="app_name">AIJ</string>
 </resources>

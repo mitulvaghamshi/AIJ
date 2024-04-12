@@ -4,7 +4,7 @@
     style="@style/scroll_layout">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/home_button_container"
+        android:id="@+id/button_container"
         style="@style/linear_layout"
         android:padding="@dimen/dimen_10dp">
 

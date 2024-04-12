@@ -42,7 +42,7 @@
                 android:imeOptions="actionGo"
                 android:src="@drawable/ic_send_24dp"
                 android:tooltipText="Login"
-                app:backgroundTint="@color/purple" />
+                app:backgroundTint="@color/orange" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
