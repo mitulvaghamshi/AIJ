@@ -49,7 +49,8 @@ class LoginFragment(
             if (tvUsername.text.isBlank()) {
                 tvUsername.startAnimation(shake)
                 return false
-            } else if (tvPassword.text.isBlank() || tvPassword.text.length < 6) {
+            }
+            if (tvPassword.text.isBlank() || tvPassword.text.length < 6) {
                 tvPassword.startAnimation(shake)
                 return false
             }

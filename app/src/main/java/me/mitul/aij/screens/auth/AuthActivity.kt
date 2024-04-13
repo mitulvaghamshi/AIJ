@@ -12,11 +12,11 @@ import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import me.mitul.aij.helpers.AuthHelper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import me.mitul.aij.R
+import me.mitul.aij.helpers.AuthHelper
 import me.mitul.aij.screens.HomeActivity
 import me.mitul.aij.utils.Database
 import kotlin.coroutines.EmptyCoroutineContext
@@ -82,13 +82,12 @@ class AuthActivity : FragmentActivity() {
     private fun task(values: ContentValues, action: () -> Long) {
         CoroutineScope(EmptyCoroutineContext).launch {
             try {
-                // TODO("Network call simulation"): Remove if required.
-                delay(timeMillis = 2000L)
                 if (action() == -1L) {
                     inputForm.startAnimation(shake)
                     return@launch
                 }
                 savePrefs(values)
+                delay(timeMillis = 2000L) // TODO("Network call simulation")
                 startActivity(Intent(applicationContext, HomeActivity::class.java))
                 finish()
             } catch (ignored: InterruptedException) {

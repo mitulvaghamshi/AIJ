@@ -18,7 +18,7 @@ class MainFragment : Fragment() {
         if (id == 0) return view
 
         val fragContainer = view.findViewById<FrameLayout>(R.id.main_frag_container)
-        fragContainer.setBackgroundColor(resources.getColor(colors[id - 1], context?.theme))
+        fragContainer.setBackgroundColor(resources.getColor(colors[id], context?.theme))
 
         return view
     }
@@ -33,6 +33,7 @@ class MainFragment : Fragment() {
     private companion object {
         const val KEY_PAGE_ID = "page_id"
         val colors = listOf(
+            android.R.color.black,
             R.color.red,
             R.color.pink,
             R.color.orange,
