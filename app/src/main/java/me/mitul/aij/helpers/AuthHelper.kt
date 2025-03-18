@@ -1,13 +1,14 @@
 package me.mitul.aij.helpers
 
 import android.content.ContentValues
+import android.content.Context
 import android.provider.Settings
 import me.mitul.aij.utils.Database
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-class AuthHelper(private val db: Database) {
+class AuthHelper(context: Context) : Database(context) {
     companion object {
         private const val TBL_USER = "User"
 
@@ -40,8 +41,7 @@ class AuthHelper(private val db: Database) {
         val username = values.getAsString(COL_USERNAME)
         val password = values.getAsString(COL_PASSWORD)
         if (username.isBlank() || password.isBlank()) return userId
-        val cursor = db.readableDatabase
-            .rawQuery(Sql.LOGIN_WITH, arrayOf(username, password))
+        val cursor = readableDatabase.rawQuery(Sql.LOGIN_WITH, arrayOf(username, password))
         if (cursor.moveToFirst()) {
             val user = cursor.getString(cursor.getColumnIndexOrThrow(COL_USERNAME))
             val pass = cursor.getString(cursor.getColumnIndexOrThrow(COL_PASSWORD))
@@ -52,10 +52,10 @@ class AuthHelper(private val db: Database) {
         return userId
     }
 
-    fun register(values: ContentValues) = if (login(values) != -1L) -1L else
-        db.writableDatabase.insert(TBL_USER, null, values.apply {
-            putNull(COL_USER_ID)
-            put(COL_DEVICE_ID, Settings.Secure.ANDROID_ID)
-            put(COL_DATE_CREATED, SimpleDateFormat(DATE_FORMAT, Locale.ENGLISH).format(Date()))
-        })
+    fun register(values: ContentValues) = if (login(values) != -1L) -1L
+    else writableDatabase.insert(TBL_USER, null, values.apply {
+        putNull(COL_USER_ID)
+        put(COL_DEVICE_ID, Settings.Secure.ANDROID_ID)
+        put(COL_DATE_CREATED, SimpleDateFormat(DATE_FORMAT, Locale.ENGLISH).format(Date()))
+    })
 }

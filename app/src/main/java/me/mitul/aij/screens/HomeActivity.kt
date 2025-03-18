@@ -37,6 +37,6 @@ class HomeActivity : Activity(), View.OnClickListener {
             R.id.btn_developer -> Intent(applicationContext, DeveloperActivity::class.java)
             else -> null
         }
-        view.animate(duration = 300L) { intent?.let { startActivity(it) } }
+        view.animate(300L) { intent?.let { startActivity(it) } }
     }
 }

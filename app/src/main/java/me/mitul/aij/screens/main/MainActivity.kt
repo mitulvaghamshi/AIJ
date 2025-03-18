@@ -15,16 +15,15 @@ import me.mitul.aij.screens.auth.AuthActivity
 import kotlin.coroutines.EmptyCoroutineContext
 
 class MainActivity : FragmentActivity() {
-    private val coroutineScope: CoroutineScope = CoroutineScope(EmptyCoroutineContext)
-    private val mainScope: CoroutineScope = MainScope()
-    private val duration = 2000L
+    private val coroutineScope = CoroutineScope(EmptyCoroutineContext)
+    private val mainScope = MainScope()
     private val pageCount = 8
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        findViewById<Button>(R.id.main_btn_continue).setOnClickListener { gotoLogin() }
+        findViewById<Button>(R.id.main_btn_continue).setOnClickListener { onContinue() }
 
         findViewById<ViewPager2>(R.id.main_viewpager).apply {
             adapter = object : FragmentStateAdapter(supportFragmentManager, lifecycle) {
@@ -34,19 +33,19 @@ class MainActivity : FragmentActivity() {
         }.start()
     }
 
-    private val gotoLogin = {
-        startActivity(Intent(applicationContext, AuthActivity::class.java))
-        finish()
-    }
-
     private fun ViewPager2.start() = coroutineScope.launch {
         var index = 0
         while (true) try {
             val page = if (index < pageCount) index++ else 0.also { index = 0 }
             mainScope.launch { this@start.currentItem = page }
-            delay(duration)
-        } catch (ignored: InterruptedException) {
-            gotoLogin()
+            delay(2000L)
+        } catch (_: InterruptedException) {
+            onContinue()
         }
+    }
+
+    private fun onContinue() {
+        startActivity(Intent(applicationContext, AuthActivity::class.java))
+        finish()
     }
 }

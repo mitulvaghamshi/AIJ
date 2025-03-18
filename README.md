@@ -2,7 +2,7 @@
 
 Final year project for Diploma in Computer Engineering - (2014-17).
 
-Java+Kotlin, XML(Views), SQLite Database.
+Kotlin, XML(Views), SQLite Database.
 
 ## Screenshots
 

@@ -35,7 +35,7 @@
 
                 <TextView
                     style="@style/table_cell_label"
-                    android:text="Name" />
+                    android:text="@string/activity_detail_college_name" />
 
                 <TextView
                     android:id="@+id/cd_tv_name"
@@ -46,7 +46,7 @@
 
                 <TextView
                     style="@style/table_cell_label"
-                    android:text="Address" />
+                    android:text="@string/activity_detail_college_address" />
 
                 <TextView
                     android:id="@+id/cd_tv_address"
@@ -58,7 +58,7 @@
 
                 <TextView
                     style="@style/table_cell_label"
-                    android:text="Phone" />
+                    android:text="@string/activity_detail_college_phone" />
 
                 <TextView
                     android:id="@+id/cd_tv_phone"
@@ -70,7 +70,7 @@
 
                 <TextView
                     style="@style/table_cell_label"
-                    android:text="Website" />
+                    android:text="@string/activity_detail_college_website" />
 
                 <TextView
                     android:id="@+id/cd_tv_website"
@@ -82,7 +82,7 @@
 
                 <TextView
                     style="@style/table_cell_label"
-                    android:text="Email" />
+                    android:text="@string/activity_detail_college_email" />
 
                 <TextView
                     android:id="@+id/cd_tv_email"
@@ -94,7 +94,7 @@
 
                 <TextView
                     style="@style/table_cell_label"
-                    android:text="Established" />
+                    android:text="@string/activity_detail_college_established" />
 
                 <TextView
                     android:id="@+id/cd_tv_established"
@@ -112,7 +112,7 @@
 
                 <TextView
                     style="@style/table_cell_label"
-                    android:text="Branches" />
+                    android:text="@string/activity_detail_college_branches" />
 
                 <TextView
                     android:id="@+id/cd_tv_branches"
@@ -129,7 +129,7 @@
 
                 <TextView
                     style="@style/table_cell_label"
-                    android:text="Fees" />
+                    android:text="@string/activity_detail_college_fees" />
 
                 <TextView
                     android:id="@+id/cd_tv_fees"
@@ -140,7 +140,7 @@
 
                 <TextView
                     style="@style/table_cell_label"
-                    android:text="Type" />
+                    android:text="@string/activity_detail_college_type" />
 
                 <TextView
                     android:id="@+id/cd_tv_type"
@@ -151,7 +151,7 @@
 
                 <TextView
                     style="@style/table_cell_label"
-                    android:text="Hostel" />
+                    android:text="@string/activity_detail_college_hostel" />
 
                 <TextView
                     android:id="@+id/cd_tv_hostel"
@@ -162,7 +162,7 @@
 
                 <TextView
                     style="@style/table_cell_label"
-                    android:text="University" />
+                    android:text="@string/activity_detail_college_university" />
 
                 <TextView
                     android:id="@+id/cd_tv_university"

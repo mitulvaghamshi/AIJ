@@ -10,35 +10,36 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimen_200dp"
-            android:contentDescription="Login form header image"
+            android:contentDescription="@string/aij_header_image_on_login_screen"
             android:scaleType="fitXY"
             android:src="@drawable/img_aij_header" />
 
         <LinearLayout
             android:id="@+id/auth_input_form"
-            style="@style/linear_layout_pad"
+            style="@style/linear_layout"
             android:orientation="vertical">
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/auth_fab_change"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/dimen_10dp"
-                android:contentDescription="Switch between Login/Registration Screen"
-                android:src="@drawable/ic_person_24dp"
+                android:layout_margin="@dimen/dimen_16dp"
+                android:contentDescription="@string/button_to_switch_between_login_and_registration_screens"
+                android:src="@drawable/baseline_add_circle_24"
                 android:tooltipText="Registration"
                 app:backgroundTint="@color/pink" />
 
             <FrameLayout
                 android:id="@+id/auth_frag_container"
-                style="@style/linear_layout" />
+                style="@style/linear_layout_pad" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/auth_fab_submit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:contentDescription="Submit login form button"
+                android:layout_margin="@dimen/dimen_16dp"
+                android:contentDescription="@string/button_to_submit_login_form"
                 android:imeOptions="actionGo"
                 android:src="@drawable/ic_send_24dp"
                 android:tooltipText="Login"

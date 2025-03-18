@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="AppTheme" parent="@style/Theme.Material3.DayNight.NoActionBar">
-        <item name="android:statusBarColor">@color/orange</item>
+    <style name="AppTheme.FullScreen" parent="@style/Theme.Material3.DynamicColors.DayNight.NoActionBar">
+        <item name="android:fitsSystemWindows">false</item>
+    </style>
+
+    <style name="AppTheme.SafeView" parent="@style/Theme.Material3.DayNight">
+        <item name="android:fitsSystemWindows">true</item>
     </style>
 </resources>

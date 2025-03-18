@@ -5,16 +5,15 @@
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/main_viewpager"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:orientation="vertical" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/main_btn_continue"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:layout_gravity="bottom"
         android:layout_margin="@dimen/dimen_30dp"
-        android:background="@drawable/list_item_bg_border"
         android:text="@string/splash_continue_btn" />
 </FrameLayout>

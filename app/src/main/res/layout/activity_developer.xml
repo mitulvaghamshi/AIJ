@@ -8,20 +8,21 @@
 
         <TextView
             style="@style/section_header"
-            android:text="Application" />
+            android:text="@string/activity_developer_application" />
 
         <ImageView
             style="@style/linear_layout"
+            android:contentDescription="@string/activity_developer_aij_logo_on_developer_screen"
             android:src="@drawable/img_aij_logo" />
 
         <TextView
             style="@style/table_cell_label"
             android:gravity="center"
-            android:text="AIJ (v1.0)" />
+            android:text="@string/activity_developer_aij_v1_0" />
 
         <TextView
             style="@style/section_header"
-            android:text="Developer" />
+            android:text="@string/activity_developer_developer" />
 
         <TableLayout
             style="@style/table_cell_divider"
@@ -32,60 +33,60 @@
 
                 <TextView
                     style="@style/table_cell_label"
-                    android:text="Developer" />
+                    android:text="@string/activity_developer_developer" />
 
                 <TextView
                     style="@style/table_cell_text"
-                    android:text="Mitul Vaghmashi" />
+                    android:text="@string/activity_developer_mitul_vaghmashi" />
             </TableRow>
 
             <TableRow style="@style/table_cell_divider">
 
                 <TextView
                     style="@style/table_cell_label"
-                    android:text="Phone" />
+                    android:text="@string/activity_developer_phone" />
 
                 <TextView
                     style="@style/table_cell_text"
                     android:autoLink="phone"
-                    android:text="+1 (289) 933-0783" />
+                    android:text="@string/activity_developer__1_289_933_0783" />
             </TableRow>
 
             <TableRow style="@style/table_cell_divider">
 
                 <TextView
                     style="@style/table_cell_label"
-                    android:text="Email" />
+                    android:text="@string/activity_developer_email" />
 
                 <TextView
                     style="@style/table_cell_text"
                     android:autoLink="email"
-                    android:text="mitulvaghmashi@gmail.com" />
+                    android:text="@string/activity_developer_mitulvaghmashi_gmail_com" />
             </TableRow>
 
             <TableRow style="@style/table_cell_divider">
 
                 <TextView
                     style="@style/table_cell_label"
-                    android:text="Website" />
+                    android:text="@string/activity_developer_website" />
 
                 <TextView
                     style="@style/table_cell_text"
                     android:autoLink="web"
-                    android:text="https://mitulvaghamshi.github.io/" />
+                    android:text="@string/activity_developer_https_mitulvaghamshi_github_io" />
             </TableRow>
         </TableLayout>
 
         <TextView
             style="@style/section_header"
-            android:text="Institute" />
+            android:text="@string/activity_developer_institute" />
 
         <Button
             android:id="@+id/dev_btn_aij"
             style="@style/linear_layout"
             android:layout_marginBottom="@dimen/dimen_10dp"
             android:background="@drawable/list_item_bg_border"
-            android:text="Learn more about AIJ" />
+            android:text="@string/activity_developer_learn_more_about_aij" />
 
         <TableLayout
             style="@style/table_cell_divider"
@@ -96,46 +97,47 @@
 
                 <TextView
                     style="@style/table_cell_label"
-                    android:text="Phone" />
+                    android:text="@string/activity_developer_phone" />
 
                 <TextView
                     style="@style/table_cell_text"
                     android:autoLink="phone"
-                    android:text="+91 82389 45600" />
+                    android:text="@string/activity_developer__91_82389_45600" />
             </TableRow>
 
             <TableRow style="@style/table_cell_divider">
 
                 <TextView
                     style="@style/table_cell_label"
-                    android:text="Email" />
+                    android:text="@string/activity_developer_email" />
 
                 <TextView
                     style="@style/table_cell_text"
                     android:autoLink="email"
-                    android:text="info@aij.ind.in" />
+                    android:text="@string/activity_developer_info_aij_ind_in" />
             </TableRow>
 
             <TableRow style="@style/table_cell_divider">
 
                 <TextView
                     style="@style/table_cell_label"
-                    android:text="Website" />
+                    android:text="@string/activity_developer_website" />
 
                 <TextView
                     style="@style/table_cell_text"
                     android:autoLink="web"
-                    android:text="https://aij.ind.in/" />
+                    android:text="@string/activity_developer_https_aij_ind_in" />
             </TableRow>
         </TableLayout>
 
         <ImageView
             style="@style/linear_layout"
+            android:contentDescription="@string/activity_developer_aij_banner_on_developer_screen"
             android:src="@drawable/img_aij_banner" />
 
         <TextView
             style="@style/section_header"
             android:gravity="center_horizontal"
-            android:text="© 2016 AIJ - All Rights Reserved." />
+            android:text="@string/activity_developer_2016_aij_all_rights_reserved" />
     </LinearLayout>
 </ScrollView>

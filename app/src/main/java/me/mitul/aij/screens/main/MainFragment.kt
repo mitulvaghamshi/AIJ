@@ -10,16 +10,16 @@ import me.mitul.aij.R
 
 class MainFragment : Fragment() {
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
     ): View {
         val view = inflater.inflate(R.layout.fragment_main, container, false)
-
         val id = requireArguments().getInt(KEY_PAGE_ID)
         if (id == 0) return view
 
         val fragContainer = view.findViewById<FrameLayout>(R.id.main_frag_container)
         fragContainer.setBackgroundColor(resources.getColor(colors[id], context?.theme))
-
         return view
     }
 
