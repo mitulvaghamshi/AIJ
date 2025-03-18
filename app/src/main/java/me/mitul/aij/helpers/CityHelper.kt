@@ -46,15 +46,16 @@ class CityHelper(context: Context, private val db: Database = Database(context))
         """
     }
 
+    @Throws(IllegalArgumentException::class)
     private fun getSql(filter: String, city: String? = null) =
         if (city.isNullOrBlank()) when (filter) {
             Keys.KEY_FILTER_BANK_BRANCH -> Sql.BANK_BRANCH_CITIES
             Keys.KEY_FILTER_HELP_CENTER -> Sql.HELP_CENTER_CITIES
-            else -> null
+            else -> throw IllegalArgumentException(filter)
         } else when (filter) {
             Keys.KEY_FILTER_BANK_BRANCH -> Sql.BANK_BRANCHES_BY_CITY
             Keys.KEY_FILTER_HELP_CENTER -> Sql.HELP_CENTERS_BY_CITY
-            else -> null
+            else -> throw IllegalArgumentException(filter)
         }
 
     fun getAll(filter: String) = arrayListOf<City>().apply {
