@@ -4,7 +4,7 @@ import android.content.Context
 import me.mitul.aij.models.University
 import me.mitul.aij.utils.Database
 
-class UniversityHelper(context: Context, private val db: Database = Database(context)) {
+class UniversityHelper(context: Context) : Database(context) {
     private companion object {
         const val TBL_UNIVERSITY = "University"
 
@@ -35,7 +35,7 @@ class UniversityHelper(context: Context, private val db: Database = Database(con
     }
 
     fun getAll() = arrayListOf<University>().apply {
-        val cursor = db.readableDatabase.rawQuery(Sql.UNIVERSITIES, null)
+        val cursor = readableDatabase.rawQuery(Sql.UNIVERSITIES, null)
         if (cursor.moveToFirst()) do add(
             University(
                 id = cursor.getInt(cursor.getColumnIndexOrThrow(COL_ID)),
@@ -46,7 +46,7 @@ class UniversityHelper(context: Context, private val db: Database = Database(con
     }
 
     fun getBy(id: String?): University? {
-        val cursor = db.readableDatabase.rawQuery(Sql.UNIVERSITY_BY_ID, arrayOf(id))
+        val cursor = readableDatabase.rawQuery(Sql.UNIVERSITY_BY_ID, arrayOf(id))
         val university = if (cursor.moveToFirst()) University(
             id = cursor.getInt(cursor.getColumnIndexOrThrow(COL_ID)),
             name = cursor.getString(cursor.getColumnIndexOrThrow(COL_NAME)),

@@ -8,21 +8,21 @@
         android:id="@+id/login_ed_username"
         style="@style/input_field"
         android:drawableStart="@drawable/ic_person_24dp"
-        android:hint="Username"
+        android:hint="@string/fragment_login_username"
         android:inputType="text" />
 
     <AutoCompleteTextView
         android:id="@+id/login_ed_password"
         style="@style/input_field"
         android:drawableStart="@drawable/ic_lock_24dp"
-        android:hint="Password"
+        android:hint="@string/fragment_login_password"
         android:inputType="textPassword" />
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/login_sw_keep_signed"
         style="@style/input_field"
         android:paddingHorizontal="@dimen/dimen_10dp"
-        android:text="Keep me signed in."
+        android:text="@string/fragment_login_keep_me_signed_in"
         app:thumbTint="@android:color/black"
         app:trackTint="@android:color/darker_gray" />
 </LinearLayout>

@@ -1,6 +1,5 @@
 package me.mitul.aij.screens.auth
 
-import android.app.Activity
 import android.content.ContentValues
 import android.content.Intent
 import android.content.SharedPreferences
@@ -9,6 +8,7 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.LinearLayout
 import androidx.core.content.edit
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -22,12 +22,15 @@ import me.mitul.aij.utils.Database
 import kotlin.coroutines.EmptyCoroutineContext
 
 class AuthActivity : FragmentActivity() {
+    private val coroutineScope = CoroutineScope(EmptyCoroutineContext)
+
     private lateinit var dbHelper: AuthHelper
     private lateinit var prefs: SharedPreferences
     private lateinit var shake: Animation
 
-    private lateinit var inputForm: LinearLayout
+    private lateinit var fabChange: FloatingActionButton
     private lateinit var fabSubmit: FloatingActionButton
+    private lateinit var inputForm: LinearLayout
 
     private lateinit var loginFragment: LoginFragment
     private lateinit var registerFragment: RegisterFragment
@@ -38,8 +41,8 @@ class AuthActivity : FragmentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auth)
 
-        dbHelper = AuthHelper(Database(applicationContext))
-        prefs = getSharedPreferences(AuthHelper.KEY_LOGIN_INFO, Activity.MODE_PRIVATE)
+        dbHelper = AuthHelper(applicationContext)
+        prefs = getSharedPreferences(AuthHelper.KEY_LOGIN_INFO, MODE_PRIVATE)
         shake = AnimationUtils.loadAnimation(applicationContext, R.anim.anim_shake)
 
         inputForm = findViewById(R.id.auth_input_form)
@@ -52,8 +55,21 @@ class AuthActivity : FragmentActivity() {
             task(it) { dbHelper.register(it) }
         }
 
-        findViewById<FloatingActionButton>(R.id.auth_fab_change).setOnClickListener {
-            showFragment(if (isLoginVisible) registerFragment else loginFragment)
+        fabChange = findViewById(R.id.auth_fab_change)
+        fabChange.setOnClickListener {
+            if (isLoginVisible) {
+                showFragment(registerFragment)
+                fabChange.setImageDrawable(
+                    ResourcesCompat
+                        .getDrawable(resources, R.drawable.ic_person_24dp, theme)
+                )
+            } else {
+                showFragment(loginFragment)
+                fabChange.setImageDrawable(
+                    ResourcesCompat
+                        .getDrawable(resources, R.drawable.baseline_add_circle_24, theme)
+                )
+            }
             isLoginVisible = !isLoginVisible
         }
 
@@ -61,8 +77,10 @@ class AuthActivity : FragmentActivity() {
     }
 
     private val showFragment: (Fragment) -> Unit = {
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.auth_frag_container, it).commit()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.auth_frag_container, it)
+            .commit()
     }
 
     private val savePrefs: (ContentValues) -> Unit = {
@@ -80,17 +98,17 @@ class AuthActivity : FragmentActivity() {
     }
 
     private fun task(values: ContentValues, action: () -> Long) {
-        CoroutineScope(EmptyCoroutineContext).launch {
+        coroutineScope.launch {
             try {
                 if (action() == -1L) {
                     inputForm.startAnimation(shake)
                     return@launch
                 }
                 savePrefs(values)
-                delay(timeMillis = 2000L) // TODO("Network call simulation")
+                delay(2000L) // TODO("Network call simulation")
                 startActivity(Intent(applicationContext, HomeActivity::class.java))
                 finish()
-            } catch (ignored: InterruptedException) {
+            } catch (_: InterruptedException) {
             }
         }
     }

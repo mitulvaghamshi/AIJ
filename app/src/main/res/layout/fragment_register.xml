@@ -7,35 +7,35 @@
         android:id="@+id/reg_ed_username"
         style="@style/input_field"
         android:drawableStart="@drawable/ic_person_24dp"
-        android:hint="Username"
+        android:hint="@string/fragment_register_username"
         android:inputType="text" />
 
     <AutoCompleteTextView
         android:id="@+id/reg_ed_email"
         style="@style/input_field"
         android:drawableStart="@drawable/ic_email_24dp"
-        android:hint="Email"
+        android:hint="@string/fragment_register_email"
         android:inputType="textEmailAddress" />
 
     <AutoCompleteTextView
         android:id="@+id/reg_ed_phone"
         style="@style/input_field"
         android:drawableStart="@drawable/ic_call_24dp"
-        android:hint="Phone"
+        android:hint="@string/fragment_register_phone"
         android:inputType="phone" />
 
     <AutoCompleteTextView
         android:id="@+id/reg_ed_city"
         style="@style/input_field"
         android:drawableStart="@drawable/ic_city_24dp"
-        android:hint="City"
+        android:hint="@string/fragment_register_city"
         android:inputType="text" />
 
     <AutoCompleteTextView
         android:id="@+id/reg_ed_password"
         style="@style/input_field"
         android:drawableStart="@drawable/ic_lock_24dp"
-        android:hint="Password"
+        android:hint="@string/fragment_register_password"
         android:inputType="textPassword" />
 
     <AutoCompleteTextView
@@ -43,6 +43,6 @@
         style="@style/input_field"
         android:layout_marginBottom="@dimen/dimen_10dp"
         android:drawableStart="@drawable/ic_lock_24dp"
-        android:hint="Confirm Password"
+        android:hint="@string/fragment_register_confirm_password"
         android:inputType="textPassword" />
 </LinearLayout>

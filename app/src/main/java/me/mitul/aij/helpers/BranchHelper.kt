@@ -6,7 +6,7 @@ import androidx.core.database.getStringOrNull
 import me.mitul.aij.models.Branch
 import me.mitul.aij.utils.Database
 
-class BranchHelper(context: Context, private val db: Database = Database(context)) {
+class BranchHelper(context: Context) : Database(context) {
     private companion object {
         const val TBL_BRANCH = "Branch"
 
@@ -34,8 +34,8 @@ class BranchHelper(context: Context, private val db: Database = Database(context
     }
 
     fun getAll() = arrayListOf<Branch>().apply {
-        val cursor = db.readableDatabase.rawQuery(Sql.BRANCHES, null)
-        val stmt = db.readableDatabase.compileStatement(Sql.COLLEGE_COUNT)
+        val cursor = readableDatabase.rawQuery(Sql.BRANCHES, null)
+        val stmt = readableDatabase.compileStatement(Sql.COLLEGE_COUNT)
         if (cursor.moveToFirst()) do {
             val id = cursor.getLongOrNull(cursor.getColumnIndex(COL_ID)) ?: -1L
             val name = cursor.getStringOrNull(cursor.getColumnIndex(COL_NAME))
@@ -45,7 +45,8 @@ class BranchHelper(context: Context, private val db: Database = Database(context
             val format = "Available in %d college${if (count == 1L) "" else "s"}."
             add(
                 Branch(
-                    id = id, count = String.format(format, count),
+                    id = id,
+                    count = String.format(format, count),
                     name = String.format("%s (%s)", name, acronym)
                 )
             )

@@ -20,7 +20,7 @@
 
                 <TextView
                     style="@style/table_cell_label"
-                    android:text="Name" />
+                    android:text="@string/activity_detail_university_name" />
 
                 <TextView
                     android:id="@+id/ud_tv_full_name"
@@ -32,7 +32,7 @@
                 <TextView
                     style="@style/table_cell_label"
                     android:autoLink="map"
-                    android:text="Address" />
+                    android:text="@string/activity_detail_university_address" />
 
                 <TextView
                     android:id="@+id/ud_tv_address"
@@ -43,7 +43,7 @@
 
                 <TextView
                     style="@style/table_cell_label"
-                    android:text="Phone" />
+                    android:text="@string/activity_detail_university_phone" />
 
                 <TextView
                     android:id="@+id/ud_tv_phone"
@@ -55,7 +55,7 @@
 
                 <TextView
                     style="@style/table_cell_label"
-                    android:text="Email" />
+                    android:text="@string/activity_detail_university_email" />
 
                 <TextView
                     android:id="@+id/ud_tv_email"
@@ -67,7 +67,7 @@
 
                 <TextView
                     style="@style/table_cell_label"
-                    android:text="Website" />
+                    android:text="@string/activity_detail_university_website" />
 
                 <TextView
                     android:id="@+id/ud_tv_website"
@@ -79,7 +79,7 @@
 
                 <TextView
                     style="@style/table_cell_label"
-                    android:text="Type" />
+                    android:text="@string/activity_detail_university_type" />
 
                 <TextView
                     android:id="@+id/ud_tv_type"
@@ -90,6 +90,6 @@
         <Button
             android:id="@+id/ud_btn_colleges"
             style="@style/section_header"
-            android:text="See Affiliated Colleges" />
+            android:text="@string/activity_detail_university_see_affiliated_colleges" />
     </LinearLayout>
 </ScrollView>

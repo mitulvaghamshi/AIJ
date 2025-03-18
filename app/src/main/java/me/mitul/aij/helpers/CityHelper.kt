@@ -5,7 +5,7 @@ import me.mitul.aij.models.City
 import me.mitul.aij.utils.Database
 import me.mitul.aij.utils.Keys
 
-class CityHelper(context: Context, private val db: Database = Database(context)) {
+class CityHelper(context: Context) : Database(context) {
     private companion object {
         const val TBL_BANK_BRANCH = "BankBranch"
         const val TBL_HELP_CENTER = "HelpCenter"
@@ -46,19 +46,20 @@ class CityHelper(context: Context, private val db: Database = Database(context))
         """
     }
 
+    @Throws(IllegalArgumentException::class)
     private fun getSql(filter: String, city: String? = null) =
         if (city.isNullOrBlank()) when (filter) {
             Keys.KEY_FILTER_BANK_BRANCH -> Sql.BANK_BRANCH_CITIES
             Keys.KEY_FILTER_HELP_CENTER -> Sql.HELP_CENTER_CITIES
-            else -> null
+            else -> throw IllegalArgumentException(filter)
         } else when (filter) {
             Keys.KEY_FILTER_BANK_BRANCH -> Sql.BANK_BRANCHES_BY_CITY
             Keys.KEY_FILTER_HELP_CENTER -> Sql.HELP_CENTERS_BY_CITY
-            else -> null
+            else -> throw IllegalArgumentException(filter)
         }
 
     fun getAll(filter: String) = arrayListOf<City>().apply {
-        val cursor = db.readableDatabase.rawQuery(getSql(filter), null)
+        val cursor = readableDatabase.rawQuery(getSql(filter), null)
         if (cursor.moveToFirst()) do add(
             City(
                 id = cursor.getInt(cursor.getColumnIndexOrThrow(COL_ID)),
@@ -69,7 +70,7 @@ class CityHelper(context: Context, private val db: Database = Database(context))
     }
 
     fun getByCity(filter: String, city: String) = arrayListOf<City>().apply {
-        val cursor = db.readableDatabase.rawQuery(getSql(filter, city), arrayOf(city))
+        val cursor = readableDatabase.rawQuery(getSql(filter, city), arrayOf(city))
         if (cursor.moveToFirst()) do add(
             City(
                 id = cursor.getInt(cursor.getColumnIndexOrThrow(COL_ID)),

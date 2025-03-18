@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/scroll_layout">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/button_container"
@@ -15,7 +16,7 @@
             android:layout_height="@dimen/dimen_180dp"
             android:layout_marginEnd="@dimen/dimen_10dp"
             android:background="#354cd7"
-            android:text="Search"
+            android:text="@string/activity_home_search"
             app:layout_constraintEnd_toStartOf="@id/btn_college"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -26,7 +27,7 @@
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_85dp"
             android:background="#2db600"
-            android:text="Colleges"
+            android:text="@string/activity_home_colleges"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/btn_find"
             app:layout_constraintTop_toTopOf="parent" />
@@ -38,7 +39,7 @@
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginTop="@dimen/dimen_10dp"
             android:background="#c4ca20"
-            android:text="Branches"
+            android:text="@string/activity_home_branches"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/btn_find"
             app:layout_constraintStart_toStartOf="@id/btn_college"
@@ -58,8 +59,8 @@
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginTop="@dimen/dimen_10dp"
             android:layout_marginEnd="@dimen/dimen_10dp"
-            android:background="#27b5f7"
-            android:text="Universities"
+            android:background="#14BAFF"
+            android:text="@string/activity_home_universities"
             app:layout_constraintEnd_toStartOf="@id/btn_help_center"
             app:layout_constraintHorizontal_weight="0.6"
             app:layout_constraintStart_toStartOf="parent"
@@ -72,9 +73,9 @@
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginTop="@dimen/dimen_10dp"
             android:background="#2e238c"
-            android:text="Help Center"
+            android:text="@string/activity_home_help_center"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_weight="0.5"
+            app:layout_constraintHorizontal_weight="0.4"
             app:layout_constraintStart_toEndOf="@id/btn_university"
             app:layout_constraintTop_toBottomOf="@id/divider_1" />
 
@@ -85,7 +86,7 @@
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginTop="@dimen/dimen_10dp"
             android:background="#c7205a"
-            android:text="Bank Branch"
+            android:text="@string/activity_home_bank_branch"
             app:layout_constraintEnd_toEndOf="@id/btn_university"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_university" />
@@ -104,7 +105,7 @@
             android:layout_height="@dimen/dimen_180dp"
             android:layout_marginTop="@dimen/dimen_10dp"
             android:background="#ff8740"
-            android:text="Developer"
+            android:text="@string/activity_home_developer"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/divider_2" />
@@ -123,7 +124,7 @@
             android:layout_height="@dimen/dimen_160dp"
             android:layout_marginTop="@dimen/dimen_10dp"
             android:background="#0a532b"
-            android:text="Scholarship"
+            android:text="@string/activity_home_scholarship"
             app:layout_constraintEnd_toStartOf="@id/btn_qa"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/divider_3" />
@@ -136,7 +137,7 @@
             android:layout_marginStart="@dimen/dimen_10dp"
             android:layout_marginTop="@dimen/dimen_10dp"
             android:background="#504332"
-            android:text="Q&amp;A"
+            android:text="@string/activity_home_q_amp_a"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/btn_scholarship"
             app:layout_constraintTop_toBottomOf="@id/divider_3" />
@@ -155,7 +156,7 @@
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginTop="@dimen/dimen_10dp"
             android:background="#66bf18"
-            android:text="Admission Step"
+            android:text="@string/activity_home_admission_step"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/divider_4" />
@@ -167,7 +168,7 @@
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginTop="@dimen/dimen_10dp"
             android:background="#cc4b75"
-            android:text="Button 2"
+            android:text="@string/activity_home_button_2"
             app:layout_constraintEnd_toStartOf="@id/btn_3"
             app:layout_constraintHorizontal_weight="0.4"
             app:layout_constraintStart_toStartOf="parent"
@@ -181,7 +182,7 @@
             android:layout_marginStart="@dimen/dimen_10dp"
             android:layout_marginTop="@dimen/dimen_10dp"
             android:background="#972697"
-            android:text="Button 3"
+            android:text="@string/activity_home_button_3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_weight="0.6"
             app:layout_constraintStart_toEndOf="@id/btn_2"
@@ -201,7 +202,7 @@
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginTop="@dimen/dimen_10dp"
             android:background="#51bc57"
-            android:text="Button 4"
+            android:text="@string/activity_home_button_4"
             app:layout_constraintBottom_toTopOf="@id/btn_5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/divider_5" />
@@ -214,7 +215,7 @@
             android:layout_marginTop="@dimen/dimen_10dp"
             android:layout_marginEnd="@dimen/dimen_10dp"
             android:background="#13b3c1"
-            android:text="Button 5"
+            android:text="@string/activity_home_button_5"
             app:layout_constraintEnd_toStartOf="@id/btn_6"
             app:layout_constraintHorizontal_weight="0.6"
             app:layout_constraintStart_toStartOf="parent"
@@ -227,7 +228,7 @@
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginTop="@dimen/dimen_10dp"
             android:background="#6e30e4"
-            android:text="Button 6"
+            android:text="@string/activity_home_button_6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_weight="0.4"
             app:layout_constraintStart_toEndOf="@id/btn_5"
@@ -247,7 +248,7 @@
             android:layout_height="@dimen/dimen_150dp"
             android:layout_marginTop="@dimen/dimen_10dp"
             android:background="@color/orange"
-            android:text="AIJ"
+            android:text="@string/activity_home_aij"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/divider_6" />
@@ -255,6 +256,7 @@
         <View
             android:id="@+id/divider_7"
             style="@style/home_section_divider"
+            app:layout_constraintBottom_toTopOf="@id/btn_students"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_aij" />
@@ -266,7 +268,7 @@
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginTop="@dimen/dimen_10dp"
             android:background="#009dff"
-            android:text="Students"
+            android:text="@string/activity_home_students"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
