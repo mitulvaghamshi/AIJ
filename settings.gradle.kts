@@ -5,11 +5,13 @@ pluginManagement {
         mavenCentral()
     }
 }
+
 dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
     }
 }
+
 rootProject.name = "AIJ"
 include(":app")

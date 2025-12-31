@@ -7,7 +7,7 @@
         android:id="@+id/main_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical" />
+        android:orientation="horizontal" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/main_btn_continue"

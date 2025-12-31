@@ -15,12 +15,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="me.mitul.aij.screens.auth.AuthActivity" />
+        <activity android:name=".screens.auth.AuthActivity" />
 
         <activity android:name=".screens.HomeActivity" />
-
         <activity android:name=".screens.DeveloperActivity" />
-
         <activity android:name=".screens.BranchListActivity" />
 
         <activity android:name=".screens.college.CollegeListActivity" />
