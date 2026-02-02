@@ -11,7 +11,7 @@
 
         <Button
             android:id="@+id/btn_find"
-            style="@style/home_button_text"
+            style="@style/home_button_style"
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_180dp"
             android:layout_marginEnd="@dimen/dimen_10dp"
@@ -24,7 +24,7 @@
 
         <Button
             android:id="@+id/btn_college"
-            style="@style/home_button_text"
+            style="@style/home_button_style"
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_85dp"
             android:background="#2db600"
@@ -36,7 +36,7 @@
 
         <Button
             android:id="@+id/btn_branch"
-            style="@style/home_button_text"
+            style="@style/home_button_style"
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginTop="@dimen/dimen_10dp"
@@ -58,7 +58,7 @@
 
         <Button
             android:id="@+id/btn_university"
-            style="@style/home_button_text"
+            style="@style/home_button_style"
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginTop="@dimen/dimen_10dp"
@@ -72,7 +72,7 @@
 
         <Button
             android:id="@+id/btn_help_center"
-            style="@style/home_button_text"
+            style="@style/home_button_style"
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginTop="@dimen/dimen_10dp"
@@ -85,7 +85,7 @@
 
         <Button
             android:id="@+id/btn_bank_branch"
-            style="@style/home_button_text"
+            style="@style/home_button_style"
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginTop="@dimen/dimen_10dp"
@@ -106,7 +106,7 @@
 
         <Button
             android:id="@+id/btn_developer"
-            style="@style/home_button_text"
+            style="@style/home_button_style"
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_180dp"
             android:background="#ff8740"
@@ -126,7 +126,7 @@
 
         <Button
             android:id="@+id/btn_scholarship"
-            style="@style/home_button_text"
+            style="@style/home_button_style"
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_160dp"
             android:background="#0a532b"
@@ -138,7 +138,7 @@
 
         <Button
             android:id="@+id/btn_qa"
-            style="@style/home_button_text"
+            style="@style/home_button_style"
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginStart="@dimen/dimen_10dp"
@@ -159,7 +159,7 @@
 
         <Button
             android:id="@+id/btn_admission"
-            style="@style/home_button_text"
+            style="@style/home_button_style"
             android:layout_width="@dimen/dimen_0dp"
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginTop="@dimen/dimen_10dp"
@@ -171,7 +171,7 @@
 
         <Button
             android:id="@+id/btn_students"
-            style="@style/home_button_text"
+            style="@style/home_button_style"
             android:layout_width="0dp"
             android:layout_height="@dimen/dimen_85dp"
             android:layout_marginTop="@dimen/dimen_10dp"
@@ -190,7 +190,7 @@
 
         <Button
             android:id="@+id/btn_aij"
-            style="@style/home_button_text"
+            style="@style/home_button_style"
             android:layout_width="@dimen/dimen_0dp"
             android:layout_height="@dimen/dimen_150dp"
             android:layout_marginTop="@dimen/dimen_10dp"

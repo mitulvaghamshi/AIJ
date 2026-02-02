@@ -3,46 +3,65 @@
     style="@style/linear_layout"
     android:orientation="vertical">
 
-    <AutoCompleteTextView
-        android:id="@+id/reg_ed_username"
-        style="@style/input_field"
-        android:drawableStart="@drawable/ic_person_24dp"
-        android:hint="@string/fragment_register_username"
-        android:inputType="text" />
+    <com.google.android.material.textfield.TextInputLayout style="@style/text_layout_style">
 
-    <AutoCompleteTextView
-        android:id="@+id/reg_ed_email"
-        style="@style/input_field"
-        android:drawableStart="@drawable/ic_email_24dp"
-        android:hint="@string/fragment_register_email"
-        android:inputType="textEmailAddress" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/reg_ed_username"
+            style="@style/text_input_style"
+            android:drawableStart="@drawable/ic_person_24dp"
+            android:hint="@string/fragment_register_username"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <AutoCompleteTextView
-        android:id="@+id/reg_ed_phone"
-        style="@style/input_field"
-        android:drawableStart="@drawable/ic_call_24dp"
-        android:hint="@string/fragment_register_phone"
-        android:inputType="phone" />
+    <com.google.android.material.textfield.TextInputLayout style="@style/text_layout_style">
 
-    <AutoCompleteTextView
-        android:id="@+id/reg_ed_city"
-        style="@style/input_field"
-        android:drawableStart="@drawable/ic_city_24dp"
-        android:hint="@string/fragment_register_city"
-        android:inputType="text" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/reg_ed_email"
+            style="@style/text_input_style"
+            android:drawableStart="@drawable/ic_email_24dp"
+            android:hint="@string/fragment_register_email"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <AutoCompleteTextView
-        android:id="@+id/reg_ed_password"
-        style="@style/input_field"
-        android:drawableStart="@drawable/ic_lock_24dp"
-        android:hint="@string/fragment_register_password"
-        android:inputType="textPassword" />
+    <com.google.android.material.textfield.TextInputLayout style="@style/text_layout_style">
 
-    <AutoCompleteTextView
-        android:id="@+id/reg_ed_re_password"
-        style="@style/input_field"
-        android:layout_marginBottom="@dimen/dimen_10dp"
-        android:drawableStart="@drawable/ic_lock_24dp"
-        android:hint="@string/fragment_register_confirm_password"
-        android:inputType="textPassword" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/reg_ed_phone"
+            style="@style/text_input_style"
+            android:drawableStart="@drawable/ic_call_24dp"
+            android:hint="@string/fragment_register_phone"
+            android:inputType="phone" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout style="@style/text_layout_style">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/reg_ed_city"
+            style="@style/text_input_style"
+            android:drawableStart="@drawable/ic_city_24dp"
+            android:hint="@string/fragment_register_city"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout style="@style/text_layout_style">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/reg_ed_password"
+            style="@style/text_input_style"
+            android:drawableStart="@drawable/ic_lock_24dp"
+            android:hint="@string/fragment_register_password"
+            android:inputType="textPassword"
+            android:isCredential="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout style="@style/text_layout_style">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/reg_ed_re_password"
+            style="@style/text_input_style"
+            android:drawableStart="@drawable/ic_lock_24dp"
+            android:hint="@string/fragment_register_confirm_password"
+            android:inputType="textPassword"
+            android:isCredential="true" />
+    </com.google.android.material.textfield.TextInputLayout>
 </LinearLayout>

@@ -3,12 +3,10 @@ import java.util.Properties
 
 plugins {
     id("com.android.application")
-    kotlin("android")
 }
 
-val keystorePropertiesFile = rootProject.file("key.properties")
 val keystoreProperties = Properties()
-keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+keystoreProperties.load(FileInputStream(rootProject.file("key.properties")))
 
 android {
     namespace = "me.mitul.aij"
@@ -22,7 +20,6 @@ android {
         versionCode = 1
         versionName = "1.0.0"
 
-        multiDexEnabled = true
         signingConfig = signingConfigs.getByName("debug")
     }
 
@@ -40,32 +37,19 @@ android {
             enableV3Signing = true
             enableV4Signing = true
 
-            keyAlias = keystoreProperties["keyAlias"]?.toString()
-            keyPassword = keystoreProperties["keyPassword"]?.toString()
-            storeFile = file(keystoreProperties["storeFile"] ?: "pubkey.jks")
-            storePassword = keystoreProperties["storePassword"]?.toString()
-        }
-    }
-
-    splits {
-        abi {
-            isEnable = false
-            reset()
-            include("arm64-v8a")
-            isUniversalApk = true
-        }
-
-        density {
-            isEnable = false
-            exclude("ldpi", "xxhdpi", "xxxhdpi")
-            compatibleScreens("small", "normal", "large", "xlarge")
+            keyAlias = keystoreProperties["keyAlias"].toString()
+            keyPassword = keystoreProperties["keyPassword"].toString()
+            storeFile = file(keystoreProperties["storeFile"]!!)
+            storePassword = keystoreProperties["storePassword"].toString()
         }
     }
 
     buildTypes {
         getByName("debug") {
-            applicationIdSuffix = ".debug"
+            multiDexEnabled = true
+
             versionNameSuffix = "-debug"
+            applicationIdSuffix = ".debug"
         }
 
         getByName("release") {
@@ -102,7 +86,6 @@ android {
             buildConfigField("Boolean", "IS_PRO", "true")
         }
     }
-
 }
 
 dependencies {

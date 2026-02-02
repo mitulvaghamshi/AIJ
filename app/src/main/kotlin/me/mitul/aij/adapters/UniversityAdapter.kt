@@ -30,7 +30,7 @@ class UniversityAdapter(
         }
     }
 
-    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val label: TextView = view.findViewById(R.id.li_tv_label)
 
         fun onClick(context: Context, id: Int) = context.startActivity(

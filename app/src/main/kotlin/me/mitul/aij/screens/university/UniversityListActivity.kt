@@ -2,12 +2,12 @@ package me.mitul.aij.screens.university
 
 import android.app.Activity
 import android.os.Bundle
-import android.widget.EditText
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import me.mitul.aij.helpers.UniversityHelper
+import com.google.android.material.textfield.TextInputEditText
 import me.mitul.aij.R
 import me.mitul.aij.adapters.UniversityAdapter
+import me.mitul.aij.helpers.UniversityHelper
 import me.mitul.aij.models.University
 import me.mitul.aij.utils.TextFilter
 
@@ -26,7 +26,7 @@ class UniversityListActivity : Activity() {
             adapter = UniversityAdapter(layoutInflater, items)
         }
 
-        findViewById<EditText>(R.id.ed_search).addTextChangedListener(
+        findViewById<TextInputEditText>(R.id.ed_search).addTextChangedListener(
             TextFilter(items, object : TextFilter.ListFilter<University> {
                 override fun setList(items: List<University>) = listview.setAdapter(
                     UniversityAdapter(this@UniversityListActivity.layoutInflater, items)

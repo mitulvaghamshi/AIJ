@@ -57,7 +57,7 @@
     <string name="activity_home_button_6">Button 6</string>
     <string name="activity_home_aij">AIJ</string>
     <string name="activity_home_students">Students</string>
-    <string name="activity_recycle_view_type_to_search">Type to search…</string>
+    <string name="activity_recycle_view_type_to_search">Type to search</string>
     <string name="fragment_login_username">Username</string>
     <string name="fragment_login_password">Password</string>
     <string name="fragment_login_keep_me_signed_in">Keep me signed in.</string>
@@ -67,4 +67,6 @@
     <string name="fragment_register_city">City</string>
     <string name="fragment_register_password">Password</string>
     <string name="fragment_register_confirm_password">Confirm Password</string>
+    <string name="don_t_have_an_account_register_here">Don\'t have an account? Register here…</string>
+    <string name="already_registered_log_in">Already registered, login here…</string>
 </resources>

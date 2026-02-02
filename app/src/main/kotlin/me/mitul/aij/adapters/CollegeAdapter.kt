@@ -34,7 +34,7 @@ class CollegeAdapter(
         }
     }
 
-    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val tvName: TextView = view.findViewById(R.id.cl_li_name)
         val tvFees: TextView = view.findViewById(R.id.cl_li_fees)
         val tcHostel: TextView = view.findViewById(R.id.cl_li_hostel)

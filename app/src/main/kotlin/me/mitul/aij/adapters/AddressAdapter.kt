@@ -26,7 +26,7 @@ class AddressAdapter(
         }
     }
 
-    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val name: TextView = view.findViewById(R.id.li2_tv_name)
         val address: TextView = view.findViewById(R.id.li2_tv_address)
     }
