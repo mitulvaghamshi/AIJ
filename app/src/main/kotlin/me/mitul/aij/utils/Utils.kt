@@ -14,8 +14,13 @@ object Keys {
     const val DB_NAME = "database.sqlite"
 }
 
-fun View.animate(duration: Long, onComplete: (() -> Unit)? = null) =
-    animate().setDuration(duration).alpha(0f).withEndAction {
-        animate().alpha(1f)
-        onComplete?.invoke()
-    }
+fun View.animate(duration: Long, action: (() -> Unit)? = null, onComplete: (() -> Unit)? = null) {
+    animate()
+        .withStartAction { action?.invoke() }
+        .setDuration(duration)
+        .alpha(0f)
+        .withEndAction {
+            animate().alpha(1f)
+            onComplete?.invoke()
+        }
+}

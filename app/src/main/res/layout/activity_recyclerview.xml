@@ -3,12 +3,15 @@
     style="@style/linear_layout"
     android:orientation="vertical">
 
-    <AutoCompleteTextView
-        android:id="@+id/ed_search"
-        style="@style/input_field"
-        android:layout_margin="@dimen/dimen_16dp"
-        android:drawableStart="@drawable/ic_filter_24"
-        android:hint="@string/activity_recycle_view_type_to_search" />
+    <com.google.android.material.textfield.TextInputLayout style="@style/text_layout_style">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_search"
+            style="@style/text_input_style"
+            android:layout_marginHorizontal="@dimen/dimen_16dp"
+            android:drawableStart="@drawable/ic_filter_24"
+            android:hint="@string/activity_recycle_view_type_to_search" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"

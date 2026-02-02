@@ -1,28 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/linear_layout"
     android:orientation="vertical">
 
-    <AutoCompleteTextView
-        android:id="@+id/login_ed_username"
-        style="@style/input_field"
-        android:drawableStart="@drawable/ic_person_24dp"
-        android:hint="@string/fragment_login_username"
-        android:inputType="text" />
+    <com.google.android.material.textfield.TextInputLayout style="@style/text_layout_style">
 
-    <AutoCompleteTextView
-        android:id="@+id/login_ed_password"
-        style="@style/input_field"
-        android:drawableStart="@drawable/ic_lock_24dp"
-        android:hint="@string/fragment_login_password"
-        android:inputType="textPassword" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_ed_username"
+            style="@style/text_input_style"
+            android:drawableStart="@drawable/ic_person_24dp"
+            android:hint="@string/fragment_login_username"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <androidx.appcompat.widget.SwitchCompat
+    <com.google.android.material.textfield.TextInputLayout style="@style/text_layout_style">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_ed_password"
+            style="@style/text_input_style"
+            android:drawableStart="@drawable/ic_lock_24dp"
+            android:hint="@string/fragment_login_password"
+            android:inputType="textPassword"
+            android:isCredential="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/login_sw_keep_signed"
-        style="@style/input_field"
-        android:paddingHorizontal="@dimen/dimen_10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/dimen_16dp"
         android:text="@string/fragment_login_keep_me_signed_in"
-        app:thumbTint="@android:color/black"
-        app:trackTint="@android:color/darker_gray" />
+        android:textStyle="bold" />
 </LinearLayout>

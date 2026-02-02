@@ -1,4 +1,4 @@
-package me.mitul.aij.screens.main
+package me.mitul.aij
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
-import me.mitul.aij.R
 
 class MainFragment : Fragment() {
     override fun onCreateView(

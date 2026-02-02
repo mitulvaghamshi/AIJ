@@ -30,9 +30,10 @@ class AuthHelper(context: Context) : Database(context) {
 
     private object Sql {
         const val LOGIN_WITH = """
-            SELECT  $COL_USER_ID, $COL_USERNAME, $COL_PASSWORD
-            FROM    $TBL_USER
-            WHERE   $COL_USERNAME = ? AND $COL_PASSWORD = ?;
+            SELECT $COL_USER_ID, $COL_USERNAME, $COL_PASSWORD
+            FROM   $TBL_USER
+            WHERE  $COL_USERNAME = ? 
+            AND    $COL_PASSWORD = ?;
         """
     }
 

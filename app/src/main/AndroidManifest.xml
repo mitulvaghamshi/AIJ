@@ -6,7 +6,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme.SafeView">
         <activity
-            android:name=".screens.main.MainActivity"
+            android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/AppTheme.FullScreen">
             <intent-filter>

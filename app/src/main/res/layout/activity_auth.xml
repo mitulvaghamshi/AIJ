@@ -7,27 +7,32 @@
         style="@style/linear_layout"
         android:orientation="vertical">
 
-        <ImageView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_200dp"
-            android:contentDescription="@string/aij_header_image_on_login_screen"
-            android:scaleType="fitXY"
-            android:src="@drawable/img_aij_header" />
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_16dp"
+            app:cardCornerRadius="@dimen/dimen_16dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_200dp"
+                android:contentDescription="@string/aij_header_image_on_login_screen"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_aij_header" />
+        </androidx.cardview.widget.CardView>
 
         <LinearLayout
             android:id="@+id/auth_input_form"
             style="@style/linear_layout"
             android:orientation="vertical">
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
                 android:id="@+id/auth_fab_change"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dimen_16dp"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_marginHorizontal="@dimen/dimen_16dp"
                 android:contentDescription="@string/button_to_switch_between_login_and_registration_screens"
-                android:src="@drawable/baseline_add_circle_24"
-                android:tooltipText="Registration"
-                app:backgroundTint="@color/pink" />
+                android:text="@string/don_t_have_an_account_register_here" />
 
             <FrameLayout
                 android:id="@+id/auth_frag_container"
@@ -38,12 +43,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:layout_margin="@dimen/dimen_16dp"
+                android:layout_marginHorizontal="@dimen/dimen_16dp"
+                android:layout_marginBottom="@dimen/dimen_16dp"
                 android:contentDescription="@string/button_to_submit_login_form"
                 android:imeOptions="actionGo"
                 android:src="@drawable/ic_send_24dp"
-                android:tooltipText="Login"
-                app:backgroundTint="@color/orange" />
+                android:tooltipText="Login" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

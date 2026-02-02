@@ -1,16 +1,15 @@
-package me.mitul.aij.screens.main
+package me.mitul.aij
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.button.MaterialButton
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import me.mitul.aij.R
 import me.mitul.aij.screens.auth.AuthActivity
 import kotlin.coroutines.EmptyCoroutineContext
 
@@ -23,7 +22,7 @@ class MainActivity : FragmentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        findViewById<Button>(R.id.main_btn_continue).setOnClickListener { onContinue() }
+        findViewById<MaterialButton>(R.id.main_btn_continue).setOnClickListener { onContinue() }
 
         findViewById<ViewPager2>(R.id.main_viewpager).apply {
             adapter = object : FragmentStateAdapter(supportFragmentManager, lifecycle) {

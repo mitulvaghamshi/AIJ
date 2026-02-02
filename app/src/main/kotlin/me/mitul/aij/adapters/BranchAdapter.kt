@@ -32,7 +32,7 @@ class BranchAdapter(
         }
     }
 
-    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val tvName: TextView = view.findViewById(R.id.b_li_name)
         val tvCollegeCount: TextView = view.findViewById(R.id.b_li_college_count)
         val itemContainer: LinearLayout = view.findViewById(R.id.b_li_container)

@@ -8,17 +8,15 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.LinearLayout
 import androidx.core.content.edit
-import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import me.mitul.aij.R
 import me.mitul.aij.helpers.AuthHelper
 import me.mitul.aij.screens.HomeActivity
-import me.mitul.aij.utils.Database
 import kotlin.coroutines.EmptyCoroutineContext
 
 class AuthActivity : FragmentActivity() {
@@ -28,7 +26,7 @@ class AuthActivity : FragmentActivity() {
     private lateinit var prefs: SharedPreferences
     private lateinit var shake: Animation
 
-    private lateinit var fabChange: FloatingActionButton
+    private lateinit var fabChange: ExtendedFloatingActionButton
     private lateinit var fabSubmit: FloatingActionButton
     private lateinit var inputForm: LinearLayout
 
@@ -59,16 +57,10 @@ class AuthActivity : FragmentActivity() {
         fabChange.setOnClickListener {
             if (isLoginVisible) {
                 showFragment(registerFragment)
-                fabChange.setImageDrawable(
-                    ResourcesCompat
-                        .getDrawable(resources, R.drawable.ic_person_24dp, theme)
-                )
+                fabChange.setText(R.string.already_registered_log_in)
             } else {
                 showFragment(loginFragment)
-                fabChange.setImageDrawable(
-                    ResourcesCompat
-                        .getDrawable(resources, R.drawable.baseline_add_circle_24, theme)
-                )
+                fabChange.setText(R.string.don_t_have_an_account_register_here)
             }
             isLoginVisible = !isLoginVisible
         }
@@ -105,7 +97,6 @@ class AuthActivity : FragmentActivity() {
                     return@launch
                 }
                 savePrefs(values)
-                delay(2000L) // TODO("Network call simulation")
                 startActivity(Intent(applicationContext, HomeActivity::class.java))
                 finish()
             } catch (_: InterruptedException) {
